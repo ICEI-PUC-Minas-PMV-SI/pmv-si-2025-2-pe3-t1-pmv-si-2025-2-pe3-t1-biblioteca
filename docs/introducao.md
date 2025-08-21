@@ -8,7 +8,18 @@ Apesar de já existirem soluções digitais no mercado, muitos problemas ainda p
 
 ## 1.2. Objetivos do trabalho
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. O objetivo geral deve resumir e apresentar a ideia central de um trabalho, descrevendo também a sua finalidade. Os objetivos específicos darão uma maior delimitação ao tema, além de detalhar os processos necessários para a realização do trabalho.
+### Objetivo Geral
+Desenvolver uma aplicação para venda de ingressos de cinema que seja simples, intuitiva e eficiente, oferecendo uma experiência de compra mais ágil e transparente para os usuários, ao mesmo tempo em que contribua para a otimização da gestão operacional e estratégica das empresas exibidoras.
+
+### Objetivos Específicos
+- Analisar as limitações e problemas das plataformas atuais de venda de ingressos de cinema.
+- Projetar uma interface amigável, responsiva e de fácil navegação, acessível em diferentes dispositivos.
+- Implementar funcionalidades de escolha de assentos em tempo real e integração com meios de pagamento digitais populares.
+- Garantir transparência nos preços e taxas, reduzindo etapas até a finalização da compra.
+- Desenvolver um sistema de notificações e lembretes para promoções, estreias e horários escolhidos.
+- Estruturar mecanismos que facilitem cancelamentos e remarcações de ingressos.
+- Incorporar ferramentas de coleta e análise de dados para apoiar estratégias de fidelização e marketing das empresas parceiras.
+- Realizar testes de usabilidade e segurança para assegurar uma experiência confiável e satisfatória ao usuário.
 
 ## 1.3. Justificativa
 
