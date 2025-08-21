@@ -1,11 +1,10 @@
 # 1. INTRODUÇÃO
 
-Contextualizar a área de pesquisa do trabalho, apresentando conceitos e dados relacionados antes de apresentar a problemática a ser investigada.
+No mercado de cinemas, os sistemas de informação são determinantes para garantir eficiência operacional e oferecer uma experiência diferenciada ao público. Plataformas como as utilizadas pelo Cinemark e pela Ingresso.com, por exemplo, permitem ao cliente escolher assentos em tempo real, realizar pagamentos digitais de forma segura e receber ingressos eletrônicos, eliminando filas e aumentando a conveniência. Além disso, esses sistemas coletam e analisam dados sobre o comportamento dos espectadores, possibilitando campanhas de marketing direcionadas, como descontos em horários de menor movimento ou programas de fidelidade personalizados. Do ponto de vista empresarial, a automação do processo de venda reduz custos com bilheteria, otimiza o fluxo de público e amplia as oportunidades de receita por meio de parcerias estratégicas e promoções. Assim, investir em sistemas modernos de venda de ingressos não apenas melhora a experiência do usuário, mas constitui uma vantagem competitiva concreta, permitindo que os cinemas se destaquem em um mercado altamente competitivo e cada vez mais digital.
 
 ## 1.1. Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. 
-Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+Apesar de já existirem soluções digitais no mercado, muitos problemas ainda persistem na experiência do usuário. Entre os principais desafios estão: a navegação pouco intuitiva, excesso de etapas até a finalização da compra, dificuldade em escolher assentos de forma clara, taxas adicionais pouco transparentes, instabilidade em horários de alta demanda e, em alguns casos, a ausência de formas de pagamento práticas e populares, como pix. Adicionamente, usuários relatam dificuldades em cancelar ou remarcar ingressos e em receber suporte adequado quando ocorrem erros na transação. O problema se torna ainda mais grave quando o usuário não tem costume de utilizar esse tipo de sistemas, como para o público idoso.
 
 ## 1.2. Objetivos do trabalho
 
