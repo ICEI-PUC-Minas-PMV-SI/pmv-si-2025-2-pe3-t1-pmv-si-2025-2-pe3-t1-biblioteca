@@ -1,4 +1,7 @@
-# Título do Projeto
+# TicketWave
+
+<img src="https://github.com/user-attachments/assets/86976a21-ce12-45ef-9e6e-2045ef3bfbf8" width="400"/>
+<br/><br/><br/>
 
 `CURSO: Sistemas de Informação`
 
@@ -6,20 +9,21 @@
 
 `SEMESTRE: 3º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto em desenvolvimento tem como foco a criação de uma aplicação web para a venda de ingressos e snacks de cinema, priorizando praticidade, acessibilidade e eficiência. A solução busca superar falhas comuns das plataformas atuais, como navegação confusa, excesso de etapas, instabilidade e ausência de meios de pagamento populares, oferecendo ao usuário um fluxo simples e integrado, desde a escolha do filme até a finalização da compra.
+
+Além de facilitar a aquisição antecipada de ingressos e produtos, a proposta reduz filas presenciais, melhora a experiência do público e amplia as oportunidades de faturamento para as salas de exibição. Ao unir tecnologia, conveniência e qualidade de serviço, a aplicação contribui para aproximar os clientes do cinema, tornando o processo de compra mais rápido, seguro e agradável.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Felipe de Souza Bonilha 
+* Grazielle Rosa Lagares
+* Maria Luiza Brito de Paula
+* Rafael da Silva Lanzarini
+* Rodrigo Junqueira de Lima Siqueira
 
 ## Orientador
 
-* Nome completo do professor 
+* Fábio Martins de Oliveira
 
 # Planejamento
 
