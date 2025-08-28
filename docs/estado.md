@@ -1,10 +1,5 @@
 # 2. ESTADO DA ARTE
-O estado da arte é um mapeamento de toda a produção acadêmica sobre um assunto específico, aqui especificamente sobre o tema escolhido para o seu trabalho. A ideia consiste em reunir as conclusões que outras pesquisas científicas chegaram sobre um determinado assunto. Neste momento você deverá buscar respostas para as seguintes perguntas:
 
-1.	Quais pesquisas estão sendo desenvolvidas sobre esse tema?
-2.	Quem está pesquisando e onde?
-3.	O que as atuais pesquisas científicas concluíram sobre o tema? 
-4.	Quais as divergências dos pesquisadores sobre o assunto? 
-5.	Quais aspectos carecem de maior abordagem?
+Nos últimos anos, as pesquisas sobre plataformas digitais de venda de ingressos têm dado destaque especial à experiência do usuário (UX design), uma vez que este fator influencia diretamente a percepção, transparência e confiança nos sistemas. Um estudo realizado por Ferreira, (Chauvel e Silveira 2006) analisou a usabilidade de sites de empresas virtuais, tendo como objeto de investigação o portal “Ingresso.com”, primeira organização estabelecida no Brasil voltada à venda de ingressos on-line. O trabalho destacou a relevância de fatores como clareza da interface, facilidade de navegação e consistência visual, elementos que se mostraram fundamentais para a consolidação dessas plataformas digitais como alternativas eficientes aos modelos tradicionais de bilheteria, podemos dizer, se tratar de um estudo pioneiro no que se compreende como UX e design centrado no usuário. 
 
-É importante referenciar estas pesquisas, fazendo as devidas citações de acordo com as normas da ABNT e colocando as referências completas ao final do trabalho.
+A literatura recente mostra que os estudos não se restringem apenas a aspectos técnicos, como escalabilidade ou segurança contra bots, mas também à forma como os usuários vivenciam a compra em cenários de alta demanda.
