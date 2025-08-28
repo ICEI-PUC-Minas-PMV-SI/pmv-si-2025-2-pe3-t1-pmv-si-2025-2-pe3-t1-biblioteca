@@ -9,7 +9,7 @@ Apesar de já existirem soluções digitais no mercado, muitos problemas ainda p
 ## 1.2. Objetivos do trabalho
 
 ### Objetivo Geral
-Desenvolver uma aplicação para venda de ingressos de cinema que seja simples, intuitiva e eficiente, oferecendo uma experiência de compra mais ágil e transparente para os usuários, ao mesmo tempo em que contribua para a otimização da gestão operacional e estratégica das empresas exibidoras.
+Desenvolver um sistema web para venda de ingressos de cinema que seja simples, intuitiva e eficiente, oferecendo uma experiência de compra mais ágil e transparente para os usuários, ao mesmo tempo em que contribua para a otimização da gestão operacional e estratégica das empresas exibidoras.
 
 ### Objetivos Específicos
 - Analisar as limitações e problemas das plataformas atuais de venda de ingressos de cinema.
