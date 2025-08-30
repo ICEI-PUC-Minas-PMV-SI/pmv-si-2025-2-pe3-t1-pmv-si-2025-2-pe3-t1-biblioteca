@@ -18,13 +18,13 @@ Por fim, serão expostos alguns exemplos de sites para bibliotecas, a fim de ilu
 
 
 <img width="1102" height="477" alt="image" src="https://github.com/user-attachments/assets/a6027815-2e78-4190-9552-021b4ff610de" />
-Figura 1 - Resultados de uma busca na plataforma Pergamum
 
-<br>
+Figura 1 - Resultados de uma busca na plataforma Pergamum
 
 Quando o usuário acessa a seção específica do livro consultado, não existe um resumo sobre o conteúdo do livro, nem uma descrição sobre o tema abordado, demonstrando escassez de informações relevantes. A única funcionalidade que induz a interação do leitor com o sistema é o campo de comentário a respeito da obra. Além disso, existe uma demora significativa no redirecionamento entre páginas.
 
 <img width="1100" height="481" alt="image" src="https://github.com/user-attachments/assets/8b14eda0-4078-4e3a-8307-641859c8e268" />
+
 Figura 2 - Página do livro "Admirável Mundo Novo" na plataforma Pergamum.
 
 O próximo sistema ilustrado apresenta uma evolução no que diz respeito à estética e à experiência do usuário. Na plataforma Sophia, utilizada pela Biblioteca Nacional, há imagens das capas dos livros, tornando a navegação mais interessante. Há também um resumo do conteúdo do livro e a funcionalidade de favoritar títulos, estimulando a interação do leitor com o site e organizando suas preferências e suas reservas posteriores.
