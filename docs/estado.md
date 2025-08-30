@@ -16,10 +16,10 @@ Sendo que a literatura reconhece a necessidade de sistemas web acessíveis e ori
 
 Por fim, serão expostos alguns exemplos de sites para bibliotecas, a fim de ilustrar o panorama atual do ecossistema virtual desse tipo de empreendimento. A primeira plataforma mostrada é o sistema Pergamum, utilizado por diversas bibliotecas universitárias brasileiras. O layout da página é pouco atrativo, carecendo de melhor elaboração estética. Não há imagens dos livros, o que torna a exibição pouco intuitiva. O excesso de informações presentes na página pode confundir os usuários.
 
-<p align="center">
+<p>
     <figure>
            <img width="1102" height="477" alt="image" src="https://github.com/user-attachments/assets/a6027815-2e78-4190-9552-021b4ff610de" />
-            <figcaption>Figura 1 — Sistema Pergamum: resultados de uma busca</figcaption>
+            <figcaption align="center">Figura 1 — Sistema Pergamum: resultados de uma busca</figcaption>
     </figure>
 </p>
 
