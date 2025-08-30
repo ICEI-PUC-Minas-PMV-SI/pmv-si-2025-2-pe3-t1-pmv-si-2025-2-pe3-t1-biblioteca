@@ -16,31 +16,40 @@ Sendo que a literatura reconhece a necessidade de sistemas web acessíveis e ori
 
 Por fim, serão expostos alguns exemplos de sites para bibliotecas, a fim de ilustrar o panorama atual do ecossistema virtual desse tipo de empreendimento. A primeira plataforma mostrada é o sistema Pergamum, utilizado por diversas bibliotecas universitárias brasileiras. O layout da página é pouco atrativo, carecendo de melhor elaboração estética. Não há imagens dos livros, o que torna a exibição pouco intuitiva. O excesso de informações presentes na página pode confundir os usuários.
 
+Figura 1 - Resultados de uma busca na plataforma Pergamum
 
 <img width="1102" height="477" alt="image" src="https://github.com/user-attachments/assets/a6027815-2e78-4190-9552-021b4ff610de" />
 
-Figura 1 - Resultados de uma busca na plataforma Pergamum
+Fonte: https://bib.pucminas.br/pesquisa_geral?for=LIVRE&q=Admir%25C3%25A1vel%2520Novo%2520Mundo&page=1&perPage=20&direction
 
 Quando o usuário acessa a seção específica do livro consultado, não existe um resumo sobre o conteúdo do livro, nem uma descrição sobre o tema abordado, demonstrando escassez de informações relevantes. A única funcionalidade que induz a interação do leitor com o sistema é o campo de comentário a respeito da obra. Além disso, existe uma demora significativa no redirecionamento entre páginas.
 
+Figura 2 - Página do livro "Admirável Mundo Novo" na plataforma Pergamum
+
 <img width="1100" height="481" alt="image" src="https://github.com/user-attachments/assets/8b14eda0-4078-4e3a-8307-641859c8e268" />
 
-Figura 2 - Página do livro "Admirável Mundo Novo" na plataforma Pergamum
+Fonte: https://bib.pucminas.br/acervo/25533
 
 O próximo sistema ilustrado apresenta uma evolução no que diz respeito à estética e à experiência do usuário. Na plataforma Sophia, utilizada pela Biblioteca Nacional, há imagens das capas dos livros, tornando a navegação mais interessante. Há também um resumo do conteúdo do livro e a funcionalidade de favoritar títulos, estimulando a interação do leitor com o site e organizando suas preferências e suas reservas posteriores.
 
+Figura 3 - Página do livro "Metrópolis" na plataforma Sophia
+
 <img width="866" height="595" alt="image" src="https://github.com/user-attachments/assets/7f389e6a-b529-47c1-a4c6-03e714360f80" />
 
-Figura 3 - Página do livro "Metrópolis" na plataforma Sophia
+Fonte: https://acervo.bn.gov.br/Sophia_web/Acervo/Detalhe/1887317?returnUrl=/Sophia_web/Home/Index&guid=1756512598050
 
 A última plataforma a ser mostrada é a Biblioteca Virtual, iniciativa da Pearson Higher Education para a disponibilização de *e-books* para cursos superiores, cursos técnicos e empresas variadas. Com um *design* inovador, o site demonstra maior investimento em experiência do usuário, apresentando uma interface atrativa e boa navegabilidade. Dessa forma, entrega ao usuário um sistema mais condizente com as expectativas de um internauta habituado com altos níveis de interatividade nas aplicações que utiliza. Um diferencial de sua interface é o sistema de recomendações, que indica títulos ao leitor de acordo com suas buscas.
 
+Figura 4 - Página do livro "Sonhos - Conexão com seu oráculo interior" na plataforma Biblioteca Virtual
+
 <img width="1101" height="419" alt="image" src="https://github.com/user-attachments/assets/8d127992-3775-472f-b563-6c2cf87d6462" />
 
-Figura 4 - Página do livro "Sonhos - Conexão com seu oráculo interior" na plataforma Biblioteca Virtual
+Fonte: https://www.bvirtual.com.br/NossoAcervo/Publicacao/217019
+
+Figura 5 - Seção de recomendações após a busca do título da imagem anterior
 
 <img width="1100" height="414" alt="image" src="https://github.com/user-attachments/assets/fa13775c-df86-491d-bc74-4c57dd407e7b" />
 
-Figura 5 - Seção de recomendações após a busca do título da imagem anterior
+Fonte: https://www.bvirtual.com.br/NossoAcervo/Publicacao/217019
                 
 De posse desses exemplos, o projeto visará à implementação das melhores funcionalidades dentre as consideradas, incorporando as melhores práticas de interatividade e experiência do usuário. Assim, a navegação se tornará mais fluida, intuitiva, agradável e funcional.
