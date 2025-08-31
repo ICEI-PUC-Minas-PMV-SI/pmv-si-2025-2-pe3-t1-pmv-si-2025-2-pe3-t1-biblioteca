@@ -24,4 +24,5 @@ XU, J.; FADER, P.; VEERARAGHAVAN, S. K. Designing and Evaluating Dynamic Pricing
 FERREIRA, Simone Bacellar Leal; CHAUVEL, Marie Agnes; SILVEIRA, Denis Silva da. Um estudo de usabilidade de sites de empresas virtuais. Produção, São Paulo, v. 16, n. 2, p. 287–302, 2006. Disponível em: https://www.scielo.br/j/prod/a/Nn5fSnNwmHYksGV3ZDz4mYp/
 Acesso em: 20 ago. 2025
 
-PIRES, Victor de Almeida Nobre. “SOLD OUT”: Ticketmaster, performance algorítmica e a venda de ingressos de preço dinâmico. Galáxia (São Paulo, online), v. 48, p. 1–21, nov. 2023. DOI: 10.1590/1982-2553202363341 acessado em 20 de ago. 2025
+PIRES, Victor de Almeida Nobre. “SOLD OUT”: Ticketmaster, performance algorítmica e a venda de ingressos de preço dinâmico. Galáxia (São Paulo, online), v. 48, p. 1–21, nov. 2023. DOI: https://doi.org/10.1590/1982-2553202363341 
+acessado em 20 de ago. 2025
