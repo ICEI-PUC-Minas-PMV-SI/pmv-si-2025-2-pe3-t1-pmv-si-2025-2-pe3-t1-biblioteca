@@ -54,7 +54,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RNF003 | **Armazenamento** — O armazenamento de dados deverá ser realizado no próprio navegador do usuário (localStorage)                                                                        |
 | RNF004 | **Design** — A interface deverá ser moderna e atrativa, seguindo as melhores práticas de design                                                                             |
 | RNF005 | **Facilidade de uso** — O fluxo de atividades do sistema deverá ser fácil e intuitivo, atendendo a públicos diversos, incluindo pessoas da terceira idade                        |
-| RNF006 | **Acessibilidade** — O sistema web deverá atender requisitos mínimos de acessibilidade, tais como tabulação lógica, descrição em áudio de elementos visuais e descrição em texto para elementos auditivos |
+| RNF006 | **Acessibilidade** — O sistema web deverá atender a requisitos mínimos de acessibilidade, tais como tabulação lógica, descrição em áudio de elementos visuais e descrição em texto para elementos auditivos |
 
 
 ### 3.3.3 Usuários 
