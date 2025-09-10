@@ -29,29 +29,40 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 
 ### 3.3.1 Requisitos Funcionais
 
-| Código | Requisito Funcional (Funcionalidade) | Descrição |
-|--------------------|------------------------------------|----------------------------------------|
-| RF1 | Gerenciar Curso de Aperfeiçoamento |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Cursos de Aperfeiçoamento |
-| RF2 |	Gerenciar Professor	| Processamento de Inclusão, Alteração, Exclusão e Consulta de professores |
-| RF3	| Gerenciar Matrícula |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Matrículas de alunos em Cursos de Aperfeiçoamento |
-| ... |	...	| ... |
+| Código | Requisito Funcional (Funcionalidade) | Descrição                                                                                                                   |
+| ------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| RF001  | Gerenciar livros                     | Permitir inclusão, consulta, alteração e exclusão de livros                                                                 |
+| RF002  | Gerenciar autores                    | Permitir inclusão, consulta, alteração e exclusão de autores                                                                |
+| RF003  | Gerenciar leitores                   | Permitir inclusão, consulta, alteração e exclusão de leitores                                                               |
+| RF004  | Gerenciar bibliotecários             | Permitir inclusão, consulta, alteração e exclusão de bibliotecários                                                         |
+| RF005  | Gerenciar reserva de livros          | Permitir inclusão, consulta, exclusão e prolongamento de reservas de livros                                                 |
+| RF006  | Acesso do leitor                     | Permitir login e logout de leitores                                                                                         |
+| RF007  | Acesso do bibliotecário              | Permitir login e logout de bibliotecários                                                                                   |
+| RF008  | Busca de livros                      | Permitir busca de títulos específicos, filtro por gênero, autor e ano de publicação                                         |
+| RF009  | Busca de autores                     | Permitir busca de autores específicos e filtro por especialidade                                                            |
+| RF010  | Lista de livros curtidos             | Permitir curtir livros, consultar lista de curtidos e remover livros da lista                                               |
+| RF011  | Lista de livros selecionados         | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
+| RF012  | Avaliações                           | Permitir atribuir nota de 1 a 5 a livros reservados, incluir comentários, exibir média por livro e histórico de comentários |
+
 
 ### 3.3.2 Requisitos Não Funcionais
 
-| Código | Requisito Não Funcional (Restrição) |
-|--------------------|------------------------------------|
-| RNF1 | O ambiente operacional a ser utilizado é o Windows XP. |
-| RNF2 | O sistema deverá executar em um computador configurado com uma impressora de tecnologia laser ou de jato de tinta, a ser usada para impressão dos relatórios. |
-| RNF3 |	Segurança	O produto deve restringir o acesso por meio de senhas individuais para o usuário. |
-| ... |	... |	... |
+
 
 ### 3.3.3 Usuários 
 
 | Ator | Descrição |
 |--------------------|------------------------------------|
-| Coordenador |	Usuário gerente do sistema responsável pelo cadastro e manutenção de cursos de aperfeiçoamento. Possui acesso geral ao sistema. |
-| Secretaria |	Usuário responsável por registros de alunos, professores, turmas e gerência de matrículas. |
-| ... |	... |	... |
+| Coordenador |	Usuário geren| Código | Requisito Não Funcional (Restrição)                                                                                                                                                     |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF001 | **Responsividade** — O sistema web deverá ser responsivo e apresentar layouts desktop, tablet e celular                                                                                    |
+| RNF002 | **Implementação** — O sistema deverá ser desenvolvido utilizando as linguagens HTML, CSS e JavaScript                                                                                   |
+| RNF003 | **Armazenamento** — O armazenamento de dados deverá ser realizado no próprio navegador do usuário (localStorage)                                                                        |
+| RNF004 | **Design** — A interface deverá ser moderna e atrativa, seguindo as melhores práticas de design   |                                                                          |
+| RNF005 | **Facilidade de uso** — O fluxo de atividades do sistema deverá ser fácil e intuitivo, atendendo públicos diversos, incluindo pessoas da terceira idade                        |
+| RNF006 | **Acessibilidade** — O sistema web deverá atender requisitos mínimos, tais como tabulação lógica, descrição em áudio de elementos visuais e descrição em texto para elementos auditivos |
+
+
 
 ## 3.4 Modelagem do Sistema
 
