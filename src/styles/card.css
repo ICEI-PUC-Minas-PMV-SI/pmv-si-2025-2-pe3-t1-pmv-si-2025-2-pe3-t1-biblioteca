@@ -1,0 +1,69 @@
+/* templates fora do fluxo: default + livro-1..6 */
+.container_card{ display:none !important; }
+
+/* slot fixo onde o conteúdo aparece (id="slot-livros") */
+.cards-slot{
+  --fade-in-duration: 1000ms;   /* entrada do novo conteúdo */
+  --fade-out-duration: 1000ms;  /* saída do conteúdo atual  */
+  --crossfade-ease: ease;
+  --card-fixed-height: 12rem;   /* o JS recalibra se você não sobrescrever */
+
+  display:block;
+  width:80%;
+  margin: 2rem auto;
+  background: var(--azul-delft);
+  color: var(--branco);
+  text-align:center;
+  border-radius:1rem;
+
+
+}
+
+/* janela de exibição com altura fixa (JS ajusta se não houver override) */
+.cards-slot .slot-viewport{
+  position:relative;
+  height: var(--card-fixed-height);
+}
+
+/* duas camadas para crossfade */
+.cards-slot .pane{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition: opacity var(--fade-in-duration) var(--crossfade-ease);
+  will-change: opacity;
+}
+
+/* camada ativa visível */
+.cards-slot .pane.is-active{ opacity:1; }
+
+/* camada saindo usa tempo de fade-out */
+.cards-slot .pane.is-fading-out{
+  transition-duration: var(--fade-out-duration);
+}
+
+/* wrapper interno evita colapso de margens e facilita medição */
+.cards-slot .slot-inner{ display:block; }
+
+/* tipografia interna */
+.cards-slot h3{
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  margin: 1rem 0;
+}
+.cards-slot p{
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  margin: 2rem 2rem;
+}
+
+#descricao-base{
+
+    margin: 4rem 1rem;
+}
+.cards-slot .container_card_orientacao{
+  color: var(--branco);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  padding:.5rem;
+  /* margem interna larga, mas encolhe no mobile */
+  margin: 0 clamp(0.5rem, 6vw, 8rem);
+}
+

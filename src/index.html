@@ -3,12 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliotex</title>
+    <title>Versora</title>
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" >
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" >
+
+     <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- _______________________________ -->
+
+    <link rel = "stylesheet" href = "./styles/reset.css">
+    <link rel = "stylesheet" href = "./styles/styles.css">
+    <script src="./scripts/transicao-card.js" defer></script>
+
 </head>
 <body>
 
+    <section class = "carrossel">
+        <h2 class = "carrossel_titulo">Livros mais acessados</h2>
+        
+        <div class = "carrossel_container">
+            
+            <div class="swiper">
+                
+                <div class="swiper-pagination">
+                        
+                </div>
+
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <img id="capa-1" class="container_capa-livro"
+                                src="img/capa_a_estrutura_das_revolucoes_cientificas.jpg"
+                                alt="A Estrutura das Revoluções Científicas">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="capa-2" class="container_capa-livro"
+                                src="img/capa_a_sabedoria_da_inseguranca.jpg"
+                                alt="A Sabedoria da Insegurança">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="capa-3" class="container_capa-livro"
+                                src="img/capa_bilhoes_e_bilhoes.jpg"
+                                alt="Bilhões e Bilhões">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="capa-4" class="container_capa-livro"
+                                src="img/capa_o_oraculo_da_noite.jpg"
+                                alt="O Oráculo da Noite">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="capa-5" class="container_capa-livro"
+                                src="img/capa_a_mansao_hollow.jpg"
+                                alt="A Mansão Hollow">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="capa-6" class="container_capa-livro"
+                                src="img/capa_os_quatro_grandes.jpg"
+                                alt="Os Quatro Grandes">
+                        </div>
+                        </div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+            </div>
+            
+        </div>
+
+        <div id="slot-livros" class="cards-slot"></div>
+
+        <div class="container_card" id="livro-default">
+        <h3>Conheça nossos títulos</h3>
+        <p id = "descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as setas para rolar o carrossel.</p>
+        </div>
+
+        <div class="container_card" id="livro-1">
+        <h3 class="container_card-titulo" id="titulo-1">A Estrutura das Revoluções Científicas</h3>
+        <p class="container_card-descricao" id="descricao-1">
+            Obra clássica de Thomas Kuhn que introduziu o conceito de paradigmas científicos e revoluções no avanço da ciência. 
+            Um marco na filosofia e história da ciência.
+        </p>
+        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="livro-2">
+        <h3 class="container_card-titulo" id="titulo-2">A Sabedoria da Insegurança</h3>
+        <p class="container_card-descricao" id="descricao-2">
+            Escrita por Alan Watts, esta obra explora a filosofia oriental e a busca por viver plenamente no presente, 
+            questionando as ansiedades da vida moderna.
+        </p>
+        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="livro-3">
+        <h3 class="container_card-titulo" id="titulo-3">Bilhões e Bilhões</h3>
+        <p class="container_card-descricao" id="descricao-3">
+            Último livro de Carl Sagan, reúne reflexões sobre ciência, meio ambiente, religião e o futuro da humanidade, 
+            com a visão crítica e poética do autor.
+        </p>
+        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="livro-4">
+        <h3 class="container_card-titulo" id="titulo-4">O Oráculo da Noite</h3>
+        <p class="container_card-descricao" id="descricao-4">
+            De Sidarta Ribeiro explora o papel dos sonhos na história, na ciência e na evolução, 
+            defendendo sua importância como ferramenta de conhecimento.
+        </p>
+        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="livro-5">
+        <h3 class="container_card-titulo" id="titulo-5">A Mansão Hollow</h3>
+        <p class="container_card-descricao" id="descricao-5">
+            Romance policial de Agatha Christie, com Hercule Poirot investigando um crime em uma mansão cheia de segredos e relações ambíguas.
+        </p>
+        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="livro-6">
+        <h3 class="container_card-titulo" id="titulo-6">Os Quatro Grandes</h3>
+        <p class="container_card-descricao" id="descricao-6">
+            Outro clássico de Agatha Christie com Hercule Poirot, desta vez enfrentando uma conspiração internacional que vai além de um simples caso criminal.
+        </p>
+        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+        </div>
+
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./scripts/carrossel.js"></script>
 
 </body>
 </html>
