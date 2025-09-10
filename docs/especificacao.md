@@ -53,8 +53,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 
 | Ator | Descrição |
 |--------------------|------------------------------------|
-| Coordenador |	Usuário geren| Código | Requisito Não Funcional (Restrição)                                                                                                                                                     |
-| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
 | RNF001 | **Responsividade** — O sistema web deverá ser responsivo e apresentar layouts desktop, tablet e celular                                                                                    |
 | RNF002 | **Implementação** — O sistema deverá ser desenvolvido utilizando as linguagens HTML, CSS e JavaScript                                                                                   |
 | RNF003 | **Armazenamento** — O armazenamento de dados deverá ser realizado no próprio navegador do usuário (localStorage)                                                                        |
