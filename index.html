@@ -25,7 +25,7 @@
 <body>
 
     
-
+    <!-- CARROSSEL DOS LIVROS COM O CARD -->
     <section class = "carrossel">
         <h2 class = "carrossel_titulo">Livros mais acessados</h2>
         
@@ -141,8 +141,115 @@
         <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
+    </section>
+    <!-- FIM DO CARROSSEL DOS LIVROS COM O CARD -->
+
+    <!-- CARROSSEL DOS AUTORES COM O CARD -->
+    <section class = "carrossel">
+        <h2 class = "carrossel_titulo">Autores mais acessados</h2>
+        
+        <div class = "carrossel_container">
+            
+            <div class="swiper">
+                
+                <div class="swiper-pagination">
+                        
+                </div>
+
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <img id="foto-1" class="container_foto-autor"
+                                src="src/img/foto_thomas_s_kuhn.jpg"
+                                alt="Thomas S. Kuhn">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="foto-2" class="container_foto-autor"
+                                src="src/img/foto_alan_watts.jpg"
+                                alt="Alan Watts">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="foto-3" class="container_foto-autor"
+                                src="src/img/foto_carl_sagan.jpg"
+                                alt="Carl Sagan">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="foto-4" class="container_foto-autor"
+                                src="src/img/foto_sidarta_ribeiro.jpg"
+                                alt="Sidarta Ribeiro">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img id="foto-5" class="container_foto-autor"
+                                src="src/img/foto_agatha_christie.jpg"
+                                alt="Agatha Christie">
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+            </div>
+            
+        </div>
+
+        <div id="slot-autores" class="cards-slot"></div>
+
+        <div class="container_card" id="autor-default">
+        <h3>Conheça nossos autores</h3>
+        <p id= "descricao-base">Passe o mouse sobre as fotos para ver informações sobre o autor ou clique sobre as setas para rolar o carrossel.</p>
+        </div>
+
+        <div class="container_card" id="autor-1">
+            <h3 class="container_card-titulo" id="nome-autor-1">Thomas S. Kuhn</h3>
+            <p class="container_card-descricao" id="descricao-1">
+                Thomas Samuel Kuhn foi um físico, historiador e filósofo da ciência estadunidense. Seu trabalho incidiu sobre história da ciência e filosofia da ciência, tornando-se um marco no estudo do processo que leva ao desenvolvimento científico
+            </p>
+            <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="autor-2">
+            <h3 class="container_card-titulo" id="nome-autor-2">Alan Watts</h3>
+            <p class="container_card-descricao" id="descricao-2">
+                Filósofo e escritor britânico radicado nos EUA, popularizou conceitos do zen-budismo,
+                taoismo e filosofia oriental no Ocidente. Explorou presença, impermanência e a relação
+                mente-mundo em linguagem acessível.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="autor-3">
+            <h3 class="container_card-titulo" id="nome-autor-3">Carl Sagan</h3>
+            <p class="container_card-descricao" id="descricao-3">
+                Astrônomo, divulgador científico e professor de Cornell. Defensor do ceticismo e do método
+                científico, tornou a ciência popular com obras e séries como “Cosmos”.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="autor-4">
+            <h3 class="container_card-titulo" id="nome-autor-4">Sidarta Ribeiro</h3>
+            <p class="container_card-descricao" id="descricao-4">
+                Neurocientista brasileiro, cofundador do Instituto do Cérebro (UFRN). Pesquisa sono, sonhos,
+                memória e aprendizagem, articulando ciência, cultura e sociedade.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
+        </div>
+
+        <div class="container_card" id="autor-5">
+            <h3 class="container_card-titulo" id="nome-autor-5">Agatha Christie</h3>
+            <p class="container_card-descricao" id="descricao-5">
+                Escritora britânica, “rainha do crime”, criadora de Hercule Poirot e Miss Marple. Conhecida
+                por tramas de mistério engenhosas e reviravoltas emblemáticas.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
+        </div>
 
     </section>
+    <!-- FIM DO CARROSSEL DOS AUTORES COM O CARD -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

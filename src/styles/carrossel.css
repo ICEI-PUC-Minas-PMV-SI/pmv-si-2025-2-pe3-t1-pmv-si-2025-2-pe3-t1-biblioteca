@@ -1,7 +1,3 @@
-.carrossel{
-
-    height: 100vh;
-}
 .carrossel_titulo{
 
     color: var(--azul-delft);
@@ -23,13 +19,22 @@
 .swiper{
 
     width: 45%;
-        
+    padding: 0.25rem 0.5rem;
+
 }
 
 .swiper-slide img{
 
     width: 100%;
+    border: 0.25rem solid transparent;
+    transition: border 0.75s ease, transform .75s ease;
    
+}
+
+.swiper-slide img:hover{
+
+    border: 0.25rem solid var(--azul-delft);
+    transform: scale(1.025);
 }
 
 .swiper-button-prev, .swiper-button-next{
@@ -37,4 +42,10 @@
     display: block;
     top: 50%;
 }
+
+.swiper-button-prev{
+
+    margin-left: 0.25rem;
+}
+
 
