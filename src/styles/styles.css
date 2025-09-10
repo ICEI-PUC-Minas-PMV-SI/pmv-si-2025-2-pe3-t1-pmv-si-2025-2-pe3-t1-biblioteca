@@ -1,7 +1,10 @@
 @import url("../styles/carrossel.css");
 @import url("../styles/card.css");
 
-*{box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+    
+}
 
 html{
 

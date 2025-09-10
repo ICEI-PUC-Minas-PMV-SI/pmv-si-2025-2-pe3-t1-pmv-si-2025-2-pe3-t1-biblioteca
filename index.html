@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versora</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png" >
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png" >
 
      <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- _______________________________ -->
 
-    <link rel = "stylesheet" href = "./styles/reset.css">
-    <link rel = "stylesheet" href = "./styles/styles.css">
-    <script src="./scripts/transicao-card.js" defer></script>
+    <!-- importando a fonte Inter, utilizada no Figma -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- _______________________________ -->
+
+    <link rel = "stylesheet" href = "src/styles/reset.css">
+    <link rel = "stylesheet" href = "src/styles/styles.css">
+    <script src="src/scripts/transicao-card.js" defer></script>
 
 </head>
 <body>
+
+    
 
     <section class = "carrossel">
         <h2 class = "carrossel_titulo">Livros mais acessados</h2>
@@ -33,37 +41,37 @@
                         
                         <div class="swiper-slide">
                             <img id="capa-1" class="container_capa-livro"
-                                src="img/capa_a_estrutura_das_revolucoes_cientificas.jpg"
+                                src="src/img/capa_a_estrutura_das_revolucoes_cientificas.jpg"
                                 alt="A Estrutura das Revoluções Científicas">
                         </div>
 
                         <div class="swiper-slide">
                             <img id="capa-2" class="container_capa-livro"
-                                src="img/capa_a_sabedoria_da_inseguranca.jpg"
+                                src="src/img/capa_a_sabedoria_da_inseguranca.jpg"
                                 alt="A Sabedoria da Insegurança">
                         </div>
 
                         <div class="swiper-slide">
                             <img id="capa-3" class="container_capa-livro"
-                                src="img/capa_bilhoes_e_bilhoes.jpg"
+                                src="src/img/capa_bilhoes_e_bilhoes.jpg"
                                 alt="Bilhões e Bilhões">
                         </div>
 
                         <div class="swiper-slide">
                             <img id="capa-4" class="container_capa-livro"
-                                src="img/capa_o_oraculo_da_noite.jpg"
+                                src="src/img/capa_o_oraculo_da_noite.jpg"
                                 alt="O Oráculo da Noite">
                         </div>
 
                         <div class="swiper-slide">
                             <img id="capa-5" class="container_capa-livro"
-                                src="img/capa_a_mansao_hollow.jpg"
+                                src="src/img/capa_a_mansao_hollow.jpg"
                                 alt="A Mansão Hollow">
                         </div>
 
                         <div class="swiper-slide">
                             <img id="capa-6" class="container_capa-livro"
-                                src="img/capa_os_quatro_grandes.jpg"
+                                src="src/img/capa_os_quatro_grandes.jpg"
                                 alt="Os Quatro Grandes">
                         </div>
                         </div>
@@ -78,7 +86,7 @@
 
         <div class="container_card" id="livro-default">
         <h3>Conheça nossos títulos</h3>
-        <p id = "descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as setas para rolar o carrossel.</p>
+        <p id= "descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as setas para rolar o carrossel.</p>
         </div>
 
         <div class="container_card" id="livro-1">
@@ -138,7 +146,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="./scripts/carrossel.js"></script>
+    <script src="src/scripts/carrossel.js"></script>
 
 </body>
 </html>
