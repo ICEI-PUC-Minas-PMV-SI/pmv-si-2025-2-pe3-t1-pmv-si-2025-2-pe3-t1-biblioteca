@@ -52,7 +52,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 ### 3.3.3 Usuários 
 
 | Ator | Descrição |
-|--------------------|------------------------------------|
+| ------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
 
 | RNF001 | **Responsividade** — O sistema web deverá ser responsivo e apresentar layouts desktop, tablet e celular                                                                                    |
 | RNF002 | **Implementação** — O sistema deverá ser desenvolvido utilizando as linguagens HTML, CSS e JavaScript                                                                                   |
