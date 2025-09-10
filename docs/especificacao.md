@@ -49,12 +49,12 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 
 | Código | Requisito Não Funcional (Restrição)                                                                                                                                                     |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RNF001 | **Usabilidade** — O sistema web deverá ser responsivo e apresentar layouts desktop, tablet e celular                                                                                    |
+| RNF001 | **Responsividade** — O sistema web deverá ser responsivo e apresentar layouts desktop, tablet e celular                                                                                    |
 | RNF002 | **Implementação** — O sistema deverá ser desenvolvido utilizando as linguagens HTML, CSS e JavaScript                                                                                   |
 | RNF003 | **Armazenamento** — O armazenamento de dados deverá ser realizado no próprio navegador do usuário (localStorage)                                                                        |
-| RNF004 | **Usabilidade/Design** — A interface deverá ser moderna e atrativa, seguindo as melhores práticas de design                                                                             |
-| RNF005 | **Usabilidade/Acessibilidade** — O fluxo de atividades do sistema deverá ser fácil e intuitivo, atendendo públicos diversos, incluindo pessoas da terceira idade                        |
-| RNF006 | **Acessibilidade** — O sistema web deverá atender requisitos mínimos, tais como tabulação lógica, descrição em áudio de elementos visuais e descrição em texto para elementos auditivos |
+| RNF004 | **Design** — A interface deverá ser moderna e atrativa, seguindo as melhores práticas de design                                                                             |
+| RNF005 | **Facilidade de uso** — O fluxo de atividades do sistema deverá ser fácil e intuitivo, atendendo a públicos diversos, incluindo pessoas da terceira idade                        |
+| RNF006 | **Acessibilidade** — O sistema web deverá atender requisitos mínimos de acessibilidade, tais como tabulação lógica, descrição em áudio de elementos visuais e descrição em texto para elementos auditivos |
 
 
 ### 3.3.3 Usuários 
