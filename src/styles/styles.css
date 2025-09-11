@@ -4,11 +4,10 @@
 
 * {
     box-sizing: border-box;
-    font-family: Inter;
+    font-family: 'Inter';
 }
 
 html{
-    font-family: 'Inter';
     font-size: 16px;
 }
 :root{
