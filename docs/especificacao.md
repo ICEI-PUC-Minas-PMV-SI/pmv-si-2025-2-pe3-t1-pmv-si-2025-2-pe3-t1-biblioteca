@@ -54,7 +54,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RNF2 | Disponibilidade - O sistema deve estar sempre disponível 99% do tempo, evitando interrupções em horários críticos como finais de semana e feriados. |
 | RNF3 |	Desempenho - A página deve ser carregado em no máximo 3 segundos incluindo a parte de home, escolha de sessão e pagamento. |
 | RNF4 |	Segurança - Proteger dados pessoais e de pagamento dos usuários em conformidade com a LGPD |
-| RNF5 |	Acessibilidade |	Permitir que pessoas com deficiência visual ou auditiva consigam usar a plataforma |
+| RNF5 |	Acessibilidade-	Permitir que pessoas com deficiência visual ou auditiva consigam usar a plataforma |
 
 ### 3.3.3 Usuários 
 
