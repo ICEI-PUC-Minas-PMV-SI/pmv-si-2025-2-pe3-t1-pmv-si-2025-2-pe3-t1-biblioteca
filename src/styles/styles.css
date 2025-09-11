@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 body header {
@@ -45,7 +46,7 @@ body header nav {
     height: 100%;
     width: 100%;
     justify-content: space-between;
-    margin: 0 3rem 0 6rem;
+    margin: 0 7.5% 0 0;
 }
 
 body header nav .nav_containers {
@@ -62,7 +63,7 @@ body header nav .nav_containers .anchor_container {
 }
 
 body header nav .nav_containers .anchor_container a {
-    color: black;
+    color: var(--alcacuz);
     font-weight: 600;
     font-size: 1.5rem;
 }
@@ -74,10 +75,37 @@ body header nav .logo_container img {
 /* escondendo a checkbox que abre o menu de login */
 #checkbox-login{
 
-    display: none;
+    display: none; 
 }
 
-body header nav .login_container a {
+/* controle do checkbox que abre o menu de login */
+#checkbox-login:checked ~.container_busca_e_login .menu_login{
+
+    flex-basis: 25%;
+    /* opacidade em 100%: */
+    opacity: 1;
+    /* essa animação é para controlar a expansão*/
+    animation: fadeIn .5s forwards;
+    height: auto;
+
+    padding: 1rem 2rem;
+    border: 0.2rem solid var(--alcacuz);
+
+}
+
+/* keyframes são "roteiros" a serem chamados para animar uma transição: */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#checkbox-login:checked ~.container_busca_e_login .search_container{
+
+    flex-basis: 75%;
+
+}
+
+body header nav .login_container label {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -97,8 +125,132 @@ body .search_container {
     height: 20rem;
     background-color: #2E347B;
     gap: 1.8rem;
+
+    /* controle da transição da seção na abertura do menu de login */
+    flex: 1 1 100%;
+    transition: flex-basis .5s ease;
+    min-width: 0;
 }
 
+.container_busca_e_login{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;         /* garante mesma altura */
+    min-width:0;
+    
+    
+}
+.menu_login{
+
+    display: flex;
+    gap: 1rem;
+
+    /* controle do aparecimento/desaparecimento */
+    flex: 0 0 0%;
+    background: var(--azul-colombia);
+    opacity: 0;
+    border: solid 0.1em;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    overflow: hidden;
+    /* controla a velocidade e tipo de transição do movimento e da opacidade: */
+    transition: flex-basis 0.5s ease, opacity 0.15s ease, padding .35s ease, border-width .35 ease;
+    /* evita que o conteúdo interno obrigue a barra a ficar maior que o flex-basis */
+    min-width: 0;
+    min-height: 0;
+    /* opcional: performance */
+    will-change: flex-basis, opacity;
+
+    /* posicionamento */
+    text-align: left;
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    line-height: 2rem;
+    
+    /* estilização */
+    font-size: 1.75rem;
+    font-family: var(--fonte-principal);
+}
+
+.container_campos_usuario{
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+
+}
+
+.container_campos_senha{
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+}
+
+.menu_login input{
+
+    width: 100%;
+    height: 2.5rem;
+    border-radius: calc((5/8)*1rem);
+    font-size: 1rem;
+    color: var(--alcacuz);
+    padding-left: 0.5rem;
+}
+
+.menu_login input:placeholder{
+
+    color: hsl(var(--alcacuz) / 0.8);
+
+}
+
+.menu_login input:focus::placeholder{
+
+    opacity: 0;
+}
+
+.menu_login button{
+
+    width: 50%;
+    height: 2.5rem;
+    font-size: 1.75rem;
+    color: var(--branco);
+    background-color: var(--azul-delft);
+    margin: auto;
+}
+
+.esqueci_senha, .cadastre-se{
+
+    font-size: 1rem;
+}
+
+.cadastre-se{
+
+    text-align: center;
+}
+.ancora_cadastre-se{
+
+    color: var(--vermelho-alaranjado)
+}
+
+.container_rotulo_senha{
+
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+   
+}
+
+.esqueci_senha{
+
+    color: var(--vermelho-alaranjado);
+}
 body .search_container h1 {
     color: white;
     font-weight: 600;

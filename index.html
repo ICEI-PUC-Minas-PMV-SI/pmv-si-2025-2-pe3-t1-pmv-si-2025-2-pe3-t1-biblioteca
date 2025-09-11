@@ -23,8 +23,8 @@
 
 </head>
 <body>
-
-    <header>
+    <input type = "checkbox" id = "checkbox-login">
+    <header class = "cabecalho">
         <nav>
             <section class="logo_container">
                 <img src="src/img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
@@ -35,25 +35,39 @@
                     <a href="#">Quem somos</a>
                     <a href="#">Nosso acervo</a>
                 </section>
-                <input type = "checkbox" id = "checkbox-login">
-                <section class="login_container">
-                    <a href="#">
-                        <img src="src/img/icon_user.png" alt="Ícone de usuário">
+                    <section class="login_container">
                         <label for = "checkbox-login" class = "entrar-rotulo">
+                            <img src="src/img/icon_user.png" alt="Ícone de usuário">
                             <span>Entrar</span>
                         </label>
-                    </a>
-                </section>
+                    </section>
             </section>
         </nav>
     </header>
 
-    <section class="search_container">
-        <h1>Já sabe qual universo deseja explorar hoje?</h1>
-        <h2>Encontre em nosso acervo sua próxima leitura</h2>
-        <div>
-            <input type="text" placeholder="Procure seu livro">
-        </div>
+    <section class = "container_busca_e_login">
+        <section class="search_container">
+            <h1>Já sabe qual universo deseja explorar hoje?</h1>
+            <h2>Encontre em nosso acervo sua próxima leitura</h2>
+            <div>
+                <input type="text" placeholder="Procure seu livro">
+            </div>
+        </section>
+        <section class = "menu_login">
+            <div class = "container_campos_usuario">
+                <label for = "input_usuario">Usuário/e-mail</label>
+                <input type = "text" class = "input_usuario" id = "input_usuario" placeholder="Digite seu nome de usuário ou e-mail">
+                </div>
+            <div class = "container_campos_senha">
+                <div class ="container_rotulo_senha">
+                    <label>Senha</label>
+                    <a href = "#" class = "esqueci_senha">Esqueci minha senha</a>
+                </div>
+                <input type = "password" class = "input_senha" id = "input_senha" placeholder="Digite sua senha">
+            </div>
+            <button type = "submit" id = "botao_logar">Logar</button>
+            <p class = "cadastre-se">Não tem uma conta?<a href = "#" class = "ancora_cadastre-se"> Cadastre-se</a></p>
+        </section>
     </section>
     
     <!-- CARROSSEL DOS LIVROS COM O CARD -->
