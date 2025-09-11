@@ -12,7 +12,22 @@ document.querySelectorAll(".swiper").forEach((element) => {
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true,
+    
     },
+
+    breakpoints: {
+        // telas até 599px: 3 slides
+        0: {
+            slidesPerView: 3,
+            spacebetween: 2,
+        },
+        // telas a partir de 600px: 4 slides
+        600: {
+            slidesPerView: 4,
+        },
+        },
+
+       
     });
 });
 

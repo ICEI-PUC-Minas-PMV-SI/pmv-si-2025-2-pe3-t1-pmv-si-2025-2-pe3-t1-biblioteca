@@ -18,7 +18,7 @@
 
 .swiper{
 
-    width: 45%;
+    width: 60%;
     padding: 0.25rem 0.5rem;
 
 }
@@ -48,4 +48,19 @@
     margin-left: 0.25rem;
 }
 
+@media screen and (max-width: 600px){
 
+    .swiper{
+
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+}
+   
+    .swiper-button-prev, .swiper-button-next{
+
+        display: none;
+    }
+
+}
