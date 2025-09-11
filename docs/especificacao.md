@@ -38,7 +38,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RF5    | Gerenciar Meios de Pagamento | Permitir configurar e remover formas de pagamento (cartões de crédito).                                   |
 | RF6    | Gerenciar Usuários           | Permitir cadastro, autenticação e remoção de perfis de usuários.                                          |
 | RF7    | Alterar Preços Dinamicamente | Permitir configurar regras de variação automática no preço dos ingressos de acordo com a lotação da sala. |
-| RF8    | Gerenciar Filmes | Permiti que filmes são cadastrados, genrenciados conforme a necessodade do cinema |
+| RF8    | Gerenciar Filmes | Permitir que filmes sejam cadastrados, gerenciados conforme a necessodade do cinema |
 | RF9    | Gerenciamento administrativo (Cinema) | Permite que a parte administrativa do cinema tenha controle sobre a gestão financeira |
 | RF10   | Avaliação de Filmes | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.|
 | RF11   | Gestão de Salas e Sessões |Permitir que o administrador cadastre novas salas, horários e configure a disponibilidade das sessões.|
