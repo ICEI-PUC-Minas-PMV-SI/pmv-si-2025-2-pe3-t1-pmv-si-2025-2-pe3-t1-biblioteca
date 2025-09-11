@@ -220,6 +220,7 @@ body .search_container {
 
     width: 50%;
     height: 2.5rem;
+    border-radius: calc((5/8)*1rem);
     font-size: 1.75rem;
     color: var(--branco);
     background-color: var(--azul-delft);
@@ -327,7 +328,7 @@ body .rise_container .high_container a {
     background-color: var(--branco);
     color: var(--alcacuz);
     padding: 1rem 1.3rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--azul-delft);
     border-radius: 0.363rem;
@@ -343,7 +344,7 @@ body .rise_container .low_container a {
     background-color: var(--branco);
     color: var(--azul-delft);
     padding: 1rem 1.3rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     border-radius: 0.363rem;
 }
