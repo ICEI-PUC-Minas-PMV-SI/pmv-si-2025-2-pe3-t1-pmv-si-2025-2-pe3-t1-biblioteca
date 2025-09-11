@@ -35,11 +35,11 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RF2    | Selecionar Poltrona          | Permitir ao cliente escolher em um mapa da sala o seu assento, indicando em tempo real os ocupados.        |
 | RF3    | Visualizar Ingresso          | Permitir ao cliente visualizar o ingresso após realizar o pagamento até o horário do filme.                |
 | RF4    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.         |
-| RF6    | Gerenciar Meios de Pagamento | Permitir ao cliente cadastrar, visualizar, alterar e remover formas de pagamento (como cartões de crédito).|
-| RF7    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta no app.                             |
-| RF8    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.             |
-| RF9    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                |
-| RF10   | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.          |
+| RF5    | Gerenciar Meios de Pagamento | Permitir ao cliente cadastrar, visualizar, alterar e remover formas de pagamento (como cartões de crédito).|
+| RF6    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta no app.                             |
+| RF7    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.             |
+| RF8    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                |
+| RF9    | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.          |
 
 ### 3.3.2 Requisitos Não Funcionais
 
