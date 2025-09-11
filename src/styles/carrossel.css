@@ -4,7 +4,8 @@
     background-color: var(--branco);
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: var(--fonte-principal);
     font-weight: bold;
     margin: 1rem 0;
     
