@@ -31,13 +31,17 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 
 | Código | Requisito Funcional          | Descrição                                                                                                 |
 | ------ | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
-| RF1    | Comprar Ingressos            | Permitir ao usuário escolher filme, horário, ingressos e efetuar pagamento com geração de e-ticket.       |
+| RF1     | Gerenciar ingresso          | Permitir ao usuário escolher filme, horário, ingressos e efetuar pagamento com geração de e-ticket.       |
 | RF2    | Selecionar Poltrona          | Exibir mapa da sala para escolha de assentos disponíveis.                                                 |
 | RF3    | Comprar Snacks               | Permitir adicionar snacks ao carrinho e pagar junto ou separado dos ingressos.                            |
 | RF4    | Gerenciar Ingressos Vendidos | Permitir consulta e relatório de ingressos vendidos pela gerência.                                        |
 | RF5    | Gerenciar Meios de Pagamento | Permitir configurar e remover formas de pagamento (cartões de crédito).                                   |
 | RF6    | Gerenciar Usuários           | Permitir cadastro, autenticação e remoção de perfis de usuários.                                          |
 | RF7    | Alterar Preços Dinamicamente | Permitir configurar regras de variação automática no preço dos ingressos de acordo com a lotação da sala. |
+| RF8    | Gerenciar Filmes | Permiti que filmes são cadastrados, genrenciados conforme a necessodade do cinema |
+| RF9    | administrativo (Cinema) | Permite que a parte administrativa do cinema tenha controle sobre a gestão financeira |
+
+
 
 
 ### 3.3.2 Requisitos Não Funcionais
