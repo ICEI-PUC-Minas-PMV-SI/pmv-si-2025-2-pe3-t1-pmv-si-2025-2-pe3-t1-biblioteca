@@ -44,7 +44,8 @@ body header nav {
     align-items: center;
     height: 100%;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 3rem 0 6rem;
 }
 
 body header nav .nav_containers {
@@ -68,6 +69,12 @@ body header nav .nav_containers .anchor_container a {
 
 body header nav .logo_container img {
     width: 15rem;
+}
+
+/* escondendo a checkbox que abre o menu de login */
+#checkbox-login{
+
+    display: none;
 }
 
 body header nav .login_container a {
