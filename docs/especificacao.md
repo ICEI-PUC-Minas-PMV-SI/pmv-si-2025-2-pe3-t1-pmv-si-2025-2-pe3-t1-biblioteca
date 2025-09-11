@@ -40,6 +40,8 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RF7    | Alterar Preços Dinamicamente | Permitir configurar regras de variação automática no preço dos ingressos de acordo com a lotação da sala. |
 | RF8    | Gerenciar Filmes | Permiti que filmes são cadastrados, genrenciados conforme a necessodade do cinema |
 | RF9    | Gerenciamento administrativo (Cinema) | Permite que a parte administrativa do cinema tenha controle sobre a gestão financeira |
+| RF10   | Avaliação de Filmes | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.|
+| RF11   | Gestão de Salas e Sessões |Permitir que o administrador cadastre novas salas, horários e configure a disponibilidade das sessões.|
 
 
 
@@ -52,7 +54,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RNF2 | Disponibilidade - O sistema deve estar sempre disponível 99% do tempo, evitando interrupções em horários críticos como finais de semana e feriados. |
 | RNF3 |	Desempenho - A página deve ser carregado em no máximo 3 segundos incluindo a parte de home, escolha de sessão e pagamento. |
 | RNF4 |	Segurança - Proteger dados pessoais e de pagamento dos usuários em conformidade com a LGPD |
-| ... |	... |	... |
+| RNF5 |	Acessibilidade |	Permitir que pessoas com deficiência visual ou auditiva consigam usar a plataforma (ex.: leitores de tela, legendas automáticas) |
 
 ### 3.3.3 Usuários 
 
