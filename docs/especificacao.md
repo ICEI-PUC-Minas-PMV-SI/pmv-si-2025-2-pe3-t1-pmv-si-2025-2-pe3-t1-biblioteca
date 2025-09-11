@@ -29,22 +29,17 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 
 ### 3.3.1 Requisitos Funcionais
 
-| Código | Requisito Funcional          | Descrição                                                                                                 |
-| ------ | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
-| RF1     | Gerenciar ingresso          | Permitir ao usuário escolher filme, horário, ingressos e efetuar pagamento com geração de e-ticket.       |
-| RF2    | Selecionar Poltrona          | Exibir mapa da sala para escolha de assentos disponíveis.                                                 |
-| RF3    | Gerenciar Venda Snacks       | Permitir adicionar snacks ao carrinho e pagar junto ou separado dos ingressos.                            |
-| RF4    | Gerenciar Ingressos Vendidos | Permitir consulta e relatório de ingressos vendidos pela gerência.                                        |
-| RF5    | Gerenciar Meios de Pagamento | Permitir configurar e remover formas de pagamento (cartões de crédito).                                   |
-| RF6    | Gerenciar Usuários           | Permitir cadastro, autenticação e remoção de perfis de usuários.                                          |
-| RF7    | Alterar Preços Dinamicamente | Permitir configurar regras de variação automática no preço dos ingressos de acordo com a lotação da sala. |
-| RF8    | Gerenciar Filmes | Permitir que filmes sejam cadastrados, gerenciados conforme a necessodade do cinema |
-| RF9    | Gerenciamento administrativo (Cinema) | Permitir que a parte administrativa do cinema tenha controle sobre a gestão financeira |
-| RF10   | Avaliação de Filmes | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.|
-| RF11   | Gestão de Salas e Sessões |Permitir que o administrador cadastre novas salas, horários e configure a disponibilidade das sessões.|
-
-
-
+| Código | Requisito Funcional          | Descrição                                                                                                  |
+| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------  |
+| RF1    | Selecionar Sessão            | Permitir ao cliente escolher um filme e um horário para adquirir o seu ingresso.                           |
+| RF2    | Selecionar Poltrona          | Permitir ao cliente escolher em um mapa da sala o seu assento, indicando em tempo real os ocupados.        |
+| RF3    | Visualizar Ingresso          | Permitir ao cliente visualizar o ingresso após realizar o pagamento até o horário do filme.                |
+| RF4    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.         |
+| RF6    | Gerenciar Meios de Pagamento | Permitir ao cliente cadastrar, visualizar, alterar e remover formas de pagamento (como cartões de crédito).|
+| RF7    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta no app.                             |
+| RF8    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.             |
+| RF9    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                |
+| RF10   | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.          |
 
 ### 3.3.2 Requisitos Não Funcionais
 
