@@ -36,13 +36,13 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RF003  | Gerenciar leitores                   | Permitir inclusão, consulta, alteração e exclusão de leitores                                                               |
 | RF004  | Gerenciar bibliotecários             | Permitir inclusão, consulta, alteração e exclusão de bibliotecários                                                         |
 | RF005  | Gerenciar reserva de livros          | Permitir inclusão, consulta, exclusão e prolongamento de reservas de livros                                                 |
-| RF006  | Acesso do leitor                     | Permitir login e logout de leitores                                                                                         |
-| RF007  | Acesso do bibliotecário              | Permitir login e logout de bibliotecários                                                                                   |
-| RF008  | Busca de livros                      | Permitir busca de títulos específicos, filtro por gênero, autor e ano de publicação                                         |
-| RF009  | Busca de autores                     | Permitir busca de autores específicos e filtro por especialidade                                                            |
-| RF010  | Lista de livros curtidos             | Permitir curtir livros, consultar lista de curtidos e remover livros da lista                                               |
-| RF011  | Lista de livros selecionados         | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
-| RF012  | Avaliações                           | Permitir atribuir nota de 1 a 5 a livros reservados, incluir comentários, exibir média por livro e histórico de comentários |
+| RF006  | Realizar login do usuário            | Permitir a entrada de leitores e bibliotecários no sistema                                                                  |
+| RF007  | Realizar logout do usuário           | Permitir a saida de leitores e bibliotecários do sistema                                                                    |
+| RF008  | Buscar livros                        | Permitir busca de títulos específicos, filtro por gênero, autor e ano de publicação                                         |
+| RF009  | Buscar autores                       | Permitir busca de autores específicos e filtro por especialidade                                                            |
+| RF010  | Gerenciar lista de favoritos         | Permitir favoritar livros, consultar lista de favoritos e remover livros da lista                                           |
+| RF011  | Gerenciar livros selecionados        | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
+| RF012  | Gerenciar avaliações                 | Permitir atribuição de nota de 1 a 5 a livros reservados e exibir a média das notas por livro. Exibir histórico de comentários, incluir e deletar comentários   |
 
 
 ### 3.3.2 Requisitos Não Funcionais
