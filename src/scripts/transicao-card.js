@@ -102,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     timers.set(slot, t);
   }
 
+  const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
+
   // ---------- init ----------
   ['capa','foto'].forEach(tipo => {
     const slot = slots[tipo];
@@ -113,27 +115,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const defTpl = defaults[tipo] || groupTpls[0];
     if (!defTpl) return;
 
-    // 1) Checa se você definiu altura no CSS (qualquer valor não-vazio)
+    // 1) Checa se você definiu altura no CSS...
     const cssVar = getComputedStyle(slot).getPropertyValue('--card-fixed-height').trim();
 
     if (!cssVar) {
-      // 2) Se NÃO definiu no CSS, calcula a maior altura e seta na variável do elemento
       const candidates = defaults[tipo] ? [defaults[tipo], ...groupTpls] : groupTpls;
       const fixedHeight = computeFixedHeight(slot, candidates);
       slot.style.setProperty('--card-fixed-height', fixedHeight + 'px');
     }
-    // Se cssVar existe, o JS não mexe — seu CSS manda.
 
-    // conteúdo inicial
-    setPaneHTML(A, defTpl);
-    A.classList.add('is-active');
+    if (isMobile()) {
+      // No mobile, NÃO mostra default: marca como "aguardando sincronização"
+      slot.setAttribute('data-await', '1');
+      // não injeta conteúdo agora — o Swiper chamará showCardFor no init
+    } else {
+      // Fora do mobile, mantém o default inicial
+      setPaneHTML(A, defTpl);
+      A.classList.add('is-active');
+    }
 
-    // listeners do slot (mantém/recupera default)
+    // listeners do slot (mantém/recupera default fora do mobile)
     slot.addEventListener('mouseenter', () => clearTimeout(timers.get(slot)));
-    slot.addEventListener('mouseleave', () => scheduleRestore(slot, tipo));
+    slot.addEventListener('mouseleave', () => {
+      if (isMobile()) return; // no mobile não forçamos voltar ao default por hover
+      scheduleRestore(slot, tipo);
+    });
   });
 
-  // imagens: mostram detalhes durante o hover
+  // imagens: mostram detalhes durante o hover (desktop/tablet)
   document.querySelectorAll('.container_capa-livro, .container_foto-autor').forEach(img => {
     const tipo  = tipoFrom(img.id);
     const slot  = slots[tipo];
@@ -142,11 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!slot || !tplEl) return;
 
     img.addEventListener('mouseenter', () => {
+      if (isMobile()) return; // no mobile, quem manda é o Swiper
       clearTimeout(timers.get(slot));
       crossfade(slot, tplEl);
     });
 
     img.addEventListener('mouseleave', (e) => {
+      if (isMobile()) return;
       const to = e.relatedTarget;
       if (to && slot.contains(to)) return;
       scheduleRestore(slot, tipo);
@@ -171,4 +182,94 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, 150);
   });
+
+  // === Função global para mostrar o card de um <img id="..."> ===
+  window.showCardFor = function showCardFor(imgId){
+    try{
+      const tipo  = tipoFrom(imgId);     // "capa" | "foto"
+      const slot  = slots[tipo];
+      const tplId = cardIdFrom(imgId);   // "livro-N" | "autor-N"
+      const tplEl = document.getElementById(tplId);
+      if (!slot || !tplEl) return;
+
+      // Se por algum motivo o slot ainda não foi montado, monta agora.
+      if (!slot.querySelector('.slot-viewport')) {
+        bootstrapSlot(slot);
+        const A = slot.querySelector('.paneA');
+        setPaneHTML(A, (defaults[tipo] || tplEl));
+        A.classList.add('is-active');
+        slot.removeAttribute('data-await');
+        return;
+      }
+
+      crossfade(slot, tplEl);
+      slot.removeAttribute('data-await');
+    }catch(e){
+      console.warn('showCardFor falhou:', e);
+    }
+  };
+
+  // === Reset/resync ao trocar de media query ===
+  const mq = window.matchMedia('(max-width: 600px)');
+  mq.addEventListener('change', (e) => {
+    if (!e.matches) {
+      // saiu do mobile → volta cada slot pro default
+      ['capa','foto'].forEach(tipo => {
+        const slot = slots[tipo];
+        const defTpl = defaults[tipo];
+        if (slot && defTpl) {
+          crossfade(slot, defTpl);
+          slot.removeAttribute('data-await');
+        }
+      });
+    } else {
+      // entrou no mobile → marca await e tenta sincronizar com o slide ativo atual
+      ['capa','foto'].forEach(tipo => {
+        const slot = slots[tipo];
+        if (!slot) return;
+        slot.setAttribute('data-await', '1');
+      });
+      // tenta sincronizar com o slide ativo (se já houver)
+      document.querySelectorAll('.swiper').forEach(swEl => {
+        const activeImg = swEl.querySelector('.swiper-slide-active img');
+        if (activeImg && window.showCardFor) window.showCardFor(activeImg.id);
+      });
+    }
+  });
+
+  // Failsafe: quando a página terminar de carregar, se estivermos no mobile e ainda em "await", sincroniza
+  window.addEventListener('load', () => {
+    if (!isMobile()) return;
+    document.querySelectorAll('.swiper').forEach(swEl => {
+      const activeImg = swEl.querySelector('.swiper-slide-active img');
+      if (activeImg && window.showCardFor) window.showCardFor(activeImg.id);
+    });
+  });
+
+    // === Ajuste dinâmico de "Clique" ↔ "Toque" conforme viewport ===
+  (function(){
+    const mq = window.matchMedia('(max-width: 600px)');
+
+    function atualizarOrientacoes(){
+      const isMobile = mq.matches;
+      document.querySelectorAll('.container_card_orientacao').forEach(p => {
+        const card = p.closest('.container_card');
+        if (!card || !card.id) return;
+
+        // Decide se é "foto" (autores) ou "capa" (livros) pelo id do card
+        const isAutor = card.id.startsWith('autor-');
+        const alvo = isAutor ? 'foto' : 'capa';
+
+        p.textContent = isMobile
+          ? `Toque sobre a ${alvo} para mais detalhes.`
+          : `Clique sobre a ${alvo} para mais detalhes.`;
+      });
+    }
+
+    // roda agora e quando mudar o breakpoint
+    atualizarOrientacoes();
+    mq.addEventListener('change', atualizarOrientacoes);
+  })();
+
+
 });

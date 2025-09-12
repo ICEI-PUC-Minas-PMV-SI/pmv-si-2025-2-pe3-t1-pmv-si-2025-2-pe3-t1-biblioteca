@@ -6,7 +6,7 @@
   --fade-in-duration: 1000ms;   /* entrada do novo conteúdo */
   --fade-out-duration: 1000ms;  /* saída do conteúdo atual  */
   --crossfade-ease: ease;
-  --card-fixed-height: 12rem;   /* o JS recalibra se você não sobrescrever */
+  --card-fixed-height: 13rem;   /* o JS recalibra se você não sobrescrever */
 
   display:block;
   width:80%;
@@ -15,7 +15,6 @@
   color: var(--branco);
   text-align:center;
   border-radius:1rem;
-
 
 }
 
@@ -53,6 +52,7 @@
 .cards-slot p{
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   margin: 2rem 2rem;
+  line-height: 1.5rem;
 }
 
 #descricao-base{
@@ -67,3 +67,36 @@
   margin: 0 clamp(0.5rem, 6vw, 8rem);
 }
 
+@media screen and (max-width: 600px){
+
+  .cards-slot{
+
+    width: 90%;
+    --card-fixed-height: 19rem;
+  }
+
+  .cards-slot h3{
+
+    font-size: clamp(1.75rem, 1.8vw, 1.55rem);
+    padding: 1rem 1rem;
+    margin: 0;
+  }
+
+  .cards-slot p{
+    font-size: clamp(1.25rem, 1.6vw, 1.25rem);
+    margin: 1rem 1rem;
+}
+
+  .cards-slot .container_card_orientacao{
+    color: var(--branco);
+    font-size: clamp(1.25rem, 1.6vw, 1.25rem);
+    padding:.5rem;
+    /* margem interna larga, mas encolhe no mobile */
+    margin: 0 clamp(0.5rem, 6vw, 8rem);
+  }
+  /* Esconde visualmente o conteúdo do slot até sincronizar no mobile, preservando espaço */
+  .cards-slot[data-await] .slot-viewport {
+    visibility: hidden;
+  }
+
+}

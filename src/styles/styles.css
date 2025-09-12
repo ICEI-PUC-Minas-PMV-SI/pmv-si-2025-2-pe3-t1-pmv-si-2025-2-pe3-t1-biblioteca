@@ -445,3 +445,13 @@ body footer .right_container nav a {
     font-weight: 500;
     text-decoration: underline;
 }
+
+@media screen and (max-width: 600px){
+
+    html{
+
+        font-size: 12px;
+    }
+
+
+}
