@@ -41,8 +41,11 @@
   transition-duration: var(--fade-out-duration);
 }
 
-/* wrapper interno evita colapso de margens e facilita medição */
-.cards-slot .slot-inner{ display:block; }
+.cards-slot .slot-inner{
+  display: grid;
+  grid-template-rows: 25% 1fr 20%;
+  height: 100%;
+}
 
 /* tipografia interna */
 .cards-slot h3{
@@ -57,7 +60,7 @@
 
 #descricao-base{
 
-    margin: 4rem 1rem;
+    margin: 2rem 1rem;
 }
 .cards-slot .container_card_orientacao{
   color: var(--branco);
@@ -72,7 +75,7 @@
   .cards-slot{
 
     width: 90%;
-    --card-fixed-height: 19rem;
+    --card-fixed-height: 18rem;
   }
 
   .cards-slot h3{
