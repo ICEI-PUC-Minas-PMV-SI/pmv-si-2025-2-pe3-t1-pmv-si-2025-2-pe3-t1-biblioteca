@@ -6,7 +6,7 @@
   --fade-in-duration: 1000ms;   /* entrada do novo conteúdo */
   --fade-out-duration: 1000ms;  /* saída do conteúdo atual  */
   --crossfade-ease: ease;
-  --card-fixed-height: 13rem;   /* o JS recalibra se você não sobrescrever */
+  --card-fixed-height: 16rem;   /* o JS recalibra se você não sobrescrever */
 
   display:block;
   width:80%;
@@ -41,6 +41,7 @@
   transition-duration: var(--fade-out-duration);
 }
 
+/* esse é o conteúdo "fantasma" do card */
 .cards-slot .slot-inner{
   display: grid;
   grid-template-rows: 25% 1fr 20%;
@@ -75,7 +76,7 @@
   .cards-slot{
 
     width: 90%;
-    --card-fixed-height: 18rem;
+    --card-fixed-height: 23rem;
   }
 
   .cards-slot h3{
@@ -103,3 +104,4 @@
   }
 
 }
+
