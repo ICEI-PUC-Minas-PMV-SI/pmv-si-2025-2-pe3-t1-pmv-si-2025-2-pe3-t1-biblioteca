@@ -1,5 +1,5 @@
-@import url("../styles/carrossel.css");
-@import url("../styles/card.css");
+@import url("../css-styles/carrossel.css");
+@import url("../css-styles/card.css");
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
@@ -84,9 +84,9 @@ body header nav .logo_container img {
     opacity: 1;
     /* essa animação é para controlar a expansão*/
     animation: fadeIn .5s forwards;
-    height: auto;
+    height: 20rem;
 
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border: 0.2rem solid var(--alcacuz);
 
 }

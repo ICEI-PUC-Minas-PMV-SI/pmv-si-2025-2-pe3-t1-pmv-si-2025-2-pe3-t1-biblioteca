@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de cadastro</title>
+</head>
+<body>
+    
+
+    <form class = "formulario-cadastro">
+
+        <fieldset class = "quadro-identidade">
+            <div class = "quadro-identidade_campo">
+
+                <label for = "usuario" > Nome de usuário:</label>
+                <input type = "text" name = "usuario" id = "usuario" required >
+
+            </div>
+            
+            <div class = "quadro-identidade_campo">
+
+                <label for = "nome" > Nome:</label>
+                <input type = "text" name = "nome" id = "nome" required>
+
+            </div>
+
+            <div class = "quadro-identidade_campo">
+
+                <label for = "sobrenome" > Sobrenome:</label>
+                <input type = "text" name = "sobrenome" id = "sobrenome" required>
+
+            </div>
+
+            <div class = "quadro-identidade_campo">
+
+                <label for = "cpf" > CPF:</label>
+                <input type = "text" name = "CPF" id = "cpf" required >
+
+            </div>
+
+            <div class = "quadro-identidade_campo">
+
+                <label for = "telefone" > Telefone:</label>
+                <input type = "tel" name = "telefone" id = "telefone" required>
+
+            </div>
+
+            <div class = "quadro-identidade_campo">
+
+                <label for = "email" > E-mail:</label>
+                <input type = "email" name = "email" id = "email" required>
+
+            </div>
+        </fieldset>
+
+        <fieldset class = "quadro-endereco">
+
+            <div class = "quadro-endereco_campo">
+
+                <label for = "rua"> Rua:</label>
+                <input type = "text" name = "rua" id = "rua" required>
+
+            </div>
+            <div class = "quadro-endereco_campo">
+
+                <label for = "numero-fachada"> Número:</label>
+                <input type = "text" name = "numero-fachada" id = "numero-fachada" required>
+
+            </div>
+            <div class = "quadro-endereco_campo">
+
+                <label for = "bairro"> Bairro:</label>
+                <input type = "text" name = "bairro" id = "bairro" required>
+
+            </div>
+            <div class = "quadro-endereco_campo">
+
+                <label for = "cidade"> Cidade:</label>
+                <input type = "text" name = "cidade" id = "cidade" required>
+
+            </div>
+            <div class = "quadro-endereco_campo">
+
+                <label for = "estado"> Estado:</label>
+                <input type = "text" name = "estado" id = "estado" required>
+
+            </div>
+
+        </fieldset>
+
+        <fieldset class = "quadro-senha">
+            <div class = "cadastro-direita-formulario-campo">
+
+                <label for = "senha"> Senha:</label>
+                <input type = "password" name = "senha" id = "senha" required>
+
+            </div>
+
+            <div class = "cadastro-direita-formulario-campo">
+
+                <label for = "repita-senha"> Repita sua senha:</label>
+                <input type = "password" name = "repita-senha" id = "repita-senha" required>
+
+            </div>
+        </fieldset>
+    
+        <div class = "formulario-cadastro_botao">
+
+            <button type = "submit" id = "botao-cadastrar"> Cadastrar </button>
+
+        </div>
+    </form>
+
+    <script src = "../js-scripts/cadastro.js" type = "module"></script>
+    
+</body>
+</html>
+        
