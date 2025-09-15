@@ -1,0 +1,302 @@
+/* escondendo a checkbox que abre o menu de login */
+#checkbox-login{
+
+    display: none; 
+}
+
+#checkbox-login:checked ~.container_busca_e_login .search_container{
+
+    flex-basis: 75%;
+
+}
+.menu_login{
+
+        display: flex;
+    gap: 1rem;
+
+    /* controle do aparecimento/desaparecimento */
+    flex: 0 0 0%;
+    background: var(--azul-colombia);
+    opacity: 0;
+    border: solid 0.1em;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    overflow: hidden;
+    /* controla a velocidade e tipo de transição do movimento e da opacidade: */
+    transition: flex-basis 0.5s ease, opacity 0.15s ease, padding .35s ease, border-width .35 ease;
+    /* evita que o conteúdo interno obrigue a barra a ficar maior que o flex-basis */
+    min-width: 0;
+    min-height: 0;
+    /* opcional: performance */
+    will-change: flex-basis, opacity;
+
+    /* posicionamento */
+    text-align: left;
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    line-height: 2rem;
+    
+    /* estilização */
+    font-size: 1.75rem;
+    font-family: var(--fonte-principal);
+}
+
+/* TUDO ISSO AQUI É DO MENU DO USUARIO */
+
+.menu_usuario{
+
+    display: flex;
+    gap: 1rem;
+
+    /* controle do aparecimento/desaparecimento */
+    flex: 0 0 0%;
+    background: var(--azul-colombia);
+    opacity: 0;
+    border: solid 0.1em;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    overflow: hidden;
+    /* controla a velocidade e tipo de transição do movimento e da opacidade: */
+    transition: flex-basis 0.5s ease, opacity 0.15s ease, padding .35s ease, border-width .35 ease;
+    /* evita que o conteúdo interno obrigue a barra a ficar maior que o flex-basis */
+    min-width: 0;
+    min-height: 0;
+    /* opcional: performance */
+    will-change: flex-basis, opacity;
+
+    /* posicionamento */
+    text-align: left;
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    line-height: 2rem;
+    
+    /* estilização */
+    font-size: 1.75rem;
+    font-family: var(--fonte-principal);
+}
+
+.menu_usuario ul{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+
+    gap: 1.25rem;
+
+}
+
+.menu_usuario ul li{
+
+    display: flex;
+    justify-content: first baseline;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 0 7.5%;
+}
+
+.menu_usuario ul li a{
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    line-height: 1.2;
+
+    white-space: normal;
+    overflow-wrap:initial; 
+    text-wrap: balance; 
+
+    gap: 0.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.75rem);
+    color: var(--alcacuz);
+}
+
+.menu_usuario ul li:hover{
+
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Abre o MENU DE LOGIN quando NÃO está logado */
+body:not(.is-logged) #checkbox-login:checked ~ .container_busca_e_login .menu_login {
+  flex-basis: 25%;
+  opacity: 1;
+  animation: fadeInUsuario .5s forwards;
+  height: 20rem;
+  padding: 1rem 1.5rem;
+  border: 0.2rem solid var(--alcacuz);
+}
+
+/* Abre o MENU DO USUÁRIO quando ESTÁ logado */
+body.is-logged #checkbox-login:checked ~ .container_busca_e_login .menu_usuario {
+  flex-basis: 20%;
+  opacity: 1;
+  animation: fadeInUsuario .5s forwards;
+  height: 20rem;
+  padding: 1rem 1% 1rem 1%;
+  border: 0.2rem solid var(--alcacuz);
+}
+
+/* sua animação já existia */
+@keyframes fadeInUsuario {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* FIM DO TRECHO DO MENU DO USUARIO */
+
+
+body .search_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    background-color: var(--azul-delft);
+    gap: 1.8rem;
+
+    /* controle da transição da seção na abertura do menu de login */
+    flex: 1 1 100%;
+    transition: flex-basis .5s ease;
+    min-width: 0;
+}
+
+.container_busca_e_login{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;         /* garante mesma altura */
+    min-width:0;
+    
+    
+}
+
+.container_campos_usuario{
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+
+}
+
+.container_campos_senha{
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+}
+
+.menu_login input{
+
+    width: 100%;
+    height: 2.5rem;
+    border-radius: calc((5/8)*1rem);
+    border: solid 0.1rem var(--alcacuz);
+    font-size: 1rem;
+    color: var(--alcacuz);
+    padding-left: 0.5rem;
+}
+
+.menu_login input::placeholder{
+
+    color: var(--alcacuz);
+    opacity: 0.6;
+
+}
+
+.menu_login input:focus::placeholder{
+
+    opacity: 0;
+}
+
+.menu_login button{
+
+    width: 50%;
+    height: 2.5rem;
+    border-radius: calc((5/8)*1rem);
+    font-size: 1.75rem;
+    color: var(--branco);
+    background-color: var(--azul-delft);
+    margin: auto;
+    cursor: pointer;
+}
+
+.esqueci_senha, .cadastre-se{
+
+    font-size: 1rem;
+}
+
+.cadastre-se{
+
+    text-align: center;
+}
+.ancora_cadastre-se{
+
+    color: var(--vermelho-alaranjado)
+}
+
+.container_rotulo_senha{
+
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+   
+}
+
+.esqueci_senha{
+
+    color: var(--vermelho-alaranjado);
+}
+body .search_container h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+body .search_container h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+body .search_container div {
+    width: 28.25rem;
+    height: 3.6rem;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+}
+
+body .search_container div input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: hsl(var(--alcacuz) / 0.8);
+    border-radius: 1rem;
+    text-align: center;
+    padding: 0 2rem 0 3rem;
+    outline: none;
+}
+
+body .search_container div input:focus::placeholder {
+
+    opacity: 0;
+}
+
+body .search_container div::before {
+      content: url("../img/icon_search.png");         
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #444;
+      opacity: .7;
+    }

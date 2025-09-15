@@ -1,0 +1,96 @@
+body footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--azul-delft);
+    height: 22rem;
+    justify-content: space-around;
+}
+
+body footer .left_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 37rem;
+    gap: 2.5rem;
+}
+
+body footer .email_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+body footer .email_container span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--branco);
+}
+
+body footer .logos_container {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid var(--branco);
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+body footer .logos_container img {
+    width: 10rem;
+    height: 10rem;
+}
+
+body footer .right_container {
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+    gap: 4.5rem;
+}
+
+body footer .right_container .devs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+body footer .right_container .devs h2 {
+    font-size: 2rem;
+    color: var(--branco);
+    font-weight: 700;
+}
+
+body footer .right_container .devs ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: .6rem;
+    margin-left: 1.3rem;
+}
+
+body footer .right_container .devs ul li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--branco);
+    list-style:circle;
+}
+
+body footer .right_container nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+body footer .right_container nav h2 {
+    font-size: 2rem;
+    color: var(--branco);
+    font-weight: 700;
+}
+
+body footer .right_container nav a {
+    font-size: 1.2rem;
+    color: var(--branco);
+    font-weight: 500;
+    text-decoration: underline;
+}
