@@ -1,4 +1,6 @@
-import { logarLeitor } from "../js-funcoes/funcao-login.js"
+import { logarLeitor } from "../js-funcoes/funcao-logar.js"
+import { _applyLoginStateNow } from "./login-persistencia.js";
+
 
 console.log("Login carregado")
 
@@ -13,17 +15,31 @@ botaoLogar.addEventListener("click", function (evento) {
 
     logarLeitor(usuarioOuEmailLeitor, senhaLeitor)
 
-    // Verifica se há um usuário logado
-    const leitorLogado = JSON.parse(localStorage.getItem("leitor logado"))
-    const primeiroNomeLeitorLogado = JSON.parse(localStorage.getItem("nome do leitor logado"))
+    
+    const leitorLogado = localStorage.getItem("leitor logado") || ""
 
-    if (leitorLogado) {
+    // Verifica se há um usuário logado
+    if (leitorLogado.trim() !== "") {
     // Seleciona o <span> dentro do botão "Entrar"
     const rotuloLogin = document.querySelector(".entrar-rotulo span")
 
+    // Substitui o "Entrar" pelo nome de usuário
     if (rotuloLogin) {
-        rotuloLogin.textContent = primeiroNomeLeitorLogado // Substitui por nome de usuário
+        rotuloLogin.textContent = leitorLogado 
     }
+
+    //limpa os inputs do login após a confirmação de entrada
+    const inputUsuario = document.getElementById("input_usuario");
+    const inputSenha   = document.getElementById("input_senha");
+    if (inputUsuario) inputUsuario.value = "";
+    if (inputSenha)   inputSenha.value   = "";
+
+    _applyLoginStateNow();
+
+    //fecha o menu de login
+    const checkbox = document.getElementById("checkbox-login");
+    if (checkbox) checkbox.checked = false;
+
 }
 
 

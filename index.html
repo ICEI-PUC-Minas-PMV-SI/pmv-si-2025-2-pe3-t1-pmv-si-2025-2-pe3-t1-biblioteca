@@ -67,8 +67,28 @@
             </div>
             <button type = "submit" id = "botao_logar">Logar</button>
             <p class = "cadastre-se">Não tem uma conta?<a href = "src/html-paginas/cadastro.html" class = "ancora_cadastre-se"> Cadastre-se</a></p>
+            </section>
+            <section class = "menu_usuario">
+            <ul class = "menu_usuario_lista">
+                <li class = "menu_usuario_lista_item">
+                    <a class = "menu_usuario_ancora" href = "#"><img class = "menu_usuario_icone" src = "src/img/icone_pilha_livros.svg">Minhas reservas</a>
+                </li>
+                <li class = "menu_usuario_lista_item">
+                    <a class = "menu_usuario_ancora" href = "#"><img class = "menu_usuario_icone" src = "src/img/icone_sacola.svg">Minha seleção</a>
+                </li>
+                <li class = "menu_usuario_lista_item">
+                    <a class = "menu_usuario_ancora" href = "#"><img class = "menu_usuario_icone" src = "src/img/icone_coracao.svg">Meus favoritos</a>
+                </li>
+                <li class = "menu_usuario_lista_item">
+                    <a class = "menu_usuario_ancora" href = "#"><img class = "menu_usuario_icone" src = "src/img/icone_lapis.svg">Editar perfil</a>
+                </li>
+                <li class = "menu_usuario_lista_item">
+                    <a class = "menu_usuario_ancora" href = "#" id = "link_sair"><img class = "menu_usuario_icone" src = "src/img/icone_sair.svg">Sair</a>
+                </li>
+            </ul>
         </section>
     </section>
+    
     
     <!-- CARROSSEL DOS LIVROS COM O CARD -->
     <section class = "carrossel">
@@ -366,6 +386,8 @@
 
     <script src="src/js-scripts/carrossel.js"></script>
     <script src = "src/js-scripts/login.js" type = "module" defer></script>
+    <script src="src/js-scripts/login-persistencia.js" type = "module" defer></script>
+    <script src="src/js-funcoes/funcao-sair.js" type="module" defer></script>
 
 
 </body>

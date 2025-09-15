@@ -1,5 +1,7 @@
 @import url("../css-styles/carrossel.css");
 @import url("../css-styles/card.css");
+@import url("../css-styles/menu-usuario.css");
+@import url("../css-styles/caixas-dialogo.css");
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
@@ -76,21 +78,6 @@ body header nav .logo_container img {
     display: none; 
 }
 
-/* controle do checkbox que abre o menu de login */
-#checkbox-login:checked ~.container_busca_e_login .menu_login{
-
-    flex-basis: 25%;
-    /* opacidade em 100%: */
-    opacity: 1;
-    /* essa animação é para controlar a expansão*/
-    animation: fadeIn .5s forwards;
-    height: 20rem;
-
-    padding: 1rem 1.5rem;
-    border: 0.2rem solid var(--alcacuz);
-
-}
-
 /* keyframes são "roteiros" a serem chamados para animar uma transição: */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -116,32 +103,44 @@ body header nav .login_container label {
     cursor: pointer;
 }
 
-body .search_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20rem;
-    background-color: var(--azul-delft);
-    gap: 1.8rem;
-
-    /* controle da transição da seção na abertura do menu de login */
-    flex: 1 1 100%;
-    transition: flex-basis .5s ease;
-    min-width: 0;
-}
-
-.container_busca_e_login{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;         /* garante mesma altura */
-    min-width:0;
-    
-    
-}
 .menu_login{
+
+        display: flex;
+    gap: 1rem;
+
+    /* controle do aparecimento/desaparecimento */
+    flex: 0 0 0%;
+    background: var(--azul-colombia);
+    opacity: 0;
+    border: solid 0.1em;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    overflow: hidden;
+    /* controla a velocidade e tipo de transição do movimento e da opacidade: */
+    transition: flex-basis 0.5s ease, opacity 0.15s ease, padding .35s ease, border-width .35 ease;
+    /* evita que o conteúdo interno obrigue a barra a ficar maior que o flex-basis */
+    min-width: 0;
+    min-height: 0;
+    /* opcional: performance */
+    will-change: flex-basis, opacity;
+
+    /* posicionamento */
+    text-align: left;
+    
+    justify-content: flex-start;
+    flex-direction: column;
+    line-height: 2rem;
+    
+    /* estilização */
+    font-size: 1.75rem;
+    font-family: var(--fonte-principal);
+}
+
+/* TUDO ISSO AQUI É DO MENU DO USUARIO */
+
+.menu_usuario{
 
     display: flex;
     gap: 1rem;
@@ -176,6 +175,102 @@ body .search_container {
     font-family: var(--fonte-principal);
 }
 
+.menu_usuario ul{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+
+    gap: 1.25rem;
+
+}
+
+.menu_usuario ul li{
+
+    display: flex;
+    justify-content: first baseline;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 0 7.5%;
+}
+
+.menu_usuario ul li a{
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    line-height: 1.2;
+
+    white-space: normal;
+    overflow-wrap:initial; 
+    text-wrap: balance; 
+
+    gap: 0.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.75rem);
+    color: var(--alcacuz);
+}
+
+.menu_usuario ul li:hover{
+
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Abre o MENU DE LOGIN quando NÃO está logado */
+body:not(.is-logged) #checkbox-login:checked ~ .container_busca_e_login .menu_login {
+  flex-basis: 25%;
+  opacity: 1;
+  animation: fadeInUsuario .5s forwards;
+  height: 20rem;
+  padding: 1rem 1.5rem;
+  border: 0.2rem solid var(--alcacuz);
+}
+
+/* Abre o MENU DO USUÁRIO quando ESTÁ logado */
+body.is-logged #checkbox-login:checked ~ .container_busca_e_login .menu_usuario {
+  flex-basis: 20%;
+  opacity: 1;
+  animation: fadeInUsuario .5s forwards;
+  height: 20rem;
+  padding: 1rem 1% 1rem 1%;
+  border: 0.2rem solid var(--alcacuz);
+}
+
+/* sua animação já existia */
+@keyframes fadeInUsuario {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* FIM DO TRECHO DO MENU DO USUARIO */
+
+
+body .search_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    background-color: var(--azul-delft);
+    gap: 1.8rem;
+
+    /* controle da transição da seção na abertura do menu de login */
+    flex: 1 1 100%;
+    transition: flex-basis .5s ease;
+    min-width: 0;
+}
+
+.container_busca_e_login{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;         /* garante mesma altura */
+    min-width:0;
+    
+    
+}
+
 .container_campos_usuario{
 
     display: flex;
@@ -204,9 +299,10 @@ body .search_container {
     padding-left: 0.5rem;
 }
 
-.menu_login input:placeholder{
+.menu_login input::placeholder{
 
-    color: hsl(var(--alcacuz) / 0.8);
+    color: var(--alcacuz);
+    opacity: 0.6;
 
 }
 

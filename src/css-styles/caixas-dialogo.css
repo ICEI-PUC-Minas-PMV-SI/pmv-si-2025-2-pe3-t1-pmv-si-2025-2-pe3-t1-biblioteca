@@ -1,0 +1,87 @@
+/* ===== Base do diálogo ===== */
+dialog.dlg {
+  border: solid 0.2rem var(--alcacuz);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  width: min(90vw, 40vw);
+  box-shadow: 0 24px 60px var(--alcacuz/0.8);
+  text-align: center;                 /* centraliza conteúdos */
+  font-family: var(--fonte-principal);
+  background: var(--branco);
+}
+
+dialog.dlg::backdrop {
+  background: var(--alcacuz/0.8);
+}
+
+/* Título e descrição */
+.dlg__title {
+  margin: 0 0 .5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--alcacuz);
+}
+
+.dlg__desc {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--alcacuz);
+  opacity: .9;
+}
+
+/* Área de ações centralizada */
+.dlg-actions {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;            /* centraliza botões */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+/* ===== Botões (herdam o estilo/fonte do botão Logar) ===== */
+.dlg-btn {
+  /* base igual ao botão de Logar */
+  height: 2.5rem;
+  padding: 0 1rem;                     /* ao invés de width fixa */
+  border-radius: calc((5/8)*1rem);
+  font-size: 1.75rem;
+  font-family: var(--fonte-principal);
+  cursor: pointer;
+
+  /* reset cross-browser */
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Primário (equivalente ao botão Logar) */
+.dlg-btn--primary {
+  background: var(--azul-delft);
+  color: var(--branco);
+}
+
+/* Secundário (mesma família/estilo, versão contornada) */
+.dlg-btn--secondary {
+  background: transparent;
+  color: var(--vermelho-alaranjado);
+  border: .125rem solid var(--vermelho-alaranjado);
+}
+
+/* Interações */
+.dlg-btn--primary:hover { filter: brightness(.92); }
+.dlg-btn--secondary:hover { background: rgba(189, 213, 234, 0.25); } /* leve azul */
+.dlg-btn:focus-visible {
+  outline: .2rem solid var(--vermelho-alaranjado);
+  outline-offset: 2px;
+}
+
+/* Ajustes móveis */
+@media (max-width: 480px) {
+  .dlg__title { font-size: 1.125rem; }
+  .dlg__desc  { font-size: .95rem; }
+  .dlg-btn    { font-size: 1.5rem; }
+}
