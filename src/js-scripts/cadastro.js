@@ -42,7 +42,7 @@ formularioCadastro.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
   // variável do id, começa em 1 e vai incrementando 1 a cada novo cadastro
-  const idLeitor = ++ClasseLeitor.numeroDeLeitores;
+  const idLeitor = ClasseLeitor.numeroDeLeitores +1;
 
   // variáveis da identidade do leitor
   const nomeUsuarioLeitor = document.getElementById("usuario").value.trim();
