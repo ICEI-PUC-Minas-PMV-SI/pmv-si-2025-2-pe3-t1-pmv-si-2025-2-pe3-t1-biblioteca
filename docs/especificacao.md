@@ -3,27 +3,35 @@
 Nesta parte do trabalho você deve detalhar a documentação dos requisitos do sistema proposto de acordo com as seções a seguir. Ressalta-se que aqui é utilizado como exemplo um sistema de gestão de cursos de aperfeiçoamento.
 
 ## 3.1 Objetivos deste documento
-Descrever e especificar as necessidades da Coordenação do Curso de Sistemas de Informação da PUC Minas que devem ser atendidas pelo projeto SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento.
+Descrever e especificar as necessidades e requisitos para o desenvolvimento de um sistema web de venda de ingressos e snacks de cinema. O documento visa orientar o projeto, garantindo que a aplicação seja simples, intuitiva, eficiente e transparente para o usuário, além de contribuir para a otimização operacional e estratégica das empresas exibidoras.
 
 ## 3.2 Escopo do produto
 
 ### 3.2.1 Nome do produto e seus componentes principais
-O produto será denominado SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento. Ele terá somente um componente (módulo) com os devidos elementos necessários à gestão de cursos.
+O produto será denominado TicketWave. Ele contará com os seguintes componentes principais:
+
+*Módulo de Catálogo e Sessões: exibição de filmes em cartaz, horários e salas disponíveis.
+*Módulo de Escolha de Assentos: seleção em tempo real dos lugares disponíveis.
+*Módulo de Pagamentos: integração com Pix, cartões de crédito/débito e carteiras digitais populares.
+*Módulo de Vendas de Snacks: opção para compra antecipada de produtos de bomboniere.
+*Módulo de Notificações e Promoções: envio de alertas sobre estreias, promoções e lembretes de sessões.
+*Módulo Administrativo: relatórios e análises de dados para apoio a marketing e gestão operacional.
 
 ### 3.2.2 Missão do produto
-Gerenciar informações sobre a oferta de cursos de aperfeiçoamento, gerenciar a composição das turmas, alunos, professores e matrículas. 
+Proporcionar uma experiência de compra de ingressos e snacks de cinema ágil, transparente e acessível, atendendo usuários com diferentes níveis de familiaridade tecnológica e fortalecendo a gestão das empresas exibidoras. O sistema busca otimizar ocupação e receita por meio de precificação dinâmica e ferramentas de análise de dados, garantindo praticidade e confiança.
 
 ### 3.2.3 Limites do produto
-O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcelas do curso, pagamento a professore e agendamentos. O SCCA não contempla o atendimento a vários cursos de Sistemas de Informação de outras unidades da PUC Minas.
+*O sistema não substituirá integralmente os sistemas internos das redes de cinema (por exemplo, contabilidade ou RH).
 
 ### 3.2.4 Benefícios do produto
 
 | # | Benefício | Valor para o Cliente |
 |--------------------|------------------------------------|----------------------------------------|
-|1	| Facilidade no cadastro de dados |	Essencial |
-|2 | Facilidade na recuperação de informações | Essencial | 
-|3 | Segurança no cadastro de matrículas | Essencial | 
-|4	| Melhoria na comunicação com os alunos	| Recomendável | 
+|1	| Facilidade e rapidez na compra de ingressos online |	Essencial |
+|2 | Transparência nos preços e taxas, reduzindo atritos na experiência | Essencial | 
+|3 | Compra antecipada de snacks, evitando filas na bomboniere | Recomendável | 
+|4	| Interface acessível para públicos diversos, incluindo idosos	| Essencial | 
+|5	| Suporte a precificação dinâmica para otimizar ocupação e receita	| Essencial | 
 
 ## 3.3 Descrição geral do produto
 
