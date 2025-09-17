@@ -8,6 +8,12 @@ muda o estilo da âncora */
     text-decoration: underline;
 }
 
+/* pra mudar o estilo da âncora sob hover, basta estilizar aqui dentro */
+.ancora-genero:hover{
+
+    font-size: 1.1rem;
+}
+
 .menu_login input::placeholder{
 
     color: var(--alcacuz);
