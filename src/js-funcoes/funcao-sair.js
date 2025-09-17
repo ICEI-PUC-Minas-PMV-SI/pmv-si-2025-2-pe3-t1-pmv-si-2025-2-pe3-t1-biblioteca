@@ -12,8 +12,8 @@ const html = `
     <h3 id="dlg-logout-titulo" class="dlg__title">Confirmar logout</h3>
     <p id="dlg-logout-desc" class="dlg__desc">Você realmente deseja sair da sua conta?</p>
     <div class="dlg-actions">
-        <button value="cancel"  id="btnCancelarLogout"  class="dlg-btn dlg-btn--secondary">Cancelar</button>  
-        <button value="confirm" id="btnConfirmarLogout" class="dlg-btn dlg-btn--primary" autofocus>Confirmar</button>
+        <button value="cancel"  id="btnCancelarLogout"  class="dlg-btn dlg-btn--secondary">Cancelar logout</button>  
+        <button value="confirm" id="btnConfirmarLogout" class="dlg-btn dlg-btn--primary" autofocus>Confirmar logout</button>
     </div>
   </form>
 </dialog>`;
