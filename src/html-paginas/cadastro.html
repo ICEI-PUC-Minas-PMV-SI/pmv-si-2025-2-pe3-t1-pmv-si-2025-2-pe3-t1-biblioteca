@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de cadastro</title>
+    <link rel = "stylesheet" href = "../css-styles/styles.css">
 </head>
 <body>
     
@@ -11,102 +12,184 @@
     <form class = "formulario-cadastro">
 
         <fieldset class = "quadro-identidade">
+            <h3 class = "formulario-cadastro_titulo-quadro">DADOS PESSOAIS</h3>
             <div class = "quadro-identidade_campo">
 
                 <label for = "usuario" > Nome de usuário:</label>
-                <input type = "text" name = "usuario" id = "usuario" required >
+                <input type = "text" name = "usuario" id = "usuario"  placeholder="Digite seu nome de usuário" required>
 
             </div>
             
             <div class = "quadro-identidade_campo">
 
                 <label for = "nome" > Nome:</label>
-                <input type = "text" name = "nome" id = "nome" required>
+                <input type = "text" name = "nome" id = "nome" placeholder="Digite seu primeiro nome" required>
 
             </div>
 
             <div class = "quadro-identidade_campo">
 
                 <label for = "sobrenome" > Sobrenome:</label>
-                <input type = "text" name = "sobrenome" id = "sobrenome" required>
+                <input type = "text" name = "sobrenome" id = "sobrenome" placeholder="Digite seu sobrenome" required>
 
             </div>
 
             <div class = "quadro-identidade_campo">
 
                 <label for = "cpf" > CPF:</label>
-                <input type = "text" name = "CPF" id = "cpf" required >
+                <input type = "text" name = "cpf" id = "cpf" placeholder="Digite seu CPF" required >
 
             </div>
 
             <div class = "quadro-identidade_campo">
 
                 <label for = "telefone" > Telefone:</label>
-                <input type = "tel" name = "telefone" id = "telefone" required>
+                <input type = "tel" name = "telefone" id = "telefone" placeholder="Digite seu telefone" required>
 
             </div>
 
             <div class = "quadro-identidade_campo">
 
                 <label for = "email" > E-mail:</label>
-                <input type = "email" name = "email" id = "email" required>
+                <input type = "email" name = "email" id = "email" placeholder="Digite seu e-mail" required>
 
             </div>
         </fieldset>
 
         <fieldset class = "quadro-endereco">
+            <h3 class = "formulario-cadastro_titulo-quadro">ENDEREÇO</h3>
 
             <div class = "quadro-endereco_campo">
 
+                <label for = "cep"> CEP:</label>
+                <input type = "text" name = "cep" id = "cep" placeholder="Digite seu CEP" required>
+
+            </div>
+            <div class = "quadro-endereco_campo">
+
                 <label for = "rua"> Rua:</label>
-                <input type = "text" name = "rua" id = "rua" required>
+                <input type = "text" name = "rua" id = "rua" placeholder="Digite o nome da sua rua"required>
 
             </div>
             <div class = "quadro-endereco_campo">
 
                 <label for = "numero-fachada"> Número:</label>
-                <input type = "text" name = "numero-fachada" id = "numero-fachada" required>
+                <input type = "text" name = "numero-fachada" id = "numero-fachada" placeholder="Digite o número da casa"required>
 
             </div>
             <div class = "quadro-endereco_campo">
 
                 <label for = "bairro"> Bairro:</label>
-                <input type = "text" name = "bairro" id = "bairro" required>
+                <input type = "text" name = "bairro" id = "bairro" placeholder="Digite seu bairro" required>
 
             </div>
             <div class = "quadro-endereco_campo">
 
                 <label for = "cidade"> Cidade:</label>
-                <input type = "text" name = "cidade" id = "cidade" required>
+                <input type = "text" name = "cidade" id = "cidade" placeholder="Digite sua cidade" required>
 
             </div>
             <div class = "quadro-endereco_campo">
 
                 <label for = "estado"> Estado:</label>
-                <input type = "text" name = "estado" id = "estado" required>
 
+                <select name = "estado" id = "estado">
+
+                    <option value = "" data-default disabled selected>Clique para selecionar</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+
+            
             </div>
 
         </fieldset>
+        <fieldset class = "quadro-generos">
+
+            <h3 class = "formulario-cadastro_titulo-quadro">GÊNEROS FAVORITOS</h3>
+            <h4 class = "quadro-generos_orientacao">Selecione até três opções:</h4>
+
+            <div class = "quadro-generos_campo">
+
+                <input type = "checkbox" class = "checkbox-genero" id= "checkbox-genero-1">
+                <label class = "rotulo-genero" for = "checkbox-genero-1">
+                    <a class = "ancora-genero" id = "ancora-genero-1">Ação</a>
+                </label>
+                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-2">
+                <label class="rotulo-genero" for="checkbox-genero-2">
+                    <a class="ancora-genero" id="ancora-genero-2">Astronomia</a>
+                </label>
+
+                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-3">
+                <label class="rotulo-genero" for="checkbox-genero-3">
+                    <a class="ancora-genero" id="ancora-genero-3">Culinária</a>
+                </label>
+
+                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-4">
+                <label class="rotulo-genero" for="checkbox-genero-4">
+                    <a class="ancora-genero" id="ancora-genero-4">Computação</a>
+                </label>
+
+                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-5">
+                <label class="rotulo-genero" for="checkbox-genero-5">
+                    <a class="ancora-genero" id="ancora-genero-5">Romance</a>
+                </label>
+
+                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-6">
+                <label class="rotulo-genero" for="checkbox-genero-6">
+                    <a class="ancora-genero" id="ancora-genero-6">Ficção Científica</a>
+                </label>
+
+
+            </div>
+        </fieldset>
 
         <fieldset class = "quadro-senha">
-            <div class = "cadastro-direita-formulario-campo">
+
+            <h3 class = "formulario-cadastro_titulo-quadro">CREDENCIAIS</h3>
+            <div class = "quadro-senha_campo">
 
                 <label for = "senha"> Senha:</label>
-                <input type = "password" name = "senha" id = "senha" required>
+                <input type = "password" name = "senha" id = "senha" placeholder="Digite a senha desejada">
 
             </div>
 
-            <div class = "cadastro-direita-formulario-campo">
+            <div class = "quadro-senha_campo">
 
                 <label for = "repita-senha"> Repita sua senha:</label>
-                <input type = "password" name = "repita-senha" id = "repita-senha" required>
+                <input type = "password" name = "repita-senha" id = "repita-senha" placeholder="Digite a senha novamente"required>
 
             </div>
         </fieldset>
     
-        <div class = "formulario-cadastro_botao">
+        <div class = "formulario-cadastro_botoes">
 
+            <button type = "reset" id = "botao-cancelar"> Cancelar </button>
             <button type = "submit" id = "botao-cadastrar"> Cadastrar </button>
 
         </div>

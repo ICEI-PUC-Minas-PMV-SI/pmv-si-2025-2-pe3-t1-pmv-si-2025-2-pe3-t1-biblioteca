@@ -1,0 +1,20 @@
+.checkbox-genero{
+    display: none;
+}
+
+/* quando um checkbox de gênero estiver marcado,
+muda o estilo da âncora */
+.checkbox-genero:checked + .rotulo-genero > .ancora-genero {
+    text-decoration: underline;
+}
+
+.menu_login input::placeholder{
+
+    color: var(--alcacuz);
+    opacity: 0.6;
+
+}
+input:focus::placeholder{
+
+    opacity: 0;
+}
