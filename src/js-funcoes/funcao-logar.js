@@ -48,7 +48,7 @@ export function logarLeitor(usuarioOuEmail, senha) {
         }  
     
         showAlertSync({
-            title: "Não encontramos",
+            title: "Usuário não encontrado",
             message: "Desculpe, não encontramos seu usuário/e-mail na nossa base de dados. Repita o procedimento."
         });
     } 

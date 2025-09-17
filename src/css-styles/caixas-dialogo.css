@@ -79,9 +79,19 @@ dialog.dlg::backdrop {
   outline-offset: 2px;
 }
 
-/* Ajustes móveis */
-@media (max-width: 480px) {
-  .dlg__title { font-size: 1.125rem; }
-  .dlg__desc  { font-size: .95rem; }
-  .dlg-btn    { font-size: 1.5rem; }
+
+/* cores da caixa de diálogo específica do botão cancelar cadastro */
+.dlg--confirm .dlg-actions button[value="cancel"] {
+  background: #1e2a78; /* azul escuro */
+  color: #fff;
+  border: none;
 }
+
+.dlg--confirm .dlg-actions button[value="confirm"] {
+
+  background: #fff;
+  color: #c00;         /* vermelho */
+  border: 2px solid #c00;
+  
+}
+/* ____________________________________________________________ */
