@@ -6,11 +6,10 @@ dialog.dlg {
   left: 50%;
   transform: translate(-50%, -50%); 
 
-
   border: solid 0.2rem var(--alcacuz);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
-  width: min(90vw, 40vw);
+  width: 65vw;
   box-shadow: 0 24px 60px var(--alcacuz/0.8);
   text-align: center;                 
   font-family: var(--fonte-principal);

@@ -4,6 +4,35 @@ import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
 
 export function cadastrarLeitor(id, usuario, nome, sobrenome, cpf, telefone, email, cep, rua, numeroFachada, bairro, cidade, estado, meusGeneros, senha, repita_senha) {
 
+    ClasseLeitor.vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores") || "[]");
+
+    let i
+    for (i=0;i<ClasseLeitor.vetorLeitores.length;i++){
+
+        if (usuario === ClasseLeitor.vetorLeitores[i].usuario){
+
+            showAlertSync({
+                title: "Nome de usuário indisponível",
+                message: "Esse nome de usuário já existe. Insira um nome de usuário diferente."
+            });
+            return
+        }else if (cpf === ClasseLeitor.vetorLeitores[i].cpf){
+
+            showAlertSync({
+                title: "CPF já cadastrado",
+                message: "Esse CPF já possui cadastro no sistema. Confira o CPF."
+            });
+            return
+        }else if (email === ClasseLeitor.vetorLeitores[i].email){
+
+            showAlertSync({
+                title: "E-mail já cadastrado",
+                message: "Esse endereço de e-mail já possui cadastro no sistema. Insira um e-mail diferente."
+            });
+            return
+        }
+    }
+    
     if (senha !== repita_senha) {
 
         showAlertSync({
@@ -13,6 +42,7 @@ export function cadastrarLeitor(id, usuario, nome, sobrenome, cpf, telefone, ema
         return
 
     } else {
+
 
         let leitor = new ClasseLeitor(id, usuario, nome, sobrenome, cpf, telefone, email, cep, rua, numeroFachada, bairro, cidade, estado, meusGeneros, senha)
 
