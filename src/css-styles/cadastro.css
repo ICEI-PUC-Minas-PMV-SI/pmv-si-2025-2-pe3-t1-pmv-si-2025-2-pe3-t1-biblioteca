@@ -15,7 +15,7 @@
 muda o estilo da âncora */
 .checkbox-genero:checked + .rotulo-genero > .ancora-genero {
     background-color: var(--azul-colombia);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 .menu_login input::placeholder{
@@ -197,7 +197,7 @@ body .formulario-cadastro .quadro-generos .quadro-generos_campos {
     row-gap: .5rem;
 }
 
-body .formulario-cadastro .quadro-generos .quadro-generos_campos .checkbox-genero a {
+body .formulario-cadastro .quadro-generos .quadro-generos_campos .checkbox-genero label a {
     cursor: pointer;
 }
 
@@ -209,6 +209,7 @@ body .formulario-cadastro .quadro-generos .quadro-generos_campos label a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   /* caixa não infla com o hover */
   width: 100%;               
@@ -236,6 +237,43 @@ body .formulario-cadastro .quadro-generos .quadro-generos_campos label a {
 /* Aumente aqui a fonte dos gêneros sob hover */
 body .formulario-cadastro .quadro-generos .quadro-generos_campos label a:hover {
  
-   font-size: 1.05rem;
+   font-size: 1.1rem;
 }
 
+body .formulario-cadastro .quadro-senha {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+    padding-bottom: 2rem;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+body .formulario-cadastro .quadro-senha .quadro-senha_campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    width: 100%;
+    row-gap: 1rem;
+}
+
+body .formulario-cadastro .quadro-senha .quadro-senha_campos .quadro-senha_campo {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+}
+
+body .formulario-cadastro .quadro-senha .quadro-senha_campos .quadro-senha_campo label {
+    padding-left: .1rem;
+}
+
+body .formulario-cadastro .quadro-senha .quadro-senha_campos .quadro-senha_campo input {
+    text-align: start;
+    border-radius: .4rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    outline: invert;
+    padding-left: .5rem;
+    width: 100%;
+}

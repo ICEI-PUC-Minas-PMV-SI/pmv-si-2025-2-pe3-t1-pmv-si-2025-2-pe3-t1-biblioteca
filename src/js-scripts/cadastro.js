@@ -115,13 +115,3 @@ formularioCadastro.addEventListener("submit", function (evento) {
     repitaSenhaLeitor
   );
 });
-
-const generos = document.querySelectorAll(".quadro-genero_campo-1, .quadro-genero_campo-2, .quadro-genero_campo-3, .quadro-genero_campo-4, .quadro-genero_campo-5, .quadro-genero_campo-6")
-
-generos.forEach((genero) => {
-  genero.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    console.log(genero)
-  })
-})
