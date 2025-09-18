@@ -15,12 +15,7 @@
 muda o estilo da âncora */
 .checkbox-genero:checked + .rotulo-genero > .ancora-genero {
     background-color: var(--azul-colombia);
-}
-
-/* pra mudar o estilo da âncora sob hover, basta estilizar aqui dentro */
-.ancora-genero:hover{
-
-    font-size: 1.7rem;
+    font-size: 1.05rem;
 }
 
 .menu_login input::placeholder{
@@ -34,7 +29,7 @@ input:focus::placeholder{
     opacity: 0;
 }
 
-body {
+#body-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +62,12 @@ body .formulario-cadastro {
     padding: 2rem 2rem;
     border-radius: 1.53rem;
     gap: 1rem;
-    width: 50%;
+    width: 60%;
+}
+
+body .formulario-cadastro option{
+
+    font-size: 1rem;
 }
 
 body .formulario-cadastro .quadro-identidade {
@@ -205,20 +205,37 @@ body .formulario-cadastro .quadro-generos .quadro-generos_campos .checkbox-gener
     display: none;
 }
 
-body .formulario-cadastro .quadro-generos .quadro-generos_campos label a { 
-    display: flex;
-    flex-direction: column;
-    font-size: 130%;
-    font-weight: 700;
-    gap: .2rem;
-    background-color: #fff;
-    color: var(--azul-delft);
-    text-align: center;
-    justify-content: center;
-    opacity: 1;
-    border-radius: .4rem;
-    height: 1.6rem;
-    width: 100%;
-    padding: 1.6rem;
-    cursor: pointer;
+body .formulario-cadastro .quadro-generos .quadro-generos_campos label a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* caixa não infla com o hover */
+  width: 100%;               
+  padding: .5rem .5rem;      
+  min-height: 2.6rem;        
+  border-radius: .4rem;
+
+  background: #fff;
+  color: var(--azul-delft);
+
+  font-size: 1rem;          
+  font-weight: 700;
+  line-height: 1.1;
+
+  /* transições só de cor/decoração, não de layout */
+  transition: background-color .25s ease, color .15s ease, text-decoration-color .15s ease;
+
 }
+
+/* realce do estado marcado continua igual */
+.checkbox-genero:checked + .rotulo-genero > .ancora-genero {
+  background-color: var(--azul-colombia);
+}
+
+/* Aumente aqui a fonte dos gêneros sob hover */
+body .formulario-cadastro .quadro-generos .quadro-generos_campos label a:hover {
+ 
+   font-size: 1.05rem;
+}
+
