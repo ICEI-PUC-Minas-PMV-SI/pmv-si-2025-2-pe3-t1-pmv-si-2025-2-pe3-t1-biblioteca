@@ -73,7 +73,8 @@ Como observado no diagrama de casos de uso da Figura 1, a secretária poderá ge
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-![dcu](https://github.com/user-attachments/assets/41f6b731-b44e-43aa-911f-423ad6198f47)
+<img width="1009" height="2472" alt="image" src="https://github.com/user-attachments/assets/5def3ad7-fe46-4e1d-9ef3-b6cebe32c1d1" />
+
 ### 3.4.2 Descrições de Casos de Uso
 
 #### Gerenciar  leitores (CSU03)
