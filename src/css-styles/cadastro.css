@@ -197,15 +197,15 @@ body .formulario-cadastro .quadro-generos .quadro-generos_campos {
     row-gap: .5rem;
 }
 
-body .formulario-cadastro .quadro-generos .quadro-generos_campos .quadro-genero_campo label a {
+body .formulario-cadastro .quadro-generos .quadro-generos_campos .quadro-genero_campo-1 label, .quadro-genero_campo-2 label, .quadro-genero_campo-3 label, .quadro-genero_campo-4 label, .quadro-genero_campo-5 label, .quadro-genero_campo-6 label a {
     cursor: pointer;
 }
 
-body .formulario-cadastro .quadro-generos .quadro-generos_campos .quadro-genero_campo label {
+body .formulario-cadastro .quadro-generos .quadro-generos_campos .quadro-genero_campo-1 label, .quadro-genero_campo-2 label, .quadro-genero_campo-3 label, .quadro-genero_campo-4, .quadro-genero_campo-5 label, .quadro-genero_campo-6 label {
     cursor: pointer;
 }
 
-body .formulario-cadastro .quadro-generos .quadro-generos_campos .quadro-genero_campo {
+body .formulario-cadastro .quadro-generos .quadro-generos_campos .quadro-genero_campo-1, .quadro-genero_campo-2, .quadro-genero_campo-3, .quadro-genero_campo-4, .quadro-genero_campo-5, .quadro-genero_campo-6 {
     display: flex;
     flex-direction: column;
     font-size: 130%;
