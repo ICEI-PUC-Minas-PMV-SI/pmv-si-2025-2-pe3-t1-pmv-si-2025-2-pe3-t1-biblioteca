@@ -1,9 +1,10 @@
-// ../js-scripts/cadastro.js
-import { ClasseLeitor } from "../js-classes/classe-leitor.js";
-import { cadastrarLeitor } from "../js-funcoes/funcao-cadastrar.js";
-import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js";
+import { ClasseLeitor } from "../js-classes/classe-leitor.js"
+import { cadastrarLeitor } from "../js-funcoes/funcao-cadastrar.js"
+import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js"
+import { logarDireto } from "../js-funcoes/funcao-logar.js"
+import { _applyLoginStateNow } from "./login-persistencia.js"
 
-const formularioCadastro = document.querySelector(".formulario-cadastro");
+const formularioCadastro = document.querySelector(".formulario-cadastro")
 
 // === CANCELAR CADASTRO (fora do submit, com showConfirmSync boolean) ===
 const botaoCancelar = document.getElementById("botao-cancelar");
@@ -92,7 +93,7 @@ formularioCadastro.addEventListener("submit", function (evento) {
     senhaLeitor === "" ||
     repitaSenhaLeitor === ""
   ) {
-    alert("Preencha todos os campos!"); // pode trocar por showAlert se quiser padronizar
+
     return;
   }
 
@@ -113,15 +114,25 @@ formularioCadastro.addEventListener("submit", function (evento) {
     generosLeitor,
     senhaLeitor,
     repitaSenhaLeitor
-  );
+  )
+
+  logarDireto(nomeUsuarioLeitor, senhaLeitor)
+
+  const leitorLogado = localStorage.getItem("leitor logado") || ""
+
+  // Verifica se há um usuário logado
+  if (leitorLogado.trim() !== "") {
+    // Seleciona o <span> dentro do botão "Entrar"
+    const rotuloLogin = document.querySelector(".entrar-rotulo span")
+
+    // Substitui o "Entrar" pelo nome de usuário
+    if (rotuloLogin) {
+        rotuloLogin.textContent = leitorLogado 
+    }
+
+    _applyLoginStateNow();
+
+  }
+
 });
 
-const generos = document.querySelectorAll(".quadro-genero_campo-1, .quadro-genero_campo-2, .quadro-genero_campo-3, .quadro-genero_campo-4, .quadro-genero_campo-5, .quadro-genero_campo-6")
-
-generos.forEach((genero) => {
-  genero.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    console.log(genero)
-  })
-})
