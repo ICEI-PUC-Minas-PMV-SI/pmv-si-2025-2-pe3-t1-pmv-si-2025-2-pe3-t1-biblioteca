@@ -1,8 +1,6 @@
 import { logarLeitor } from "../js-funcoes/funcao-logar.js"
-import { _applyLoginStateNow } from "./login-persistencia.js";
+import { _applyLoginStateNow } from "./login-persistencia.js"
 
-
-console.log("Login carregado")
 
 const botaoLogar = document.getElementById("botao_logar")
 

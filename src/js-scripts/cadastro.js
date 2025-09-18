@@ -1,9 +1,10 @@
-// ../js-scripts/cadastro.js
-import { ClasseLeitor } from "../js-classes/classe-leitor.js";
-import { cadastrarLeitor } from "../js-funcoes/funcao-cadastrar.js";
-import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js";
+import { ClasseLeitor } from "../js-classes/classe-leitor.js"
+import { cadastrarLeitor } from "../js-funcoes/funcao-cadastrar.js"
+import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js"
+import { logarDireto } from "../js-funcoes/funcao-logar.js"
+import { _applyLoginStateNow } from "./login-persistencia.js"
 
-const formularioCadastro = document.querySelector(".formulario-cadastro");
+const formularioCadastro = document.querySelector(".formulario-cadastro")
 
 // === CANCELAR CADASTRO (fora do submit, com showConfirmSync boolean) ===
 const botaoCancelar = document.getElementById("botao-cancelar");
@@ -92,7 +93,7 @@ formularioCadastro.addEventListener("submit", function (evento) {
     senhaLeitor === "" ||
     repitaSenhaLeitor === ""
   ) {
-    alert("Preencha todos os campos!"); // pode trocar por showAlert se quiser padronizar
+
     return;
   }
 

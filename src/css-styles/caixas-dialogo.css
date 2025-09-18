@@ -43,21 +43,24 @@ dialog.dlg::backdrop {
   gap: .75rem;
   justify-content: center;            /* centraliza botões */
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: .5rem;
 }
 
-/* ===== Botões (herdam o estilo/fonte do botão Logar) ===== */
+/* Botões: estilo geral */
 .dlg-btn {
-  /* base igual ao botão de Logar */
+  
+  flex: 1 1 0;
+  width: auto;
+
   height: 2.5rem;
-  padding: 0 1rem;                     /* ao invés de width fixa */
+  padding: 0 1rem;                     
   border-radius: calc((5/8)*1rem);
   font-size: 1.75rem;
   font-family: var(--fonte-principal);
   cursor: pointer;
 
-  /* reset cross-browser */
+ 
   border: none;
   outline: none;
   display: inline-flex;
@@ -65,22 +68,32 @@ dialog.dlg::backdrop {
   justify-content: center;
 }
 
+/* se for apenas o botão "Ok */
+.dlg-actions .dlg-btn:only-child {
+  flex: 0 0 auto;    /* não cresce nem encolhe */
+  width: auto;       /* só o tamanho do texto + padding */
+  min-width: 6rem;   /* largura mínima confortável */
+  justify-self: center;
+}
+
 /* Primário (equivalente ao botão Logar) */
 .dlg-btn--primary {
   background: var(--azul-delft);
   color: var(--branco);
+
 }
 
 /* Secundário (mesma família/estilo, versão contornada) */
 .dlg-btn--secondary {
   background: transparent;
   color: var(--vermelho-alaranjado);
-  border: .125rem solid var(--vermelho-alaranjado);
+  border: 0.2rem solid var(--vermelho-alaranjado);
+
 }
 
 /* Interações */
 .dlg-btn--primary:hover { filter: brightness(.92); }
-.dlg-btn--secondary:hover { background: rgba(189, 213, 234, 0.25); } /* leve azul */
+.dlg-btn--secondary:hover { background: var(--azul-colombia), opacity 25%;}
 .dlg-btn:focus-visible {
   outline: .2rem solid var(--vermelho-alaranjado);
   outline-offset: 2px;
@@ -89,16 +102,16 @@ dialog.dlg::backdrop {
 
 /* cores da caixa de diálogo específica do botão cancelar cadastro */
 .dlg--confirm .dlg-actions button[value="cancel"] {
-  background: #1e2a78; /* azul escuro */
-  color: #fff;
-  border: none;
+  background: var(--azul-delft); 
+  color: var(--branco);
+  border: 0.2rem solid var(--azul-delft);
 }
 
 .dlg--confirm .dlg-actions button[value="confirm"] {
 
-  background: #fff;
-  color: #c00;         /* vermelho */
-  border: 2px solid #c00;
+  background: var(--branco);
+  color: var(--vermelho-alaranjado);     
+  border: 0.2rem solid var(--vermelho-alaranjado);
   
 }
 /* ____________________________________________________________ */

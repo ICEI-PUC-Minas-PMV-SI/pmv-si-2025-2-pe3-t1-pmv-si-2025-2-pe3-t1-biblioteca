@@ -54,6 +54,29 @@ export function logarLeitor(usuarioOuEmail, senha) {
     } 
 }
 
+export function logarDireto (usuario, senha){
+
+    let i
+
+    for (i = 0; i < ClasseLeitor.numeroDeLeitores; i++) {
+
+            if (usuario === ClasseLeitor.vetorLeitores[i].usuario) {
+
+            if (senha === ClasseLeitor.vetorLeitores[i].senha) {
+
+                ClasseLeitor.leitorLogado = ClasseLeitor.vetorLeitores[i]
+
+                const usuario = ClasseLeitor.leitorLogado.usuario
+                const primeiroNomeLeitor = ClasseLeitor.leitorLogado.nome
+
+                localStorage.setItem("leitor logado", usuario)
+                localStorage.setItem("nome do leitor logado", primeiroNomeLeitor)
+            }
+        }
+    }
+}
+
+
       
 
 
