@@ -115,4 +115,24 @@ formularioCadastro.addEventListener("submit", function (evento) {
     senhaLeitor,
     repitaSenhaLeitor
   );
+
+    logarDireto(nomeUsuarioLeitor, senhaLeitor)
+
+  const leitorLogado = localStorage.getItem("leitor logado") || ""
+
+  // Verifica se há um usuário logado
+  if (leitorLogado.trim() !== "") {
+    // Seleciona o <span> dentro do botão "Entrar"
+    const rotuloLogin = document.querySelector(".entrar-rotulo span")
+
+    // Substitui o "Entrar" pelo nome de usuário
+    if (rotuloLogin) {
+        rotuloLogin.textContent = leitorLogado 
+    }
+
+    _applyLoginStateNow();
+
+  }
+
 });
+
