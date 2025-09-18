@@ -1,3 +1,12 @@
+* {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
 .checkbox-genero{
     display: none;
 }
@@ -24,4 +33,135 @@ input:focus::placeholder{
 
     opacity: 0;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+body .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    gap: -1rem;
+}
+
+body .logo-container img {
+    width: 15rem;
+    height: 15rem;
+}
+
+body .logo-container h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--azul-delft);
+}
+
+body .formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--azul-delft);
+    color: white;
+    padding: 2rem 2rem;
+    border-radius: 1.53rem;
+    gap: 1rem;
+}
+
+body .formulario-cadastro .quadro-identidade {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 2rem;
+}
+
+body .formulario-cadastro .quadro-identidade h3 {
+    font-size: 1.6rem;
+}
+
+body .formulario-cadastro .quadro-identidade .quadro-identidade-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    width: 100%;
+    row-gap: .5rem;
+}
+
+body .formulario-cadastro .quadro-identidade .quadro-identidade-campos .quadro-identidade_campo {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: 700;
+    gap: .15rem;
+}
+
+body .formulario-cadastro .quadro-identidade .quadro-identidade-campos .quadro-identidade_campo label {
+    padding-left: .1rem;
+}
+
+body .formulario-cadastro .quadro-identidade .quadro-identidade-campos .quadro-identidade_campo input {
+    text-align: start;
+    border-radius: .4rem;
+    height: 2rem;
+    font-size: 1.1rem;
+    outline: invert;
+    padding-left: .5rem;
+}
+
+body .formulario-cadastro .quadro-endereco {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 2rem;
+}
+
+body .formulario-cadastro .quadro-endereco h3 {
+    font-size: 1.6rem;
+}
+
+body .formulario-cadastro .quadro-endereco .quadro-endereco-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    width: 100%;
+    row-gap: .5rem;
+}
+
+body .formulario-cadastro .quadro-endereco .quadro-endereco-campos .quadro-endereco_campo {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: 700;
+    gap: .15rem;
+}
+
+body .formulario-cadastro .quadro-endereco .quadro-endereco-campos .quadro-endereco_campo label {
+    padding-left: .1rem;
+}
+
+body .formulario-cadastro .quadro-endereco .quadro-endereco-campos .quadro-endereco_campo input {
+    text-align: start;
+    border-radius: .4rem;
+    height: 2rem;
+    font-size: 1.1rem;
+    outline: invert;
+    padding-left: .5rem;
+}
+
+body .formulario-cadastro .quadro-endereco .quadro-endereco-campos .quadro-endereco_campo #estado {
+    text-align: start;
+    height: 2rem;
+    border-radius: .4rem;
+    font-size: 1.2rem;
+    color: var(--alcacuz) !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: .5rem;
+}
+
 

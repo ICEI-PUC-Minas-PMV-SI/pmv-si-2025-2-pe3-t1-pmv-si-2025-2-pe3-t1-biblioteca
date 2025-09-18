@@ -1,101 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de cadastro</title>
-    <link rel = "stylesheet" href = "../css-styles/styles.css">
+    <link rel="stylesheet" href="../css-styles/styles.css">
 </head>
+
 <body>
-    
 
-    <form class = "formulario-cadastro">
+    <div class="logo-container">
+        <img src="../img/logotipo_versora.png" alt="Logotipo Versora">
+        <h1>Página de Cadastro</h1>
+    </div>
 
-        <fieldset class = "quadro-identidade">
-            <h3 class = "formulario-cadastro_titulo-quadro">DADOS PESSOAIS</h3>
-            <div class = "quadro-identidade_campo">
+    <form class="formulario-cadastro">
 
-                <label for = "usuario" > Nome de usuário:</label>
-                <input type = "text" name = "usuario" id = "usuario"  placeholder="Digite seu nome de usuário" required>
+        <fieldset class="quadro-identidade">
+            <h3 class="formulario-cadastro_titulo-quadro">DADOS PESSOAIS</h3>
 
-            </div>
-            
-            <div class = "quadro-identidade_campo">
+            <div class="quadro-identidade-campos">
+                <div class="quadro-identidade_campo">
 
-                <label for = "nome" > Nome:</label>
-                <input type = "text" name = "nome" id = "nome" placeholder="Digite seu primeiro nome" required>
+                    <label for="usuario"> Nome de usuário:</label>
+                    <input type="text" name="usuario" id="usuario" placeholder="Digite seu nome de usuário" required>
 
-            </div>
+                </div>
 
-            <div class = "quadro-identidade_campo">
+                <div class="quadro-identidade_campo">
 
-                <label for = "sobrenome" > Sobrenome:</label>
-                <input type = "text" name = "sobrenome" id = "sobrenome" placeholder="Digite seu sobrenome" required>
+                    <label for="nome"> Nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu primeiro nome" required>
 
-            </div>
+                </div>
 
-            <div class = "quadro-identidade_campo">
+                <div class="quadro-identidade_campo">
 
-                <label for = "cpf" > CPF:</label>
-                <input type = "text" name = "cpf" id = "cpf" placeholder="Digite seu CPF" required >
+                    <label for="sobrenome"> Sobrenome:</label>
+                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
 
-            </div>
+                </div>
 
-            <div class = "quadro-identidade_campo">
+                <div class="quadro-identidade_campo">
 
-                <label for = "telefone" > Telefone:</label>
-                <input type = "tel" name = "telefone" id = "telefone" placeholder="Digite seu telefone" required>
+                    <label for="cpf"> CPF:</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" required>
 
-            </div>
+                </div>
 
-            <div class = "quadro-identidade_campo">
+                <div class="quadro-identidade_campo">
 
-                <label for = "email" > E-mail:</label>
-                <input type = "email" name = "email" id = "email" placeholder="Digite seu e-mail" required>
+                    <label for="telefone"> Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
 
+                </div>
+
+                <div class="quadro-identidade_campo">
+
+                    <label for="email"> E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+
+                </div>
             </div>
         </fieldset>
 
-        <fieldset class = "quadro-endereco">
-            <h3 class = "formulario-cadastro_titulo-quadro">ENDEREÇO</h3>
+        <fieldset class="quadro-endereco">
+            <h3 class="formulario-cadastro_titulo-quadro">ENDEREÇO</h3>
 
-            <div class = "quadro-endereco_campo">
+            <div class="quadro-endereco-campos">
+            <div class="quadro-endereco_campo">
 
-                <label for = "cep"> CEP:</label>
-                <input type = "text" name = "cep" id = "cep" placeholder="Digite seu CEP" required>
-
-            </div>
-            <div class = "quadro-endereco_campo">
-
-                <label for = "rua"> Rua:</label>
-                <input type = "text" name = "rua" id = "rua" placeholder="Digite o nome da sua rua"required>
+                <label for="cep"> CEP:</label>
+                <input type="text" name="cep" id="cep" placeholder="Digite seu CEP" required>
 
             </div>
-            <div class = "quadro-endereco_campo">
+            <div class="quadro-endereco_campo">
 
-                <label for = "numero-fachada"> Número:</label>
-                <input type = "text" name = "numero-fachada" id = "numero-fachada" placeholder="Digite o número da casa"required>
-
-            </div>
-            <div class = "quadro-endereco_campo">
-
-                <label for = "bairro"> Bairro:</label>
-                <input type = "text" name = "bairro" id = "bairro" placeholder="Digite seu bairro" required>
+                <label for="rua"> Rua:</label>
+                <input type="text" name="rua" id="rua" placeholder="Digite o nome da sua rua" required>
 
             </div>
-            <div class = "quadro-endereco_campo">
+            <div class="quadro-endereco_campo">
 
-                <label for = "cidade"> Cidade:</label>
-                <input type = "text" name = "cidade" id = "cidade" placeholder="Digite sua cidade" required>
+                <label for="numero-fachada"> Número:</label>
+                <input type="text" name="numero-fachada" id="numero-fachada" placeholder="Digite o número da casa"
+                    required>
 
             </div>
-            <div class = "quadro-endereco_campo">
+            <div class="quadro-endereco_campo">
 
-                <label for = "estado"> Estado:</label>
+                <label for="bairro"> Bairro:</label>
+                <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro" required>
 
-                <select name = "estado" id = "estado">
+            </div>
+            <div class="quadro-endereco_campo">
 
-                    <option value = "" data-default disabled selected>Clique para selecionar</option>
+                <label for="cidade"> Cidade:</label>
+                <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
+
+            </div>
+            
+            <div class="quadro-endereco_campo">
+
+                <label for="estado"> Estado:</label>
+
+                <select name="estado" id="estado">
+
+                    <option value="" data-default disabled selected>Clique para selecionar</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
                     <option value="AP">AP</option>
@@ -125,20 +137,21 @@
                     <option value="TO">TO</option>
                 </select>
 
-            
+
+            </div>
             </div>
 
         </fieldset>
-        <fieldset class = "quadro-generos">
+        <fieldset class="quadro-generos">
 
-            <h3 class = "formulario-cadastro_titulo-quadro">GÊNEROS FAVORITOS</h3>
-            <h4 class = "quadro-generos_orientacao">Selecione até três opções:</h4>
+            <h3 class="formulario-cadastro_titulo-quadro">GÊNEROS FAVORITOS</h3>
+            <h4 class="quadro-generos_orientacao">Selecione até três opções:</h4>
 
-            <div class = "quadro-generos_campo">
+            <div class="quadro-generos_campo">
 
-                <input type = "checkbox" class = "checkbox-genero" id= "checkbox-genero-1">
-                <label class = "rotulo-genero" for = "checkbox-genero-1">
-                    <a class = "ancora-genero" id = "ancora-genero-1">Divulgação científica</a>
+                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-1">
+                <label class="rotulo-genero" for="checkbox-genero-1">
+                    <a class="ancora-genero" id="ancora-genero-1">Divulgação científica</a>
                 </label>
                 <input type="checkbox" class="checkbox-genero" id="checkbox-genero-2">
                 <label class="rotulo-genero" for="checkbox-genero-2">
@@ -169,35 +182,36 @@
             </div>
         </fieldset>
 
-        <fieldset class = "quadro-senha">
+        <fieldset class="quadro-senha">
 
-            <h3 class = "formulario-cadastro_titulo-quadro">CREDENCIAIS</h3>
-            <div class = "quadro-senha_campo">
+            <h3 class="formulario-cadastro_titulo-quadro">CREDENCIAIS</h3>
+            <div class="quadro-senha_campo">
 
-                <label for = "senha"> Senha:</label>
-                <input type = "password" name = "senha" id = "senha" placeholder="Digite a senha desejada">
+                <label for="senha"> Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite a senha desejada">
 
             </div>
 
-            <div class = "quadro-senha_campo">
+            <div class="quadro-senha_campo">
 
-                <label for = "repita-senha"> Repita sua senha:</label>
-                <input type = "password" name = "repita-senha" id = "repita-senha" placeholder="Digite a senha novamente"required>
+                <label for="repita-senha"> Repita sua senha:</label>
+                <input type="password" name="repita-senha" id="repita-senha" placeholder="Digite a senha novamente"
+                    required>
 
             </div>
         </fieldset>
-    
-        <div class = "formulario-cadastro_botoes">
 
-            <button type = "reset" id = "botao-cancelar"> Cancelar </button>
-            <button type = "submit" id = "botao-cadastrar"> Cadastrar </button>
+        <div class="formulario-cadastro_botoes">
+
+            <button type="reset" id="botao-cancelar"> Cancelar </button>
+            <button type="submit" id="botao-cadastrar"> Cadastrar </button>
 
         </div>
     </form>
 
     <script src="../js-scripts/limite-generos.js" type="module"></script>
-    <script src = "../js-scripts/cadastro.js" type = "module"></script>
-    
+    <script src="../js-scripts/cadastro.js" type="module"></script>
+
 </body>
+
 </html>
-        
