@@ -37,17 +37,18 @@ Proporcionar uma experiência de compra de ingressos e snacks de cinema ágil, t
 
 ### 3.3.1 Requisitos Funcionais
 
-| Código | Requisito Funcional          | Descrição                                                                                                  |
-| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------  |
-| RF1    | Selecionar Sessão            | Permitir ao cliente escolher um filme e um horário para adquirir o seu ingresso.                           |
-| RF2    | Selecionar Poltrona          | Permitir ao cliente escolher em um mapa da sala o seu assento, indicando em tempo real os ocupados.        |
-| RF3    | Visualizar Ingresso          | Permitir ao cliente visualizar o ingresso após realizar o pagamento até o horário do filme.                |
-| RF4    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.         |
-| RF5    | Gerenciar Meios de Pagamento | Permitir ao cliente cadastrar, visualizar, alterar e remover formas de pagamento (como cartões de crédito).|
-| RF6    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta no app.                             |
+| Código | Requisito Funcional          | Descrição                                                                                                        |
+| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------        |
+| RF1    | Compra de ingressos          | Permitir ao cliente selecionar o filme, o horário e o assento e visualizar o ingresso após realizar o pagamento. |
+| RF2    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.         |
+| RF3    | Gerenciar Meios de Pagamento | Permitir ao estabelecimento cadastrar, visualizar, alterar e remover formas de pagamento.|                             
+| RF4    | Selecionar forma de pagamento| Permitir que o usuário salve seus meios de pagamento na plataforma e escolha qual utilizar ao realizar a compra do ingresso. |
+| RF5    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta no app.                                               |
+| RF6    | Acessar conta                | Permitir que o usuário autentique-se na plataforma e encerre sua sessão para acessar sua conta e realizar a compra de ingressos. |
 | RF7    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.             |
 | RF8    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                |
-| RF9    | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.          |
+| RF9    | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.          ||
+
 
 ### 3.3.2 Requisitos Não Funcionais
 
