@@ -92,23 +92,34 @@ Pré-condições: O leitor deve estar cadastrado e deve ser validado pelo Sistem
 
 Fluxo Principal:
 
-1) 	O leitor acessa a página de cadastro.
-2) 	O leitor preenche o formulário de cadastro incluindo dados pessoais, dados de contato, senha e gêneros favoritos.
-3) 	O sistema confirma o cadastro e insere as informações no banco de dados.
+1)  O sistema apresenta as operações que podem ser realizadas: inclusão de um novo leitor, consulta dos dados de um leitor, alteração dos dados de um leitor e exclusão de um leitor.
+2) 	O leitor seleciona a operação desejada: inclusão, consulta, alteração, exclusão ou opta por encerrar o caso de uso.
+3)  Se o leitor deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O leitor requisita sua inclusão no sistema.
+b) O sistema apresenta a página de cadastro.
+c) O leitor preenche os campos solicitados.
+d) O sistema verifica se o leitor já possui cadastro. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados. Em caso negativo, o sistema prossegue para o próximo passo.
+e) O sistema inclui o novo leitor e atualiza o banco de dados com o novo cadastro.
 
 Fluxo Alternativo (2): Consulta
 
-a)	O leitor acessa seu perfil de usuário e consulta seus próprios dados. <br>
-
+a) O leitor requisita a consulta de seus dados no sistema.
+b) O sistema apresenta a página de perfil.
+c) O leitor confere os dados solicitados.
 
 Fluxo Alternativo (2): Alteração
 
-a) O leitor acessa o formulário de edição de dados e altera os campos que julgar necessário.
-b) O sistema confirma a alteração dos campos e atualiza o banco de dados.
+a) O leitor requisita a edição de seus dados no sistema.
+b) O sistema apresenta o formulário de edição de dados.
+c) O leitor altera os dados que julgar necessário e requisita sua atualização.
+d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
 
 Fluxo Alternativo (2): Exclusão
 
-a)	O leitor acessa seu perfil e solicita a exclusão de sua conta de usuário.
+a)	O leitor solicita a exclusão de sua conta de usuário.
 b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
  
 Pós-condições: um leitor foi cadastrado no sistema, seus dados foram exibidos ou alterados ou sua conta foi excluída do sistema.
