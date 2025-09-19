@@ -316,3 +316,13 @@ body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+#botao-cadastrar:hover{
+
+    opacity: 90%;
+}
+
+ #botao-cancelar:hover{
+
+    filter: brightness(1.2);
+}

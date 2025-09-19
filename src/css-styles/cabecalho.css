@@ -51,3 +51,8 @@ body header nav .login_container label {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.entrar-rotulo:hover{
+
+    opacity: 90%;
+}

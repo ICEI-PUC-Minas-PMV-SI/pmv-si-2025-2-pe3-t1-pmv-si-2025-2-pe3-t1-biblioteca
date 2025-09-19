@@ -11,7 +11,7 @@
 }
 .menu_login{
 
-        display: flex;
+    display: flex;
     gap: 1rem;
 
     /* controle do aparecimento/desaparecimento */
@@ -173,8 +173,6 @@ body .search_container {
     justify-content: space-between;
     align-items: stretch;         /* garante mesma altura */
     min-width:0;
-    
-    
 }
 
 .container_campos_usuario{
@@ -183,7 +181,6 @@ body .search_container {
     flex-direction: column;
     gap: 0.25rem;
     text-align: left;
-
 }
 
 .container_campos_senha{
@@ -229,14 +226,34 @@ body .search_container {
     cursor: pointer;
 }
 
+.menu_login button:hover{
+
+    opacity: 90%;
+}
+
 .esqueci_senha, .cadastre-se{
 
     font-size: 1rem;
 }
 
+.esqueci_senha{
+
+    line-height: 100%;
+}
+
+.esqueci_senha:hover{
+
+    filter: brightness(1.2);
+}
+
 .cadastre-se{
 
     text-align: center;
+}
+
+.cadastre-se:hover{
+
+    filter:brightness(1.2);
 }
 .ancora_cadastre-se{
 
@@ -246,8 +263,9 @@ body .search_container {
 .container_rotulo_senha{
 
     display: flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content: space-between;
+    gap: 0.75rem;
    
 }
 

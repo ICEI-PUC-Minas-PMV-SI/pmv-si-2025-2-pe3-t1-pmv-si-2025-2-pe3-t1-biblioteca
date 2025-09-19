@@ -9,7 +9,7 @@ dialog.dlg {
   border: solid 0.2rem var(--alcacuz);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
-  width: 65vw;
+  width: 50vw;
   box-shadow: 0 24px 60px var(--alcacuz/0.8);
   text-align: center;                 
   font-family: var(--fonte-principal);
@@ -55,7 +55,7 @@ dialog.dlg::backdrop {
   height: 2.5rem;
   padding: 0 1rem;                     
   border-radius: calc((5/8)*1rem);
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-family: var(--fonte-principal);
   cursor: pointer;
 
@@ -91,8 +91,8 @@ dialog.dlg::backdrop {
 }
 
 /* Interações */
-.dlg-btn--primary:hover { filter: brightness(.92); }
-.dlg-btn--secondary:hover { background: var(--azul-colombia), opacity 25%;}
+.dlg-btn--primary:hover { opacity: 90%; }
+.dlg-btn--secondary:hover { opacity: 90%;}
 .dlg-btn:focus-visible {
   outline: .2rem solid var(--vermelho-alaranjado);
   outline-offset: 2px;
@@ -106,6 +106,12 @@ dialog.dlg::backdrop {
   border: 0.2rem solid var(--azul-delft);
 }
 
+.dlg--confirm .dlg-actions button[value="confirm"]:hover {
+
+  filter: brightness(1.2);
+
+}
+
 .dlg--confirm .dlg-actions button[value="confirm"] {
 
   background: var(--branco);
@@ -114,3 +120,10 @@ dialog.dlg::backdrop {
   
 }
 /* ____________________________________________________________ */
+
+/* Modificando especificamente o hover do botão de cancelar logout */
+
+.dlg-btn--secondary:hover{
+
+  filter:brightness(1.2);
+}
