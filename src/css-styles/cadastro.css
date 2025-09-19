@@ -40,15 +40,16 @@ body .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: -2rem;
 }
 
 body .logo-container img {
-    width: 15rem;
-    height: 15rem;
+    width: 18rem;
+    height: 18rem;
 }
 
 body .logo-container h1 {
+    margin-top: -4rem;
     font-weight: 700;
     font-size: 3rem;
     color: var(--azul-delft);
@@ -63,6 +64,7 @@ body .formulario-cadastro {
     border-radius: 1.53rem;
     gap: 1rem;
     width: 60%;
+    margin-bottom: 6rem;
 }
 
 body .formulario-cadastro option{
@@ -276,4 +278,41 @@ body .formulario-cadastro .quadro-senha .quadro-senha_campos .quadro-senha_campo
     outline: invert;
     padding-left: .5rem;
     width: 100%;
+}
+
+body .formulario-cadastro .formulario-cadastro_botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+    border-radius: .4rem;
+    padding: .8rem;
+}
+
+body .formulario-cadastro .formulario-cadastro_botoes #botao-cancelar {
+    background-color: var(--vermelho-alaranjado);
+    border-radius: .4rem;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem .5rem;
+    color: #fff;
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
+    background-color: var(--azul-delft);
+    border-radius: .4rem;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem .5rem;
+    color: #fff;
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
