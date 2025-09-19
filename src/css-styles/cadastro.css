@@ -319,7 +319,7 @@ body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
 
 #botao-cadastrar:hover{
 
-    opacity: 90%;
+    filter: brightness(1.2);
 }
 
  #botao-cancelar:hover{

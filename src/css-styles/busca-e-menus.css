@@ -228,7 +228,7 @@ body .search_container {
 
 .menu_login button:hover{
 
-    opacity: 90%;
+    filter: brightness(1.2);
 }
 
 .esqueci_senha, .cadastre-se{

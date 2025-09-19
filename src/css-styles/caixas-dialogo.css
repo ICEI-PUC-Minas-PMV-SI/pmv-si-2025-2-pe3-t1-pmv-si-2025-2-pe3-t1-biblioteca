@@ -91,8 +91,8 @@ dialog.dlg::backdrop {
 }
 
 /* Interações */
-.dlg-btn--primary:hover { opacity: 90%; }
-.dlg-btn--secondary:hover { opacity: 90%;}
+.dlg-btn--primary:hover { filter: brightness(1.2); }
+.dlg-btn--secondary:hover { filter: brightness(1.2);}
 .dlg-btn:focus-visible {
   outline: .2rem solid var(--vermelho-alaranjado);
   outline-offset: 2px;

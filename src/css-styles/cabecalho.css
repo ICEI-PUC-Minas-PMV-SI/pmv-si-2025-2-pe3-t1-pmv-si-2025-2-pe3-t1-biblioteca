@@ -54,5 +54,5 @@ body header nav .login_container label {
 
 .entrar-rotulo:hover{
 
-    opacity: 90%;
+    filter: brightness(1.2);
 }
