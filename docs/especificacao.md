@@ -75,7 +75,8 @@ Como observado no diagrama de casos de uso da Figura 1, a secretária poderá ge
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-<img width="1009" height="2472" alt="image" src="https://github.com/user-attachments/assets/5def3ad7-fe46-4e1d-9ef3-b6cebe32c1d1" />
+<img width="1009" height="2472" alt="image" src="![Imagem do WhatsApp de 2025-09-18 à(s) 21 15 44_f249e9f0](https://github.com/user-attachments/assets/6e80301e-208a-4f4c-a3bc-3d7a4e484a9f)
+" />
 
 ### 3.4.2 Descrições de Casos de Uso
 
