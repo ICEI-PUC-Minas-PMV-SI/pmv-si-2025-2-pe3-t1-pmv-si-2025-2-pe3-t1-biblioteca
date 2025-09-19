@@ -37,18 +37,18 @@ Proporcionar uma experiência de compra de ingressos e snacks de cinema ágil, t
 
 ### 3.3.1 Requisitos Funcionais
 
-| Código | Requisito Funcional          | Descrição                                                                                                        |
-| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------        |
-| RF1    | Compra de ingressos          | Permitir ao cliente selecionar o filme, o horário e o assento e visualizar o ingresso após realizar o pagamento. |
-| RF2    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.         |
-| RF3    | Gerenciar Meios de Pagamento | Permitir ao estabelecimento cadastrar, visualizar, alterar e remover formas de pagamento.|                             
-| RF4    | Selecionar forma de pagamento| Permitir que o usuário salve seus meios de pagamento na plataforma e escolha qual utilizar ao realizar a compra do ingresso. |
-| RF5    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta no app.                                               |
+| Código | Requisito Funcional          | Descrição                                                                                                                        |
+| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------                        |
+| RF1    | Compra de ingressos          | Permitir ao cliente selecionar o filme, o horário e o assento e visualizar o ingresso após realizar o pagamento.                 |
+| RF2    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.                               |
+| RF3    | Gerenciar Meios de Pagamento | Permitir ao estabelecimento cadastrar, visualizar, alterar e remover formas de pagamento.                                        |                             
+| RF4    | Selecionar forma de pagamento| Permitir que o usuário salve seus meios de pagamento na plataforma e escolha qual utilizar ao realizar a compra do ingresso.     |
+| RF5    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta na aplicação.                                             |
 | RF6    | Acessar conta                | Permitir que o usuário autentique-se na plataforma e encerre sua sessão para acessar sua conta e realizar a compra de ingressos. |
-| RF7    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.             |
-| RF8    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                |
-| RF9    | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.          ||
-
+| RF7    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.                                   |
+| RF8    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                                      |
+| RF9    | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.                                |
+| RF10   | Gerenciar Filmes             | Permitir ao gestor de conteúdos  cadastrar, visualizar, alterar e remover os filmes em cartaz.                                   |
 
 ### 3.3.2 Requisitos Não Funcionais
 
@@ -64,67 +64,171 @@ Proporcionar uma experiência de compra de ingressos e snacks de cinema ágil, t
 
 | Ator | Descrição |
 |--------------------|------------------------------------|
-| Coordenador |	Usuário gerente do sistema responsável pelo cadastro e manutenção de cursos de aperfeiçoamento. Possui acesso geral ao sistema. |
-| Secretaria |	Usuário responsável por registros de alunos, professores, turmas e gerência de matrículas. |
-| ... |	... |	... |
+| Gestor de Conteúdo |	Usuário gerente do sistema responsável pelo cadastro, edição e remoção dos filmes exibidos pelo cinema. |
+| Administrador de sistema |	Usuário responsável por criar contas de gestores eoperadores, definir papéis e acessos e gerenciar integrações |
+| Cliente |	Usuário responsável por escolher filme, sessão, poltrona, fazer o pagamento, receber e apresentar ingresso digital, consultar histórico de compras e promoções. |
 
 ## 3.4 Modelagem do Sistema
 
 ### 3.4.1 Diagrama de Casos de Uso
-Como observado no diagrama de casos de uso da Figura 1, a secretária poderá gerenciar as matrículas e professores no sistema, enquanto o coordenador, além dessas funções, poderá gerenciar os cursos de aperfeiçoamento.
+Como mostrado no diagrama da Figura 1, o Cliente poderá navegar pelos filmes, selecionar sessões, escolher poltronas e efetuar a compra de ingressos. O Administrador de Cinema será responsável por gerenciar filmes, sessões e salas, enquanto o Atendente poderá validar ingressos e auxiliar clientes. O Administrador do Sistema gerencia permissões e configurações gerais da plataforma.
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-![dcu](https://github.com/user-attachments/assets/41f6b731-b44e-43aa-911f-423ad6198f47)
+![dcu](https://github.com/user-attachments/assets/41f6b731-b44e-43aa-911f-423ad6198f47) (substituir imagem)
  
 ### 3.4.2 Descrições de Casos de Uso
 
-Cada caso de uso deve ter a sua descrição representada nesta seção. Exemplo:
+#### Navegar Filmes (CSU01)
 
-#### Gerenciar Professor (CSU01)
+Sumário: O Cliente visualiza a lista de filmes em cartaz, com detalhes como sinopse, horários e classificação indicativa.
 
-Sumário: A Secretária realiza a gestão (inclusão, remoção, alteração e consulta) dos dados sobre professores.
+Ator Primário: Cliente.
 
-Ator Primário: Secretária.
+Ator Secundário: —
 
-Ator Secundário: Coordenador.
+Pré-condições: O sistema deve estar acessível.
 
-Pré-condições: A Secretária deve ser validada pelo Sistema.
+- Fluxo Principal:
 
-Fluxo Principal:
+1) O Cliente acessa a página inicial. <br>
+2) O Sistema exibe a lista de filmes. <br>
+3) O Cliente pode visualizar detalhes de um filme específico. <br>
 
-1) 	A Secretária requisita manutenção de professores.
-2) 	O Sistema apresenta as operações que podem ser realizadas: inclusão de um novo professor, alteração de um professor, a exclusão de um professor e a consulta de dados de um professor.
-3) 	A Secretária seleciona a operação desejada: Inclusão, Exclusão, Alteração ou Consulta, ou opta por finalizar o caso de uso.
-4) 	Se a Secretária desejar continuar com a gestão de professores, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+#### Escolher Sessão e Poltrona (CSU02)
 
-Fluxo Alternativo (3): Inclusão
+Sumário: O Cliente seleciona a sessão e poltrona desejadas para o filme escolhido.
 
-a)	A Secretária requisita a inclusão de um professor. <br>
-b)	O Sistema apresenta uma janela solicitando o CPF do professor a ser cadastrado. <br>
-c)	A Secretária fornece o dado solicitado. <br>
-d)	O Sistema verifica se o professor já está cadastrado. Se sim, o Sistema reporta o fato e volta ao início; caso contrário, apresenta um formulário em branco para que os detalhes do professor (Código, Nome, Endereço, CEP, Estado, Cidade, Bairro, Telefone, Identidade, Sexo, Fax, CPF, Data do Cadastro e Observação) sejam incluídos. <br>
-e)	A Secretária fornece os detalhes do novo professor. <br>
-f)	O Sistema verifica a validade dos dados. Se os dados forem válidos, inclui o novo professor e a grade listando os professores cadastrados é atualizada; caso contrário, o Sistema reporta o fato, solicita novos dados e repete a verificação. <br>
+Ator Primário: Cliente.
 
-Fluxo Alternativo (3): Remoção
+Pré-condições: O Cliente já navegou pelos filmes.
 
-a)	A Secretária seleciona um professor e requisita ao Sistema que o remova. <br>
-b)	Se o professor pode ser removido, o Sistema realiza a remoção; caso contrário, o Sistema reporta o fato. <br>
+- Fluxo Principal:
 
-Fluxo Alternativo (3): Alteração
+1) O Cliente escolhe o filme e a data.
+2) O Sistema apresenta as sessões disponíveis.
+3) O Cliente seleciona horário e poltrona.
 
-a)	A Secretária altera um ou mais dos detalhes do professor e requisita sua atualização. <br>
-b)	O Sistema verifica a validade dos dados e, se eles forem válidos, altera os dados na lista de professores, caso contrário, o erro é reportado. <br>
- 
-Fluxo Alternativo (3): Consulta
+Fluxo Alternativo (3): Seleção de Poltrona Ocupada
 
-a)	A Secretária opta por pesquisar pelo nome ou código e solicita a consulta sobre a lista de professores. <br>
-b)	O Sistema apresenta uma lista professores. <br>
-c)	A Secretária seleciona o professor. <br>
-d)	O Sistema apresenta os detalhes do professor no formulário de professores. <br>
+a) O Cliente seleciona uma poltrona que já foi reservada.
+b) O Sistema reporta o fato e destaca a poltrona como indisponível.
+c) O Sistema solicita que o Cliente escolha outra poltrona.
+d) O Cliente seleciona uma nova poltrona disponível.
+e) O Sistema confirma a reserva temporária.
 
-Pós-condições: Um professor foi inserido ou removido, seus dados foram alterados ou apresentados na tela.
+Fluxo Alternativo (4): Sessão Esgotada
+
+a) O Cliente seleciona uma sessão que atingiu a capacidade máxima.
+b) O Sistema reporta o fato.
+c) O Sistema apresenta uma lista de sessões alternativas para o mesmo filme.
+
+Pós-condições
+
+Uma poltrona válida foi selecionada ou outra sessão foi escolhida.
+
+#### Comprar Ingresso (CSU03)
+
+Sumário: O Cliente efetua o pagamento e conclui a compra do ingresso.
+
+Ator Primário: Cliente.
+
+Ator Secundário: Administrador de Cinema (recebe relatório de vendas).
+
+Pré-condições: O Cliente selecionou sessão e poltrona.
+
+- Fluxo Principal:
+
+1) O Cliente confirma a seleção.
+2) O Sistema exibe formas de pagamento.
+3) O Cliente insere os dados e confirma.
+4) O Sistema valida o pagamento e envia o ingresso digital.
+
+Fluxo Alternativo (3): Pagamento Recusado
+
+a) O Cliente escolhe a forma de pagamento e insere os dados.
+b) O Sistema envia a solicitação ao provedor de pagamento.
+c) O Provedor retorna recusa da transação.
+d) O Sistema reporta o fato e oferece opções para tentar outro método de pagamento ou corrigir os dados.
+
+Fluxo Alternativo (4): Conexão Perdida Durante Pagamento
+
+a) O Cliente confirma a compra.
+b) A conexão é perdida antes de finalizar o pagamento.
+c) O Sistema salva temporariamente a reserva.
+d) Quando o Cliente retornar, o Sistema solicita retomada do processo de pagamento.
+
+Pós-condições
+
+O pagamento foi concluído ou o Cliente foi instruído a tentar novamente.
+
+#### Gerenciar Filmes (CSU04)
+
+Sumário: O Administrador de Cinema adiciona, altera ou remove filmes do catálogo.
+
+Ator Primário: Administrador de Cinema.
+
+Ator Secundário: Administrador do Sistema (suporte em caso de falhas).
+
+Pré-condições: Administrador autenticado.
+
+- Fluxo Principal:
+
+1) O Administrador acessa o painel de controle.
+2) O Sistema exibe opções de gerenciamento.
+3) O Administrador cadastra, edita ou remove filmes.
+
+Fluxo Alternativo (3): Inclusão de Filme
+
+a) O Administrador de Cinema requisita a inclusão de um novo filme.
+b) O Sistema solicita informações obrigatórias (Título, Gênero, Classificação, Duração, Sinopse, Data de Início e Fim).
+c) O Administrador fornece os dados.
+d) O Sistema verifica a validade das informações.
+e) Se válidas, o filme é incluído e a lista de filmes é atualizada; caso contrário, o Sistema reporta o fato e solicita correção.
+
+Fluxo Alternativo (4): Remoção de Filme
+
+a) O Administrador seleciona um filme e solicita sua remoção.
+b) Se não houver sessões futuras vinculadas, o Sistema remove o filme.
+c) Caso contrário, o Sistema reporta o fato e bloqueia a remoção.
+
+Fluxo Alternativo (5): Alteração de Filme
+
+a) O Administrador altera um ou mais dados do filme e confirma a alteração.
+b) O Sistema verifica a validade dos dados.
+c) Se válidos, atualiza o registro; caso contrário, reporta o erro.
+
+Pós-condições
+
+Um filme foi adicionado, removido ou atualizado.
+
+#### Gerenciar Sessões e Salas (CSU05)
+
+Sumário: O Administrador de Cinema define horários de sessões e a disponibilidade de salas.
+
+Ator Primário: Administrador de Cinema.
+
+Pré-condições: Administrador autenticado.
+
+- Fluxo Principal:
+
+1) O Administrador seleciona um filme cadastrado.
+2) O Sistema apresenta as salas disponíveis.
+3) O Administrador define o horário e salva a sessão.
+
+#### Gerenciar Usuários e Permissões (CSU06)
+
+Sumário: O Administrador do Sistema cria e gerencia contas de administradores e atendentes.
+
+Ator Primário: Administrador do Sistema.
+
+Pré-condições: Acesso autorizado ao painel administrativo.
+
+- Fluxo Principal:
+
+1) O Administrador acessa o painel de usuários.
+2) O Sistema exibe a lista de contas.
+3) O Administrador cria, edita ou remove contas e define permissões.
 
 ### 3.4.3 Diagrama de Classes 
 
