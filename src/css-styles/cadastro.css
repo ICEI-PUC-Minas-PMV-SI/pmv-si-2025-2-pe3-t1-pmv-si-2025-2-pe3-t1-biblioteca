@@ -326,3 +326,5 @@ body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
 
     filter: brightness(1.2);
 }
+
+#telefone { font-variant-numeric: tabular-nums; } /* dígitos com largura uniforme */

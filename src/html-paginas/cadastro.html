@@ -45,14 +45,17 @@
                 <div class="quadro-identidade_campo">
 
                     <label for="cpf"> CPF:</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF (apenas números)" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
+                    title="Use o formato 999.888.777-33" inputmode="numeric"
+                    autocomplete="off"required>
 
                 </div>
 
                 <div class="quadro-identidade_campo">
 
                     <label for="telefone"> Telefone:</label>
-                    <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
+                    <input type="tel" inputmode = "numeric" autocomplete = "tel" name="telefone" id="telefone" placeholder="Digite seu telefone (apenas números)" pattern="^\(\d{2}\) \d{5}-\d{4}$"
+                    title="Use o formato (DD) 9XXXX-XXXX"required>
 
                 </div>
 
@@ -72,7 +75,9 @@
                 <div class="quadro-endereco_campo">
 
                     <label for="cep"> CEP:</label>
-                    <input type="text" name="cep" id="cep" placeholder="Digite seu CEP" required>
+                    <input type="text" name="cep" id="cep" placeholder="Digite seu CEP (apenas números)" inputmode="numeric"
+                    autocomplete="postal-code"pattern="^\d{5}-\d{3}$"
+                    title="Use o formato 33000-000"required>
 
                 </div>
                 <div class="quadro-endereco_campo">
@@ -225,6 +230,7 @@
 
     <script src="../js-scripts/limite-generos.js" type="module"></script>
     <script src="../js-scripts/cadastro.js" type="module"></script>
+    <script src = "../js-scripts/mascaras.js" type = "module"></script>
   
 
 </body>
