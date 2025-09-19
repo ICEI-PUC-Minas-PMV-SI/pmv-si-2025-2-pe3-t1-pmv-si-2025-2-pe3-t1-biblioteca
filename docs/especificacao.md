@@ -43,6 +43,8 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RF010  | Gerenciar lista de favoritos         | Permitir favoritar livros, consultar lista de favoritos e remover livros da lista                                           |
 | RF011  | Gerenciar livros selecionados        | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
 | RF012  | Gerenciar avaliações                 | Permitir atribuição de nota de 1 a 5 a livros reservados e exibir a média das notas por livro. Exibir histórico de comentários, incluir e deletar comentários   |
+| RF013  | Gerenciar empréstimos                | Permitir inclusão, finalização e prolongamento de empréstimos |
+| RF014  | Gerenciar recomendações              | Recomendar livros, gêneros e autores |
 
 
 ### 3.3.2 Requisitos Não Funcionais
