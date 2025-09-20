@@ -2,7 +2,7 @@ export class ClasseAutor{
 
     // aqui estão atributos estáticos, que pertencem à classe como um todo e não a objetos específicos
     static vetorAutores = JSON.parse(localStorage.getItem("lista de autores")) || []
-    static numeroDeAutores
+    static numeroDeAutores = ClasseAutor.vetorAutores.length
 
     // aqui estão atributos específicos de cada objeto da classe (cada autor específico)
     id

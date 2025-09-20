@@ -2,7 +2,7 @@ export class ClasseLeitor {
 
     // aqui estão atributos estáticos, que pertencem à classe como um todo e não a objetos específicos
     static vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || []
-    static numeroDeLeitores
+    static numeroDeLeitores = ClasseLeitor.vetorLeitores.length
     //recebe o nome de usuário do leitor logado no ato de login
     static leitorLogado
 
@@ -21,6 +21,9 @@ export class ClasseLeitor {
     cidade
     estado
     meusGeneros = []
+    minhasReservas = []
+    meusFavoritos = []
+    minhaSelecao = []
     senha
     
     // contrutor de objetos leitor

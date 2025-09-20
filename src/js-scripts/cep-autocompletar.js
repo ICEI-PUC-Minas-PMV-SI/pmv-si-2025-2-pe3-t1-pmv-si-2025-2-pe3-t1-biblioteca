@@ -1,4 +1,4 @@
-import { showValidateFixSync } from "../js-funcoes/funcoes-de-dialogo.js";
+import { showValidateFixSync } from "../js-funcoes/funcoes-de-dialogo.js"
 
 // ---------- Config ----------
 const IDS_CEP = {

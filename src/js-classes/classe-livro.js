@@ -2,7 +2,7 @@ export class ClasseLivro{
 
     // aqui estão atributos estáticos, que pertencem à classe como um todo e não a objetos específicos
     static vetorLivros = JSON.parse(localStorage.getItem("lista de livros")) || []
-    static numeroDeLivros
+    static numeroDeLivros = ClasseLivro.vetorLivros.length
     //conta o número de títulos distintos (um título pode ter mais de um exemplar)
     static numeroTitulos = 0
 

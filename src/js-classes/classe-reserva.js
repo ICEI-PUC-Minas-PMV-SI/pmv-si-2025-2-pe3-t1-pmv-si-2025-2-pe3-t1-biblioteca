@@ -2,7 +2,7 @@ export class ClasseReserva{
 
      // aqui estão atributos estáticos, que pertencem à classe como um todo e não a objetos específicos
     static vetorReservas = JSON.parse(localStorage.getItem("lista de reservas")) || []
-    static numeroDeReservas
+    static numeroDeReservas = ClasseReserva.vetorReservas.length
 
     // aqui estão atributos específicos de cada objeto da classe (cada livro específico)
     idReserva
