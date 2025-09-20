@@ -3,7 +3,7 @@ import { logarDireto } from "../js-funcoes/funcao-logar.js"
 import { _applyLoginStateNow } from "./login-persistencia.js";
 import { ClasseLeitor } from "../js-classes/classe-leitor.js";
 
-let vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || ""
+let vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || []
 
 let indiceEncontrado 
 
@@ -81,65 +81,69 @@ function init() {
   otpBox?.addEventListener("animationend", () => otpBox.classList.remove("otp--erro"));
 
   // ===== Etapa 1 -> 2 =====
-btnEnviar?.addEventListener("click", () => {
-  const email = (inputEmail?.value || "").trim();
+  btnEnviar?.addEventListener("click", () => {
+    const email = (inputEmail?.value || "").trim();
 
-  if (!email) {
-    showAlertSync(
-      { title: "Atenção", message: "Informe o e-mail para prosseguir." },
-      () => {
-        inputEmail?.focus();
-      }
-    );
-    return;
-  } 
-
-    let existeEmail = false
-    
-    let i
-
-    for (i = 0; i < vetorLeitores.length; i++) {
-      if (email === vetorLeitores[i].email) {
-       
-        existeEmail = true
-        indiceEncontrado = i
-
-      } else {
-
-        showValidateFixSync(
-          {
-            title: "E-mail não encontrado",
-            message: "O e-mail inserido não consta em nossa base de dados.",
-            cancelText: "Cancelar procedimento",
-            continueText: "Corrigir o e-mail",
-          },
-          (ok) => {
-  
-            if (ok) {
-              inputEmail?.focus()
-              
-            } else {
-              // Cancelar → redireciona pro index
-              window.location.href = "../../index.html";
-              
-            }
-          }
-        );
-      }
-    }
-
-    if(existeEmail){
-      blurNow(btnEnviar);
-
+    if (!email) {
       showAlertSync(
-        { title: "Código enviado", message: "Enviamos um código de 6 dígitos para seu e-mail." },
+        { title: "Atenção", message: "Informe o e-mail para prosseguir." },
         () => {
-          showStep(2);
-          blurNow(document.activeElement);
-          focusOtpFirstAggressive();
+          inputEmail?.focus();
         }
       );
+      return;
+    } 
+
+  let existeEmail = false
+  
+  let i
+
+  for (i = 0; i < vetorLeitores.length; i++) {
+    if (email === vetorLeitores[i].email) {
+      
+      existeEmail = true
+      indiceEncontrado = i
+
+    } else {
+      //não faz nada
     }
+  }
+
+  if(!existeEmail){
+
+    showValidateFixSync(
+        {
+          title: "E-mail não encontrado",
+          message: "O e-mail inserido não consta em nossa base de dados.",
+          cancelText: "Cancelar procedimento",
+          continueText: "Corrigir o e-mail",
+        },
+        (ok) => {
+
+          if (ok) {
+            inputEmail?.focus()
+            
+          } else {
+            // Cancelar → redireciona pro index
+            window.location.href = "../../index.html";
+            
+          }
+        }
+      );
+  }
+
+  if(existeEmail){
+    blurNow(btnEnviar);
+
+    showAlertSync(
+      { title: "Código enviado", message: "Enviamos um código de 6 dígitos para seu e-mail." },
+      () => {
+        showStep(2);
+        blurNow(document.activeElement);
+        focusOtpFirstAggressive();
+      }
+    );
+  }
   
 });
 

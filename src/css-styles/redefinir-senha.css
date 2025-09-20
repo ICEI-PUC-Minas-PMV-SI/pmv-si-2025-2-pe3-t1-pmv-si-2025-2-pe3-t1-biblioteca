@@ -134,7 +134,7 @@
   border-bottom-color: var(--alcacuz / 0.45);
 }
 
-/* -------- Estados e animação (shake) -------- */
+/* -------- Estados e animação do "shake" */
 @keyframes otp-shake {
   10%, 90% { transform: translateX(-1px); }
   20%, 80% { transform: translateX(2px); }
