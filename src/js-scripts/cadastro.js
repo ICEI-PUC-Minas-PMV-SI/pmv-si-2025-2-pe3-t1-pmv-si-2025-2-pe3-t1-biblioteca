@@ -3,8 +3,23 @@ import { cadastrarLeitor } from "../js-funcoes/funcao-cadastrar.js"
 import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js"
 import { logarDireto } from "../js-funcoes/funcao-logar.js"
 import { _applyLoginStateNow } from "./login-persistencia.js"
+import { initViaCEPAutofill } from "../js-scripts/cep-autocompletar.js"
+
 
 const formularioCadastro = document.querySelector(".formulario-cadastro")
+
+// Inicializa o autofill do ViaCEP (escuta blur e input=8 dígitos)
+document.addEventListener("DOMContentLoaded", () => {
+  initViaCEPAutofill({
+    cep: "cep",
+    rua: "rua",
+    numero: "numero-fachada", // seu ID real tem hífen; mapeamos aqui
+    bairro: "bairro",
+    cidade: "cidade",
+    estado: "estado",
+  });
+});
+
 
 // === CANCELAR CADASTRO (fora do submit, com showConfirmSync boolean) ===
 const botaoCancelar = document.getElementById("botao-cancelar");
