@@ -1,4 +1,11 @@
-import { showAlertSync, showValidateFixSync } from "../js-funcoes/funcoes-de-dialogo.js";
+import { showAlertSync, showValidateFixSync, showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js";
+import { logarDireto } from "../js-funcoes/funcao-logar.js"
+import { _applyLoginStateNow } from "./login-persistencia.js";
+import { ClasseLeitor } from "../js-classes/classe-leitor.js";
+
+let vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || ""
+
+let indiceEncontrado 
 
 (function initWhenReady() {
   if (document.readyState === "loading") {
@@ -68,38 +75,95 @@ function init() {
   const inputs = document.querySelectorAll("#otp .codigo-validacao__input");
   const hidden = document.getElementById("codigo-validacao");
 
+  const btnRedefinirSenha = document.getElementById("redefinir-senha_botao-confirmar")
   const btnCancelar3 = document.getElementById("redefinir-senha_botao-cancelar");
 
   otpBox?.addEventListener("animationend", () => otpBox.classList.remove("otp--erro"));
 
   // ===== Etapa 1 -> 2 =====
-  btnEnviar?.addEventListener("click", () => {
-    const email = (inputEmail?.value || "").trim();
-    if (!email) {
-      showAlertSync({ title: "Atenção", message: "Informe o e-mail para prosseguir." }, () => {
-        inputEmail?.focus();
-      });
-      return;
-    }
+btnEnviar?.addEventListener("click", () => {
+  const email = (inputEmail?.value || "").trim();
 
-    blurNow(btnEnviar);
-
+  if (!email) {
     showAlertSync(
-      { title: "Código enviado", message: "Enviamos um código de 6 dígitos para seu e-mail." },
+      { title: "Atenção", message: "Informe o e-mail para prosseguir." },
       () => {
-        showStep(2);
-        blurNow(document.activeElement);
-        focusOtpFirstAggressive();
+        inputEmail?.focus();
       }
     );
-  });1
+    return;
+  } 
+
+    let existeEmail = false
+    
+    let i
+
+    for (i = 0; i < vetorLeitores.length; i++) {
+      if (email === vetorLeitores[i].email) {
+       
+        existeEmail = true
+        indiceEncontrado = i
+
+      } else {
+
+        showValidateFixSync(
+          {
+            title: "E-mail não encontrado",
+            message: "O e-mail inserido não consta em nossa base de dados.",
+            cancelText: "Cancelar procedimento",
+            continueText: "Corrigir o e-mail",
+          },
+          (ok) => {
+  
+            if (ok) {
+              inputEmail?.focus()
+              
+            } else {
+              // Cancelar → redireciona pro index
+              window.location.href = "../../index.html";
+              
+            }
+          }
+        );
+      }
+    }
+
+    if(existeEmail){
+      blurNow(btnEnviar);
+
+      showAlertSync(
+        { title: "Código enviado", message: "Enviamos um código de 6 dígitos para seu e-mail." },
+        () => {
+          showStep(2);
+          blurNow(document.activeElement);
+          focusOtpFirstAggressive();
+        }
+      );
+    }
+  
+});
 
   // Cancelar na etapa 1
-  btnCancelar1?.addEventListener("click", () => {
-    blurNow(btnCancelar1);
-    if (inputEmail) inputEmail.value = "";
-    showStep(1);
-    inputEmail?.focus();
+  btnCancelar1?.addEventListener("click", (e) => {
+     e.preventDefault();
+   
+     showConfirmSync(
+       {
+         title: "Cancelar redefinição de senha",
+         message: "Todos os dados preenchidos serão perdidos.",
+         confirmText: "Cancelar o procedimento",
+         cancelText: "Continuar o procedimento",
+       },
+       (ok) => {
+         if (ok) {
+         // Cancelar → redireciona pro index
+              window.location.href = "../../index.html"
+       } else {
+        finalizarCancelamento()
+              
+        }
+      }
+     );
   });
 
   // ===== OTP =====
@@ -137,8 +201,8 @@ function init() {
           {
             title: "Código inválido",
             message: "O código digitado não confere. Deseja tentar novamente?",
-            cancelText: "Cancelar",
-            continueText: "Tentar novamente",
+            cancelText: "Cancelar procedimento",
+            continueText: "Inserir código novamente",
           },
           (ok) => {
             if (ok) {
@@ -198,13 +262,79 @@ function init() {
   }
 
   // ===== Etapa 3 =====
-  btnCancelar3?.addEventListener("click", () => {
-    blurNow(btnCancelar3);
-    clearOtp();
-    setOtpState(null);
-    if (inputEmail) inputEmail.value = "";
-    showStep(1);
-    inputEmail?.focus();
+
+    btnRedefinirSenha?.addEventListener("click", (e) => {
+
+      e.preventDefault()
+
+      const novaSenha = document.getElementById("nova-senha")
+      const repitaNovaSenha = document.getElementById("repita-nova-senha")
+
+      if(novaSenha.value !== repitaNovaSenha.value){
+
+        showAlertSync({
+          title: "Senhas diferentes",
+          message: "As senhas digitadas não estão iguais. Repita o procedimento."
+          });
+        return
+
+      }else{
+
+        
+        vetorLeitores[indiceEncontrado].senha = novaSenha.value
+        
+        localStorage.setItem("lista de leitores", JSON.stringify(vetorLeitores))
+        ClasseLeitor.vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || []
+      
+        vetorLeitores = ClasseLeitor.vetorLeitores
+
+        logarDireto(vetorLeitores[indiceEncontrado].usuario, novaSenha.value)
+       
+        
+        const leitorLogado = localStorage.getItem("leitor logado") || "";
+        
+        // Verifica se há um usuário logado
+        if (leitorLogado.trim() !== "") {
+          // Seleciona o <span> dentro do botão "Entrar"
+          const rotuloLogin = document.querySelector(".entrar-rotulo span");
+      
+          // Substitui o "Entrar" pelo nome de usuário
+          if (rotuloLogin) {
+            rotuloLogin.textContent = leitorLogado;
+          }
+      
+          _applyLoginStateNow();
+        }
+
+      blurNow(document.activeElement);
+      showAlertSync(
+        { title: "Senha alterada com sucesso", message: "Você será redirecionado para a página inicial." },
+        () => { window.location.href = "../../index.html"; }
+      );
+
+      }
+
+    })
+   btnCancelar3?.addEventListener("click", (e) => {
+     e.preventDefault()
+   
+     showConfirmSync(
+       {
+         title: "Cancelar redefinição de senha",
+         message: "Todos os dados preenchidos serão perdidos.",
+         confirmText: "Cancelar o procedimento",
+         cancelText: "Continuar o procedimento",
+       },
+       (ok) => {
+         if (ok) {
+          // Cancelar → redireciona pro index
+              window.location.href = "../../index.html";
+       } else {
+              
+       }
+       
+      }
+     );
   });
 
   // inicial

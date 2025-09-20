@@ -74,9 +74,8 @@ export function logarDireto (usuario, senha){
             }
         }
     }
-}
 
 
       
 
-
+}
