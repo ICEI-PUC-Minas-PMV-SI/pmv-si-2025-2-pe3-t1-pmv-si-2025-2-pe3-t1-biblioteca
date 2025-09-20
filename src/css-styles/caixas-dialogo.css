@@ -127,3 +127,28 @@ dialog.dlg::backdrop {
 
   filter:brightness(1.2);
 }
+
+/* Modificando caixas adaptadas para campos CPF e CEP */
+
+#botao-cancelar-cpf-cep{
+
+  background: transparent;
+  color: var(--vermelho-alaranjado);
+  border: 0.2rem solid var(--vermelho-alaranjado);
+}
+
+#botao-cancelar-cpf-cep:hover{
+
+  filter: brightness(1.2);
+}
+.dlg__btn--confirm{
+
+  background: var(--azul-delft);
+  color: var(--branco);
+}
+
+.dlg__btn--confirm:hover{
+
+  filter: brightness(1.2);
+
+}

@@ -1,9 +1,7 @@
-import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js";
+import { showValidateFixSync } from "../js-funcoes/funcoes-de-dialogo.js";
 
-// ATENÇÃO: POSSUI CÓDIGO ASSÍNCRONO
-
-// ---------- Configuração rápida ----------
-const IDS = {
+// ---------- Config ----------
+const IDS_CEP = {
   cep: "cep",
   rua: "rua",
   numero: "numeroFachada",
@@ -12,21 +10,18 @@ const IDS = {
   estado: "estado",
 };
 
-// ---------- Utilidades ----------
-const onlyDigits = (s) => (s || "").replace(/\D/g, "");
+// ---------- Utils ----------
+const onlyDigitsCEP = (s) => (s || "").replace(/\D/g, "");
 const isCEPValido = (digits) => /^\d{8}$/.test(digits);
 
-// Pequena ajuda visual enquanto busca (barra indeterminada após o input CEP)
 function setLoading(el, on = true) {
   const BAR_ID = "cep-loading-bar";
   let bar = document.getElementById(BAR_ID);
-
   if (on) {
     if (!bar) {
       bar = document.createElement("div");
       bar.id = BAR_ID;
       bar.className = "cep-loading-bar";
-      // insere a barra logo após o input CEP
       el.insertAdjacentElement("afterend", bar);
     }
   } else {
@@ -34,25 +29,23 @@ function setLoading(el, on = true) {
   }
 }
 
-
-// Desabilita/rehabilita campos enquanto preenche
 function toggleAddressDisabled(disabled = true) {
-  const { rua, bairro, cidade, estado } = getEls();
+  const { rua, bairro, cidade, estado } = getElsCEP();
   [rua, bairro, cidade, estado].forEach((el) => el && (el.disabled = disabled));
 }
 
-function getEls() {
+function getElsCEP() {
   return {
-    cep: document.getElementById(IDS.cep),
-    rua: document.getElementById(IDS.rua),
-    numero: document.getElementById(IDS.numero),
-    bairro: document.getElementById(IDS.bairro),
-    cidade: document.getElementById(IDS.cidade),
-    estado: document.getElementById(IDS.estado),
+    cep: document.getElementById(IDS_CEP.cep),
+    rua: document.getElementById(IDS_CEP.rua),
+    numero: document.getElementById(IDS_CEP.numero),
+    bairro: document.getElementById(IDS_CEP.bairro),
+    cidade: document.getElementById(IDS_CEP.cidade),
+    estado: document.getElementById(IDS_CEP.estado),
   };
 }
 
-// ---------- Núcleo ViaCEP ----------
+// ---------- Núcleo ----------
 async function consultarViaCEP(cepDigits, { signal } = {}) {
   const url = `https://viacep.com.br/ws/${cepDigits}/json/`;
   const resp = await fetch(url, { signal, cache: "no-store" });
@@ -67,25 +60,44 @@ async function consultarViaCEP(cepDigits, { signal } = {}) {
 }
 
 function preencherEndereco(data) {
-  const { rua, bairro, cidade, estado, numero } = getEls();
+  const { rua, bairro, cidade, estado, numero } = getElsCEP();
   if (rua) rua.value = data.logradouro || "";
   if (bairro) bairro.value = data.bairro || "";
   if (cidade) cidade.value = data.localidade || "";
   if (estado) estado.value = data.uf || "";
-
-  // Se o número estiver vazio, joga o foco pra lá
   if (numero && !numero.value) numero.focus();
 }
 
-// Evita sobreposição de requisições
+// Evita sobreposição de requisições e duplicidade de diálogo
 let currentAbort = null;
+let viaCepDialogOpen = false;
+
+function showCepApiErrorOnce(message) {
+  if (viaCepDialogOpen) return;
+  viaCepDialogOpen = true;
+
+  showValidateFixSync(
+    { title: "CEP inválido", message },
+    (continuar) => {
+      if (continuar) {
+        const { cep } = getElsCEP();
+        cep?.focus();
+        cep?.select();
+      } else {
+        // encerra cadastro sem abrir outra caixa
+        document.dispatchEvent(new CustomEvent("cadastro:cancelarAgora"));
+      }
+      viaCepDialogOpen = false;
+    }
+  );
+}
 
 async function handleCEPInputLookup() {
-  const { cep } = getEls();
+  const { cep } = getElsCEP();
   if (!cep) return;
 
-  const digits = onlyDigits(cep.value);
-  if (!isCEPValido(digits)) return; // espera formar 8 dígitos
+  const digits = onlyDigitsCEP(cep.value);
+  if (!isCEPValido(digits)) return; // só busca quando tiver 8 dígitos
 
   // Aborta requisição anterior, se houver
   if (currentAbort) currentAbort.abort();
@@ -98,33 +110,30 @@ async function handleCEPInputLookup() {
     const data = await consultarViaCEP(digits, { signal: currentAbort.signal });
     preencherEndereco(data);
   } catch (err) {
-    // Mensagens enxutas para o usuário
-    let message = "Não foi possível buscar o CEP. Tente novamente.";
-    if (err.name === "AbortError") return; // usuário digitou de novo; ignora
-    if (err.code === "CEP_NOT_FOUND") message = "CEP não encontrado. Confira o número.";
+    if (err.name === "AbortError") return;
 
-    await showAlertSync({ title: "Atenção", message });
+    let message = "Não foi possível buscar o CEP. Tente novamente.";
+    if (err.code === "CEP_NOT_FOUND") message = "CEP não encontrado. Verifique o campo.";
+
+    showCepApiErrorOnce(message);
   } finally {
     setLoading(cep, false);
     toggleAddressDisabled(false);
   }
 }
 
-// ---------- Inicialização pública ----------
+// ---------- Init ----------
 export function initViaCEPAutofill(customIds = {}) {
-  Object.assign(IDS, customIds); // permite sobrescrever IDs se necessário
-
-  const { cep } = getEls();
+  Object.assign(IDS_CEP, customIds);
+  const { cep } = getElsCEP();
   if (!cep) return;
 
-  // 1) Buscar ao sair do campo
-  cep.addEventListener("blur", () => {
-    handleCEPInputLookup();
-  });
+  if (cep.dataset.viacepInit === "1") return;
+  cep.dataset.viacepInit = "1";
 
-  // 2) Buscar assim que 8 dígitos forem digitados
+  cep.addEventListener("blur", handleCEPInputLookup);
   cep.addEventListener("input", () => {
-    const digits = onlyDigits(cep.value);
+    const digits = onlyDigitsCEP(cep.value);
     if (digits.length === 8) handleCEPInputLookup();
   });
 }

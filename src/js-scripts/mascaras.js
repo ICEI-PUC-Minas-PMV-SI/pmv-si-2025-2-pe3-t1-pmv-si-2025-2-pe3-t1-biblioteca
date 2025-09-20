@@ -1,149 +1,190 @@
-// MÁSCARA DO TELEFONE
-const tel = document.querySelector('#telefone');
+import { showValidateFixSync } from "../js-funcoes/funcoes-de-dialogo.js";
 
-const formatTelefoneBR = (value) => {
-  const d = value.replace(/\D/g, '').slice(0, 11); // só dígitos, máx 11
-  if (d.length <= 2) return `(${d}`;
-  if (d.length <= 7) return `(${d.slice(0,2)}) ${d.slice(2)}`;
-  return `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
-};
+/* =========================
+   MÁSCARA DO TELEFONE
+   ========================= */
+export function initTelefoneMask(id = "telefone") {
+  const tel = document.getElementById(id);
+  if (!tel) return;
 
-tel.addEventListener('input', (e) => {
-  const raw = e.target.value;
-  e.target.value = formatTelefoneBR(raw);
-  e.target.setSelectionRange(e.target.value.length, e.target.value.length);
-});
+  const formatTelefoneBR = (value) => {
+    const d = (value || "").replace(/\D/g, "").slice(0, 11);
+    if (d.length <= 2) return `(${d}`;
+    if (d.length <= 7) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+  };
 
-tel.addEventListener('blur', () => {
-  const digits = tel.value.replace(/\D/g, '');
-  if (!digits) {
-    // se não digitou nada, deixa em branco (placeholder volta a aparecer)
-    tel.value = '';
-    tel.setCustomValidity('');
-  } else if (digits.length !== 11) {
-    // inválido: mostra erro
-    tel.setCustomValidity('Telefone deve ter 11 dígitos (ex.: (33) 98877-2211).');
-  } else {
-    tel.setCustomValidity('');
-  }
-});
-// ________________________
+  tel.addEventListener("input", (e) => {
+    const raw = e.target.value;
+    e.target.value = formatTelefoneBR(raw);
+    e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+  });
 
-// MÁSCARA DO CPF
-const cpfInput = document.querySelector('#cpf');
-
-// Formata: 999.888.777-33
-function formatCPF(value) {
-  const d = (value || '').replace(/\D/g, '').slice(0, 11); // só dígitos, máx 11
-  if (d.length <= 3) return d;
-  if (d.length <= 6) return `${d.slice(0,3)}.${d.slice(3)}`;
-  if (d.length <= 9) return `${d.slice(0,3)}.${d.slice(3,6)}.${d.slice(6)}`;
-  return `${d.slice(0,3)}.${d.slice(3,6)}.${d.slice(6,9)}-${d.slice(9,11)}`;
+  tel.addEventListener("blur", () => {
+    const digits = (tel.value || "").replace(/\D/g, "");
+    if (!digits) { tel.value = ""; tel.setCustomValidity(""); return; }
+    if (digits.length !== 11) {
+      tel.setCustomValidity("Telefone deve ter 11 dígitos (ex.: (33) 98877-2211).");
+    } else {
+      tel.setCustomValidity("");
+    }
+  });
 }
 
-// Validação dos dígitos verificadores do CPF
-function isValidCPF(cpfDigits) {
-  // precisa ter 11 dígitos
-  if (!/^\d{11}$/.test(cpfDigits)) return false;
+/* =========================
+   MÁSCARA DO CPF
+   ========================= */
+const digitsOnlyCPF = (s) => (s || "").replace(/\D/g, "");
+const isCPFComplete = (d) => /^\d{11}$/.test(d);
 
-  // rejeita sequências repetidas (000..., 111..., etc.)
-  if (/^(\d)\1{10}$/.test(cpfDigits)) return false;
+function formatCPF(value) {
+  const d = digitsOnlyCPF(value).slice(0, 11);
+  return d
+    .replace(/^(\d{3})(\d)/, "$1.$2")
+    .replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
+    .replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
+}
 
-  const nums = cpfDigits.split('').map(n => parseInt(n, 10));
+function validarCPF(d) {
+  if (!/^\d{11}$/.test(d)) return false;
+  if (/^(\d)\1{10}$/.test(d)) return false;
+  const n = d.split("").map(Number);
 
-  // 1º dígito verificador
-  let sum1 = 0;
-  for (let i = 0; i < 9; i++) sum1 += nums[i] * (10 - i);
-  let d1 = (sum1 * 10) % 11;
-  if (d1 === 10) d1 = 0;
-  if (d1 !== nums[9]) return false;
+  let soma = 0;
+  for (let i = 0; i < 9; i++) soma += n[i] * (10 - i);
+  let resto = (soma * 10) % 11;
+  if (resto === 10) resto = 0;
+  if (resto !== n[9]) return false;
 
-  // 2º dígito verificador
-  let sum2 = 0;
-  for (let i = 0; i < 10; i++) sum2 += nums[i] * (11 - i);
-  let d2 = (sum2 * 10) % 11;
-  if (d2 === 10) d2 = 0;
-  if (d2 !== nums[10]) return false;
+  soma = 0;
+  for (let i = 0; i < 10; i++) soma += n[i] * (11 - i);
+  resto = (soma * 10) % 11;
+  if (resto === 10) resto = 0;
+  if (resto !== n[10]) return false;
 
   return true;
 }
 
-if (cpfInput) {
-  cpfInput.addEventListener('input', (e) => {
-    const raw = e.target.value;
-    e.target.value = formatCPF(raw);
-    // cursor simples no fim — estável o bastante para digitar e colar
-    e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+export function initCPFMask({ cpf: cpfId = "cpf" } = {}) {
+  const cpf = document.getElementById(cpfId);
+  if (!cpf) return;
+
+  let cpfDialogOpen = false;
+  function showCpfDialog(title, message) {
+    if (cpfDialogOpen) return;
+    cpfDialogOpen = true;
+
+    showValidateFixSync(
+      { title, message },
+      (continuar) => {
+        if (continuar) {
+          cpf.focus();
+          cpf.select();
+        } else {
+          document.dispatchEvent(new CustomEvent("cadastro:cancelarAgora"));
+        }
+        cpfDialogOpen = false;
+      }
+    );
+  }
+
+  // formata enquanto digita e valida ao completar 11 dígitos
+  cpf.addEventListener("input", () => {
+    const pos = cpf.selectionStart;
+    const prevLen = cpf.value.length;
+
+    cpf.value = formatCPF(cpf.value);
+
+    const newLen = cpf.value.length;
+    const diff = newLen - prevLen;
+    cpf.setSelectionRange(pos + (diff > 0 ? diff : 0), pos + (diff > 0 ? diff : 0));
+
+    const d = digitsOnlyCPF(cpf.value);
+    if (isCPFComplete(d)) {
+      const ok = validarCPF(d);
+      cpf.classList.toggle("cpf--invalid", !ok);
+      if (!ok) showCpfDialog("CPF inválido", "O CPF informado não é válido. Verifique o campo.");
+    } else {
+      cpf.classList.remove("cpf--invalid");
+    }
   });
 
-  cpfInput.addEventListener('blur', () => {
-    const digits = cpfInput.value.replace(/\D/g, '');
-
-    // se não digitou nada (ou apagou tudo), volta ao placeholder
-    if (!digits) {
-      cpfInput.value = '';
-      cpfInput.setCustomValidity('');
+  // >>> exibe mensagem no BLUR quando INCOMPLETO
+  cpf.addEventListener("blur", () => {
+    const d = digitsOnlyCPF(cpf.value);
+    if (d.length === 0) { 
+      // vazio: não incomoda, só limpa qualquer estado
+      cpf.classList.remove("cpf--invalid");
+      cpf.setCustomValidity("");
       return;
     }
-
-    if (!isValidCPF(digits)) {
-      cpfInput.setCustomValidity('CPF inválido.');
-      // Alerta visual do seu sistema
-      if (typeof showAlertSync === 'function') {
-        showAlertSync({
-          title: 'CPF inválido',
-          message: 'Confira o número informado. O CPF deve estar no formato 999.888.777-33 e possuir dígitos verificadores válidos.'
-        });
-      }
-      // opcional: focar de volta no campo
-      // cpfInput.focus();
-    } else {
-      cpfInput.setCustomValidity('');
+    if (d.length < 11) {
+      cpf.setCustomValidity("CPF deve ter 11 dígitos.");
+      showCpfDialog("CPF incompleto", "Digite os 11 dígitos do CPF.");
+      return;
     }
+    // completou 11 → valida DV
+    const ok = validarCPF(d);
+    cpf.classList.toggle("cpf--invalid", !ok);
+    cpf.setCustomValidity(ok ? "" : "CPF inválido.");
+    if (!ok) showCpfDialog("CPF inválido", "O CPF informado não é válido. Verifique o campo.");
   });
 }
-// __________________
+/* =========================
+   MÁSCARA DO CEP (formatação + mensagem no BLUR se INCOMPLETO)
+   ========================= */
+const cepInput = document.querySelector("#cep");
 
-// MÁSCARA DO CEP
-const cepInput = document.querySelector('#cep');
-
-// Formata: 33000-000
 function formatCEP(value) {
-  const d = (value || '').replace(/\D/g, '').slice(0, 8); // só dígitos, máx 8
+  const d = (value || "").replace(/\D/g, "").slice(0, 8); // 33000-000
   if (d.length <= 5) return d;
-  return `${d.slice(0,5)}-${d.slice(5,8)}`;
+  return `${d.slice(0, 5)}-${d.slice(5, 8)}`;
 }
 
 if (cepInput) {
-  cepInput.addEventListener('input', (e) => {
+  // formata enquanto digita
+  cepInput.addEventListener("input", (e) => {
     const raw = e.target.value;
     e.target.value = formatCEP(raw);
-    // cursor no fim
     e.target.setSelectionRange(e.target.value.length, e.target.value.length);
   });
 
-  cepInput.addEventListener('blur', () => {
-    const digits = cepInput.value.replace(/\D/g, '');
+  let cepDialogOpen = false;
+  function showCepDialog(title, message) {
+    if (cepDialogOpen) return;
+    cepDialogOpen = true;
 
-    if (!digits) {
-      // apagou tudo → volta pro placeholder
-      cepInput.value = '';
-      cepInput.setCustomValidity('');
+    showValidateFixSync(
+      { title, message },
+      (continuar) => {
+        if (continuar) {
+          cepInput.focus();
+          cepInput.select();
+        } else {
+          document.dispatchEvent(new CustomEvent("cadastro:cancelarAgora"));
+        }
+        cepDialogOpen = false;
+      }
+    );
+  }
+
+  // >>> exibe mensagem no BLUR quando INCOMPLETO (< 8 dígitos)
+  cepInput.addEventListener("blur", () => {
+    const digits = (cepInput.value || "").replace(/\D/g, "");
+
+    if (digits.length === 0) {
+     
+      cepInput.value = "";
+      cepInput.setCustomValidity("");
       return;
     }
 
-    if (digits.length !== 8) {
-      cepInput.setCustomValidity('CEP deve ter 8 dígitos (ex.: 33000-000).');
-      if (typeof showAlertSync === 'function') {
-        showAlertSync({
-          title: 'CEP inválido',
-          message: 'Confira o número informado. O CEP deve ter 8 dígitos no formato 33000-000.'
-        });
-      }
-    } else {
-      cepInput.setCustomValidity('');
+    if (digits.length < 8) {
+      cepInput.setCustomValidity("CEP deve ter 8 dígitos (ex.: 33000-000).");
+      showCepDialog("CEP incompleto", "Digite os 8 dígitos do CEP (ex.: 33000-000).");
+      return;
     }
+    cepInput.setCustomValidity("");
   });
 }
-// ________________________________-
 

@@ -4,24 +4,39 @@ import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js"
 import { logarDireto } from "../js-funcoes/funcao-logar.js"
 import { _applyLoginStateNow } from "./login-persistencia.js"
 import { initViaCEPAutofill } from "../js-scripts/cep-autocompletar.js"
-
+import { initCPFMask, initTelefoneMask } from "../js-scripts/mascaras.js"
 
 const formularioCadastro = document.querySelector(".formulario-cadastro")
 
-// Inicializa o autofill do ViaCEP (escuta blur e input=8 dígitos)
+
+function finalizarCancelamento() {
+  // limpar UI de gêneros
+  document.querySelectorAll(".checkbox-genero").forEach((cb) => (cb.checked = false));
+  document.querySelectorAll(".ancora-genero.selecionado").forEach((a) => a.classList.remove("selecionado"));
+  // resetar formulário
+  formularioCadastro?.reset();
+  // redirecionar
+  window.location.href = "../../index.html";
+}
+
+// ouvir pedido de cancelamento imediato vindo das máscaras (CPF/CEP)
+document.addEventListener("cadastro:cancelarAgora", finalizarCancelamento);
+
+// Inicializa máscaras e ViaCEP quando DOM estiver pronto
 document.addEventListener("DOMContentLoaded", () => {
   initViaCEPAutofill({
     cep: "cep",
     rua: "rua",
-    numero: "numero-fachada", // seu ID real tem hífen; mapeamos aqui
+    numero: "numero-fachada", 
     bairro: "bairro",
     cidade: "cidade",
     estado: "estado",
   });
+  initCPFMask({ cpf: "cpf" });
+  initTelefoneMask("telefone");
 });
 
-
-// === CANCELAR CADASTRO (fora do submit, com showConfirmSync boolean) ===
+// === CANCELAR CADASTRO  ===
 const botaoCancelar = document.getElementById("botao-cancelar");
 botaoCancelar?.addEventListener("click", (e) => {
   e.preventDefault();
@@ -34,21 +49,8 @@ botaoCancelar?.addEventListener("click", (e) => {
       cancelText: "Continuar cadastro",
     },
     (ok) => {
-      if (!ok) return; // usuário escolheu "Continuar cadastro"
-
-      // limpar UI de gêneros
-      document.querySelectorAll(".checkbox-genero").forEach((cb) => {
-        cb.checked = false;
-      });
-      document
-        .querySelectorAll(".ancora-genero.selecionado")
-        .forEach((a) => a.classList.remove("selecionado"));
-
-      // resetar formulário
-      formularioCadastro.reset();
-
-      // redirecionar (opcional)
-      window.location.href = "../../index.html";
+      if (ok) finalizarCancelamento();
+      // se escolher "Continuar cadastro", não faz nada
     }
   );
 });
@@ -58,7 +60,7 @@ formularioCadastro.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
   // variável do id, começa em 1 e vai incrementando 1 a cada novo cadastro
-  const idLeitor = ClasseLeitor.numeroDeLeitores +1;
+  const idLeitor = ClasseLeitor.numeroDeLeitores + 1;
 
   // variáveis da identidade do leitor
   const nomeUsuarioLeitor = document.getElementById("usuario").value.trim();
@@ -80,7 +82,7 @@ formularioCadastro.addEventListener("submit", function (evento) {
   const generosLeitor = Array.from(
     document.querySelectorAll(".checkbox-genero:checked")
   )
-    .slice(0, 3) // cinto de segurança
+    .slice(0, 3)
     .map((cb) => {
       const ancora = document.querySelector(`label[for="${cb.id}"] .ancora-genero`);
       return ancora?.innerText?.trim();
@@ -108,7 +110,6 @@ formularioCadastro.addEventListener("submit", function (evento) {
     senhaLeitor === "" ||
     repitaSenhaLeitor === ""
   ) {
-
     return;
   }
 
@@ -131,23 +132,20 @@ formularioCadastro.addEventListener("submit", function (evento) {
     repitaSenhaLeitor
   );
 
-    logarDireto(nomeUsuarioLeitor, senhaLeitor)
+  logarDireto(nomeUsuarioLeitor, senhaLeitor);
 
-  const leitorLogado = localStorage.getItem("leitor logado") || ""
+  const leitorLogado = localStorage.getItem("leitor logado") || "";
 
   // Verifica se há um usuário logado
   if (leitorLogado.trim() !== "") {
     // Seleciona o <span> dentro do botão "Entrar"
-    const rotuloLogin = document.querySelector(".entrar-rotulo span")
+    const rotuloLogin = document.querySelector(".entrar-rotulo span");
 
     // Substitui o "Entrar" pelo nome de usuário
     if (rotuloLogin) {
-        rotuloLogin.textContent = leitorLogado 
+      rotuloLogin.textContent = leitorLogado;
     }
 
     _applyLoginStateNow();
-
   }
-
 });
-

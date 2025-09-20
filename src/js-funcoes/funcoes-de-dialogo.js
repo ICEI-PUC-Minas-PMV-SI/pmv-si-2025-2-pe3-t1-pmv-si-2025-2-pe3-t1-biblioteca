@@ -92,3 +92,51 @@ export function showConfirmSync(opts = {}, onDecision) {
     if (typeof onDecision === "function") onDecision(ok);
   });
 }
+
+
+//Função de diálogo específica para correção de campos CPF e CEP
+// Função de diálogo específica para correção de campos (sem destaque em botões)
+export function showValidateFixSync(
+  {
+    title = "Campo inválido",
+    message = "",
+    continueText = "Corrigir campo",   // direita
+    cancelText = "Cancelar cadastro",   // esquerda
+  } = {},
+  callback
+) {
+  const dlg = document.createElement("dialog");
+  dlg.className = "dlg dlg--confirm dlg--validate";
+  dlg.tabIndex = -1; // permite focar o <dialog> e evitar foco em botões
+
+  // Layout: [Cancelar] [Corrigir] — ambos SEM classe de "primary" ou "secondary"
+  dlg.innerHTML = `
+    <form method="dialog" class="dlg__form" role="dialog" aria-modal="true">
+      <h3 class="dlg__title"></h3>
+      <p class="dlg__desc"></p>
+      <div class="dlg-actions dlg-actions--reversed">
+        <button type="button" class="dlg-btn dlg__btn--cancel"  value="cancel" id= "botao-cancelar-cpf-cep">${cancelText}</button>
+        <button type="submit" class="dlg-btn dlg__btn--confirm" value="continue">${continueText}</button>
+      </div>
+    </form>
+  `;
+
+  dlg.querySelector(".dlg__title").textContent = title;
+  dlg.querySelector(".dlg__desc").textContent = message;
+
+  // cancelar (esquerda)
+  dlg.querySelector(".dlg__btn--cancel")?.addEventListener("click", () => {
+    dlg.close("cancel");
+  });
+
+  document.body.appendChild(dlg);
+  dlg.showModal();
+
+  // foco neutro no <dialog> para não acender contorno em nenhum botão
+  dlg.focus({ preventScroll: true });
+
+  dlg.addEventListener("close", () => {
+    const ok = dlg.returnValue === "continue"; // true se clicou "Corrigir campo"
+    try { callback && callback(ok); } finally { dlg.remove(); }
+  });
+}
