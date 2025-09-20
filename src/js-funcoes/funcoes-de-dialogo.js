@@ -95,7 +95,6 @@ export function showConfirmSync(opts = {}, onDecision) {
 
 
 //Função de diálogo específica para correção de campos CPF e CEP
-// Função de diálogo específica para correção de campos (sem destaque em botões)
 export function showValidateFixSync(
   {
     title = "Campo inválido",
