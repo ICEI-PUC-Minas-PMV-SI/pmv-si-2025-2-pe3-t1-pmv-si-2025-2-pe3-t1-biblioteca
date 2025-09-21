@@ -243,9 +243,13 @@ A Figura 2 mostra o diagrama de classes do sistema. A Matrícula deve conter a i
 
 | # | Nome | Descrição |
 |--------------------|------------------------------------|----------------------------------------|
-| 1	|	Aluno |	Cadastro de informações relativas aos alunos. |
-| 2	| Curso |	Cadastro geral de cursos de aperfeiçoamento. |
-| 3 |	Matrícula |	Cadastro de Matrículas de alunos nos cursos. |
-| 4 |	Turma |	Cadastro de turmas.
-| 5	|	Professor |	Cadastro geral de professores que ministram as disciplinas. |
-| ... |	... |	... |
+| 1	|	Cliente |É o usuário do sistema que navega pelos filmes em cartaz, seleciona sessões, escolhe poltronas e compra ingressos. É o ator principal dos casos de uso de navegação, reserva e compra. |
+| 2	| Filme |	Representa os filmes que estão em cartaz no cinema. É responsável por armazenar e disponibilizar as informações básicas, como título, gênero, sinopse e classificação. Um filme pode ter várias sessões associadas |
+| 3 |	Pagamento |	Responsável por processar a transação financeira do ingresso. Ele valida os dados do cliente, verifica com o provedor de pagamento se a compra foi aceita ou recusada, e informa o sistema sobre o resultado. Caso o pagamento seja concluído, a reserva vira um ingresso; caso contrário, o cliente pode tentar novamente com outro método. |
+| 4 |	sessão |Representa uma exibição específica de um filme, em uma data e horário definidos. Está ligada a uma sala de cinema e permite que os clientes escolham poltronas para assistir ao filme|
+| 5	|	Sala |	É o ambiente físico onde os filmes são exibidos. Cada sala tem um conjunto de poltronas e pode receber diferentes sessões ao longo do tempo |
+| 6 |	Poltrona  |	Representa um assento dentro de uma sala. Pode estar disponível ou ocupada, dependendo das reservas feitas para a sessão |
+| 7	|	Ingresso |	É o comprovante final da compra feita pelo cliente. Está vinculado a uma reserva confirmada e garante o direito de entrada na sessão escolhida |
+| 8	|	Administrador do cinema |	É o responsável por gerenciar o catálogo de filmes e as sessões. Ele pode cadastrar novos filmes, editar informações, remover filmes do sistema e definir os horários em que os filmes serão exibidos, além de gerenciar as salas. Atua como ator secundário nos casos de uso, pois garante que o sistema esteja sempre atualizado para o cliente |
+| 9	|	Reserva tempotária |	Controla a relação entre cliente, sessão e poltrona. Pode ser temporária até a conclusão do pagamento, garantindo que a poltrona escolhida não seja ocupada por outro cliente nesse intervalo. |
+
