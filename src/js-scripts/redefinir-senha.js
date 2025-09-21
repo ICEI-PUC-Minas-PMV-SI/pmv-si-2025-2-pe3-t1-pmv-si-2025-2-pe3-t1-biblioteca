@@ -49,12 +49,49 @@ function init() {
     if (state) otpBox.classList.add(state);
   }
 
-  function shakeOtp() {
-    if (!otpBox) return;
-    otpBox.classList.remove("otp--erro");
-    void otpBox.offsetWidth; // reflow
-    otpBox.classList.add("otp--erro");
+function shakeOtp() {
+  if (!otpBox) return;
+
+  // Mantém visual de erro
+  otpBox.classList.add("otp--erro");
+
+  // Cancela um shake JS anterior, se houver
+  if (otpBox.__shakeStop) {
+    try { otpBox.__shakeStop(); } catch {}
   }
+
+  const DURATION = 420; // ms
+  const AMPLITUDE = 4;  // px
+  let rafId = null;
+  let stopped = false;
+
+  function stop() {
+    stopped = true;
+    if (rafId) cancelAnimationFrame(rafId);
+    otpBox.style.transform = "";
+    otpBox.classList.remove("otp--erro"); // espelha o cleanup do animationend
+    otpBox.__shakeStop = null;
+  }
+
+  otpBox.__shakeStop = stop;
+
+  const start = performance.now();
+  function tick(now) {
+    if (stopped) return;
+    const t = Math.min(1, (now - start) / DURATION);
+    // onda senoidal para ir e voltar suavemente
+    const x = Math.sin(t * Math.PI * 4) * AMPLITUDE; // ~4 “idas/voltas” em 420ms
+    otpBox.style.transform = `translateX(${x}px)`;
+
+    if (t < 1) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      stop();
+    }
+  }
+
+  rafId = requestAnimationFrame(tick);
+}
 
   function showStep(step) {
     if (sec1) sec1.hidden = step !== 1;
@@ -80,8 +117,38 @@ function init() {
 
   otpBox?.addEventListener("animationend", () => otpBox.classList.remove("otp--erro"));
 
+  // ===== Helpers de Loading por SECTION (usam .rs-loading relativo) =====
+  function getSectionLoader(sectionEl) {
+    return sectionEl?.querySelector?.(".rs-loading") || null;
+  }
+
+  function setDisabledInSection(sectionEl, isLoading) {
+    if (!sectionEl) return;
+    const controls = sectionEl.querySelectorAll("button, input, select, textarea");
+    controls.forEach(el => {
+      el.disabled = !!isLoading;
+      if (isLoading) el.setAttribute("aria-disabled", "true");
+      else el.removeAttribute("aria-disabled");
+    });
+  }
+
+  function startSectionLoading(sectionEl, ms = 1000) {
+    const loader = getSectionLoader(sectionEl);
+    if (!loader) return Promise.resolve();
+    loader.hidden = false;
+    setDisabledInSection(sectionEl, true);
+    return new Promise(resolve => {
+      setTimeout(() => {
+        loader.hidden = true;
+        setDisabledInSection(sectionEl, false);
+        resolve();
+      }, ms);
+    });
+  }
+  // ===== FIM Helpers de Loading =====
+
   // ===== Etapa 1 -> 2 =====
-  btnEnviar?.addEventListener("click", () => {
+  btnEnviar?.addEventListener("click", async () => {
     const email = (inputEmail?.value || "").trim();
 
     if (!email) {
@@ -94,46 +161,45 @@ function init() {
       return;
     } 
 
-  let existeEmail = false
-  
-  let i
+    let existeEmail = false
+    let i
 
-  for (i = 0; i < vetorLeitores.length; i++) {
-    if (email === vetorLeitores[i].email) {
-      
-      existeEmail = true
-      indiceEncontrado = i
-
-    } else {
-      //não faz nada
+    for (i = 0; i < vetorLeitores.length; i++) {
+      if (email === vetorLeitores[i].email) {
+        existeEmail = true
+        indiceEncontrado = i
+      } else {
+        //não faz nada
+      }
     }
-  }
 
-  if(!existeEmail){
+    if(!existeEmail){
 
-    showValidateFixSync(
-        {
-          title: "E-mail não encontrado",
-          message: "O e-mail inserido não consta em nossa base de dados.",
-          cancelText: "Cancelar procedimento",
-          continueText: "Corrigir o e-mail",
-        },
-        (ok) => {
+      showValidateFixSync(
+          {
+            title: "E-mail não encontrado",
+            message: "O e-mail inserido não consta em nossa base de dados.",
+            cancelText: "Cancelar procedimento",
+            continueText: "Corrigir o e-mail",
+          },
+          (ok) => {
 
-          if (ok) {
-            inputEmail?.focus()
-            
-          } else {
-            // Cancelar → redireciona pro index
-            window.location.href = "../../index.html";
-            
+            if (ok) {
+              inputEmail?.focus()
+              
+            } else {
+              // Cancelar → redireciona pro index
+              window.location.href = "../../index.html";
+              
+            }
           }
-        }
-      );
-  }
+        );
+      return;
+    }
 
-  if(existeEmail){
+    // Loading ANTES da mensagem "Código enviado" (Section 1)
     blurNow(btnEnviar);
+    await startSectionLoading(sec1, 1400);
 
     showAlertSync(
       { title: "Código enviado", message: "Enviamos um código de 6 dígitos para seu e-mail." },
@@ -143,9 +209,8 @@ function init() {
         focusOtpFirstAggressive();
       }
     );
-  }
-  
-});
+    
+  });
 
   // Cancelar na etapa 1
   btnCancelar1?.addEventListener("click", (e) => {
@@ -191,36 +256,40 @@ function init() {
     updateHidden(code);
 
     if (code.length === (inputs ? inputs.length : 0)) {
-      if (code === OTP_EXPECTED) {
-        setOtpState("otp--ok");
-        showStep(3);
-        document.getElementById("nova-senha")?.focus();
-      } else {
-        // Apenas um shake ANTES da mensagem
-        setOtpState("otp--erro");
-        shakeOtp();
+      (async () => {
+        if (code === OTP_EXPECTED) {
+          // LOADING (Section 2) ANTES de seguir para a Section 3
+          await startSectionLoading(sec2, 900);
+          setOtpState("otp--ok");
+          showStep(3);
+          document.getElementById("nova-senha")?.focus();
+        } else {
+          // Somente SHAKE (sem loading) antes da mensagem
+          setOtpState("otp--erro");
+          console.log("vai fazer o shake")
+          shakeOtp();
 
-        // Caixa estilo confirm
-        showValidateFixSync(
-          {
-            title: "Código inválido",
-            message: "O código digitado não confere. Deseja tentar novamente?",
-            cancelText: "Cancelar procedimento",
-            continueText: "Inserir código novamente",
-          },
-          (ok) => {
-            if (ok) {
-              // Tentar de novo → limpa e volta pro 1º dígito
-              clearOtp();
-              blurNow(document.activeElement);
-              focusOtpFirstAggressive();
-            } else {
-              // Cancelar → redireciona pro index
-              window.location.href = "../../index.html";
+          showValidateFixSync(
+            {
+              title: "Código inválido",
+              message: "O código inserido está incorreto. Deseja  digitar novamente?",
+              cancelText: "Cancelar procedimento",
+              continueText: "Inserir código novamente",
+            },
+            (ok) => {
+              if (ok) {
+                // Tentar de novo → limpa e volta pro 1º dígito
+                clearOtp();
+                blurNow(document.activeElement);
+                focusOtpFirstAggressive();
+              } else {
+                // Cancelar → redireciona pro index
+                window.location.href = "../../index.html";
+              }
             }
-          }
-        );
-      }
+          );
+        }
+      })();
     }
   }
 
@@ -266,49 +335,50 @@ function init() {
   }
 
   // ===== Etapa 3 =====
+  btnRedefinirSenha?.addEventListener("click", async (e) => {
 
-    btnRedefinirSenha?.addEventListener("click", (e) => {
+    e.preventDefault()
 
-      e.preventDefault()
+    const novaSenha = document.getElementById("nova-senha")
+    const repitaNovaSenha = document.getElementById("repita-nova-senha")
 
-      const novaSenha = document.getElementById("nova-senha")
-      const repitaNovaSenha = document.getElementById("repita-nova-senha")
+    if(novaSenha.value !== repitaNovaSenha.value){
 
-      if(novaSenha.value !== repitaNovaSenha.value){
+      showAlertSync({
+        title: "Senhas diferentes",
+        message: "As senhas digitadas não estão iguais. Repita o procedimento."
+        });
+      return
 
-        showAlertSync({
-          title: "Senhas diferentes",
-          message: "As senhas digitadas não estão iguais. Repita o procedimento."
-          });
-        return
+    }else{
 
-      }else{
+      // LOADING (Section 3) enquanto “salva” no localStorage
+      const saving = startSectionLoading(sec3, 1100);
 
-        
-        vetorLeitores[indiceEncontrado].senha = novaSenha.value
-        
-        localStorage.setItem("lista de leitores", JSON.stringify(vetorLeitores))
-        ClasseLeitor.vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || []
+      vetorLeitores[indiceEncontrado].senha = novaSenha.value
       
-        vetorLeitores = ClasseLeitor.vetorLeitores
+      localStorage.setItem("lista de leitores", JSON.stringify(vetorLeitores))
+      ClasseLeitor.vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || []
+      vetorLeitores = ClasseLeitor.vetorLeitores
 
-        logarDireto(vetorLeitores[indiceEncontrado].usuario, novaSenha.value)
-       
-        
-        const leitorLogado = localStorage.getItem("leitor logado") || "";
-        
-        // Verifica se há um usuário logado
-        if (leitorLogado.trim() !== "") {
-          // Seleciona o <span> dentro do botão "Entrar"
-          const rotuloLogin = document.querySelector(".entrar-rotulo span");
+      logarDireto(vetorLeitores[indiceEncontrado].usuario, novaSenha.value)
       
-          // Substitui o "Entrar" pelo nome de usuário
-          if (rotuloLogin) {
-            rotuloLogin.textContent = leitorLogado;
-          }
+      const leitorLogado = localStorage.getItem("leitor logado") || "";
       
-          _applyLoginStateNow();
+      // Verifica se há um usuário logado
+      if (leitorLogado.trim() !== "") {
+        // Seleciona o <span> dentro do botão "Entrar"
+        const rotuloLogin = document.querySelector(".entrar-rotulo span");
+    
+        // Substitui o "Entrar" pelo nome de usuário
+        if (rotuloLogin) {
+          rotuloLogin.textContent = leitorLogado;
         }
+    
+        _applyLoginStateNow();
+      }
+
+      await saving; // respeita o tempo de cena
 
       blurNow(document.activeElement);
       showAlertSync(
@@ -316,29 +386,29 @@ function init() {
         () => { window.location.href = "../../index.html"; }
       );
 
-      }
+    }
 
-    })
-   btnCancelar3?.addEventListener("click", (e) => {
-     e.preventDefault()
-   
-     showConfirmSync(
-       {
-         title: "Cancelar redefinição de senha",
-         message: "Todos os dados preenchidos serão perdidos.",
-         confirmText: "Cancelar o procedimento",
-         cancelText: "Continuar o procedimento",
-       },
-       (ok) => {
-         if (ok) {
+  })
+
+  btnCancelar3?.addEventListener("click", (e) => {
+    e.preventDefault()
+  
+    showConfirmSync(
+      {
+        title: "Cancelar redefinição de senha",
+        message: "Todos os dados preenchidos serão perdidos.",
+        confirmText: "Cancelar o procedimento",
+        cancelText: "Continuar o procedimento",
+      },
+      (ok) => {
+        if (ok) {
           // Cancelar → redireciona pro index
-              window.location.href = "../../index.html";
-       } else {
-              
-       }
-       
+          window.location.href = "../../index.html";
+        } else {
+          // segue o jogo
+        }
       }
-     );
+    );
   });
 
   // inicial

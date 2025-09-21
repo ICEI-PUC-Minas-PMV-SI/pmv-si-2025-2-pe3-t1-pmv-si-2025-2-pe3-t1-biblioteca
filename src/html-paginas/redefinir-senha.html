@@ -23,6 +23,13 @@
       <button type="button" id="enviar-codigo_botao-cancelar">Cancelar</button>
       <button type="button" id="enviar-codigo_botao-confirmar">Enviar código</button>
     </div>
+
+    <!-- Loading “Enviando código...” -->
+    <div id="email-loading" class="rs-loading" hidden aria-live="polite">
+      <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando código..."></div>
+      <span class="rs-loading__text">Enviando código…</span>
+    </div>
+
   </section>
 
   <!-- Section 2: código (OTP) -->
@@ -40,7 +47,12 @@
       </div>
 
       <input type="hidden" name="codigo-validacao" id="codigo-validacao">
-    </div>
+      <!-- Loading “Confirmando código...” -->
+      <div id="email-loading" class="rs-loading" hidden aria-live="polite">
+        <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando código..."></div>
+          <span class="rs-loading__text">Confirmando código…</span>
+        </div>
+      </div>
   </section>
 
   <!-- Section 3: nova senha -->
@@ -62,6 +74,11 @@
         <button type="button" id="redefinir-senha_botao-cancelar">Cancelar</button>
         <button type="submit" id="redefinir-senha_botao-confirmar">Confirmar mudança</button>
       </div>
+    </div>
+    <!-- Loading “Redefinindo senha...” -->
+    <div id="email-loading" class="rs-loading" hidden aria-live="polite">
+      <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando código..."></div>
+        <span class="rs-loading__text">Redefinindo senha…</span>
     </div>
   </section>
   <script src = "../js-scripts/redefinir-senha.js" type = "module" defer></script>

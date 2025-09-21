@@ -142,9 +142,7 @@
   40%, 60% { transform: translateX(4px); }
 }
 
-#body-redefinir-senha .codigo-validacao.otp--erro{
-  animation: otp-shake 420ms ease;
-}
+
 #body-redefinir-senha .codigo-validacao.otp--erro .codigo-validacao__input{
   border-bottom-color: var(--vermelho-alaranjado);
   border-bottom-style: solid;
@@ -154,6 +152,49 @@
   border-bottom-color: var(--azul-delft);
   border-bottom-style: solid;
   box-shadow: 0 2px 0 0 var(--azul-delft);
+}
+
+/* ===== Loading para envio do código por e-mail ===== */
+#body-redefinir-senha .rs-loading{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#body-redefinir-senha .rs-loading__text{
+  font: 600 14px/1 var(--fonte-principal);
+  color: var(--texto-secundario);
+}
+
+#body-redefinir-senha .rs-loading__bar{
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--alcacuz) 15%, transparent);
+  overflow: hidden;
+}
+
+#body-redefinir-senha .rs-loading__bar::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: var(--azul-delft);
+  border-radius: inherit;
+  animation: rs-indeterminate 900ms ease-in-out infinite;
+}
+
+@keyframes rs-indeterminate {
+  0%   { transform: translateX(-60%); }
+  50%  { transform: translateX(25%); }
+  100% { transform: translateX(160%); }
+}
+
+/* Dispara apenas a animação; mantém otp--erro só para o estilo */
+#body-redefinir-senha .codigo-validacao.otp--shake{
+  animation: otp-shake 420ms ease;
 }
 
 
