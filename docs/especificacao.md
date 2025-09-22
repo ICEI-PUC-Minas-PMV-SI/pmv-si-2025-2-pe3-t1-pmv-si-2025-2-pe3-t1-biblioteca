@@ -124,6 +124,50 @@ Fluxo Alternativo (2): Exclusão
 a)	O administrador solicita a exclusão do livro ao sistema.
 b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui o livro selecionado do banco de dados.
 
+### Gerenciar autores (CSU02)
+
+Súmario: O administrador do sistema realiza a gestão (inclusão, remoção, alteração e consulta) dos dados de um autor.
+
+Ator Primário: Administrador.
+
+Ator Secundário: Não possui.
+
+Entidade: Autor.
+
+Pré-condições: O administrador deve ter permissão para realizar o gerenciamento de autores.
+
+Fluxo Principal:
+
+1) O sistema apresenta as operações que podem ser realizadas: inclusão de um novo autor, consulta dos dados de um autor, alteração dos dados de um autor e exclusão de um autor.
+2) O administrador seleciona a opção desejada: inclusão, consulta, exclusão ou opta por encerrar o caso de uso.
+3) Se o administrador deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O administrador requisita a inclusão de um autor no sistema.
+b) O sistema apresenta a página de cadastro de um autor.
+c) O administrador preenche os campos solicitados.
+d) O sistema verifica se o autor já existe no sistema. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados. Em caso negativo, o sistema prossegue para o próximo passo.
+e) O sistema inclui o novo autor e atualiza o banco de dados.
+
+Fluxo Alternativo (2): Consulta
+
+a) O administrador solicita a consulta de dados de um autor no sistema.
+b) O sistema apresenta a página de informações do autor.
+c) O administrador consulta os dados do autor.
+
+Fluxo Alternativo (2): Alteração
+
+a) O administrador requisita a edição dos dados de um autor no sistema.
+b) O sistema apresenta o formulário de edição de dados.
+c) O administrador altera os dados que julgar necessário e requisita sua atualização.
+d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
+
+Fluxo Alternativo (2): Exclusão
+
+a)	O administrador solicita a exclusão do autor ao sistema.
+b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui o autor selecionado do banco de dados.
+
 #### Gerenciar  leitores (CSU03)
 
 Sumário: O leitor realiza a gestão (inclusão, remoção, alteração e consulta) dos seus próprios dados.
