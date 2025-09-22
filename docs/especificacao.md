@@ -64,7 +64,7 @@ O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados 
 | Ator | Descrição |
 |--------------------|------------------------------------|
 | Leitor |	Usuário que deseja buscar livros para empréstimo. É responsável por seu próprio perfil e pelas solicitações de empréstimo de livros. O leitor pode interagir com o sistema favoritando livros, adicionando títulos à sua cesta, avaliando obras específicas e deixando comentários. Possui um acesso restrito ao sistema.|
-| Bibliotecário |	Usuário responsável pelo gerenciamento de livros. Possui acesso geral ao sistema. |
+| Bibliotecário |	Usuário responsável pelo gerenciamento dos livros do averso e dos empréstimos efetivados. Possui acesso geral ao sistema e terá como atribuição adicional a gestão do fluxo informacional referente aos autores cadastrados no site. |
 
 ## 3.4 Modelagem do Sistema
 
