@@ -212,6 +212,72 @@ b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite
  
 Pós-condições: um leitor foi cadastrado no sistema, seus dados foram exibidos ou alterados ou sua conta foi excluída do sistema.
 
+#### Realizar login do usuário (CSU06)
+
+Sumário: Permitir a entrada de leitores e bibliotecários no sistema, validando suas credenciais de acesso.
+
+Ator Primário: Leitor ou Bibliotecário.
+
+Ator Secundário: Não possui.
+
+Pré-condições: O usuário (leitor ou bibliotecário) deve estar previamente cadastrado no sistema.
+
+Fluxo Principal:
+
+O sistema apresenta a tela de login solicitando nome de usuário e senha.
+
+O usuário informa suas credenciais de acesso (login e senha) e confirma.
+
+O sistema valida as credenciais informadas.
+
+Se as credenciais forem válidas, o sistema autentica o usuário e apresenta a tela inicial correspondente ao seu perfil (leitor ou bibliotecário).
+
+Caso o usuário deseje sair, poderá encerrar sua sessão posteriormente pelo caso de uso “Realizar logout do usuário”.
+
+Fluxo Alternativo (3): Credenciais Inválidas
+
+a) O sistema identifica que o login ou a senha estão incorretos.
+b) O sistema exibe uma mensagem de erro informando que as credenciais são inválidas.
+c) O sistema solicita nova tentativa de login.
+
+Fluxo Alternativo (2): Esqueci minha senha
+
+a) O usuário aciona a opção “Esqueci minha senha”.
+b) O sistema apresenta o procedimento de recuperação de senha (por e-mail ou outro meio configurado).
+c) O usuário segue o procedimento para redefinir sua senha.
+d) Após redefinição bem-sucedida, o usuário retorna à tela de login.
+
+Pós-condições: O usuário foi autenticado no sistema e obteve acesso às funcionalidades de acordo com seu perfil ou recebeu mensagem de erro caso não tenha conseguido se autenticar.
+
+#### Realizar logout do usuário (CSU07)
+
+Sumário: Permitir a saída de leitores e bibliotecários do sistema, encerrando a sessão do usuário de forma segura.
+
+Ator Primário: Leitor ou Bibliotecário.
+
+Ator Secundário: Não possui.
+
+Pré-condições: O usuário (leitor ou bibliotecário) deve estar autenticado no sistema.
+
+Fluxo Principal:
+
+O sistema apresenta a opção “Sair” ou “Logout” ao usuário autenticado.
+
+O usuário seleciona a opção “Sair” ou “Logout”.
+
+O sistema encerra a sessão do usuário.
+
+O sistema redireciona para a tela inicial de login.
+
+Fluxo Alternativo (2): Operações não salvas
+
+a) Antes de encerrar a sessão, o sistema identifica que há operações não salvas.
+b) O sistema exibe uma mensagem de aviso ao usuário.
+c) Se o usuário confirmar a saída, o sistema encerra a sessão mesmo assim.
+d) Se o usuário optar por permanecer, o sistema cancela o logout e retorna ao sistema.
+
+Pós-condições: A sessão do usuário é encerrada e ele não tem mais acesso às funcionalidades restritas até efetuar um novo login.
+
 #### Gerenciar  avaliações (CSU12)
 
 Sumário: O leitor realiza a gestão (inclusão, remoção, alteração e consulta) das suas avaliações.
