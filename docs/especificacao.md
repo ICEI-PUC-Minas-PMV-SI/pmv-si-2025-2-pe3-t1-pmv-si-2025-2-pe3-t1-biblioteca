@@ -65,13 +65,12 @@ O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados 
 |--------------------|------------------------------------|
 | Leitor |	Usuário que deseja buscar livros para empréstimo. É responsável por seu próprio perfil e pelas solicitações de empréstimo de livros. O leitor pode interagir com o sistema favoritando livros, adicionando títulos à sua cesta, avaliando obras específicas e deixando comentários. Possui um acesso restrito ao sistema.|
 | Bibliotecário |	Usuário responsável pelo gerenciamento de livros. Possui acesso geral ao sistema. |
-| ... |	... |	... |
-
 
 ## 3.4 Modelagem do Sistema
 
 ### 3.4.1 Diagrama de Casos de Uso
-Como observado no diagrama de casos de uso da Figura 1, a secretária poderá gerenciar as matrículas e professores no sistema, enquanto o coordenador, além dessas funções, poderá gerenciar os cursos de aperfeiçoamento.
+
+Como observado no diagrama de casos de uso da Figura 1, os leitores possuem alto grau de autonomia no gerenciamento de seus perfis e na interação com o sistema, realizando suas próprias reservas e criando listas de favoritos e de livros para serem reservados . A figura do bibliotecário será responsável por cadastrar livros e autores, bem como acompanhar as reservas e registrar os empréstimos. O sistema web apresentará um sistema automático de recomendações baseado tanto no perfil do leitor quanto na popularidade de gêneros, títulos e autores entre os usuários do site.
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
