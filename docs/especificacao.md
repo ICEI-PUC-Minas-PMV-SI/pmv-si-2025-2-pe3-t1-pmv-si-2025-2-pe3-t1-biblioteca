@@ -1,20 +1,19 @@
 # 3. DOCUMENTO DE ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE
 
-Nesta parte do trabalho você deve detalhar a documentação dos requisitos do sistema proposto de acordo com as seções a seguir. Ressalta-se que aqui é utilizado como exemplo um sistema de gestão de cursos de aperfeiçoamento.
-
 ## 3.1 Objetivos deste documento
-Descrever e especificar as necessidades da Coordenação do Curso de Sistemas de Informação da PUC Minas que devem ser atendidas pelo projeto SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento.
+
+Nesta seção, serão documentados os requisitos funcionais e não funcionais da plataforma proposta, bem como o diagrama de casos de uso e as descrições dos casos de uso relacionados a cada requisito funcional do sistema web da biblioteca Versora.
 
 ## 3.2 Escopo do produto
 
 ### 3.2.1 Nome do produto e seus componentes principais
-O produto será denominado SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento. Ele terá somente um componente (módulo) com os devidos elementos necessários à gestão de cursos.
+O produto será denominado Versora - um sistema web para uma biblioteca física que facilite a gestão de usuários e as tarefas relacionadas à busca e à reserva de livros. Seus componentes principais são o sistema de busca de livros e autores, o sistema de recomendação de livros e autores, o sistema de reservas e o sistema de avaliações.
 
 ### 3.2.2 Missão do produto
-Gerenciar informações sobre a oferta de cursos de aperfeiçoamento, gerenciar a composição das turmas, alunos, professores e matrículas. 
+Tornar a busca por títulos agradável e intutiva, cirar um ambiente interativo e atraente para leitores de todas as faixas etárias, conferir acessibilidade à biblioteca e incentivar o hábito da leitura. O sistema web implementará as melhores práticas observadas em sites para bibliotecas e irá além, apresentando funcionalidades inéditas no contexto desse tipo de plataforma.
 
 ### 3.2.3 Limites do produto
-O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcelas do curso, pagamento a professore e agendamentos. O SCCA não contempla o atendimento a vários cursos de Sistemas de Informação de outras unidades da PUC Minas.
+O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados simulado em armazenamento local, para fins de testagem de todas as suas funcionalidades, bem como de implementação de seu layout.
 
 ### 3.2.4 Benefícios do produto
 
@@ -22,8 +21,9 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 |--------------------|------------------------------------|----------------------------------------|
 |1	| Facilidade no cadastro de dados |	Essencial |
 |2 | Facilidade na recuperação de informações | Essencial | 
-|3 | Segurança no cadastro de matrículas | Essencial | 
-|4	| Melhoria na comunicação com os alunos	| Recomendável | 
+|3 | Fluxo de navegação intutivo | Essencial | 
+|4	| Agradabilidade estética	| Essencial | 
+|5 | Alto nível de interatividade entre leitores e sistema| Essencial |
 
 ## 3.3 Descrição geral do produto
 
@@ -35,7 +35,7 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 | RF002  | Gerenciar autores                    | Permitir inclusão, consulta, alteração e exclusão de autores                                                                |
 | RF003  | Gerenciar leitores                   | Permitir inclusão, consulta, alteração e exclusão de leitores                                                               |
 | RF004  | Gerenciar bibliotecários             | Permitir inclusão, consulta, alteração e exclusão de bibliotecários                                                         |
-| RF005  | Gerenciar reserva de livros          | Permitir inclusão, consulta, exclusão e prolongamento de reservas de livros                                                 |
+| RF005  | Gerenciar reserva de livros          | Permitir inclusão, consulta e exclusão de reservas de livros                                                 |
 | RF006  | Realizar login do usuário            | Permitir a entrada de leitores e bibliotecários no sistema                                                                  |
 | RF007  | Realizar logout do usuário           | Permitir a saida de leitores e bibliotecários do sistema                                                                    |
 | RF008  | Buscar livros                        | Permitir busca de títulos específicos, filtro por gênero, autor e ano de publicação                                         |
@@ -211,6 +211,76 @@ a)	O leitor solicita a exclusão de sua conta de usuário.
 b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
  
 Pós-condições: um leitor foi cadastrado no sistema, seus dados foram exibidos ou alterados ou sua conta foi excluída do sistema.
+
+#### Gerenciar bibliotecários (CSU04)
+
+Sumário: O bibliotecário realiza a gestão (consulta, alteração ou exclusão) dos seus próprios dados.
+
+Ator Primário: Bibliotecário.
+
+Ator Secundário: Não possui.
+
+Pré-condições: O bibliotecário deve estar cadastrado e deve ser validado pelo Sistema.
+
+Fluxo Principal:
+
+1) O sistema apresenta as operações que podem ser realizadas: consulta dos dados de um bibliotecário, alteração dos dados de um bibliotecário e exclusão de um bibliotecário.
+2) O bibliotecário seleciona a operação desejada: consulta, alteração, exclusão ou opta por encerrar o caso de uso.
+3) Se o bibliotecário deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Consulta
+
+a) O bibliotecário requisita a consulta de seus dados no sistema. 
+b) O sistema apresenta a página de perfil. 
+c) O bibliotecário confere os dados solicitados.
+
+Fluxo Alternativo (2): Alteração
+
+a) O bibliotecário requisita a edição de seus dados no sistema. 
+b) O sistema apresenta o formulário de edição de dados. 
+c) O bibliotecário altera os dados que julgar necessário e requisita sua atualização. 
+d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
+
+Fluxo Alternativo (2): Exclusão
+
+a) O bibliotecário solicita a exclusão de sua conta de usuário. 
+b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
+
+Pós-condições: os dados do bibliotecário foram exibidos ou alterados ou sua conta foi excluída do sistema.
+
+#### Gerenciar reservas de livros (CSU05)
+
+Sumário: O leitor realiza a gestão (inclusão, consulta e exclusão) de reservas de livros.
+
+Ator Primário: Leitor.
+
+Ator Secundário: Não possui.
+
+Pré-condições: O leitor deve estar cadastrado e deve ser validado pelo Sistema.
+
+Fluxo Principal:
+
+1) O sistema apresenta as operações que podem ser realizadas: inclusão de uma reserva, consulta dos dados de uma reserva, exclusão de uma reserva.
+2) O leitor seleciona a operação desejada: inclusão, consulta ou exclusão de uma reserva, ou opta por encerrar o caso de uso.
+3) Se o leitor deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O leitor requisita a inclusão de uma reserva no sistema. 
+b) O sistema registra a reserva no banco de dados e exibe a posição do leitor na fila de reservas da obra desejada. 
+
+Fluxo Alternativo (2): Consulta
+
+a) O leitor requisita a consulta de suas lista de reservas. 
+b) O sistema apresenta a página com todas as reservas do leitor. 
+c) O leitor confere os dados solicitados.
+
+Fluxo Alternativo (2): Exclusão
+
+a) O leitor solicita a exclusão de uma reserva. 
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de confirmação, exclui o leitor da fila de reservas daquele título específico, atualizando a fila no banco de dados.
+
+Pós-condições: a reserva de um livro foi incluída, consultada ou excluída do sistema.
 
 #### Realizar login do usuário (CSU06)
 
