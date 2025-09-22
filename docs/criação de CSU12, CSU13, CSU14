@@ -212,9 +212,123 @@ b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite
  
 Pós-condições: um leitor foi cadastrado no sistema, seus dados foram exibidos ou alterados ou sua conta foi excluída do sistema.
 
+#### Gerenciar  avaliações (CSU12)
+
+Sumário: O leitor realiza a gestão (inclusão, remoção, alteração e consulta) das suas avaliações.
+
+Ator Primário: Leitor.
+
+Ator Secundário: Não possui.
+
+Entidade: Avaliação.
+
+Pré-condições: O leitor deve estar cadastrado e deve ser validado pelo Sistema.
+
+Fluxo Principal:
+
+1)  O sistema apresenta as operações que podem ser realizadas: inclusão de uma nova avaliação, consulta dos dados de uma avaliação, alteração dos dados de uma avaliação e exclusão de uma avaliação.
+2) 	O leitor seleciona a operação desejada: inclusão, consulta, alteração, exclusão ou opta por encerrar o caso de uso.
+3)  Se o leitor deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O leitor requisita a inclusão de sua avaliação no sistema.
+b) O sistema apresenta a página de cadastro de uma avaliação.
+c) O leitor preenche os campos solicitados.
+d) O sistema verifica se o livro já foi avaliado por este leitor. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados da avaliação. Em caso negativo, o sistema prossegue para o próximo passo.
+e) O sistema inclui uma nova avaliação e atualiza o banco de dados.
+
+Fluxo Alternativo (2): Consulta
+
+a) O leitor requisita a consulta de suas avaliações no sistema.
+b) O sistema apresenta a página de avaliações.
+c) O leitor confere os dados das avaliações.
+
+Fluxo Alternativo (2): Alteração
+
+a) O leitor requisita a edição de suas avaliações no sistema.
+b) O sistema apresenta o formulário de edição de dados.
+c) O leitor altera os dados que julgar necessário e requisita sua atualização.
+d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
+
+Fluxo Alternativo (2): Exclusão
+
+a)	O leitor solicita a exclusão de sua avaliação.
+b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a avaliação do banco de dados.
+ 
+Pós-condições: uma avaliação foi cadastrada no sistema, essa avaliação teve seus dados exibidos ou alterados ou foi excluída do sistema.
+
+#### Gerenciar  empréstimos (CSU13)
+
+Sumário: O administrador realiza a gestão (inclusão, remoção, alteração e consulta) dos empréstimos da biblioteca.
+
+Ator Primário: Administrador.
+
+Ator Secundário: Não possui.
+
+Entidade: Empréstimo.
+
+Pré-condições: O administrador deve estar cadastrado e deve ser validado pelo Sistema.
+
+Fluxo Principal:
+
+1)  O sistema apresenta as operações que podem ser realizadas: inclusão de um novo empréstimo, consulta dos dados de um empréstimo, alteração dos dados de um empréstimo e exclusão de um empréstimo.
+2) 	O administrador seleciona a operação desejada: inclusão, consulta, alteração, exclusão ou opta por encerrar o caso de uso.
+3)  Se o administrador deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O administrador requisita a inclusão de um empréstimo no sistema.
+b) O sistema apresenta a página de cadastro de empréstimos.
+c) O administrador preenche os campos solicitados.
+d) O sistema verifica se o empréstimo já foi realizado por este administrador. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados do empréstimo. Em caso negativo, o sistema prossegue para o próximo passo.
+e) O sistema inclui um novo empréstimo e atualiza o banco de dados.
+
+Fluxo Alternativo (2): Consulta
+
+a) O administrador requisita a consulta dos empréstimos realizados no sistema.
+b) O sistema apresenta a página de empréstimos.
+c) O administrador confere os dados dos empréstimos.
+
+Fluxo Alternativo (2): Alteração
+
+a) O administrador requisita a edição de um empréstimo no sistema.
+b) O sistema apresenta o formulário de edição de dados.
+c) O administrador altera os dados que julgar necessário e requisita sua atualização.
+d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
+
+Fluxo Alternativo (2): Exclusão
+
+a)	O administrador solicita o cancelamento de um empréstimo.
+b) O sistema envia uma janela de confirmação de cancelamento e, em caso de aceite, cancela o empréstimo do banco de dados.
+ 
+Pós-condições: um empréstimo foi cadastrado no sistema, esse empréstimo teve seus dados exibidos ou alterados ou foi excluído do sistema.
+
+#### Gerenciar  recomendações (CSU14)
+
+Sumário: O tempo realiza a recomendação de livros, gêneros e autores para os leitores, com base em suas interações registradas.
+
+Ator Primário: Leitor.
+
+Ator Secundário: Não possui.
+
+Entidade: Recomendação.
+
+Pré-condições: O leitor deve estar cadastrado e ser validado pelo Sistema, além de possuir interações registradas como reservas, avaliações e curtidas.
+Fluxo Principal:
+
+1)  O sistema apresenta o acervo ao leitor.
+2) 	O sistema verifica se o leitor possui interações (histórico de reservas, avaliações e curtidas). Em caso negativo, o sistema não gera um carrossel de recomendação personalizado. Em caso afirmativo, o sistema prossegue para o próximo passo.
+3)  O sistema identifica livros ou autores semelhantes baseados em suas características.
+4)  O sistema apresenta um carrossel de recomendações personalizadas ao leitor.
+
+
+Pós-condições: um carrossel de recomendações foi exibido ao leitor.
 ### 3.4.3 Diagrama de Classes 
 
 A Figura 2 mostra o diagrama de classes do sistema. A Matrícula deve conter a identificação do funcionário responsável pelo registro, bem com os dados do aluno e turmas. Para uma disciplina podemos ter diversas turmas, mas apenas um professor responsável por ela.
+
+
 
 #### Figura 2: Diagrama de Classes do Sistema.
  
