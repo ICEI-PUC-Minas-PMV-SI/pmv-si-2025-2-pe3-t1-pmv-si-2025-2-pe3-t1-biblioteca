@@ -10,7 +10,7 @@ Nesta seção, serão documentados os requisitos funcionais e não funcionais da
 O produto será denominado Versora - um sistema web para uma biblioteca física que facilite a gestão de usuários e as tarefas relacionadas à busca e à reserva de livros. Seus componentes principais são o sistema de busca de livros e autores, o sistema de recomendação de livros e autores, o sistema de reservas e o sistema de avaliações.
 
 ### 3.2.2 Missão do produto
-Tornar a busca por títulos agradável e intutiva, cirar um ambiente interativo e atraente para leitores de todas as faixas etárias, conferir acessibilidade à biblioteca e incentivar o hábito da leitura. O sistema web implementará as melhores práticas observadas em sites para bibliotecas e irá além, apresentando funcionalidades inéditas no contexto desse tipo de plataforma.
+Tornar a busca por títulos agradável e intuitiva, cirar um ambiente interativo e atraente para leitores de todas as faixas etárias, conferir acessibilidade à biblioteca e incentivar o hábito da leitura. O sistema web implementará as melhores práticas observadas em sites para bibliotecas e irá além, apresentando funcionalidades inéditas no contexto desse tipo de plataforma.
 
 ### 3.2.3 Limites do produto
 O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados simulado em armazenamento local, para fins de testagem de todas as suas funcionalidades, bem como de implementação de seu layout.
@@ -21,7 +21,7 @@ O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados 
 |--------------------|------------------------------------|----------------------------------------|
 |1	| Facilidade no cadastro de dados |	Essencial |
 |2 | Facilidade na recuperação de informações | Essencial | 
-|3 | Fluxo de navegação intutivo | Essencial | 
+|3 | Fluxo de navegação intuitivo | Essencial | 
 |4	| Agradabilidade estética	| Essencial | 
 |5 | Alto nível de interatividade entre leitores e sistema| Essencial |
 
