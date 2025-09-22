@@ -84,9 +84,11 @@ Como observado no diagrama de casos de uso da Figura 1, a secretária poderá ge
 
 Súmario: O administrador do sistema realiza a gestão (inclusão, remoção, alteração e consulta) dos dados de um livro.
 
-Ator Primário: Livro.
+Ator Primário: Administrador.
 
-Ator Secundário: Administrador.
+Ator Secundário: Não possui.
+
+Entidade: Livro.
 
 Pré-condições: O administrador deve ter permissão para realizar o gerenciamento de livros.
 
