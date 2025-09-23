@@ -347,7 +347,75 @@ d) Se o usuário optar por permanecer, o sistema cancela o logout e retorna ao s
 
 Pós-condições: A sessão do usuário é encerrada e ele não tem mais acesso às funcionalidades restritas até efetuar um novo login.
 
-#### Gerenciar  avaliações (CSU12)
+#### Gerenciar lista de favoritos (CSU10)
+
+Sumário: O leitor realiza a gestão (inclusão, consulta e exclusão) da lista de favoritos.
+
+Ator Primário: Leitor.
+
+Ator Secundário: Não possui.
+
+Pré-condições: O leitor deve estar cadastrado e deve ser validado pelo Sistema.
+
+Fluxo Principal:
+
+1) O sistema apresenta as operações que podem ser realizadas: inclusão de um novo livro à lista, consulta da lista de favoritos, exclusão de um livro da lista.
+2) O leitor seleciona a operação desejada: inclusão, consulta ou exclusão de um favorito, ou opta por encerrar o caso de uso.
+3) Se o leitor deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O leitor requisita a inclusão de um livro à lista. 
+b) O sistema registra o livro na lista de favoitos e o exibe junto aos outros, caso já haja algum. 
+
+Fluxo Alternativo (2): Consulta
+
+a) O leitor requisita a consulta de sua lista de favoritos. 
+b) O sistema apresenta a página com todos os livros inclusos na lista de favoritos do leitor. 
+c) O leitor confere os dados solicitados.
+
+Fluxo Alternativo (2): Exclusão
+
+a) O leitor solicita a exclusão de um livro da lista. 
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de confirmação, exclui o livro selecionado da lista, atualizando a mesma.
+
+Pós-condições: um livro foi incluído, consultado ou excluído da lista de favoritos do leitor.
+
+#### Gerenciar livros selecionados (CSU11)
+
+Sumário: O leitor realiza a gestão (inclusão, consulta e exclusão) da sacola de livros.
+
+Ator Primário: Leitor.
+
+Ator Secundário: Não possui.
+
+Pré-condições: O leitor deve estar cadastrado e deve ser validado pelo Sistema.
+
+Fluxo Principal:
+
+1) O sistema apresenta as operações que podem ser realizadas: inclusão de um novo livro à sacola, consultar lista de selecionados, exclusão de um livro da sacola.
+2) O leitor seleciona a operação desejada: inclusão, consulta ou exclusão de um livro da sacola, ou opta por encerrar o caso de uso.
+3) Se o leitor deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+
+Fluxo Alternativo (2): Inclusão
+
+a) O leitor requisita a inclusão de um livro à sacola. 
+b) O sistema registra o livro na sacola de livros selecionados e o exibe junto aos outros, caso já haja algum. 
+
+Fluxo Alternativo (2): Consulta
+
+a) O leitor requisita a consulta de sua sacola de livros selecionados. 
+b) O sistema apresenta a página com todos os títulos inclusos na sacola de livros selecionados do leitor. 
+c) O leitor confere os dados solicitados.
+
+Fluxo Alternativo (2): Exclusão
+
+a) O leitor solicita a exclusão de um livro da sacola. 
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de confirmação, exclui o livro selecionado da sacola, atualizando a mesma.
+
+Pós-condições: um livro foi incluído, consultado ou excluído da sacola do leitor.
+
+#### Gerenciar avaliações (CSU12)
 
 Sumário: O leitor realiza a gestão (inclusão, remoção, alteração e consulta) das suas avaliações.
 
