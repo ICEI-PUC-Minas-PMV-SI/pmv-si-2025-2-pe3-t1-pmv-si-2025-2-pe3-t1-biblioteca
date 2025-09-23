@@ -6,10 +6,9 @@ export class ClasseEmprestimo{
 
     // aqui estão atributos específicos de cada objeto da classe (cada emprestimo específico)
     idEmprestimo
-    idUsuario
+    idLeitor
+    idBibliotecario
     tomboLivro
-    //booleano que indica se há emprestimos (true) ou se não há reservas (false) no momento
-    estaEmprestado
     //indica a data da coleta do livro
     dataEmprestimo
     //indica a data inicial para devolução do livro
@@ -18,6 +17,8 @@ export class ClasseEmprestimo{
     foiProlongado
     //indica a nova data de devolução após o prolongamento do empréstimo
     dataProlongamento
+    // indica se o empréstimo está em vigor ou se foi finalizado
+    estaAtivo
 
     //construtor de objetos empréstimo
 

@@ -6,12 +6,10 @@ export class ClasseReserva{
 
     // aqui estão atributos específicos de cada objeto da classe (cada livro específico)
     idReserva
-    idUsuario
-    //como pode haver uma fila de reservas, esse atributo guarda a quantidade de usuários que está na fila
+    idLeitor
+    //como pode haver uma fila de reservas, esse atributo guarda a quantidade de usuários que está na sua frente na fila
     tamanhoFila
     tomboLivro
-    //booleano que indica se há reservas (true) ou se não há reservas (false) no momento
-    estaReservado
     //indica a data e hora de solicitação da reserva
     dataHoraSolicitacao
     //indica a data e hora limites para efetivamente coletar o livro
