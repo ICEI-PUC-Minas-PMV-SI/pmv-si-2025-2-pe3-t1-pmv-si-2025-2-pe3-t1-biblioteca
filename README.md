@@ -6,7 +6,9 @@
 
 `SEMESTRE: 3º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este projeto tem como finalidade desenvolver uma plataforma web para bibliotecas físicas que auxilie no cadastramento e controle do acervo, no registro e edição dos dados dos usuários, bem como na reserva de livros por parte dos próprios leitores, de forma totalmente digital. 
+
+O sistema web desenvolvido possuirá layout moderno e acessível e apresentará alto nível de interatividade para o usuário, como a funcionalidade de recomendação de títulos e autores, a possibilidade de favoritar obras e uma seção de avaliações de títulos.
 
 ## Integrantes
 
