@@ -342,6 +342,15 @@ function shakeOtp() {
     const novaSenha = document.getElementById("nova-senha")
     const repitaNovaSenha = document.getElementById("repita-nova-senha")
 
+    if (novaSenha.value === "" || repitaNovaSenha.value === ""){
+
+       showAlertSync({
+        title: "Prencha todos campos",
+        message: "É necessário inserir sua senha nos dois campos apresentados."
+        });
+      return
+    }
+
     if(novaSenha.value !== repitaNovaSenha.value){
 
       showAlertSync({
