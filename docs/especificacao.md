@@ -37,18 +37,20 @@ Proporcionar uma experiência de compra de ingressos e snacks de cinema ágil, t
 
 ### 3.3.1 Requisitos Funcionais
 
-| Código | Requisito Funcional          | Descrição                                                                                                                        |
-| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------                        |
-| RF1    | Compra de ingressos          | Permitir ao cliente selecionar o filme, o horário e o assento e visualizar o ingresso após realizar o pagamento.                 |
-| RF2    | Comprar na Lanchonete        | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos, etc junto ao seu ingresso.                               |
-| RF3    | Gerenciar Meios de Pagamento | Permitir ao estabelecimento cadastrar, visualizar, alterar e remover formas de pagamento.                                        |                             
-| RF4    | Selecionar forma de pagamento| Permitir que o usuário salve seus meios de pagamento na plataforma e escolha qual utilizar ao realizar a compra do ingresso.     |
-| RF5    | Gerenciar Usuários           | Permitir ao cliente cadastrar, visualizar, alterar e remover sua conta na aplicação.                                             |
-| RF6    | Acessar conta                | Permitir que o usuário autentique-se na plataforma e encerre sua sessão para acessar sua conta e realizar a compra de ingressos. |
-| RF7    | Precificar Dinamicamente     | Permitir regras de variação automática no preço dos ingressos de acordo com a lotação da sala.                                   |
-| RF8    | Avaliar Filmes               | Permitir que os usuários avaliem os filmes assistidos e deixem comentários.                                                      |
-| RF9    | Gerenciar Promoções          | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanchonete.                                |
-| RF10   | Gerenciar Filmes             | Permitir ao gestor de conteúdos  cadastrar, visualizar, alterar e remover os filmes em cartaz.                                   |
+| Código | Requisito Funcional           | Descrição                                                                                                |
+| ------ | ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| RF1    | Compra de ingressos           | Permitir ao cliente selecionar filme, horário e assento e receber o ingresso digital após o pagamento.   |
+| RF2    | Comprar na Lanchonete         | Permitir ao cliente selecionar e adquirir pipoca, refrigerante, combos e outros itens junto ao ingresso. |
+| RF3    | Gerenciar Meios de Pagamento  | Permitir ao estabelecimento cadastrar, visualizar, alterar e remover formas de pagamento aceitas.        |
+| RF4    | Selecionar Forma de Pagamento | Permitir que o cliente armazene seus meios de pagamento e escolha qual utilizar na compra.               |
+| RF5    | Acessar Conta                 | Permitir que o cliente crie, edite e acesse sua conta por meio de autenticação e logout seguro.          |
+| RF6    | Precificar Dinamicamente      | Permitir definir regras automáticas de variação no preço dos ingressos conforme a ocupação da sala.      |
+| RF7    | Avaliar Filmes                | Permitir que os clientes atribuam notas e publiquem comentários sobre os filmes assistidos.              |
+| RF8    | Gerenciar Promoções           | Permitir à gerência cadastrar, visualizar, alterar e remover promoções de ingressos e lanches.           |
+| RF9    | Gerenciar Filmes              | Permitir ao gestor de conteúdo cadastrar, visualizar, alterar e remover filmes em cartaz.                |
+| RF10   | Fórum de Reviews              | Permitir que clientes publiquem comentários em texto e vídeo sobre os filmes em um espaço de interação.  |
+| RF11   | Gerenciar Contas de Usuários  | Permitir ao administrador criar, editar e remover contas de usuários e definir permissões de acesso.     |
+
 
 ### 3.3.2 Requisitos Não Funcionais
 
