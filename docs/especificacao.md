@@ -77,8 +77,8 @@ Como mostrado no diagrama da Figura 1, o Cliente poderá navegar pelos filmes, s
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-<img width="639" height="614" alt="image" src="https://github.com/user-attachments/assets/64d9bb2c-4504-4489-b975-766f66c57c84" />
- 
+<img width="790" height="807" alt="image" src="https://github.com/user-attachments/assets/edc42d4b-8ec0-48e8-831f-08d9f434ee51" />
+
 ### 3.4.2 Descrições de Casos de Uso
 
 #### Navegar Filmes (CSU01)
