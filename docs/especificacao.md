@@ -42,8 +42,8 @@ O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados 
 | RF009  | Buscar autores                       | Permitir busca de autores específicos e filtro por especialidade                                                            |
 | RF010  | Gerenciar lista de favoritos         | Permitir favoritar livros, consultar lista de favoritos e remover livros da lista                                           |
 | RF011  | Gerenciar livros selecionados        | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
-| RF012  | Gerenciar avaliações                 | Permitir atribuição de nota de 1 a 5 a livros reservados e exibir a média das notas por livro. Exibir histórico de comentários, incluir e deletar comentários   |
-| RF013  | Gerenciar empréstimos                | Permitir inclusão, finalização e prolongamento de empréstimos |
+| RF012  | Gerenciar avaliações                 | Permitir atribuição de nota de 1 a 5 a livros reservados e consultar a média das notas por livro. Consultar o histórico de comentários, incluir e deletar comentários   |
+| RF013  | Gerenciar empréstimos                | Permitir inclusão, consulta, finalização e prolongamento de empréstimos |
 | RF014  | Gerenciar recomendações              | Recomendar livros, gêneros e autores |
 
 
@@ -293,30 +293,25 @@ Pré-condições: O usuário (leitor ou bibliotecário) deve estar previamente c
 
 Fluxo Principal:
 
-O sistema apresenta a tela de login solicitando nome de usuário e senha.
+1)O sistema apresenta a seção de login com as opções de entrar no sistema ou redefinir senha.
+2)O usuário seleciona a opção desejada: entrar no sistema ou redefinir sua senha.
+3)Caso o usuário deseje realizar outra operação, retorna ao passo 2. Caso contrário, o caso de uso termina.
 
-O usuário informa suas credenciais de acesso (login e senha) e confirma.
 
-O sistema valida as credenciais informadas.
-
-Se as credenciais forem válidas, o sistema autentica o usuário e apresenta a tela inicial correspondente ao seu perfil (leitor ou bibliotecário).
-
-Caso o usuário deseje sair, poderá encerrar sua sessão posteriormente pelo caso de uso “Realizar logout do usuário”.
-
-Fluxo Alternativo (3): Credenciais Inválidas
-
-a) O sistema identifica que o login ou a senha estão incorretos.
-b) O sistema exibe uma mensagem de erro informando que as credenciais são inválidas.
-c) O sistema solicita nova tentativa de login.
+Fluxo Alternativo (2): entrar no sistema
+a) O usuário escolhe a opção de entrar no sistema 
+b) O sistema solicita a inserção dos dados de entrada nos campos correspondentes
+c) O usuário preenche os campos solicitados
+d) O sistema valida os dados inseridos e, em caso afirmativo, a entrada no sistema é confirmada. Caso contrário, o sistema reporta o erro e solicita a verificação dos dados.
 
 Fluxo Alternativo (2): Esqueci minha senha
 
 a) O usuário aciona a opção “Esqueci minha senha”.
-b) O sistema apresenta o procedimento de recuperação de senha (por e-mail ou outro meio configurado).
+b) O sistema apresenta o procedimento de recuperação de senha (por intermédio de um código de verificação enviado para o e-mail do usuário).
 c) O usuário segue o procedimento para redefinir sua senha.
-d) Após redefinição bem-sucedida, o usuário retorna à tela de login.
+d) O sistema valida os dados inseridos e, em caso afirmativo, a senha é alterada, encerrando o caso de uso. Caso contrário, o sistema reporta o erro e solicita a verificação dos dados.
 
-Pós-condições: O usuário foi autenticado no sistema e obteve acesso às funcionalidades de acordo com seu perfil ou recebeu mensagem de erro caso não tenha conseguido se autenticar.
+Pós-condições: O usuário foi autenticado no sistema e obteve acesso às funcionalidades de acordo com seu perfil ou ocorreu a alteração da senha do usuário no banco de dados.
 
 #### Realizar logout do usuário (CSU07)
 
@@ -330,20 +325,9 @@ Pré-condições: O usuário (leitor ou bibliotecário) deve estar autenticado n
 
 Fluxo Principal:
 
-O sistema apresenta a opção “Sair” ou “Logout” ao usuário autenticado.
-
-O usuário seleciona a opção “Sair” ou “Logout”.
-
-O sistema encerra a sessão do usuário.
-
-O sistema redireciona para a tela inicial de login.
-
-Fluxo Alternativo (2): Operações não salvas
-
-a) Antes de encerrar a sessão, o sistema identifica que há operações não salvas.
-b) O sistema exibe uma mensagem de aviso ao usuário.
-c) Se o usuário confirmar a saída, o sistema encerra a sessão mesmo assim.
-d) Se o usuário optar por permanecer, o sistema cancela o logout e retorna ao sistema.
+1)O sistema apresenta a opção “Sair” ao usuário autenticado.
+2)O usuário seleciona a opção “Sair”.
+3)O sistema verifica se há operações não salvas. Em caso afirmativo, reporta o erro e solicita a conclusão das operações não salvas. Caso contrário, encerra a sessão do usuário, finalizando o caso de uso.
 
 Pós-condições: A sessão do usuário é encerrada e ele não tem mais acesso às funcionalidades restritas até efetuar um novo login.
 
@@ -423,8 +407,6 @@ Ator Primário: Leitor.
 
 Ator Secundário: Não possui.
 
-Entidade: Avaliação.
-
 Pré-condições: O leitor deve estar cadastrado e deve ser validado pelo Sistema.
 
 Fluxo Principal:
@@ -465,13 +447,11 @@ Pós-condições: uma avaliação foi cadastrada no sistema, essa avaliação te
 
 Sumário: O administrador realiza a gestão (inclusão, remoção, alteração e consulta) dos empréstimos da biblioteca.
 
-Ator Primário: Administrador.
+Ator Primário: Bibliotecário.
 
 Ator Secundário: Não possui.
 
-Entidade: Empréstimo.
-
-Pré-condições: O administrador deve estar cadastrado e deve ser validado pelo Sistema.
+Pré-condições: O bibliotecário deve estar cadastrado e deve ser validado pelo Sistema.
 
 Fluxo Principal:
 
@@ -514,8 +494,6 @@ Sumário: O tempo realiza a recomendação de livros, gêneros e autores para os
 Ator Primário: Leitor.
 
 Ator Secundário: Não possui.
-
-Entidade: Recomendação.
 
 Pré-condições: O leitor deve estar cadastrado e ser validado pelo Sistema, além de possuir interações registradas como reservas, avaliações e curtidas.
 Fluxo Principal:
