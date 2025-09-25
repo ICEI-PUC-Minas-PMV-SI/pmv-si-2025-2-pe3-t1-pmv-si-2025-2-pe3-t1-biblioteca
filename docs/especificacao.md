@@ -50,6 +50,8 @@ Proporcionar uma experiência de compra de ingressos e snacks de cinema ágil, t
 | RF9    | Gerenciar Filmes              | Permitir ao gestor de conteúdo cadastrar, visualizar, alterar e remover filmes em cartaz.                |
 | RF10   | Fórum de Reviews              | Permitir que clientes publiquem comentários em texto e vídeo sobre os filmes em um espaço de interação.  |
 | RF11   | Gerenciar Contas de Usuários  | Permitir ao administrador criar, editar e remover contas de usuários e definir permissões de acesso.     |
+| RF12   | Recomendar Filmes por Preferências  | Permitir que, no momento do cadastro, o cliente selecione seus gêneros de filmes favoritos. Após o login, o sistema recomendará filmes em cartaz e futuros lançamentos com base nessas preferências.     |
+| RF13   | Comentar no Cartaz do Filme  | Permitir que o cliente publique comentários diretamente na página/cartaz do filme em exibição, possibilitando interação e troca de opiniões entre os usuários.     |
 
 
 ### 3.3.2 Requisitos Não Funcionais
