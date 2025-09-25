@@ -239,10 +239,8 @@ Pré-condições: Acesso autorizado ao painel administrativo.
 A Figura 2 mostra o diagrama de classes do sistema. A Matrícula deve conter a identificação do funcionário responsável pelo registro, bem com os dados do aluno e turmas. Para uma disciplina podemos ter diversas turmas, mas apenas um professor responsável por ela.
 
 #### Figura 2: Diagrama de Classes do Sistema.
- 
 
-![image](https://github.com/user-attachments/assets/8250c6c8-de5f-4a57-8099-3a5ba25f5878)
-
+<img width="700" alt="Diag  Classes Ticketwave (1)" src="https://github.com/user-attachments/assets/5cd627ab-375f-48b8-a8a4-150fba20273e" />
 
 
 ### 3.4.4 Descrições das Classes 
