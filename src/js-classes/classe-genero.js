@@ -7,7 +7,7 @@ export class ClasseGenero{
     // para o sistema de recomendações, pode ser útil um gênero ter "gêneros irmãos":
     gererosRelacionados
     //contador de acessos para o sistema de recomendação:
-    numeroDeAcessos
+    numeroDeAcessos = 0
 
     
 }
