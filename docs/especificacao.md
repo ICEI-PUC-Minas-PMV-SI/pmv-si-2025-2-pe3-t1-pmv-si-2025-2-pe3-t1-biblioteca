@@ -79,92 +79,88 @@ Como observado no diagrama de casos de uso da Figura 1, os leitores possuem alto
 
 ### 3.4.2 Descrições de Casos de Uso
 
-### Gerenciar livros (CSU01)
+#### Gerenciar livros (CSU01)
 
-Súmario: O administrador do sistema realiza a gestão (inclusão, remoção, alteração e consulta) dos dados de um livro.
+Súmario: O bibliotecário do sistema realiza a gestão (inclusão, remoção, alteração e consulta) dos dados de um livro.
 
-Ator Primário: Administrador.
+Ator Primário: Bibliotecário.
 
 Ator Secundário: Não possui.
 
-Entidade: Livro.
-
-Pré-condições: O administrador deve ter permissão para realizar o gerenciamento de livros.
+Pré-condições: O bibliotecário deve estar previamente cadastrado no sistema.
 
 Fluxo Principal:
 
 1) O sistema apresenta as operações que podem ser realizadas: inclusão de um novo livro, consulta dos dados de um livro, alteração dos dados de um livro e exclusão de um livro.
-2) O administrador seleciona a opção desejada: inclusão, consulta, exclusão ou opta por encerrar o caso de uso.
-3) Se o administrador deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+2) O bibliotecário seleciona a opção desejada: inclusão, consulta, exclusão ou opta por encerrar o caso de uso.
+3) Se o bibliotecário deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
 
 Fluxo Alternativo (2): Inclusão
 
-a) O administrador requisita a inclusão de um livro no sistema.
+a) O bibliotecário requisita a inclusão de um livro no sistema.
 b) O sistema apresenta a página de cadastro de um livro.
-c) O administrador preenche os campos solicitados.
-d) O sistema verifica se o livro já existe no sistema pelo ISBN. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados. Em caso negativo, o sistema prossegue para o próximo passo.
+c) O bibliotecário preenche os campos solicitados.
+d) O sistema verifica se há erros no formato e tipo dos dados inseridos. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados. Em caso negativo, o sistema prossegue para o próximo passo.
 e) O sistema inclui o novo livro e atualiza o banco de dados.
 
 Fluxo Alternativo (2): Consulta
 
-a) O administrador solicita a consulta de dados de um livro no sistema.
+a) O bibliotecário solicita a consulta de dados de um livro no sistema.
 b) O sistema apresenta a página de informações do livro.
-c) O administrador consulta os dados do livro.
+c) O bibliotecário consulta os dados do livro.
 
 Fluxo Alternativo (2): Alteração
 
-a) O adnunistrador requisita a edição dos dados de um livro no sistema.
+a) O bibliotecário requisita a edição dos dados de um livro no sistema.
 b) O sistema apresenta o formulário de edição de dados.
-c) O administrador altera os dados que julgar necessário e requisita sua atualização.
+c) O bibliotecário altera os dados que julgar necessário e requisita sua atualização.
 d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
 
 Fluxo Alternativo (2): Exclusão
 
-a)	O administrador solicita a exclusão do livro ao sistema.
+a)	O bibliotecário solicita a exclusão do livro ao sistema.
 b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui o livro selecionado do banco de dados.
 
 ### Gerenciar autores (CSU02)
 
-Súmario: O administrador do sistema realiza a gestão (inclusão, remoção, alteração e consulta) dos dados de um autor.
+Súmario: O bibliotecário do sistema realiza a gestão (inclusão, remoção, alteração e consulta) dos dados de um autor.
 
-Ator Primário: Administrador.
+Ator Primário: bibliotecário.
 
 Ator Secundário: Não possui.
 
-Entidade: Autor.
-
-Pré-condições: O administrador deve ter permissão para realizar o gerenciamento de autores.
+Pré-condições: O bibliotecário deve estar previamente cadastrado no sistema.
 
 Fluxo Principal:
 
 1) O sistema apresenta as operações que podem ser realizadas: inclusão de um novo autor, consulta dos dados de um autor, alteração dos dados de um autor e exclusão de um autor.
-2) O administrador seleciona a opção desejada: inclusão, consulta, exclusão ou opta por encerrar o caso de uso.
-3) Se o administrador deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+2) O bibliotecário seleciona a opção desejada: inclusão, consulta, exclusão ou opta por encerrar o caso de uso.
+3) Se o bibliotecário deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
 
 Fluxo Alternativo (2): Inclusão
 
-a) O administrador requisita a inclusão de um autor no sistema.
+a) O bibliotecário requisita a inclusão de um autor no sistema.
 b) O sistema apresenta a página de cadastro de um autor.
-c) O administrador preenche os campos solicitados.
+c) O bibliotecário preenche os campos solicitados.
 d) O sistema verifica se o autor já existe no sistema. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados. Em caso negativo, o sistema prossegue para o próximo passo.
 e) O sistema inclui o novo autor e atualiza o banco de dados.
 
 Fluxo Alternativo (2): Consulta
 
-a) O administrador solicita a consulta de dados de um autor no sistema.
+a) O bibliotecário solicita a consulta de dados de um autor no sistema.
 b) O sistema apresenta a página de informações do autor.
-c) O administrador consulta os dados do autor.
+c) O bibliotecário consulta os dados do autor.
 
 Fluxo Alternativo (2): Alteração
 
-a) O administrador requisita a edição dos dados de um autor no sistema.
+a) O bibliotecário requisita a edição dos dados de um autor no sistema.
 b) O sistema apresenta o formulário de edição de dados.
-c) O administrador altera os dados que julgar necessário e requisita sua atualização.
+c) O bibliotecário altera os dados que julgar necessário e requisita sua atualização.
 d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
 
 Fluxo Alternativo (2): Exclusão
 
-a)	O administrador solicita a exclusão do autor ao sistema.
+a)	O bibliotecário solicita a exclusão do autor ao sistema.
 b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui o autor selecionado do banco de dados.
 
 #### Gerenciar  leitores (CSU03)
@@ -445,7 +441,7 @@ Pós-condições: uma avaliação foi cadastrada no sistema, essa avaliação te
 
 #### Gerenciar  empréstimos (CSU13)
 
-Sumário: O administrador realiza a gestão (inclusão, remoção, alteração e consulta) dos empréstimos da biblioteca.
+Sumário: O bibliotecário realiza a gestão (inclusão, remoção, alteração e consulta) dos empréstimos da biblioteca.
 
 Ator Primário: Bibliotecário.
 
@@ -456,33 +452,33 @@ Pré-condições: O bibliotecário deve estar cadastrado e deve ser validado pel
 Fluxo Principal:
 
 1)  O sistema apresenta as operações que podem ser realizadas: inclusão de um novo empréstimo, consulta dos dados de um empréstimo, alteração dos dados de um empréstimo e exclusão de um empréstimo.
-2) 	O administrador seleciona a operação desejada: inclusão, consulta, alteração, exclusão ou opta por encerrar o caso de uso.
-3)  Se o administrador deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+2) 	O bibliotecário seleciona a operação desejada: inclusão, consulta, alteração, exclusão ou opta por encerrar o caso de uso.
+3)  Se o bibliotecário deseja realizar outra operação, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
 
 Fluxo Alternativo (2): Inclusão
 
-a) O administrador requisita a inclusão de um empréstimo no sistema.
+a) O bibliotecário requisita a inclusão de um empréstimo no sistema.
 b) O sistema apresenta a página de cadastro de empréstimos.
-c) O administrador preenche os campos solicitados.
-d) O sistema verifica se o empréstimo já foi realizado por este administrador. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados do empréstimo. Em caso negativo, o sistema prossegue para o próximo passo.
+c) O bibliotecário preenche os campos solicitados.
+d) O sistema verifica se o empréstimo já foi realizado por este bibliotecário. Em caso afirmativo, o sistema reporta o fato e solicita a verificação dos dados do empréstimo. Em caso negativo, o sistema prossegue para o próximo passo.
 e) O sistema inclui um novo empréstimo e atualiza o banco de dados.
 
 Fluxo Alternativo (2): Consulta
 
-a) O administrador requisita a consulta dos empréstimos realizados no sistema.
+a) O bibliotecário requisita a consulta dos empréstimos realizados no sistema.
 b) O sistema apresenta a página de empréstimos.
-c) O administrador confere os dados dos empréstimos.
+c) O bibliotecário confere os dados dos empréstimos.
 
 Fluxo Alternativo (2): Alteração
 
-a) O administrador requisita a edição de um empréstimo no sistema.
+a) O bibliotecário requisita a edição de um empréstimo no sistema.
 b) O sistema apresenta o formulário de edição de dados.
-c) O administrador altera os dados que julgar necessário e requisita sua atualização.
+c) O bibliotecário altera os dados que julgar necessário e requisita sua atualização.
 d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alterações no banco de dados. Caso contrário, o erro é reportado.
 
 Fluxo Alternativo (2): Exclusão
 
-a)	O administrador solicita o cancelamento de um empréstimo.
+a)	O bibliotecário solicita o cancelamento de um empréstimo.
 b) O sistema envia uma janela de confirmação de cancelamento e, em caso de aceite, cancela o empréstimo do banco de dados.
  
 Pós-condições: um empréstimo foi cadastrado no sistema, esse empréstimo teve seus dados exibidos ou alterados ou foi excluído do sistema.
