@@ -39,13 +39,11 @@ O sistema web Versora, no atual ciclo iterativo, funcionará com banco de dados 
 | RF006  | Realizar login do usuário            | Permitir a entrada de leitores e bibliotecários no sistema                                                                  |
 | RF007  | Realizar logout do usuário           | Permitir a saida de leitores e bibliotecários do sistema                                                                    |
 | RF008  | Buscar livros                        | Permitir busca de títulos específicos, filtro por gênero, autor e ano de publicação                                         |
-| RF009  | Buscar autores                       | Permitir busca de autores específicos e filtro por especialidade                                                            |
-| RF010  | Gerenciar lista de favoritos         | Permitir favoritar livros, consultar lista de favoritos e remover livros da lista                                           |
-| RF011  | Gerenciar livros selecionados        | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
-| RF012  | Gerenciar avaliações                 | Permitir atribuição de nota de 1 a 5 a livros reservados e consultar a média das notas por livro. Consultar o histórico de comentários, incluir e deletar comentários   |
-| RF013  | Gerenciar empréstimos                | Permitir inclusão, consulta, finalização e prolongamento de empréstimos |
-| RF014  | Gerenciar recomendações              | Recomendar livros, gêneros e autores |
-
+| RF009  | Gerenciar lista de favoritos         | Permitir favoritar livros, consultar lista de favoritos e remover livros da lista                                           |
+| RF010  | Gerenciar livros selecionados        | Permitir adicionar livros a uma sacola, consultar lista de selecionados e remover livros da lista                           |
+| RF011  | Gerenciar avaliações                 | Permitir atribuição de nota de 1 a 5 a livros reservados e consultar a média das notas por livro. Consultar o histórico de comentários, incluir e deletar comentários   |
+| RF012  | Gerenciar empréstimos                | Permitir inclusão, consulta, finalização e prolongamento de empréstimos |
+| RF013  | Gerenciar recomendações              | Recomendar livros, gêneros e autores |
 
 ### 3.3.2 Requisitos Não Funcionais
 
@@ -119,7 +117,7 @@ d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alt
 Fluxo Alternativo (2): Exclusão
 
 a)	O bibliotecário solicita a exclusão do livro ao sistema.
-b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui o livro selecionado do banco de dados.
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de aceite, exclui o livro selecionado do banco de dados.
 
 ### Gerenciar autores (CSU02)
 
@@ -161,7 +159,7 @@ d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alt
 Fluxo Alternativo (2): Exclusão
 
 a)	O bibliotecário solicita a exclusão do autor ao sistema.
-b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui o autor selecionado do banco de dados.
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de aceite, exclui o autor selecionado do banco de dados.
 
 #### Gerenciar  leitores (CSU03)
 
@@ -203,7 +201,7 @@ d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alt
 Fluxo Alternativo (2): Exclusão
 
 a)	O leitor solicita a exclusão de sua conta de usuário.
-b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
  
 Pós-condições: um leitor foi cadastrado no sistema, seus dados foram exibidos ou alterados ou sua conta foi excluída do sistema.
 
@@ -239,7 +237,7 @@ d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alt
 Fluxo Alternativo (2): Exclusão
 
 a) O bibliotecário solicita a exclusão de sua conta de usuário. 
-b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de aceite, exclui a conta do usuário do banco de dados.
 
 Pós-condições: os dados do bibliotecário foram exibidos ou alterados ou sua conta foi excluída do sistema.
 
@@ -323,11 +321,50 @@ Fluxo Principal:
 
 1)O sistema apresenta a opção “Sair” ao usuário autenticado.
 2)O usuário seleciona a opção “Sair”.
-3)O sistema verifica se há operações não salvas. Em caso afirmativo, reporta o erro e solicita a conclusão das operações não salvas. Caso contrário, encerra a sessão do usuário, finalizando o caso de uso.
+3)O sistema exibe uma janela de confirmação de saída e, em caso de aceite, realiza o logout do usuário.
 
 Pós-condições: A sessão do usuário é encerrada e ele não tem mais acesso às funcionalidades restritas até efetuar um novo login.
 
-#### Gerenciar lista de favoritos (CSU10)
+#### Buscar livros (CSU08)
+
+Sumário: O leitor realiza a busca por livros no sistema, podendo aplicar filtros como título, gênero, autor e ano de publicação.
+
+Ator Primário: Leitor.
+
+Pré-condições: Não possui.
+
+Fluxo Principal:
+	1)	O sistema apresenta a seção de busca de livros.
+	2)	O leitor seleciona o critério de busca (título, gênero, autor ou ano de publicação) ou realiza uma busca sem selecionar filtros.
+
+ Fluxo alternativo (2): Busca por título
+
+ a)O leitor insere o título do livro desejado no campo de busca.
+ b)O sistema realiza a busca e, caso encontre correspondências, apresenta todos os livros cujos títulos contêm as palavras buscadas. Caso contrário, reporta a inexistência de títulos correspondentes.
+
+ Fluxo alternativo (2): Busca por gênero
+
+ a)O leitor insere o gênero desejado no campo de busca.
+ b)O sistema realiza a busca e, caso encontre correspondências, apresenta os livros correspondentes ao gênero buscado. Caso contrário, reporta a inexistência de títulos com referência ao gênero buscado.
+
+ Fluxo alternativo (2): Busca por autor
+
+ a)O leitor insere o autor desejado no campo de busca.
+ b)O sistema realiza a busca e, caso encontre correspondências, apresenta os livros escritos pelo autor buscado. Caso contrário, reporta a inexistência de títulos escritos pelo autor buscado.
+ 
+Fluxo alternativo (2): Busca por ano de publicação
+
+ a)O leitor insere o ano de publicação desejado no campo de busca.
+ b)O sistema realiza a busca e, caso encontre correspondências, apresenta os livros publicados no ano requisitado. Caso contrário, reporta a inexistência de títulos publicados naquele ano.
+
+ Fluxo alternativo (2): Busca sem filtros
+
+ a)O leitor insere as palavras desejadas no campo de busca
+ b)O sistema realiza a busca e, caso encontre correspondências, apresenta os livros que contenham referência à palavra informada em seu título, nome do autor ou gênero. Caso contrário, reporta a inexistência de livros com alguma referência às palavras buscadas.
+ 
+Pós-condições: O catálogo de livros correspondentes à busca é exibido, permitindo ao leitor consultar informações de cada obra.
+
+#### Gerenciar lista de favoritos (CSU09)
 
 Sumário: O leitor realiza a gestão (inclusão, consulta e exclusão) da lista de favoritos.
 
@@ -361,7 +398,7 @@ b) O sistema exibe uma janela de confirmação de exclusão e, em caso de confir
 
 Pós-condições: um livro foi incluído, consultado ou excluído da lista de favoritos do leitor.
 
-#### Gerenciar livros selecionados (CSU11)
+#### Gerenciar livros selecionados (CSU10)
 
 Sumário: O leitor realiza a gestão (inclusão, consulta e exclusão) da sacola de livros.
 
@@ -395,7 +432,7 @@ b) O sistema exibe uma janela de confirmação de exclusão e, em caso de confir
 
 Pós-condições: um livro foi incluído, consultado ou excluído da sacola do leitor.
 
-#### Gerenciar avaliações (CSU12)
+#### Gerenciar avaliações (CSU11)
 
 Sumário: O leitor realiza a gestão (inclusão, remoção, alteração e consulta) das suas avaliações.
 
@@ -435,11 +472,11 @@ d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alt
 Fluxo Alternativo (2): Exclusão
 
 a)	O leitor solicita a exclusão de sua avaliação.
-b) O sistema envia uma janela de confirmação de exclusão e, em caso de aceite, exclui a avaliação do banco de dados.
+b) O sistema exibe uma janela de confirmação de exclusão e, em caso de aceite, exclui a avaliação do banco de dados.
  
 Pós-condições: uma avaliação foi cadastrada no sistema, essa avaliação teve seus dados exibidos ou alterados ou foi excluída do sistema.
 
-#### Gerenciar  empréstimos (CSU13)
+#### Gerenciar  empréstimos (CSU12)
 
 Sumário: O bibliotecário realiza a gestão (inclusão, remoção, alteração e consulta) dos empréstimos da biblioteca.
 
@@ -479,19 +516,20 @@ d) O sistema verifica a validade dos dados e, em caso afirmativo, realiza as alt
 Fluxo Alternativo (2): Exclusão
 
 a)	O bibliotecário solicita o cancelamento de um empréstimo.
-b) O sistema envia uma janela de confirmação de cancelamento e, em caso de aceite, cancela o empréstimo do banco de dados.
+b) O sistema exibe uma janela de confirmação de cancelamento e, em caso de aceite, cancela o empréstimo do banco de dados.
  
 Pós-condições: um empréstimo foi cadastrado no sistema, esse empréstimo teve seus dados exibidos ou alterados ou foi excluído do sistema.
 
-#### Gerenciar  recomendações (CSU14)
+#### Gerenciar  recomendações (CSU13)
 
 Sumário: O tempo realiza a recomendação de livros, gêneros e autores para os leitores, com base em suas interações registradas.
 
-Ator Primário: Leitor.
+Ator Primário: Tempo.
 
-Ator Secundário: Não possui.
+Ator Secundário: Leitor.
 
-Pré-condições: O leitor deve estar cadastrado e ser validado pelo Sistema, além de possuir interações registradas como reservas, avaliações e curtidas.
+Pré-condições: O leitor deve estar cadastrado e validado pelo sistema, além de possuir interações registradas como reservas, avaliações e curtidas.
+
 Fluxo Principal:
 
 1)  O sistema apresenta o acervo ao leitor.
