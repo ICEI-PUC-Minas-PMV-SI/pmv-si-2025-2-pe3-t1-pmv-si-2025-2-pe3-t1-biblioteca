@@ -542,14 +542,13 @@ Pós-condições: um carrossel de recomendações foi exibido ao leitor.
 
 ### 3.4.3 Diagrama de Classes 
 
-
-#### Figura 2: Diagrama de Classes do Sistema.
-
 O diagrama de classes do sistema para bibliotecas está representado a seguir. A superclasse Usuário engloba as subclasses Leitor e Bibliotecário. O leitor registra uma lista de até duas reservas e cada reserva pertence a somente um leitor. O relacionamento entre o leitor e a reserva é de composição. Na lógica projetada, cada reserva específica diz respeito a apenas um livro, mas cada livro pode estar contido em diversas reservas devido à possibilidade de haver uma fila de reservas.
 
 Cada leitor pode possuir, em seu histórico, diversos empréstimos associados, mas cada empréstimo específico pertence a apenas um leitor. É importante notar que o histórico de empréstimos de um leitor permanece no sistema mesmo no caso de exclusão da conta desse leitor. Na lógica projetada, cada empréstimo diz respeito a apenas um livro, e cada livro específico pode ter apenas um empréstimo por vez. 
 
 Cada livro deve ter pelo menos um autor, havendo a possibilidade de possuir múltiplos autores. De maneira análoga, cada autor cadastrado deve possuir ao menos um livro no acervo, podendo possuir diversos livros. Cada livro deve ser registrado com pelo menos um gênero associado, podendo possuir até três gêneros. Cada gênero registrado no sistema deve possuir pelo menos um livro associado, não havendo limite superior para essa quantidade. Cada autor presente no sistema deve possuir pelo menos um gênero associado, não havendo limite para essa quantidade. De maneira análoga, cada gênero deve ter pelo menos um autor associado, não havendo, também, limite para essa quantidade.
+
+#### Figura 2: Diagrama de Classes do Sistema.
 
 <img width="1703" height="839" alt="image" src="https://github.com/user-attachments/assets/c35c717d-74cc-4a2a-a84e-53749df9e545" />
 
