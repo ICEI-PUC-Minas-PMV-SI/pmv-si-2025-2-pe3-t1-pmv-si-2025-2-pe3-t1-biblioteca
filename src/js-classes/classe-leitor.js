@@ -22,6 +22,7 @@ export class ClasseLeitor {
     estado
     meusGeneros = []
     minhasReservas = []
+    meusEmprestimos = []
     meusFavoritos = []
     minhaSelecao = []
     senha
