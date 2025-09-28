@@ -2,7 +2,7 @@
 
 ## 3.1 Objetivos deste documento
 
-Nesta seção, serão documentados os requisitos funcionais e não funcionais da plataforma proposta. Também serão registrados o diagrama de casos de uso e o diagrama de classes do sistema, bem como suas respectivas descrições.
+Nesta seção, serão documentados os requisitos funcionais e não funcionais do sistema web proposto. Também serão registrados o diagrama de casos de uso e o diagrama de classes, bem como suas respectivas descrições.
 
 ## 3.2 Escopo do produto
 
