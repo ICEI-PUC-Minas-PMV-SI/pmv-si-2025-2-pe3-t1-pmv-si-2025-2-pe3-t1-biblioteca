@@ -1,6 +1,3 @@
-// src/js-funcoes/funcoes-cadastrar-livros.js
-// Requer: ClasseLivro já carregada (src/js-classes/classe-livro.js)
-
 import { ClasseLivro } from "../js-classes/classe-livro.js";
 
 // ===== Util =====
@@ -33,7 +30,7 @@ export function gerarNumeroChamadaFisica(genero, indiceNoGenero) {
   return `E${est}-P${prat}-C${col}`;
 }
 
-// ===== Catálogo PT-BR (36 itens) =====
+// ===== Catálogo PT-BR (48 itens) =====
 // t=título | a=autor | g=gênero | i=ISBN | edit=editora | ano=anoPublicacao | ed(edição)=opcional | desc=descricaoCurta
 const CATALOGO_PTBR = [
   // ---------- FILOSOFIA ----------
@@ -279,10 +276,15 @@ export function seedLivrosVersora() {
     livro.sinopse = m.s || "";
     livro.capa = livro.capa ?? "";
 
+     // >>> NOVO (strings, sem validação)
+    livro.numeroDePaginas = " ";
+    livro.idioma = "Português";
+
     ClasseLivro.vetorLivros.push(livro);
     contagemPorGenero.set(m.g, seqGenero + 1);
   });
 
+  
   localStorage.setItem(ClasseLivro.chaveLS, JSON.stringify(ClasseLivro.vetorLivros));
   ClasseLivro.numeroDeLivros = ClasseLivro.vetorLivros.length;
 }
