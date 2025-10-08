@@ -20,6 +20,8 @@ export class ClasseLivro{
     editora
     edicao
     anoPublicacao
+    numeroDePaginas
+    idioma
     data_cadastro
     disponibilidade
     numeroDeAcessos = 0
