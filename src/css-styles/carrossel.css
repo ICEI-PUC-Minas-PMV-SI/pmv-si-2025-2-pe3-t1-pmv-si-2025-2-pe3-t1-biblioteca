@@ -29,6 +29,7 @@
     width: 100%;
     border: 0.25rem solid transparent;
     transition: border 0.75s ease, transform .75s ease;
+    cursor: pointer;
    
 }
 
