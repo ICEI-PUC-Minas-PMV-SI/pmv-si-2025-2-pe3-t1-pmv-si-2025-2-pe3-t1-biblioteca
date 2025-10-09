@@ -274,7 +274,7 @@ export function seedLivrosVersora() {
 
     // placeholders para próximas iterações
     livro.sinopse = m.s || "";
-    livro.capa = livro.capa ?? "";
+    
 
      // >>> NOVO (strings, sem validação)
     livro.numeroDePaginas = " ";

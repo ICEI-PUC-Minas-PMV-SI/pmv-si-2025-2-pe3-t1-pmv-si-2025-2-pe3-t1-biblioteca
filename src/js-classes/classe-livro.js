@@ -29,14 +29,14 @@ export class ClasseLivro{
     //atributos descritivos e visuais
     descricaoCurta
     sinopse
-    capa
+    capaId
+    altCapa
 
     //construtor de objetos livro
-    constructor (tombo, numeroChamada, isbn, titulo, genero, editora, anoPublicacao, data_cadastro, disponibilidade, descricaoCurta, sinopse, capa){
+    constructor (tombo, numeroChamada, isbn, titulo, genero, editora, anoPublicacao, data_cadastro, disponibilidade, descricaoCurta, sinopse, capaId, altCapa){
 
         this.tombo = tombo
         this.numeroChamada = numeroChamada
-        this.isbn = isbn
         this.isbn = isbn
         this.titulo = titulo
         this.genero = genero
@@ -44,6 +44,10 @@ export class ClasseLivro{
         this.editora = editora
         this.data_cadastro = data_cadastro
         this.disponibilidade = disponibilidade
+        this.descricaoCurta = descricaoCurta
+        this.sinopse = sinopse
+        this.capaId = capaId || isbn
+        this.altCapa = altCapa || `Capa do livro ${titulo}`
 
         // a cada chamada de construtor bem sucedida, o contador de número de livros é incrementado
         ClasseLivro.numeroDeLivros ++

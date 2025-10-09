@@ -320,7 +320,6 @@ body .search_container div::after {
       right: -10%;
       top: 50%;
       transform: translateY(-50%);
-      color: #444;
       opacity: .8;
 
       display: flex;
@@ -332,4 +331,9 @@ body .search_container div::after {
       border-radius: 1.5rem;
       cursor: pointer;
     
+    }
+
+    body .search_container div:hover::after{
+
+        filter: brightness(1.1);
     }
