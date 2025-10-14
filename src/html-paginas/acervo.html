@@ -39,7 +39,7 @@
         </button>
 
         <form action="" class="container-form">
-            <ul class="list-hidden hidden">
+            <ul class="list-hidden hidden" id="list-hidden">
                 <li class="forAll">Todos os campos</li>
                 <li class="forTitle">Título</li>
                 <li class="forAuthor">Autor</li>
@@ -47,11 +47,9 @@
                 <li class="forPublisher">Editora</li>
                 <li class="forISBN">ISBN / ISSN</li>
             </ul>
-            <div class="tipo-de-busca">
-                <span class="selectSearch">
-                    Todos os Campos
-                    <img src="../img/arrow-down.png" alt="Seta para baixo">
-                </span>
+            <div class="tipo-de-busca" id="tipo-de-busca">
+                <span class="selectSearch" id="selectSearch">Todos os Campos</span>
+                <img src="../img/arrow-down.png" alt="Seta para baixo">
             </div>
 
             <input type="text" class="input-busca">
