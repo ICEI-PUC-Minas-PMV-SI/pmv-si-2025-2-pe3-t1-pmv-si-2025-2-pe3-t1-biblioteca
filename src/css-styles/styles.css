@@ -29,6 +29,10 @@
     display: none;
 }
 
+.opacity {
+    opacity: 0.7;
+}
+
 html {
     font-size: 16px;
     font-family: var(--fonte-principal);
