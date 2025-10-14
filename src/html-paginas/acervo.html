@@ -7,6 +7,11 @@
     <title>Versora - Acervo</title>
     <link rel="stylesheet" href="../css-styles/styles.css">
     <script defer src="../js-scripts/acervo.js"></script>
+    <script defer src = "../js-scripts/login.js" type = "module"></script>
+    <script defer src="../js-scripts/login-persistencia.js" type = "module"></script>
+    <script defer src="../js-funcoes/funcao-sair.js" type="module"></script>
+    <script defer src = "../js-scripts/redefinir-senha.js" type = "module"></script>
+    <script defer src = "../js-scripts/cadastro-livros.js" type = "module"></script>
 </head>
 
 <body>
@@ -18,9 +23,9 @@
             </section>
             <section class="nav_containers">
                 <section class="anchor_container">
-                    <a href="#">Página inicial</a>
+                    <a href="/index.html">Página inicial</a>
                     <a href="#">Quem somos</a>
-                    <a href="#">Nosso acervo</a>
+                    <a href="./acervo.html">Nosso acervo</a>
                 </section>
                 <section class="login_container">
                     <label for="checkbox-login" class="entrar-rotulo">
@@ -33,10 +38,10 @@
     </header>
 
     <section class="navigation-bar">
-        <button class="back-to-home">
+        <a href="/index.html" class="back-to-home">
             <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
             <span>Voltar</span>
-        </button>
+        </a>
 
         <form action="" class="container-form">
             <ul class="list-hidden hidden" id="list-hidden">
