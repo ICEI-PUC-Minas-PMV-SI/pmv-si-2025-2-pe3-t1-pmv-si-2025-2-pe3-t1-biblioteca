@@ -112,10 +112,11 @@
     grid-template-columns: repeat(6, 1fr);
     column-gap: 2%;
     row-gap: 5%;
+    max-width: 90%;
 }
 
 .libContainer .libItem li {
-    max-width: 300px;
+    max-width: 100%;
 }
 
 .libContainer .libItem li a img {
