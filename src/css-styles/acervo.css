@@ -1,3 +1,5 @@
+
+
 .navigation-bar {
     background-color: var(--azul-delft);
     max-height: 8rem;
@@ -100,6 +102,7 @@
     margin-top: 50px;
     gap: 50px;
     text-align: left;
+    margin-bottom: 70px;
 }
 
 .libContainer span {
@@ -110,8 +113,8 @@
 .libContainer .libItem {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 2%;
-    row-gap: 5%;
+    column-gap: 25px;
+    row-gap: 40px;
     max-width: 90%;
 }
 
@@ -122,3 +125,4 @@
 .libContainer .libItem a img {
     width: 100%;
 }
+
