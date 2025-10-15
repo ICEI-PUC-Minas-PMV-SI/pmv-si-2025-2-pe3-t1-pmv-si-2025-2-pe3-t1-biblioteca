@@ -115,10 +115,10 @@
     max-width: 90%;
 }
 
-.libContainer .libItem li {
+.libContainer .libItem a {
     max-width: 100%;
 }
 
-.libContainer .libItem li a img {
+.libContainer .libItem a img {
     width: 100%;
 }
