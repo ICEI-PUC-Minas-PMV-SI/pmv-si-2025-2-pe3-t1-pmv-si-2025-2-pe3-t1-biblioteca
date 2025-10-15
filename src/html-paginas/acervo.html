@@ -45,28 +45,27 @@
 
         <form class="container-form">
             <ul class="list-hidden hidden" id="list-hidden">
-                <li class="forAll listItem">Todos os Campos</li>
+                <li class="forAll listItem">Todos os campos</li>
                 <li class="forTitle listItem">Título</li>
                 <li class="forAuthor listItem">Autor</li>
                 <li class="forGender listItem">Gênero</li>
                 <li class="forPublisher listItem">Editora</li>
-                <li class="forISBN listItem">ISBN / ISSN</li>
             </ul>
             <div class="tipo-de-busca" id="tipo-de-busca">
-                <span class="selectSearch" id="selectSearch">Todos os Campos</span>
+                <span class="selectSearch" id="selectSearch">Todos os campos</span>
                 <img src="../img/arrow-down.png" alt="Seta para baixo">
             </div>
 
-            <input type="text" class="input-busca">
+            <input type="text" class="input-busca" id = "busca-acervo">
 
-            <button class="submitButton">
+            <button class="submitButton" id = "botao-buscar-acervo">
                 <img src="../img/icon-search-2.png" alt="">
             </button>
         </form>
     </section>
 
     <section class="libContainer">
-        <span>Total de livros encontrados: 48</span>
+        <span id = "contagem-de-encontrados"></span>
 
         <ul class="libItem">
 
@@ -304,6 +303,9 @@
             </nav>
         </section>
     </footer>
+
+    <script src = "../js-scripts/buscar-no-acervo.js" type = "module"></script>
+
 
 </body>
 

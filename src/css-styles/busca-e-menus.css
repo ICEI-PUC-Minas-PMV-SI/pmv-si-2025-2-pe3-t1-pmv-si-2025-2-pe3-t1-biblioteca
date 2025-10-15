@@ -313,27 +313,38 @@ body .search_container div input:focus::placeholder {
 }
 
 body .search_container div::after {
-      content: url("../img/icon_search.png");  
-      border: solid 0.2em var(--azul-delft); 
-      position: absolute;
-      height: 100%;
-      right: -10%;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: .8;
 
-      display: flex;
-      align-items: center;
-      
-      padding: 0 7.5%;
+    content: url("../img/icon_search.png");  
+    border: solid 0.2em var(--azul-delft); 
+    position: absolute;
+    height: 100%;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .8;
 
-      background-color: var(--azul-colombia);
-      border-radius: 1.5rem;
-      cursor: pointer;
+    display: flex;
+    align-items: center;
     
-    }
+    padding: 0 7.5%;
 
-    body .search_container div:hover::after{
+    background-color: var(--azul-colombia);
+    border-radius: 1.5rem;
+    pointer-events: none;
+    
+}
 
-        filter: brightness(1.1);
-    }
+#botao-buscar-home {
+
+    position: absolute;
+    height: 100%;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 7.5%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    /* acessível mas invisível visualmente */
+    color: transparent;
+}
