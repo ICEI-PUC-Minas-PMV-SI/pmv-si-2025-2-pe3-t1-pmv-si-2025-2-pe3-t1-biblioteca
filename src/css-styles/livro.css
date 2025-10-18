@@ -1,0 +1,173 @@
+body{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#voltar{
+
+    font-size: 42px; 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+#voltar img{
+
+   background: blue;
+}
+
+.info{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+#titulo-livro{
+
+    font-size: 38px;
+}
+
+.div-superior{
+ 
+    display: flex;
+    gap: 5%;
+    align-items: center;
+   
+}
+
+.div-superior img{
+    
+    height: 50vh;
+}
+
+.div-superior_informacoes{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.div-superior_informacoes_3{
+
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    align-items: center;
+}
+
+.div-inferior{
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+.div-inferior_cima{
+
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+}
+
+.div-inferior_baixo{
+
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+}
+
+.mutavel{
+
+    color: blue;
+}
+
+#botao-trocar-livro{
+
+    width: 20%;
+    height: 60px;
+    margin-left: 40%;
+}
+
+/* aqui está a estilização do coração */
+
+/* oculta a checkbox que marca o coração */
+#like{
+
+  display: none;
+}
+
+.coracao-like{
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--branco);         /* branco inicial */
+  stroke: var(--alcacuz);       /* contorno alcaçuz */
+  stroke-width: calc((1/8)*1rem);
+  transition: transform .15s ease, fill .15s ease, stroke .15s ease;
+}
+
+.coracao-like:hover{
+
+  cursor: pointer;
+}
+
+.checkbox-like:checked + .rotulo-like .coracao-like path {
+  
+  /* cor do interior do coração curtido */
+  fill: var(--vermelho-alaranjado);   
+  /* cor do contorno do coração curtido */
+  stroke: var(--vermelho-alaranjado); 
+}
+
+/* aqui está a estilização da classificação */
+
+.rating {
+  display: inline-flex;
+  flex-direction: row-reverse; /* facilita pintar "à esquerda" com ~ */
+  align-items: center;
+  gap: 6px;
+}
+
+.rating input {
+  display: none;
+}
+
+.estrela-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform .12s ease, fill .12s ease, stroke .12s ease;
+}
+
+.rating label {
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 0;
+}
+
+/* Estado base: contorno no alcaçuz, interior transparente */
+.rating label .estrela-svg path {
+  fill: transparent;
+  stroke: var(--alcacuz);
+  stroke-width: 2px;
+}
+
+/* Hover: estrela sob o cursor e as “à esquerda” (visualmente) ficam preenchidas */
+.rating label:hover .estrela-svg path,
+.rating label:hover ~ label .estrela-svg path {
+  fill: var(--azul-delft);
+  stroke: var(--azul-delft);
+}
+
+/* Seleção: pinta a escolhida e as anteriores (visualmente) */
+.rating input:checked ~ label .estrela-svg path {
+  fill: var(--azul-delft);
+  stroke: var(--azul-delft);
+}
+
+/* Micro-feedback */
+.rating label:active .estrela-svg { transform: scale(0.92); }
