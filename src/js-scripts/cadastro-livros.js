@@ -1,7 +1,3 @@
-// src/js-scripts/cadastro-livros.js
-// Uso no index.html (uma linha):
-//   <script type="module" src="./src/js-scripts/cadastro-livros.js"></script>
-
 import { ClasseLivro } from "../js-classes/classe-livro.js";
 import { seedLivrosVersora } from "../js-funcoes/funcoes-cadastrar-livros.js";
 
