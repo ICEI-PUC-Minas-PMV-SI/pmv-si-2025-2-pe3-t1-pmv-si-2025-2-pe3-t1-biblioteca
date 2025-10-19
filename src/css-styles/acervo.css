@@ -1,4 +1,6 @@
-
+.hidden {
+    display: none;
+}
 
 .navigation-bar {
     background-color: var(--azul-delft);

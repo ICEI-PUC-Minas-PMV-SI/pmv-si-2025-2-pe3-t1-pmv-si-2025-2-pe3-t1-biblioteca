@@ -15,19 +15,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- _______________________________ -->
 
-    <link rel = "stylesheet" href = "../css-styles/reset.css">
+    <link rel="stylesheet" href="../css-styles/reset.css">
     <link rel = "stylesheet" href = "../css-styles/styles.css">
-    <link rel = "stylesheet" href = "../css-styles/livro.css">
+    <link rel="stylesheet" href="../css-styles/livro.css">
 </head>
 
 <!-- OBS: a página padrão será a do livro "Irmãos Karamazov" -->
 <body>
 
-    <a id = "voltar" href = "./acervo.html">            
-        <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
+    <header class="cabecalho">
+        <nav>
+            <section class="logo_container">
+                <img src="../img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
+            </section>
+            <section class="nav_containers">
+                <section class="anchor_container">
+                    <a href="../../index.html">Página inicial</a>
+                    <a href="#">Quem somos</a>
+                    <a href="./acervo.html">Nosso acervo</a>
+                </section>
+                <section class="login_container">
+                    <label for="checkbox-login" class="entrar-rotulo">
+                        <img src="../img/icon_user.png" alt="Ícone de usuário">
+                        <span>Entrar</span>
+                    </label>
+                </section>
+            </section>
+        </nav>
+    </header>
 
-        
-        Voltar para o acervo</a>
+    <section class="navigation-bar">
+        <a href="./acervo.html" class="back-to-home" id="voltar">
+            <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
+            <span>Voltar</span>
+        </a>
+    </section>
+
+    <main>
     <div class = "div-superior">
 
         <img src = "../img/capas/9788573265385.jpg" id = "capa">
@@ -109,7 +133,7 @@
             <div class = "div-superior_informacoes_4">
                 <!-- botões: selecionar e reservar -->
                 <a id = "livro-selecionar">Selecionar</a>
-                <a id = "livro-selecionar">Reservar</a>
+                <a id = "livro-reservar">Reservar</a>
             </div>
 
             <div class = "div-superior_informacoes_5">
@@ -218,6 +242,7 @@
             
         </div>
     </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
