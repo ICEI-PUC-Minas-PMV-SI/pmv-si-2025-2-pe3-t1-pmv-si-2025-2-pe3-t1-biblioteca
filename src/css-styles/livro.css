@@ -43,19 +43,19 @@ main {
 .div-superior {
   margin-top: 50px;
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 2%;
   width: 90%;
 }
 
 .div-superior img {
-    height: 80vh;
+    height: 95vh;
+    max-height: 80vh;
 }
 
 .div-superior_informacoes {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.5rem;
   width: 100vw;
   height: max-content;
 }
@@ -153,7 +153,7 @@ main {
   max-width: 100%;                 
   color: var(--alcacuz);
   font-weight: 700;
-  font-size: clamp(12px, 1.3vw, 20px);
+  font-size: clamp(12px, 1.4vw, 20px);
 }
 
 
