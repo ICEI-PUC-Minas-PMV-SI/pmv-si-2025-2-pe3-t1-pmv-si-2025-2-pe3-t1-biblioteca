@@ -43,36 +43,35 @@ main {
 .div-superior {
   margin-top: 50px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   gap: 30px;
-  width: 90vw;
-  height: 90vh;
-  overflow: hidden;
+  width: 90%;
 }
 
 .div-superior img {
-    width: 50%;
-    height: 100%;
+    height: 80vh;
 }
 
 .div-superior_informacoes {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 100%;
+  width: 100vw;
+  height: max-content;
 }
 
 .div-superior_informacoes_1 {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 80%;
+  max-width: 80vw;
 }
 
 .div-superior_informacoes_1 #disponibilidade {
   background-color: var(--azul-colombia);
   border-radius: 15px;
-  font-size: 32px;
+  font-size: clamp(14px, 2vw, 20px);
   padding: 1.2% 6%;
   color: var(--azul-delft);
   font-weight: 700;
@@ -80,7 +79,7 @@ main {
 }
 
 .div-superior_informacoes_1 #titulo-livro {
-  font-size: 56px;
+  font-size: clamp(42px, 2vw, 56px);
   font-weight: 700;
   color: var(--azul-delft);
 }
@@ -90,21 +89,22 @@ main {
   flex-direction: row;
   gap: 15px;
   align-items: center;
-  max-width: 80%;
+  flex-wrap: nowrap;
 }
 
 .div-superior_informacoes_2 #autor {
-  font-size: 28px;
+  font-size: clamp(24px, 2vw, 32px);
   font-weight: 700;
   color: var(--azul-delft);
+  flex-wrap: nowrap;
 }
 
 .div-superior_informacoes_2 #genero {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 700;
   background-color: var(--azul-colombia);
   color: var(--azul-delft);
-  padding: 12px 42px;
+  padding: 1.5% 6%;
   border-radius: 20px;
 }
 
@@ -125,40 +125,36 @@ main {
 }
 
 .div-superior_informacoes_4 #livro-selecionar {
-  font-size: 200%;
+  font-size: clamp(24px, 2vw, 32px);
   font-weight: 700;
   color: white;
   background-color: var(--azul-delft);
-  padding: 3% 5%;
+  padding: 2.5% 5%;
   border-radius: 15px;
   cursor: pointer;
 }
 
 .div-superior_informacoes_4 #livro-reservar {
-  font-size: 200%;
+  font-size: clamp(24px, 2vw, 32px);
   font-weight: 700;
   color: white;
   background-color: var(--azul-delft);
-  padding: 3% 5%;
+  padding: 2.5% 5%;
   border-radius: 15px;
   cursor: pointer;
 }
 
 .div-superior_informacoes_5 {
   display: inline-block;
-  width: 90%;
-  max-height: 200px;
+  width: 100%;
 }
 
 .div-superior_informacoes_5 span {
-  display: block;            /* ou inline-block, se preferir */
-  max-width: 100%;          /* ajuste conforme o tamanho desejado */
-  overflow-wrap: break-word; /* força quebra dentro de palavras longas */
-  word-break: break-word;    /* compatibilidade */
-  white-space: normal;       /* garante que o texto quebre em várias linhas */
+  display: block;            
+  max-width: 100%;                 
   color: var(--alcacuz);
   font-weight: 700;
-  font-size: 20px;
+  font-size: clamp(12px, 1vw, 20px);
 }
 
 
