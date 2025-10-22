@@ -48,8 +48,8 @@ main {
 }
 
 .div-superior img {
-    height: 95vh;
-    max-height: 80vh;
+    width: 50vw;
+    height: 80vh;
 }
 
 .div-superior_informacoes {
@@ -124,7 +124,7 @@ main {
 }
 
 .div-superior_informacoes_4 #livro-selecionar {
-  font-size: clamp(24px, 1.4vw, 32px);
+  font-size: clamp(20px, 1vw, 32px);
   font-weight: 700;
   color: white;
   background-color: var(--azul-delft);
@@ -134,7 +134,7 @@ main {
 }
 
 .div-superior_informacoes_4 #livro-reservar {
-  font-size: clamp(24px, 1.4vw, 32px);
+  font-size: clamp(20px, 1vw, 32px);
   font-weight: 700;
   color: white;
   background-color: var(--azul-delft);
