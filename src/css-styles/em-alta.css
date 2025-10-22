@@ -2,25 +2,26 @@ body .rise_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 23.75rem;
+    justify-content: center;
+    height: 300px;
     width: 100%;
     background-color: var(--azul-delft);
+    gap: 3rem;
 }
 
 body .rise_container h2 {
     font-size: 3rem;
     font-weight:600;
-    font-family: var(--);
     color: var(--branco);
-    margin-top: 1.5rem;
+    margin-top: -30px;
 }
 
 body .rise_container .high_container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 2.5rem;
-    margin-top: 3.5rem;
-    margin-bottom: 5rem;
+    width: 100%;
 }
 
 body .rise_container .high_container a {
@@ -33,17 +34,3 @@ body .rise_container .high_container a {
     border-radius: 0.363rem;
 }
 
-body .rise_container .low_container {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
-}
-
-body .rise_container .low_container a {
-    background-color: var(--branco);
-    color: var(--azul-delft);
-    padding: 1rem 1.3rem;
-    font-size: 1.75rem;
-    font-weight: 700;
-    border-radius: 0.363rem;
-}
