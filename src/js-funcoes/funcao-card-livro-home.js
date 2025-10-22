@@ -7,7 +7,10 @@ export function carregarCards(isbn1, isbn2, isbn3, isbn4, isbn5, isbn6, isbn7, i
     const vetorISBNs = [isbn1, isbn2, isbn3, isbn4, isbn5, isbn6, isbn7, isbn8]
 
     const cardTitulos = document.querySelectorAll(".container_card-titulo")
+
+    
     const cardDescricao = document.querySelectorAll(".container_card-descricao")
+
 
     let vetorTitulos = []
     let vetorDescricoesCurtas = []

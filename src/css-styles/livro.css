@@ -1,8 +1,8 @@
 body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 main {
@@ -14,30 +14,30 @@ main {
 }
 
 .navigation-bar {
-    background-color: var(--azul-delft);
-    max-height: 8rem;
-    height: 8rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    width: 100%;
+  background-color: var(--azul-delft);
+  max-height: 8rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
 }
 
 .back-to-home {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 4%;
+  /* background-color: transparent; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 4%;
 }
 
 .back-to-home span {
-    font-size: 2.3rem;
-    color: white;
-    font-weight: 550;
-    margin-left: -4%;
+  font-size: 2.3rem;
+  color: var(--branco);
+  font-weight: 550;
+  margin-left: -4%;
 }
 
 .div-superior {
@@ -126,7 +126,7 @@ main {
 .div-superior_informacoes_4 #livro-selecionar {
   font-size: clamp(20px, 1vw, 32px);
   font-weight: 700;
-  color: white;
+  color: var(--branco);
   background-color: var(--azul-delft);
   padding: 2.5% 5%;
   border-radius: 15px;
@@ -136,7 +136,7 @@ main {
 .div-superior_informacoes_4 #livro-reservar {
   font-size: clamp(20px, 1vw, 32px);
   font-weight: 700;
-  color: white;
+  color: var(--branco);
   background-color: var(--azul-delft);
   padding: 2.5% 5%;
   border-radius: 15px;
@@ -191,7 +191,7 @@ main {
 
 .mutavel{
     font-size: 24px;
-    color: white;
+    color: var(--branco);
 }
 
 .carrossel {
@@ -216,13 +216,6 @@ main {
   font-size: 56px;
   color: var(--azul-delft);
   font-weight: 700;
-}
-
-#botao-trocar-livro{
-
-    width: 20%;
-    height: 60px;
-    margin-left: 40%;
 }
 
 /* aqui está a estilização do coração */

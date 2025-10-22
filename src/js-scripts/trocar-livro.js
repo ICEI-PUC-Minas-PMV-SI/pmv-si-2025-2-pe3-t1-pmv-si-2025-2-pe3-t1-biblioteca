@@ -1,14 +1,19 @@
 import { trocarLivro } from "../js-funcoes/funcao-trocar-livro.js"
 import { ClasseLivro } from "../js-classes/classe-livro.js"
+import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { titulosSemelhantesTitulo, titulosSemelhantesISBN } from "../js-funcoes/funcao-titulos-semelhantes.js"
 import { carregarAncorasCarrossel } from "../js-funcoes/funcao-carrosel-livro.js"
 import { salvarTopAcessos} from "../js-funcoes/funcao-livros-mais-acessados.js"
+import { persistirLike } from "../js-funcoes/funcao-favorito-persistir.js"
 
 window.addEventListener("DOMContentLoaded", () => {
 
+    //trecho que carrega as informações do livro
     const isbn = sessionStorage.getItem("isbn_redirecionamento")
 
     trocarLivro(isbn)
+
+    //trecho que carrega o carrossel de livros semelhantes
 
     let livro
 
@@ -31,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById(`capa-${j+1}`).src = `../img/capas/${vetorSemelhantesISBN[j]}.jpg`
         document.getElementById(`capa-${j+1}`).alt = vetorSemelhantesTitulo[j]
+        document.getElementById(`capa-${j+1}`).title = vetorSemelhantesTitulo[j]
     }
 
     carregarAncorasCarrossel(vetorSemelhantesISBN[0],vetorSemelhantesISBN[1],vetorSemelhantesISBN[2],vetorSemelhantesISBN[3],vetorSemelhantesISBN[4])
@@ -43,5 +49,35 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //chama a função que salva o vetor de 8 livros mais acessados no local storage
     salvarTopAcessos(8)
+
+    //trecho que permite a persistência do like
+
+    const usuarioLogado = localStorage.getItem("leitor logado")
+
+    if(!usuarioLogado){
+        return
+    }
+
+    let vetorFavoritos = []
+
+    let leitor
+
+    let n
+
+    for(n=0; n<ClasseLeitor.vetorLeitores.length;n++){
+
+        if(ClasseLeitor.vetorLeitores[n].usuario === usuarioLogado){
+
+            leitor = ClasseLeitor.vetorLeitores[n]
+
+            break
+        }
+    }
+
+    vetorFavoritos = leitor.meusFavoritos
+
+    persistirLike(vetorFavoritos)
+
+    
 
 })

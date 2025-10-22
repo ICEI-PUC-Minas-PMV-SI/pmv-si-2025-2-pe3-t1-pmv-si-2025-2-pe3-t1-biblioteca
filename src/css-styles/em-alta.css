@@ -6,7 +6,7 @@ body .rise_container {
     height: 300px;
     width: 100%;
     background-color: var(--azul-delft);
-    gap: 3rem;
+    gap: 6rem;
 }
 
 body .rise_container h2 {

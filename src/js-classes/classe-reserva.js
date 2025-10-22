@@ -21,7 +21,6 @@ export class ClasseReserva{
 
     this.idReserva = idReserva
     this.idUsuario = idUsuario
-    this.tamanhoFila = tamanhoFila
     this.tomboLivro = tomboLivro
     this.estaReservado = estaReservado
     this.dataHoraSolicitacao = dataHoraSolicitacao

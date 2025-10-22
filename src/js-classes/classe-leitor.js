@@ -24,6 +24,7 @@ export class ClasseLeitor {
     minhasReservas = []
     meusEmprestimos = []
     meusFavoritos = []
+    meusAutoresFavoritos = []
     minhaSelecao = []
     senha
     

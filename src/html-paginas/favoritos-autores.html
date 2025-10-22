@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus autores favoritos</title>
+    <link rel="stylesheet" href="../css-styles/styles.css">
+</head>
+<body>
+
+    <a id = "home" href = "../../index.html">Home</a>
+    <h2 id = "titulo">Meus favoritos</h2>
+
+     <div class = "secao-trocar-tipo">
+        <a class = "trocar-tipo-de-favorito" id = "livros-favoritos" href ="./favoritos-livros.html">Livros</a>
+        <a class = "trocar-tipo-de-favorito" id = "autores-favoritos" href = "#">Autores</a>
+    </div>
+
+    <span id = "mensagem-padrao">Não há autores favoritos a serem exibidos.</span>
+    
+    <section id = "grade-favoritos">
+
+         <!-- essse trecho apenas serve de modelo para os elementos criados dinamicamente ao carregar a página. Manter esse comentário para facilitar a leitura de tags -->
+        <!-- <div class = "container-do-favorito"> -->
+            <!-- essse trecho apenas serve de modelo para os elementos criados dinamicamente ao carregar a página. Manter esse comentário para facilitar a leitura de tags -->
+            <!-- <a class="capa-favorito" href="#" id="0001">
+                <img src="../img/fotos-autores/0001.jpg" alt="Thomas Kuhn">
+                <span>Thomas Kuhn</span>
+            </a> -->
+
+            <!-- esse trecho todo é referente ao ícone de lixeira para excluir o livro -->
+            <!-- <button class="btn-trash" id = "lixeira-ID" type="button" aria-label="Remover dos favoritos" title="Remover dos favoritos">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon-trash">
+                tampa -->
+                <!-- <path d="M3 6h18"/>
+                <path d="M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6"/> -->
+                <!-- corpo -->
+                <!-- <rect x="5" y="6" width="14" height="15" rx="2"/> -->
+                <!-- linhas internas -->
+                <!-- <path d="M10 11v6M14 11v6"/>
+                </svg>
+            </button> -->
+            <!-- FIM DA LIXEIRA -->
+        <!-- </div> -->
+
+    </section>
+    
+    <script src ="../js-scripts/favoritos-criar-autor.js" type = "module"></script>
+    <script src = "../js-scripts/ir-para-autor-favoritos.js" type = "module"></script>
+    <script src = "../js-scripts/favorito-excluir-autor.js" type = "module"></script>
+
+</body>
+</html>
