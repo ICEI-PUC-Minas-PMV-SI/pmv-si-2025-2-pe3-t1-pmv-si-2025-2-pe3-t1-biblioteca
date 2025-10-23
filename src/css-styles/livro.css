@@ -48,8 +48,10 @@ main {
 }
 
 .div-superior img {
-    width: 50vw;
-    height: 80vh;
+  
+  height: 80vh;
+  /* para manter a proporção de 2/3 entre largura e altura: */
+  width: calc((2/3)*height);
 }
 
 .div-superior_informacoes {
