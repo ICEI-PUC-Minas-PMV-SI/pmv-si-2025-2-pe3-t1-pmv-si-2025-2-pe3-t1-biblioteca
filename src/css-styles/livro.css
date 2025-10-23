@@ -218,6 +218,12 @@ main {
   font-weight: 700;
 }
 
+#sinopse{
+
+  color: var(--alcacuz);
+  font-family: var(--fonte-serifada);
+}
+
 /* aqui está a estilização do coração */
 
 /* oculta a checkbox que marca o coração */

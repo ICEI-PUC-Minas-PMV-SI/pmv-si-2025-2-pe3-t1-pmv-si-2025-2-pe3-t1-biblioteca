@@ -98,6 +98,11 @@ body{
     color: blue;
 }
 
+#bio{
+
+  font-family: var(--fonte-serifada);
+}
+
 #botao-trocar-livro{
 
     width: 20%;
