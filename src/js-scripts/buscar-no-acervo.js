@@ -62,7 +62,7 @@ function correspondeAproximadamente(valorCampo, termoBusca) {
 }
 
 // Execução da busca 
-function executarBusca(busca, tipoBusca = "Todos os campos") {
+export function executarBusca(busca, tipoBusca = "Todos os campos") {
   livrosExibidos = [];
 
   // Capture as capas sempre no DOM atual do acervo
