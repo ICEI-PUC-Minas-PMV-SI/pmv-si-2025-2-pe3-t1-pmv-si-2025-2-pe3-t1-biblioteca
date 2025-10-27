@@ -98,6 +98,7 @@ main {
   font-weight: 700;
   color: var(--azul-delft);
   flex-wrap: nowrap;
+  cursor: pointer;
 }
 
 .div-superior_informacoes_2 #genero {

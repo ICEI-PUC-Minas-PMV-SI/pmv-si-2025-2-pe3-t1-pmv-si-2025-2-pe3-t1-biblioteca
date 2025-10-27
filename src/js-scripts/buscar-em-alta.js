@@ -3,7 +3,7 @@ const emAltaBuscar = document.querySelectorAll(".ancoras-em-alta")
 emAltaBuscar.forEach(genero => {
 
     genero.addEventListener("click", function (evento) {
-        evento.preventDefault();
+        evento.preventDefault()
 
         //capta o texto buscado antes de redirecionar para o acervo
         const busca = genero.textContent
