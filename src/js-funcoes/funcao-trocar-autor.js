@@ -20,6 +20,7 @@ export function trocarAutor(id){
             document.getElementById("genero").textContent = genero
             document.getElementById("nacionalidade").textContent = nacionalidade
             document.getElementById("bio").textContent = descricao
+            document.getElementById("buscar-livros-do-autor").title = `Clique para buscar livros de ${nome}`
 
             break
         }
