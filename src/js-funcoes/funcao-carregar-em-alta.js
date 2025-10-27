@@ -30,7 +30,7 @@ export async function carregarEmAlta(id1, id2, id3){
             if(ClasseGenero.vetorGeneros[j].id === ancoras[k].id){
                 
                 document.getElementById(ancoras[k].id).textContent = ClasseGenero.vetorGeneros[j].nomeGenero
-                document.getElementById(ancoras[k].id).title = `Buscar livros de ${ClasseGenero.vetorGeneros[j].nomeGenero.toLowerCase()}`
+                document.getElementById(ancoras[k].id).title = `Clique para buscar livros de ${ClasseGenero.vetorGeneros[j].nomeGenero.toLowerCase()}`
             }
         }   
     }  

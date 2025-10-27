@@ -2,7 +2,7 @@ const botaoBuscar = document.getElementById("botao-buscar-home");
 
 
 botaoBuscar.addEventListener("click", function (evento) {
-  evento.preventDefault();
+  evento.preventDefault()
 
   
 

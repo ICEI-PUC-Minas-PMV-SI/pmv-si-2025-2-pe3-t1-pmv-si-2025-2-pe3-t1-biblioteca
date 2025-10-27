@@ -1,4 +1,4 @@
-const emAltaBuscar = document.querySelectorAll(".ancoras-em-alta");
+const emAltaBuscar = document.querySelectorAll(".ancoras-em-alta")
 
 emAltaBuscar.forEach(genero => {
 
