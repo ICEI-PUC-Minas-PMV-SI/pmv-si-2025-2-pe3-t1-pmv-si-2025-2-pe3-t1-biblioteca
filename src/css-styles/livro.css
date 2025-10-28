@@ -22,6 +22,7 @@ main {
   align-items: center;
   justify-content: start;
   width: 100%;
+  gap: 20px;
 }
 
 .back-to-home {

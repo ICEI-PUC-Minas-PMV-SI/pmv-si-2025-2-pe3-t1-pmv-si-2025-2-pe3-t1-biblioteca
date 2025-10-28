@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus autores favoritos</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png" >
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png" >
     <link rel="stylesheet" href="../css-styles/styles.css">
 </head>
 <body>
 
-    <a id = "home" href = "../../index.html">Home</a>
-    <h2 id = "titulo">Meus favoritos</h2>
+        <header class="cabecalho">
+        <nav>
+            <section class="logo_container">
+                <img src="../img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
+            </section>
+            <section class="nav_containers">
+                <section class="anchor_container">
+                    <a href="../../index.html">Página inicial</a>
+                    <a href="#">Quem somos</a>
+                    <a href="./acervo.html">Nosso acervo</a>
+                </section>
+                <section class="login_container">
+                    <label for="checkbox-login" class="entrar-rotulo">
+                        <img src="../img/icon_user.png" alt="Ícone de usuário">
+                        <span>Entrar</span>
+                    </label>
+                </section>
+            </section>
+        </nav>
+    </header>
+
+
+    <section class="navigation-bar" style="gap: 0;">
+        <a href="./acervo.html" class="back-to-home" id="voltar">
+            <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
+            <span>Voltar</span>
+        </a>
+        <h2>Meus favoritos</h2>
+    </section>
 
      <div class = "secao-trocar-tipo">
-        <a class = "trocar-tipo-de-favorito" id = "livros-favoritos" href ="./favoritos-livros.html">Livros</a>
-        <a class = "trocar-tipo-de-favorito" id = "autores-favoritos" href = "#">Autores</a>
+        <a class = "trocar-tipo-de-favorito" id = "livros-favoritos" href ="./favoritos-livros.html" style="opacity: 0.4;">Livros</a>
+        <a class = "trocar-tipo-de-favorito" id = "autores-favoritos" href = "#" style="opacity: 1.0;">Autores</a>
     </div>
 
     <span id = "mensagem-padrao">Não há autores favoritos a serem exibidos.</span>
