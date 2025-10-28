@@ -1,3 +1,53 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+}
+
+.navigation-bar {
+  max-height: 8rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.back-to-home {
+  /* background-color: transparent; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+.back-to-home span {
+  font-size: 2.3rem;
+  color: var(--branco);
+  font-weight: 550;
+  margin-left: -7%;
+}
+
+.navigation-bar h2 {
+    font-size: 2.3rem;
+    color: var(--branco);
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
 
 #home{
 
@@ -14,18 +64,29 @@
 }
 
 .secao-trocar-tipo {
-
     gap: 20%;
     justify-content: center;
     display: flex;
     flex-direction: row;
+    margin-top: 30px;
 }
 
 .secao-trocar-tipo a{
-
+    color: var(--branco);
+    padding: 2% 8%;
     cursor: pointer;
+    font-size: clamp(16px, 1.4vw, 24px);
+    border-radius: 10px;
 }
 
+#livros-favoritos {
+    background-color: var(--azul-delft);
+}
+
+#autores-favoritos {
+    background-color: var(--azul-delft);
+    opacity: 0.4;
+}
 
 .container-do-favorito{
 
