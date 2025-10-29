@@ -225,17 +225,20 @@ main {
 
 .reserve-container {
   background-color: var(--azul-colombia);
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   border: 5px solid var(--azul-delft);
   width: 60%;
+  position: absolute;
+  left: 25%;
+  z-index: 10;
 }
 
 .reserve-container h2 {
-  font-size: clamp(24px, 1.4vw, 36px);
+  font-size: clamp(36px, 1.4vw, 42px);
   color: var(--azul-delft);
   font-weight: 600;
 }
@@ -262,6 +265,7 @@ main {
 
 .reserve-container .container-livro .lib-page #capa {
   width: 30%;
+  height: 0%;
 }
 
 .reserve-container .container-livro .lib-page .container-informacao {
@@ -274,6 +278,26 @@ main {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.reserve-container .buttons-container #botao-cancelar-reserva {
+  font-size: clamp(20px, 1.4vw, 32px);
+  padding: 2rem 3rem;
+  border-radius: 1.25rem;
+  background-color: var(--vermelho-alaranjado);
+  color: var(--branco);
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.reserve-container .buttons-container #botao-confirmar-reserva {
+  font-size: clamp(20px, 1.4vw, 32px);
+  padding: 2rem 3rem;
+  border-radius: 1.25rem;
+  background-color: var(--azul-delft);
+  color: var(--branco);
+  font-weight: 550;
+  cursor: pointer;
 }
 
 #sinopse{
