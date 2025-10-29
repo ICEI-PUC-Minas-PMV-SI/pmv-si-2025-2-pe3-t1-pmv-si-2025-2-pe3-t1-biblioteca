@@ -226,14 +226,14 @@ main {
 .reserve-container {
   background-color: var(--azul-colombia);
   padding: 2rem 2rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   border: 5px solid var(--azul-delft);
   width: 60%;
   position: absolute;
-  left: 25%;
+  left: 33%;
   z-index: 10;
 }
 
