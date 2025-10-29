@@ -62,7 +62,8 @@ body .formulario-cadastro .form-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 body .formulario-cadastro option{
@@ -360,5 +361,9 @@ body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
   0%   { transform: translateX(-60%) }
   50%  { transform: translateX(35%)  }
   100% { transform: translateX(120%) }
+}
+
+#footer-cadastro {
+    border-top: 1px solid white;
 }
 
