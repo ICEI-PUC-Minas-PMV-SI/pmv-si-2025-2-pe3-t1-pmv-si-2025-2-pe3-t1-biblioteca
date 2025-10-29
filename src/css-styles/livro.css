@@ -223,6 +223,59 @@ main {
   font-weight: 700;
 }
 
+.reserve-container {
+  background-color: var(--azul-colombia);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border: 5px solid var(--azul-delft);
+  width: 60%;
+}
+
+.reserve-container h2 {
+  font-size: clamp(24px, 1.4vw, 36px);
+  color: var(--azul-delft);
+  font-weight: 600;
+}
+
+.reserve-container .container-livro {
+  border: 4px solid var(--azul-delft);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+}
+
+.reserve-container .container-livro span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.reserve-container .container-livro .lib-page {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.reserve-container .container-livro .lib-page #capa {
+  width: 30%;
+}
+
+.reserve-container .container-livro .lib-page .container-informacao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reserve-container .buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 #sinopse{
 
   color: var(--alcacuz);
