@@ -5,245 +5,262 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de cadastro</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
     <link rel="stylesheet" href="../css-styles/styles.css">
 </head>
 
 <body id="body-cadastro">
 
-    <div class="logo-container">
-        <img src="../img/logotipo_versora.png" alt="Logotipo Versora">
-        <h1>Página de Cadastro</h1>
-    </div>
+    <header class="cabecalho" id="cabecalho-cadastro">
+        <nav>
+            <section class="logo_container">
+                <img src="../img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
+            </section>
+        </nav>
+    </header>
 
     <form class="formulario-cadastro">
 
-        <fieldset class="quadro-identidade">
-            <h3 class="formulario-cadastro_titulo-quadro">DADOS PESSOAIS</h3>
+        <section class="navigation-bar">
+                <a href="../../index.html" class="back-to-home">
+                    <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
+                    <span>Voltar</span>
+                </a>
+                <h2 id="titulo-cadastro">Página de Cadastro</h2>
+            </section>
 
-            <div class="quadro-identidade-campos">
-                <div class="quadro-identidade_campo">
+        <section class="form-container">
 
-                    <label for="usuario"> Nome de usuário:</label>
-                    <input type="text" name="usuario" id="usuario" placeholder="Digite seu nome de usuário" required>
+            <fieldset class="quadro-identidade">
+                <h3 class="formulario-cadastro_titulo-quadro">DADOS PESSOAIS</h3>
+
+                <div class="quadro-identidade-campos">
+                    <div class="quadro-identidade_campo">
+
+                        <label for="usuario"> Nome de usuário:</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="Digite seu nome de usuário"
+                            required>
+
+                    </div>
+
+                    <div class="quadro-identidade_campo">
+
+                        <label for="nome"> Nome:</label>
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu primeiro nome" required>
+
+                    </div>
+
+                    <div class="quadro-identidade_campo">
+
+                        <label for="sobrenome"> Sobrenome:</label>
+                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+
+                    </div>
+
+                    <div class="quadro-identidade_campo">
+
+                        <label for="cpf"> CPF:</label>
+                        <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF (apenas números)"
+                            pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" title="Use o formato 999.888.777-33"
+                            inputmode="numeric" autocomplete="off" required>
+
+                    </div>
+
+                    <div class="quadro-identidade_campo">
+
+                        <label for="telefone"> Telefone:</label>
+                        <input type="tel" inputmode="numeric" autocomplete="tel" name="telefone" id="telefone"
+                            placeholder="Digite seu telefone (apenas números)" pattern="^\(\d{2}\) \d{5}-\d{4}$"
+                            title="Use o formato (DD) 9XXXX-XXXX" required>
+
+                    </div>
+
+                    <div class="quadro-identidade_campo">
+
+                        <label for="email"> E-mail:</label>
+                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="quadro-endereco">
+                <h3 class="formulario-cadastro_titulo-quadro">ENDEREÇO</h3>
+
+                <div class="quadro-endereco-campos">
+                    <div class="quadro-endereco_campo">
+
+                        <label for="cep"> CEP:</label>
+                        <input type="text" name="cep" id="cep" placeholder="Digite seu CEP (apenas números)"
+                            inputmode="numeric" autocomplete="postal-code" pattern="^\d{5}-\d{3}$"
+                            title="Use o formato 33000-000" required>
+
+                    </div>
+                    <div class="quadro-endereco_campo">
+
+                        <label for="rua"> Rua:</label>
+                        <input type="text" name="rua" id="rua" placeholder="Digite o nome da sua rua" required>
+
+                    </div>
+                    <div class="quadro-endereco_campo">
+
+                        <label for="numero-fachada"> Número:</label>
+                        <input type="text" name="numero-fachada" id="numero-fachada"
+                            placeholder="Digite o número da casa" required>
+
+                    </div>
+                    <div class="quadro-endereco_campo">
+
+                        <label for="bairro"> Bairro:</label>
+                        <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro" required>
+
+                    </div>
+                    <div class="quadro-endereco_campo">
+
+                        <label for="cidade"> Cidade:</label>
+                        <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
+
+                    </div>
+
+                    <div class="quadro-endereco_campo">
+
+                        <label for="estado"> Estado:</label>
+
+                        <select name="estado" id="estado">
+
+                            <option value="" data-default disabled selected>Clique para selecionar</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+
+
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset class="quadro-generos">
+
+                <h3 class="formulario-cadastro_titulo-quadro">GÊNEROS FAVORITOS</h3>
+                <h4 class="quadro-generos_orientacao">Selecione até três opções:</h4>
+
+                <div class="quadro-generos_campos">
+
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-1">
+                    <label class="rotulo-genero" for="checkbox-genero-1">
+                        <a class="ancora-genero" id="ancora-genero-1">Divulgação científica</a>
+                    </label>
+
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-2">
+                    <label class="rotulo-genero" for="checkbox-genero-2">
+                        <a class="ancora-genero" id="ancora-genero-2">Filosofia</a>
+                    </label>
+
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-3">
+                    <label class="rotulo-genero" for="checkbox-genero-3">
+                        <a class="ancora-genero" id="ancora-genero-3">Mistério</a>
+                    </label>
+
+
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-4">
+                    <label class="rotulo-genero" for="checkbox-genero-4">
+                        <a class="ancora-genero" id="ancora-genero-4">Psicologia</a>
+                    </label>
+
+
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-5">
+                    <label class="rotulo-genero" for="checkbox-genero-5">
+                        <a class="ancora-genero" id="ancora-genero-5">Romance</a>
+                    </label>
+
+
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-6">
+                    <label class="rotulo-genero" for="checkbox-genero-6">
+                        <a class="ancora-genero" id="ancora-genero-6">Sociologia</a>
+                    </label>
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-7">
+                    <label class="rotulo-genero" for="checkbox-genero-7">
+                        <a class="ancora-genero" id="ancora-genero-7">Ficção científica</a>
+                    </label>
+
+                    <input type="checkbox" class="checkbox-genero" id="checkbox-genero-8">
+                    <label class="rotulo-genero" for="checkbox-genero-8">
+                        <a class="ancora-genero" id="ancora-genero-8">Fantasia</a>
+                    </label>
 
                 </div>
 
-                <div class="quadro-identidade_campo">
-
-                    <label for="nome"> Nome:</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu primeiro nome" required>
-
                 </div>
+            </fieldset>
 
-                <div class="quadro-identidade_campo">
+            <fieldset class="quadro-senha">
 
-                    <label for="sobrenome"> Sobrenome:</label>
-                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                <h3 class="formulario-cadastro_titulo-quadro">CREDENCIAIS</h3>
 
+                <div class="quadro-senha_campos">
+                    <div class="quadro-senha_campo">
+
+                        <label for="senha"> Senha:</label>
+                        <input type="password" name="senha" id="senha" placeholder="Digite a senha desejada">
+
+                    </div>
+
+                    <div class="quadro-senha_campo">
+
+                        <label for="repita-senha"> Repita sua senha:</label>
+                        <input type="password" name="repita-senha" id="repita-senha"
+                            placeholder="Digite a senha novamente" required>
+
+                    </div>
                 </div>
+            </fieldset>
 
-                <div class="quadro-identidade_campo">
+            <div class="formulario-cadastro_botoes">
 
-                    <label for="cpf"> CPF:</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF (apenas números)" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
-                    title="Use o formato 999.888.777-33" inputmode="numeric"
-                    autocomplete="off"required>
+                <button type="reset" id="botao-cancelar"> Cancelar </button>
+                <button type="submit" id="botao-cadastrar"> Cadastrar </button>
 
-                </div>
-
-                <div class="quadro-identidade_campo">
-
-                    <label for="telefone"> Telefone:</label>
-                    <input type="tel" inputmode = "numeric" autocomplete = "tel" name="telefone" id="telefone" placeholder="Digite seu telefone (apenas números)" pattern="^\(\d{2}\) \d{5}-\d{4}$"
-                    title="Use o formato (DD) 9XXXX-XXXX"required>
-
-                </div>
-
-                <div class="quadro-identidade_campo">
-
-                    <label for="email"> E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-
-                </div>
             </div>
-        </fieldset>
 
-        <fieldset class="quadro-endereco">
-            <h3 class="formulario-cadastro_titulo-quadro">ENDEREÇO</h3>
-
-            <div class="quadro-endereco-campos">
-                <div class="quadro-endereco_campo">
-
-                    <label for="cep"> CEP:</label>
-                    <input type="text" name="cep" id="cep" placeholder="Digite seu CEP (apenas números)" inputmode="numeric"
-                    autocomplete="postal-code"pattern="^\d{5}-\d{3}$"
-                    title="Use o formato 33000-000"required>
-
-                </div>
-                <div class="quadro-endereco_campo">
-
-                    <label for="rua"> Rua:</label>
-                    <input type="text" name="rua" id="rua" placeholder="Digite o nome da sua rua" required>
-
-                </div>
-                <div class="quadro-endereco_campo">
-
-                    <label for="numero-fachada"> Número:</label>
-                    <input type="text" name="numero-fachada" id="numero-fachada" placeholder="Digite o número da casa"
-                        required>
-
-                </div>
-                <div class="quadro-endereco_campo">
-
-                    <label for="bairro"> Bairro:</label>
-                    <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro" required>
-
-                </div>
-                <div class="quadro-endereco_campo">
-
-                    <label for="cidade"> Cidade:</label>
-                    <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
-
-                </div>
-
-                <div class="quadro-endereco_campo">
-
-                    <label for="estado"> Estado:</label>
-
-                    <select name="estado" id="estado">
-
-                        <option value="" data-default disabled selected>Clique para selecionar</option>
-                        <option value="AC">AC</option>
-                        <option value="AL">AL</option>
-                        <option value="AP">AP</option>
-                        <option value="AM">AM</option>
-                        <option value="BA">BA</option>
-                        <option value="CE">CE</option>
-                        <option value="DF">DF</option>
-                        <option value="ES">ES</option>
-                        <option value="GO">GO</option>
-                        <option value="MA">MA</option>
-                        <option value="MT">MT</option>
-                        <option value="MS">MS</option>
-                        <option value="MG">MG</option>
-                        <option value="PA">PA</option>
-                        <option value="PB">PB</option>
-                        <option value="PR">PR</option>
-                        <option value="PE">PE</option>
-                        <option value="PI">PI</option>
-                        <option value="RJ">RJ</option>
-                        <option value="RN">RN</option>
-                        <option value="RS">RS</option>
-                        <option value="RO">RO</option>
-                        <option value="RR">RR</option>
-                        <option value="SC">SC</option>
-                        <option value="SP">SP</option>
-                        <option value="SE">SE</option>
-                        <option value="TO">TO</option>
-                    </select>
-
-
-                </div>
-            </div>
-
-        </fieldset>
-        <fieldset class="quadro-generos">
-
-            <h3 class="formulario-cadastro_titulo-quadro">GÊNEROS FAVORITOS</h3>
-            <h4 class="quadro-generos_orientacao">Selecione até três opções:</h4>
-
-            <div class="quadro-generos_campos">
-
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-1">
-                <label class="rotulo-genero" for="checkbox-genero-1">
-                    <a class="ancora-genero" id="ancora-genero-1">Divulgação científica</a>
-                </label>
-
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-2">
-                <label class="rotulo-genero" for="checkbox-genero-2">
-                    <a class="ancora-genero" id="ancora-genero-2">Filosofia</a>
-                </label>
-
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-3">
-                <label class="rotulo-genero" for="checkbox-genero-3">
-                    <a class="ancora-genero" id="ancora-genero-3">Mistério</a>
-                </label>
-
-
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-4">
-                <label class="rotulo-genero" for="checkbox-genero-4">
-                    <a class="ancora-genero" id="ancora-genero-4">Psicologia</a>
-                </label>
-
-
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-5">
-                <label class="rotulo-genero" for="checkbox-genero-5">
-                    <a class="ancora-genero" id="ancora-genero-5">Romance</a>
-                </label>
-
-
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-6">
-                <label class="rotulo-genero" for="checkbox-genero-6">
-                    <a class="ancora-genero" id="ancora-genero-6">Sociologia</a>
-                </label>
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-7">
-                <label class="rotulo-genero" for="checkbox-genero-7">
-                    <a class="ancora-genero" id="ancora-genero-7">Ficção científica</a>
-                </label>
-
-                <input type="checkbox" class="checkbox-genero" id="checkbox-genero-8">
-                <label class="rotulo-genero" for="checkbox-genero-8">
-                    <a class="ancora-genero" id="ancora-genero-8">Fantasia</a>
-                </label>
-
-            </div>
-
-            </div>
-        </fieldset>
-
-        <fieldset class="quadro-senha">
-
-            <h3 class="formulario-cadastro_titulo-quadro">CREDENCIAIS</h3>
-
-            <div class="quadro-senha_campos">
-                <div class="quadro-senha_campo">
-
-                    <label for="senha"> Senha:</label>
-                    <input type="password" name="senha" id="senha" placeholder="Digite a senha desejada">
-
-                </div>
-
-                <div class="quadro-senha_campo">
-
-                    <label for="repita-senha"> Repita sua senha:</label>
-                    <input type="password" name="repita-senha" id="repita-senha" placeholder="Digite a senha novamente"
-                        required>
-
-                </div>
-            </div>
-        </fieldset>
-
-        <div class="formulario-cadastro_botoes">
-
-            <button type="reset" id="botao-cancelar"> Cancelar </button>
-            <button type="submit" id="botao-cadastrar"> Cadastrar </button>
-
-        </div>
+        </section>
     </form>
 
     <script src="../js-scripts/limite-generos.js" type="module"></script>
     <script src="../js-scripts/cadastro.js" type="module"></script>
-    <script src = "../js-scripts/mascaras.js" type = "module"></script>
-  
+    <script src="../js-scripts/mascaras.js" type="module"></script>
+
 
 </body>
 

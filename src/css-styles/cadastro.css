@@ -32,27 +32,20 @@ input:focus::placeholder{
 #body-cadastro {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
 }
 
-body .logo-container {
+#cabecalho-cadastro {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: -2rem;
+    justify-content: center;
 }
 
-body .logo-container img {
-    width: 18rem;
-    height: 18rem;
-}
-
-body .logo-container h1 {
-    margin-top: -4rem;
-    font-weight: 700;
-    font-size: 3rem;
-    color: var(--azul-delft);
+#cabecalho-cadastro nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body .formulario-cadastro {
@@ -60,11 +53,16 @@ body .formulario-cadastro {
     flex-direction: column;
     background-color: var(--azul-delft);
     color: white;
-    padding: 2rem 2rem;
-    border-radius: 1.53rem;
-    gap: 1rem;
-    width: 60%;
-    margin-bottom: 6rem;
+    width: 100%;
+    align-items: center;
+}
+
+body .formulario-cadastro .form-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
 }
 
 body .formulario-cadastro option{
@@ -75,7 +73,7 @@ body .formulario-cadastro option{
 body .formulario-cadastro .quadro-identidade {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
     border-bottom: 2px solid white;
     padding-bottom: 2rem;
     width: 100%;
@@ -88,9 +86,9 @@ body .formulario-cadastro .quadro-identidade h3 {
 body .formulario-cadastro .quadro-identidade .quadro-identidade-campos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     width: 100%;
-    row-gap: .5rem;
+    row-gap: 1rem;
 }
 
 body .formulario-cadastro .quadro-identidade .quadro-identidade-campos .quadro-identidade_campo {
@@ -121,7 +119,7 @@ body .formulario-cadastro .quadro-endereco {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: .5rem;
+    gap: 1rem;
     border-bottom: 2px solid white;
     padding-bottom: 2rem;
     width: 100%;
@@ -134,9 +132,9 @@ body .formulario-cadastro .quadro-endereco h3 {
 body .formulario-cadastro .quadro-endereco .quadro-endereco-campos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     width: 100%;
-    row-gap: .5rem;
+    row-gap: 1rem;
 }
 
 body .formulario-cadastro .quadro-endereco .quadro-endereco-campos .quadro-endereco_campo {
@@ -177,7 +175,7 @@ body .formulario-cadastro .quadro-generos {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: .5rem;
+    gap: 1rem;
     border-bottom: 2px solid white;
     padding-bottom: 2rem;
     width: 100%;
@@ -194,9 +192,9 @@ body .formulario-cadastro .quadro-generos h4 {
 body .formulario-cadastro .quadro-generos .quadro-generos_campos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     width: 100%;
-    row-gap: .5rem;
+    row-gap: 1rem;
 }
 
 body .formulario-cadastro .quadro-generos .quadro-generos_campos .checkbox-genero label a {
@@ -246,8 +244,7 @@ body .formulario-cadastro .quadro-senha {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: .5rem;
-    padding-bottom: 2rem;
+    gap: 1rem;
     font-size: 1.2rem;
     width: 100%;
 }
@@ -255,7 +252,7 @@ body .formulario-cadastro .quadro-senha {
 body .formulario-cadastro .quadro-senha .quadro-senha_campos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     width: 100%;
     row-gap: 1rem;
 }
@@ -283,17 +280,16 @@ body .formulario-cadastro .quadro-senha .quadro-senha_campos .quadro-senha_campo
 body .formulario-cadastro .formulario-cadastro_botoes {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
     width: 100%;
-    background-color: #fff;
     border-radius: .4rem;
     padding: .8rem;
 }
 
 body .formulario-cadastro .formulario-cadastro_botoes #botao-cancelar {
     background-color: var(--vermelho-alaranjado);
-    border-radius: .4rem;
+    border-radius: 1.25rem;
     align-items: center;
     justify-content: center;
     padding: .5rem .5rem;
@@ -302,11 +298,12 @@ body .formulario-cadastro .formulario-cadastro_botoes #botao-cancelar {
     height: 4rem;
     font-size: 1.5rem;
     cursor: pointer;
+    border: .3rem solid white;
 }
 
 body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
     background-color: var(--azul-delft);
-    border-radius: .4rem;
+    border-radius: 1.25rem;
     align-items: center;
     justify-content: center;
     padding: .5rem .5rem;
@@ -315,6 +312,7 @@ body .formulario-cadastro .formulario-cadastro_botoes #botao-cadastrar {
     height: 4rem;
     font-size: 1.5rem;
     cursor: pointer;
+    border: .3rem solid white;
 }
 
 #botao-cadastrar:hover{
