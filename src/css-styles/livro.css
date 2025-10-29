@@ -238,14 +238,14 @@ main {
 }
 
 .reserve-container h2 {
-  font-size: clamp(36px, 1.4vw, 42px);
+  font-size: clamp(28px, 1.4vw, 42px);
   color: var(--azul-delft);
   font-weight: 600;
 }
 
 .reserve-container .container-livro {
   border: 4px solid var(--azul-delft);
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -277,12 +277,14 @@ main {
 .reserve-container .buttons-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
 }
 
 .reserve-container .buttons-container #botao-cancelar-reserva {
-  font-size: clamp(20px, 1.4vw, 32px);
-  padding: 2rem 3rem;
+  font-size: clamp(16px, 1.4vw, 24px);
+  padding: 3% 8%;
   border-radius: 1.25rem;
   background-color: var(--vermelho-alaranjado);
   color: var(--branco);
@@ -291,8 +293,8 @@ main {
 }
 
 .reserve-container .buttons-container #botao-confirmar-reserva {
-  font-size: clamp(20px, 1.4vw, 32px);
-  padding: 2rem 3rem;
+  font-size: clamp(16px, 1.4vw, 24px);
+  padding: 3% 8%;
   border-radius: 1.25rem;
   background-color: var(--azul-delft);
   color: var(--branco);
