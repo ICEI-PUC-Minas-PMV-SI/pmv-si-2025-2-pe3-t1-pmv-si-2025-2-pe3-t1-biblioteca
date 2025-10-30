@@ -4,7 +4,7 @@
 
 ### Persona 01: Luís Cláudio
 
-![P1](https://github.com/user-attachments/assets/c7bb396b-5c29-4a00-811c-35bdf82b50a3)
+![P1](https://github.com/user-attachments/assets/9dd2e1fb-df53-4188-bf7f-df75a9df1b37)
 
 
 ## 4.2 Mapas de Empatia
