@@ -224,21 +224,27 @@ main {
 }
 
 .reserve-container {
-  background-color: var(--azul-colombia);
+background-color: var(--azul-colombia);
   padding: 2rem 2rem;
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   border: 5px solid var(--azul-delft);
-  width: 60%;
+  width: 65vw;
+  height: max-content;
   position: absolute;
-  left: 33%;
+  left: 24%;
   z-index: 10;
+  box-sizing: border-box;
+  border-radius: 15px;
+  transform: scale(calc(80 / 100)); 
+  transform-origin: top center; 
+  margin-top: 5%;
 }
 
 .reserve-container h2 {
-  font-size: clamp(28px, 1.4vw, 42px);
+  font-size: clamp(24px, calc(1.3vw + 1.3vh), 42px);
   color: var(--azul-delft);
   font-weight: 600;
 }
@@ -250,11 +256,14 @@ main {
   flex-direction: column;
   align-items: start;
   gap: 40px;
+  width: 100%;
+  height: 100%;
 }
 
 .reserve-container .container-livro span {
-  font-size: 1rem;
+  font-size: clamp(12px, calc(0.8vw + 0.8vh), 16px);
   font-weight: 600;
+  font-style: italic;
 }
 
 .reserve-container .container-livro .lib-page {
@@ -264,14 +273,42 @@ main {
 }
 
 .reserve-container .container-livro .lib-page #capa {
-  width: 30%;
-  height: 0%;
+  height: 40vh;
+  width: calc((2/3)*height);
 }
 
 .reserve-container .container-livro .lib-page .container-informacao {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  
+}
+
+.reserve-container .container-livro .lib-page .container-informacao #titulo-livro, #autor, #genero, #resumo {
+  color: var(--azul-delft);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.reserve-container .container-livro .lib-page .container-informacao #titulo-livro {
+  font-size: clamp(20px, calc(1.3vw + 1.3vh), 36px);
+}
+
+.reserve-container .container-livro .lib-page .container-informacao #autor {
+  font-size: clamp(16px, calc(0.8vw + 0.8vh), 20px);
+}
+
+.reserve-container .container-livro .lib-page .container-informacao #genero {
+  font-size: clamp(12px, calc(0.8vw + 0.8vh, 16px));
+  padding: 2% 4%;
+  background-color: var(--branco);
+  width: max-content;
+  border-radius: 1.25rem;
+  border: 2px solid var(--azul-delft);
+}
+
+.reserve-container .container-livro .lib-page .container-informacao #resumo {
+  font-size: clamp(12px, calc(0.8vw + 0.8vh, 16px));
 }
 
 .reserve-container .buttons-container {
