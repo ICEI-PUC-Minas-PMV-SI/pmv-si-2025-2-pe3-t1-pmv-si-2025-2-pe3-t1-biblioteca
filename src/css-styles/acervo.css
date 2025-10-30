@@ -60,7 +60,7 @@
 
 .list-hidden {
     position: absolute;
-    top: 232px;
+    top: 222px;
     background-color: white;
     display: flex;
     flex-direction: column;    
