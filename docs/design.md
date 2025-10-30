@@ -1,16 +1,18 @@
 # 4. PROJETO DO DESIGN DE INTERAÇÃO
 
 ## 4.1 Personas
-Nesta seção você deve detalhar as personas do seu projeto. Deve-se documentar uma persona por integrante do projeto. Para mais informações sobre personas consulte: https://www.rdstation.com/blog/marketing/persona-o-que-e/. Sugere-se a utilização do gerador de personas disponibilizado em https://persona-pillar.lovable.app/?utm_campaign=br-inb-rdsm-blog-novos_leads-persona-pillar-cta_pls_portal_cta_persona
-
-## 4.2 Mapas de Empatia
 
 ### Persona 01: Luís Cláudio
 
-![ME1](https://github.com/user-attachments/assets/1fe72748-3ef1-45d6-9035-395387b71edf)
+![P1](https://github.com/user-attachments/assets/c7bb396b-5c29-4a00-811c-35bdf82b50a3)
 
-![ME1 - 0,75](https://github.com/user-attachments/assets/9e38be78-f185-4f2f-ad7a-3ee3f99f0593)
 
+## 4.2 Mapas de Empatia
+
+### Mapa de empatia 01: Luís Cláudio
+
+
+![ME1](https://github.com/user-attachments/assets/15738379-50e1-4eb2-8254-ad51347e5522)
 
 
 ## 4.3 Protótipos das Interfaces
