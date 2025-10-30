@@ -9,6 +9,9 @@ Nesta seção você deve detalhar as personas do seu projeto. Deve-se documentar
 
 ![ME1](https://github.com/user-attachments/assets/1fe72748-3ef1-45d6-9035-395387b71edf)
 
+![ME1 - 0,75](https://github.com/user-attachments/assets/9e38be78-f185-4f2f-ad7a-3ee3f99f0593)
+
+
 
 ## 4.3 Protótipos das Interfaces
 Apresente nesta seção os protótipos de alta fidelidade do sistema proposto. A fidelidade do protótipo refere-se ao nível de detalhes e funcionalidades incorporadas a ele. Assim, um protótipo de alta fidelidade é uma representação interativa do produto, baseada no computador ou em dispositivos móveis. Esse protótipo já apresenta maior semelhança com o design final em termos de detalhes e funcionalidades. No desenvolvimento dos protótipos, devem ser considerados os princípios gestálticos, as recomendações ergonômicas e as regras de design (como as 8 regras de ouro). É importante descrever no texto do relatório como os princípios gestálticos e as regras de ouro foram seguidas no projeto das interfaces. Nesta etapa deve-se dar uma ênfase na implementação do software de modo que possam ser realizados os testes com usuários na etapa seguinte.
