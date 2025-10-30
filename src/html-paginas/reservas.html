@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Reservas</title>
-     <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
 
     <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
@@ -21,7 +22,9 @@
 
     <link rel="stylesheet" href="../css-styles/reset.css">
     <link rel="stylesheet" href="../css-styles/styles.css">
+    <link rel="stylesheet" href="../css-styles/reservas.css">
 </head>
+
 <body>
     <header class="cabecalho opacity05">
         <nav>
@@ -51,5 +54,32 @@
         </a>
         <h2>Minhas reservas</h2>
     </section>
+
+    <main>
+        <section class="container-reserva">
+            <section class="container-capa">
+                <img src="../img/capas/9786555655940.jpg" id="capa">
+            </section>
+            <section class="container-informacoes-livro">
+                <h3 id="titulo-livro" class="mutavel">Os Irmãos Karamázov</h3>
+                <span id="autor" class="mutavel" title="Clique para ir para a página do autor">Fiódor
+                    Dostoiévski</span>
+                <span id="genero" class="mutavel">Romance</span>
+                <span id="resumo" class="mutavel">Conflitos familiares como palco para fé, razão e
+                    liberdade. Uma
+                    obra-prima que tensiona ética, afeto e transcendência.
+                </span>
+                <section class="container-informacoes-reserva">
+                    <section class="container-status-reserva">
+                        <span class="status-reserva">Aguardando retirada</span>
+                        <span class="informacao-reserva">Você pode retirar esse livro até o dia 22/10/2025 às
+                            20:00</span>
+                    </section>
+                    <button class="botao-cancelar-reserva">Cancelar</button>
+                </section>
+            </section>
+        </section>
+    </main>
 </body>
+
 </html>
