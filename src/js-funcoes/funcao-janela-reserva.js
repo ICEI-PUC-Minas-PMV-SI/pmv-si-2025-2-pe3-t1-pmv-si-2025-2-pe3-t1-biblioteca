@@ -6,10 +6,6 @@ export function carregarJanelaReserva(isbn){
 
     for(i=0; i<ClasseLivro.vetorLivros.length; i++){
         
-        console.log(i)
-        console.log(isbn)
-        console.log(ClasseLivro.vetorLivros[i].isbn)
-
         if(ClasseLivro.vetorLivros[i].isbn === isbn){
 
             const disponibilidade = ClasseLivro.vetorLivros[i].disponibilidade
@@ -17,8 +13,6 @@ export function carregarJanelaReserva(isbn){
             const autor = ClasseLivro.vetorLivros[i].autor
             const genero = ClasseLivro.vetorLivros[i].genero
             const descricao = ClasseLivro.vetorLivros[i].descricaoCurta
-
-            console.log(titulo)
 
             document.getElementById("capa-janela-reserva").src = `../img/capas/${isbn}.jpg`
             document.getElementById("capa-janela-reserva").alt = titulo
