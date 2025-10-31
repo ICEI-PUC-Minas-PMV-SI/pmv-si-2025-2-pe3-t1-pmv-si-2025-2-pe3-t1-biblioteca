@@ -115,6 +115,12 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+.container-do-favorito span {
+    color: var(--azul-delft);
+    font-weight: 600;
+}
+
 #grade-favoritos a img{
 
     width: 100%;

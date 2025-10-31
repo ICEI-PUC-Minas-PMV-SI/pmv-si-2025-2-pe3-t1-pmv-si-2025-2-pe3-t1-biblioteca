@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página do autor</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
 
     <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -14,107 +15,126 @@
     <!-- importando a fonte Inter, utilizada no Figma -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <!-- _______________________________ -->
 
-    <link rel = "stylesheet" href = "../css-styles/reset.css">
-    <link rel = "stylesheet" href = "../css-styles/styles.css">
-    <link rel = "stylesheet" href = "../css-styles/livro.css">
+    <link rel="stylesheet" href="../css-styles/reset.css">
+    <link rel="stylesheet" href="../css-styles/styles.css">
+    <link rel="stylesheet" href="../css-styles/livro.css">
+
+    <script src="../js-scripts/login.js" type="module" defer></script>
+    <script src="../js-scripts/login-persistencia.js" type="module" defer></script>
+    <script src="../js-funcoes/funcao-sair.js" type="module" defer></script>
+    <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
 </head>
 
 <!-- OBS: a página padrão será a do livro "Irmãos Karamazov" -->
+
 <body>
 
-    <a id = "voltar" href = "../../index.html">            
+    <a id="voltar" href="../../index.html">
         <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
 
-        
+
         Home</a>
-    <div class = "div-superior">
+    <div class="div-superior">
 
-        <img src = "../img/fotos-autores/0000.jpg" id = "foto">
+        <img src="../img/fotos-autores/0000.jpg" id="foto">
 
-        <div class = "div-superior_informacoes">
+        <div class="div-superior_informacoes">
 
-            <div class = "div-superior_informacoes_1">
+            <div class="div-superior_informacoes_1">
                 <!-- nome do autor -->
-                 <h2 id = "nome-autor" class = "mutavel">Thomas Kuhn</h2>
+                <h2 id="nome-autor" class="mutavel">Thomas Kuhn</h2>
             </div>
 
-            <div class = "div-superior_informacoes_2">
+            <div class="div-superior_informacoes_2">
                 <!-- <--nacionalidade e gênero -->
-                 <span id = "nacionalidade" class = "mutavel">Estadunidense</span>
-                 <span id = "genero" class = "mutavel">Filosofia</span>
+                <span id="nacionalidade" class="mutavel">Estadunidense</span>
+                <span id="genero" class="mutavel">Filosofia</span>
             </div>
 
-            <div class = "div-superior_informacoes_3">
+            <div class="div-superior_informacoes_3">
                 <!-- nota e coração de favoritar -->
-                 
+
                 <!-- aqui está o código das estrelas que representam a classificação -->
                 <div id="classificacao" class="rating" role="radiogroup" aria-label="Classificação">
-                <!-- Ordem invertida para facilitar o preenchimento via ~ e row-reverse -->
-                <input type="radio" name="rating" id="star5" value="5" aria-label="5 estrelas">
-                <label for="star5" title="5 estrelas">
-                    <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z"/>
-                    </svg>
-                </label>
+                    <!-- Ordem invertida para facilitar o preenchimento via ~ e row-reverse -->
+                    <input type="radio" name="rating" id="star5" value="5" aria-label="5 estrelas">
+                    <label for="star5" title="5 estrelas">
+                        <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                            <path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                        </svg>
+                    </label>
 
-                <input type="radio" name="rating" id="star4" value="4" aria-label="4 estrelas">
-                <label for="star4" title="4 estrelas">
-                    <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z"/>
-                    </svg>
-                </label>
+                    <input type="radio" name="rating" id="star4" value="4" aria-label="4 estrelas">
+                    <label for="star4" title="4 estrelas">
+                        <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                            <path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                        </svg>
+                    </label>
 
-                <input type="radio" name="rating" id="star3" value="3" aria-label="3 estrelas">
-                <label for="star3" title="3 estrelas">
-                    <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z"/>
-                    </svg>
-                </label>
+                    <input type="radio" name="rating" id="star3" value="3" aria-label="3 estrelas">
+                    <label for="star3" title="3 estrelas">
+                        <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                            <path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                        </svg>
+                    </label>
 
-                <input type="radio" name="rating" id="star2" value="2" aria-label="2 estrelas">
-                <label for="star2" title="2 estrelas">
-                    <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z"/>
-                    </svg>
-                </label>
+                    <input type="radio" name="rating" id="star2" value="2" aria-label="2 estrelas">
+                    <label for="star2" title="2 estrelas">
+                        <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                            <path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                        </svg>
+                    </label>
 
-                <input type="radio" name="rating" id="star1" value="1" aria-label="1 estrela">
-                <label for="star1" title="1 estrela">
-                    <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z"/>
-                    </svg>
-                </label>
+                    <input type="radio" name="rating" id="star1" value="1" aria-label="1 estrela">
+                    <label for="star1" title="1 estrela">
+                        <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                            <path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                        </svg>
+                    </label>
                 </div>
                 <!-- fim da classificação -->
 
                 <!-- aqui está o ícone de favoritar -->
-                 <div class="favoritar">
+                <div class="favoritar">
                     <input type="checkbox" id="like" class="checkbox-like">
-                    <label for="like" class="rotulo-like" id = "rotulo-like" title="">
-                        <svg class="coracao-like" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                    <label for="like" class="rotulo-like" id="rotulo-like" title="">
+                        <svg class="coracao-like" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
                                 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
                                 C13.09 3.81 14.76 3 16.5 3
                                 19.58 3 22 5.42 22 8.5
-                                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                fill="white" stroke="black" stroke-width="2"/>
+                                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="white" stroke="black" stroke-width="2" />
                         </svg>
                     </label>
                 </div>
             </div>
             <!-- fim do ícone de favoritar -->
 
-            <div class = "div-superior_informacoes_4">
+            <div class="div-superior_informacoes_4">
                 <!-- botão: ver livros -->
-                <a id = "buscar-livros-do-autor" title = "Clique para ver livros desse autor">Ver livros</a>
-                
+                <a id="buscar-livros-do-autor" title="Clique para ver livros desse autor">Ver livros</a>
+
             </div>
-            <div class = "div-superior_informacoes_5">
+            <div class="div-superior_informacoes_5">
                 <!-- mini biografia -->
-                <span id = "bio" class = "mutavel"> Thomas Samuel Kuhn (1922–1996) foi um físico, historiador e filósofo da ciência estadunidense, conhecido por sua obra 'A Estrutura das Revoluções Científicas' (1962). Introduziu o conceito de paradigma, demonstrando que o progresso científico não é linear, mas ocorre por rupturas epistemológicas. Seu trabalho redefiniu a compreensão da ciência como prática social e histórica, influenciando campos como sociologia do conhecimento e epistemologia. Lecionou em Harvard, Berkeley e Princeton, tornando-se uma das vozes mais influentes da filosofia moderna da ciência.
+                <span id="bio" class="mutavel"> Thomas Samuel Kuhn (1922–1996) foi um físico, historiador e filósofo da
+                    ciência estadunidense, conhecido por sua obra 'A Estrutura das Revoluções Científicas' (1962).
+                    Introduziu o conceito de paradigma, demonstrando que o progresso científico não é linear, mas ocorre
+                    por rupturas epistemológicas. Seu trabalho redefiniu a compreensão da ciência como prática social e
+                    histórica, influenciando campos como sociologia do conhecimento e epistemologia. Lecionou em
+                    Harvard, Berkeley e Princeton, tornando-se uma das vozes mais influentes da filosofia moderna da
+                    ciência.
 
 
                 </span>
@@ -123,76 +143,72 @@
     </div>
 
     <!-- CARROSSEL DOS AUTORES RECOMENDADOS -->
-    <section class = "carrossel">
-        <h2 class = "carrossel_titulo">Recomendados para você</h2>
-        
-        <div class = "carrossel_container">
-            
+    <section class="carrossel">
+        <h2 class="carrossel_titulo">Recomendados para você</h2>
+
+        <div class="carrossel_container">
+
             <div class="swiper">
-                
+
                 <div class="swiper-pagination">
-                        
+
                 </div>
 
-                    <div class="swiper-wrapper">
-                        
-                        <div class="swiper-slide">
-                            <a title="" class="ancora-carrossel-autor" id="" href="#">
-                                <img id="foto-1" class="container_foto_autor"
-                                    src="src/img/fotos-autores/0004.jpg"
-                                    alt="Jessé Souza">
-                            </a>
-                        </div>
+                <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <a title="" class="ancora-carrossel-autor" id="" href="#">
-                                <img id="foto-2" class="container_foto_autor"
-                                    src="src/img/fotos-autores/0007.jpg"
-                                    alt="Carl Sagan">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a title="" class="ancora-carrossel-autor" id="" href="#">
-                                <img id="foto-3" class="container_foto_autor"
-                                    src="src/img/fotos-autores/0010.jpg"
-                                    alt="Steven Pinker">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a title="" class="ancora-carrossel-autor" id="" href="#">
-                                <img id="foto-4" class="container_foto_autor"
-                                    src="src/img/fotos-autores/0013.jpg"
-                                    alt="Aldous Huxley">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a title="" class="ancora-carrossel-autor" id="" href="#">
-                                <img id="foto-5" class="container_foto_autor"
-                                    src="src/img/fotos-autores/0016.jpg"
-                                    alt="Agatha Christie">
-                            </a>
-                        </div>
-
-                          
+                    <div class="swiper-slide">
+                        <a title="" class="ancora-carrossel-autor" id="" href="#">
+                            <img id="foto-1" class="container_foto_autor" src="src/img/fotos-autores/0004.jpg"
+                                alt="Jessé Souza">
+                        </a>
                     </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-slide">
+                        <a title="" class="ancora-carrossel-autor" id="" href="#">
+                            <img id="foto-2" class="container_foto_autor" src="src/img/fotos-autores/0007.jpg"
+                                alt="Carl Sagan">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a title="" class="ancora-carrossel-autor" id="" href="#">
+                            <img id="foto-3" class="container_foto_autor" src="src/img/fotos-autores/0010.jpg"
+                                alt="Steven Pinker">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a title="" class="ancora-carrossel-autor" id="" href="#">
+                            <img id="foto-4" class="container_foto_autor" src="src/img/fotos-autores/0013.jpg"
+                                alt="Aldous Huxley">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a title="" class="ancora-carrossel-autor" id="" href="#">
+                            <img id="foto-5" class="container_foto_autor" src="src/img/fotos-autores/0016.jpg"
+                                alt="Agatha Christie">
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            
+
         </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="../js-scripts/carrossel.js"></script>
-    <script src = "../js-scripts/trocar-autor.js" type = "module"></script>
-    <script src = "../js-scripts/ir-para-autor-carrossel-autor.js" type = "module"></script>
-    <script src = "../js-scripts/favoritar-autor.js" type = "module"></script>
-    <script src = "../js-scripts/buscar-livros-do-autor.js" type = "module"></script>
-   
+    <script src="../js-scripts/trocar-autor.js" type="module"></script>
+    <script src="../js-scripts/ir-para-autor-carrossel-autor.js" type="module"></script>
+    <script src="../js-scripts/favoritar-autor.js" type="module"></script>
+    <script src="../js-scripts/buscar-livros-do-autor.js" type="module"></script>
+
 </body>
+
 </html>

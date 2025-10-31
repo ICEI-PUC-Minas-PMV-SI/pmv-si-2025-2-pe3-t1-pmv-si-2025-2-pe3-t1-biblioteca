@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Reservas</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
 
     <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="../css-styles/reset.css">
     <link rel="stylesheet" href="../css-styles/styles.css">
     <link rel="stylesheet" href="../css-styles/reservas.css">
+
+    <script src="../js-scripts/login.js" type="module" defer></script>
+    <script src="../js-scripts/login-persistencia.js" type="module" defer></script>
+    <script src="../js-funcoes/funcao-sair.js" type="module" defer></script>
+    <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
 </head>
 
 <body>
@@ -79,7 +84,60 @@
                 </section>
             </section>
         </section>
+
+        <section class="container-reserva">
+            <section class="container-capa">
+                <img src="../img/capas/9786555655940.jpg" id="capa">
+            </section>
+            <section class="container-informacoes-livro">
+                <h3 id="titulo-livro" class="mutavel">Nada a declarar</h3>
+                <span id="autor" class="mutavel" title="Clique para ir para a página do autor">Karen M. McManus</span>
+                <span id="genero" class="mutavel">Mistério</span>
+                <span id="resumo" class="mutavel">Mistério em alto-mar com adolescentes presos num cruzeiro.
+                    Conspirações e desaparecimentos alimentam a paranoia do grupo.
+                </span>
+                <section class="container-informacoes-reserva">
+                    <section class="container-status-reserva">
+                        <span class="status-reserva reserva-expirada">Reserva expirada</span>
+                        <span class="informacao-reserva informacao-reserva-expirada">Sua reserva expirou no dia 21/10/2025 às 20:00</span>
+                    </section>
+                    <button class="botao-cancelar-reserva">Cancelar</button>
+                </section>
+            </section>
+        </section>
     </main>
+
+    <footer class="opacity05">
+        <section class="left_container">
+            <div class="email_container">
+                <span>Entre em contato: versora@pucminas.br</span>
+            </div>
+            <div class="logos_container">
+                <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
+                <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
+            </div>
+        </section>
+        <section class="right_container">
+            <div class="devs">
+                <h2>Desenvolvido por</h2>
+                <ul>
+                    <li>Caio</li>
+                    <li>Danilo</li>
+                    <li>Gustavo</li>
+                    <li>Jessé</li>
+                    <li>Kauê</li>
+                    <li>Michael</li>
+                </ul>
+            </div>
+            <nav>
+                <h2>Navegação</h2>
+                <a href="../html-paginas/acervo.html">Nosso acervo</a>
+                <a href="../../index.html">Página Inicial</a>
+                <a href="#">Quem somos</a>
+            </nav>
+        </section>
+    </footer>
+
 </body>
 
 </html>

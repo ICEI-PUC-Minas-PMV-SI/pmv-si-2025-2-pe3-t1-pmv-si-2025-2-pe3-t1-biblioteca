@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus favoritos</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
     <link rel="stylesheet" href="../css-styles/favoritos.css">
     <link rel="stylesheet" href="../css-styles/styles.css">
+
+    <script src="../js-scripts/login.js" type="module" defer></script>
+    <script src="../js-scripts/login-persistencia.js" type="module" defer></script>
+    <script src="../js-funcoes/funcao-sair.js" type="module" defer></script>
+    <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
 </head>
+
 <body>
-    
+
     <header class="cabecalho">
         <nav>
             <section class="logo_container">
@@ -42,45 +49,77 @@
     </section>
 
 
-    <div class = "secao-trocar-tipo">
-        <a class = "trocar-tipo-de-favorito" id = "livros-favoritos" href = "#">Livros</a>
-        <a class = "trocar-tipo-de-favorito" id = "autores-favoritos" href = "./favoritos-autores.html" >Autores</a>
+    <div class="secao-trocar-tipo">
+        <a class="trocar-tipo-de-favorito" id="livros-favoritos" href="#">Livros</a>
+        <a class="trocar-tipo-de-favorito" id="autores-favoritos" href="./favoritos-autores.html">Autores</a>
     </div>
 
-    <span id = "mensagem-padrao">Não há livros favoritos a serem exibidos.</span>
-    
-    <section id = "grade-favoritos">
+    <span id="mensagem-padrao">Não há livros favoritos a serem exibidos.</span>
 
-         <!-- essse trecho apenas serve de modelo para os elementos criados dinamicamente ao carregar a página. Manter esse comentário para facilitar a leitura de tags -->
+    <section id="grade-favoritos">
+
+        <!-- essse trecho apenas serve de modelo para os elementos criados dinamicamente ao carregar a página. Manter esse comentário para facilitar a leitura de tags -->
         <!-- <div class = "container-do-favorito"> -->
-            <!-- essse trecho apenas serve de modelo para os elementos criados dinamicamente ao carregar a página. Manter esse comentário para facilitar a leitura de tags -->
-            <!-- <a class="capa-favorito" href="#" id="9786558311461">
+        <!-- essse trecho apenas serve de modelo para os elementos criados dinamicamente ao carregar a página. Manter esse comentário para facilitar a leitura de tags -->
+        <!-- <a class="capa-favorito" href="#" id="9786558311461">
                 <img src="../img/capas/9786558311461.jpg" alt="A Sabedoria da Insegurança">
                 <span>A Sabedoria da Insegurança</span>
             </a> -->
 
-            <!-- esse trecho todo é referente ao ícone de lixeira para excluir o livro -->
-            <!-- <button class="btn-trash" id = "lixeira-ISBN" type="button" aria-label="Remover dos favoritos" title="Remover dos favoritos">
+        <!-- esse trecho todo é referente ao ícone de lixeira para excluir o livro -->
+        <!-- <button class="btn-trash" id = "lixeira-ISBN" type="button" aria-label="Remover dos favoritos" title="Remover dos favoritos">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                     fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
                     class="icon-trash">
                 tampa -->
-                <!-- <path d="M3 6h18"/>
+        <!-- <path d="M3 6h18"/>
                 <path d="M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6"/> -->
-                <!-- corpo -->
-                <!-- <rect x="5" y="6" width="14" height="15" rx="2"/> -->
-                <!-- linhas internas -->
-                <!-- <path d="M10 11v6M14 11v6"/>
+        <!-- corpo -->
+        <!-- <rect x="5" y="6" width="14" height="15" rx="2"/> -->
+        <!-- linhas internas -->
+        <!-- <path d="M10 11v6M14 11v6"/>
                 </svg>
             </button> -->
-            <!-- FIM DA LIXEIRA -->
+        <!-- FIM DA LIXEIRA -->
         <!-- </div> -->
 
     </section>
-    
-    <script src ="../js-scripts/favoritos-criar.js" type = "module"></script>
-    <script src = "../js-scripts/ir-para-livro-favoritos.js" type = "module"></script>
-    <script src = "../js-scripts/favorito-excluir.js" type = "module"></script>
+
+    <footer class="opacity05">
+        <section class="left_container">
+            <div class="email_container">
+                <span>Entre em contato: versora@pucminas.br</span>
+            </div>
+            <div class="logos_container">
+                <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
+                <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
+            </div>
+        </section>
+        <section class="right_container">
+            <div class="devs">
+                <h2>Desenvolvido por</h2>
+                <ul>
+                    <li>Caio</li>
+                    <li>Danilo</li>
+                    <li>Gustavo</li>
+                    <li>Jessé</li>
+                    <li>Kauê</li>
+                    <li>Michael</li>
+                </ul>
+            </div>
+            <nav>
+                <h2>Navegação</h2>
+                <a href="../html-paginas/acervo.html">Nosso acervo</a>
+                <a href="../../index.html">Página Inicial</a>
+                <a href="#">Quem somos</a>
+            </nav>
+        </section>
+    </footer>
+
+    <script src="../js-scripts/favoritos-criar.js" type="module"></script>
+    <script src="../js-scripts/ir-para-livro-favoritos.js" type="module"></script>
+    <script src="../js-scripts/favorito-excluir.js" type="module"></script>
 
 </body>
+
 </html>
