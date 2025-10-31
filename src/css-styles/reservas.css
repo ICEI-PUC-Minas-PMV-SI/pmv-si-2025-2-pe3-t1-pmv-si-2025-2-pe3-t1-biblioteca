@@ -35,7 +35,7 @@ main .container-reserva .container-informacoes-livro #titulo-livro, #autor, #gen
 
 main .container-reserva .container-informacoes-livro #titulo-livro {
     font-size: clamp(20px, calc(1.4vw + 1.4vh), 36px);
-    width: max-content;
+    width: 100%;
 }
 
 main .container-reserva .container-informacoes-livro #autor {
@@ -55,7 +55,7 @@ main .container-reserva .container-informacoes-livro #genero {
 
 main .container-reserva .container-informacoes-livro #resumo {
     font-size: clamp(12px, calc(0.8vw + 0.8vh), 16px);
-    width: 100%;
+    width: 90%;
 }
 
 main .container-reserva .container-informacoes-reserva {
@@ -74,29 +74,38 @@ main .container-reserva .container-informacoes-reserva .container-status-reserva
 }
 
 main .container-reserva .container-informacoes-reserva .container-status-reserva .status-reserva {
-    font-size: clamp(12px, calc(0.8vw + 0.8vh), 16px);
-    padding: 1.3% 4%;
+    font-size: clamp(10px, calc(0.7vw + 0.7vh), 16px);
+    display: flex;
     background-color: var(--azul-delft);
     color: var(--branco);
-    width: max-content;
+    width: 70%;
+    height: 1.8rem;
     border-radius: 1.25rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
 }
 
 main .container-reserva .container-informacoes-reserva .container-status-reserva .informacao-reserva {
     font-size: clamp(8px, calc(0.7vw + 0.7vh), 16px);
     font-weight: 700;
     color: var(--alcacuz);
-    width: 60%;
+    width: 70%;
 }
 
 main .container-reserva .container-informacoes-reserva .botao-cancelar-reserva {
-    font-size: clamp(16px, calc(1vw + 1vh), 24px);
-    padding: 2.5% 6%;
+    font-size: clamp(16px, calc(1.1vw + 1.1vh), 32px);
     background-color: var(--vermelho-alaranjado);
     color: var(--branco);
     border-radius: 1rem;
     cursor: pointer;
-    width: max-content;
-    height: max-content;
+    width: 40%;
+    height: 3.5rem;
+    text-align: center;
+    align-items: center;
 }
 
+main .container-reserva .container-informacoes-reserva .container-status-reserva .reserva-expirada {
+    background-color: var(--vermelho-alaranjado);
+}
