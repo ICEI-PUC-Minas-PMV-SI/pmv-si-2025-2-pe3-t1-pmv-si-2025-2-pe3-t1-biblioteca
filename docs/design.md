@@ -12,7 +12,7 @@
 
 ### Persona 03: Gabriel Almeida
 
-
+![P3](https://github.com/user-attachments/assets/131f5c01-53ed-4081-9b67-a5494b18ea76)
 
 ### Persona 04: Neuza de Fátima
 
@@ -20,11 +20,11 @@
 
 ### Persona 05: Helena Duarte
 
-
+![P5](https://github.com/user-attachments/assets/3357d0ed-9be3-4db6-97f1-752ea92428c8)
 
 ### Persona 06: Jonas Martins
 
-
+![P6](https://github.com/user-attachments/assets/69f0344d-7918-420f-bee5-fef4549233e9)
 
 ## 4.2 Mapas de Empatia
 
@@ -38,6 +38,7 @@
 
 ### Mapa de empatia 03: Gabriel Almeida
 
+![ME3](https://github.com/user-attachments/assets/fbefecac-ff83-45d5-afa8-fa3fa3429618)
 
 ### Mapa de empatia 04: Neuza de Fátima
 
@@ -45,11 +46,11 @@
 
 #### Mapa de empatia 05: Helena Duarte
 
-
+![ME5](https://github.com/user-attachments/assets/e158c1bc-3749-4765-bd84-d67fc90835dc)
 
 ### Mapa de empatia 06: Jonas Martins
 
-
+![ME6](https://github.com/user-attachments/assets/f08f9415-9ce8-4733-b274-2839671241e3)
 
 ## 4.3 Protótipos das Interfaces
 Apresente nesta seção os protótipos de alta fidelidade do sistema proposto. A fidelidade do protótipo refere-se ao nível de detalhes e funcionalidades incorporadas a ele. Assim, um protótipo de alta fidelidade é uma representação interativa do produto, baseada no computador ou em dispositivos móveis. Esse protótipo já apresenta maior semelhança com o design final em termos de detalhes e funcionalidades. No desenvolvimento dos protótipos, devem ser considerados os princípios gestálticos, as recomendações ergonômicas e as regras de design (como as 8 regras de ouro). É importante descrever no texto do relatório como os princípios gestálticos e as regras de ouro foram seguidas no projeto das interfaces. Nesta etapa deve-se dar uma ênfase na implementação do software de modo que possam ser realizados os testes com usuários na etapa seguinte.
@@ -63,5 +64,6 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
