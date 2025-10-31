@@ -7,6 +7,8 @@
 ![P1](https://github.com/user-attachments/assets/9dd2e1fb-df53-4188-bf7f-df75a9df1b37)
 
 ### Persona 02: Mariana Torres
+![P2](https://github.com/user-attachments/assets/0dc060ed-a04c-43c6-8f66-45de0024326b)
+
 
 ### Persona 04: Neuza de Fátima
 
@@ -18,6 +20,8 @@
 
 ![ME1](https://github.com/user-attachments/assets/15738379-50e1-4eb2-8254-ad51347e5522)
 ### Mapa de empatia 02: Mariana Torres
+![mapa](https://github.com/user-attachments/assets/e2d49db1-dc9c-44eb-b1df-4787563f692f)
+
 
 
 ### Mapa de empatia 04: Neuza de Fátima
@@ -38,4 +42,5 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
