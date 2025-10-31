@@ -277,7 +277,7 @@ background-color: var(--azul-colombia);
   gap: 15px;
 }
 
-.reserve-container .container-livro .lib-page #capa {
+.reserve-container .container-livro .lib-page #capa-janela-reserva {
   height: 40vh;
   width: calc((2/3)*height);
 }
@@ -289,21 +289,21 @@ background-color: var(--azul-colombia);
   
 }
 
-.reserve-container .container-livro .lib-page .container-informacao #titulo-livro, #autor, #genero, #resumo {
+.reserve-container .container-livro .lib-page .container-informacao #titulo-livro-janela-reserva, #autor-janela-reserva, #genero-janela-reserva, #resumo {
   color: var(--azul-delft);
   font-weight: 700;
   font-style: normal;
 }
 
-.reserve-container .container-livro .lib-page .container-informacao #titulo-livro {
+.reserve-container .container-livro .lib-page .container-informacao #titulo-livro-janela-reserva {
   font-size: clamp(20px, calc(1.3vw + 1.3vh), 36px);
 }
 
-.reserve-container .container-livro .lib-page .container-informacao #autor {
+.reserve-container .container-livro .lib-page .container-informacao #autor-janela-reserva {
   font-size: clamp(16px, calc(0.8vw + 0.8vh), 20px);
 }
 
-.reserve-container .container-livro .lib-page .container-informacao #genero {
+.reserve-container .container-livro .lib-page .container-informacao #genero-janela-reserva {
   font-size: clamp(12px, calc(0.8vw + 0.8vh, 16px));
   padding: 2% 4%;
   background-color: var(--branco);
