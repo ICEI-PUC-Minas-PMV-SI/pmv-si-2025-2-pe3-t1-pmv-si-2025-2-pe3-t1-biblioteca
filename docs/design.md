@@ -6,12 +6,23 @@
 
 ![P1](https://github.com/user-attachments/assets/9dd2e1fb-df53-4188-bf7f-df75a9df1b37)
 
+### Persona 04: Neuza de Fátima
+
+![P4](https://github.com/user-attachments/assets/ece6957d-0ebf-4648-9168-d93ade0d5197)
+
 ## 4.2 Mapas de Empatia
+
 
 ### Mapa de empatia 01: Luís Cláudio
 
 
 ![ME1](https://github.com/user-attachments/assets/15738379-50e1-4eb2-8254-ad51347e5522)
+
+
+### Mapa de empatia 04: Neuza de Fátima
+
+
+![ME4](https://github.com/user-attachments/assets/795262bf-4f51-4a07-b347-a32e4e31c730)
 
 
 ## 4.3 Protótipos das Interfaces
