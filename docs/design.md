@@ -6,8 +6,6 @@
 
 ![P1](https://github.com/user-attachments/assets/9dd2e1fb-df53-4188-bf7f-df75a9df1b37)
 
-![P11](https://github.com/user-attachments/assets/9a456af9-b997-4a87-a7a5-72df0089116f)
-
 ## 4.2 Mapas de Empatia
 
 ### Mapa de empatia 01: Luís Cláudio
