@@ -260,6 +260,11 @@ background-color: var(--azul-colombia);
   height: 100%;
 }
 
+.reserve-buttons{
+
+  width: 40%;
+}
+
 .reserve-container .container-livro span {
   font-size: clamp(12px, calc(0.8vw + 0.8vh), 16px);
   font-weight: 600;
