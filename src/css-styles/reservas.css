@@ -1,3 +1,11 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -128,8 +136,10 @@ main .container-reserva .container-informacoes-reserva .container-status-reserva
     margin-left: 10%;
 }
 
-#mensagem-padrão{
-
-    margin: 0 0 0 0;
+#mensagem-padrão-reserva{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
     
 }
