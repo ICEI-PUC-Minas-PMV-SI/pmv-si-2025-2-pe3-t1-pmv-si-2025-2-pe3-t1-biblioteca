@@ -10,9 +10,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   flex: 1;
-  margin: 50px 0;
+  margin: 50px 0
 }
 
 .navigation-bar {
@@ -179,7 +179,6 @@ main {
     height: 350px;
     padding: 0 10%;
     align-items: center;
-    margin-top: 40px;
 }
 
 .div-inferior_cima{
@@ -201,7 +200,6 @@ main {
 }
 
 .carrossel {
-  margin-top: 30px;
   width: 100%;
 }
 
@@ -213,14 +211,93 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  width: 100%;
+  width: 100vw;
+  gap: 20px;
 }
 
 .avaliation-container h2 {
   font-size: 56px;
   color: var(--azul-delft);
   font-weight: 700;
+}
+
+.avaliation-container .container-interno-avaliacao {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 15px;
+  width: 90%;
+  border: 2px solid var(--azul-delft);
+  gap: 1%;
+  border-radius: 1.25rem;
+}
+
+.avaliation-container .container-interno-avaliacao .container-pontuacao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  min-width: max-content
+}
+
+.avaliation-container .container-interno-avaliacao .container-pontuacao #nota-avaliacao {
+  font-size: 56px;
+  color: var(--alcacuz);
+  opacity: 0.7;
+}
+
+.avaliation-container .container-interno-avaliacao .container-pontuacao .estrela-de-pontuacao {
+  color: var(--alcacuz);
+  opacity: 0.7;
+}
+
+.avaliation-container .container-interno-avaliacao .container-pontuacao #quantidade-avaliacoes {
+  font-size: 16px;
+  color: var(--alcacuz);
+  opacity: 0.7;
+}
+
+.avaliation-container .container-interno-avaliacao .container-estrela-barra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra span {
+  min-width: 10px
+}
+
+.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-dzn {
+  width: 100%;
+  background-color: var(--alcacuz);
+  opacity: 0.3;
+  height: 45%;
+  border-radius: 1.25rem;
+}
+
+.avaliation-container .container-add-avaliacao {
+  width: 90%;
+  display: flex;
+  justify-content: start;
+} 
+
+.avaliation-container .adicionar-avaliacao {
+  background-color: var(--azul-delft);
+  width: 15%;
+  min-width: min-content;
+  padding: 1rem 0.25rem;
+  color: var(--branco);
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .reserve-container {
