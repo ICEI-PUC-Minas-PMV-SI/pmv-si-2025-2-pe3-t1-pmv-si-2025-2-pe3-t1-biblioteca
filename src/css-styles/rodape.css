@@ -5,9 +5,8 @@ body footer {
     background-color: var(--azul-delft);
     height: 22rem;
     justify-content: space-around;
-    position: absolute;
+    position: relative;
     bottom: 0;
-    width: 100%;
 }
 
 body footer .left_container {

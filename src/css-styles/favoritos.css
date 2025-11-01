@@ -11,6 +11,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 40%;
+  flex: 1;
 }
 
 .navigation-bar {
@@ -30,6 +31,7 @@ main {
   align-items: center;
   cursor: pointer;
   margin-left: 4%;
+  position: absolute;
 }
 
 .back-to-home span {
@@ -46,7 +48,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 100%;
 }
 
 #home{

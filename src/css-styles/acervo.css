@@ -9,19 +9,23 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
     gap: 20px;
 }
 
-.back-to-home {
+#navbar-acervo {
+    justify-content: space-around;
+}
+
+.back-to-home-acervo {
     background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    position: relative;
 }
 
-.back-to-home span {
+.back-to-home-acervo span {
     font-size: 2.3rem;
     color: white;
     font-weight: 550;
