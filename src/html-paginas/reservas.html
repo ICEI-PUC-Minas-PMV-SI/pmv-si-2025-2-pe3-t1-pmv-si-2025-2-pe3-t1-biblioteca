@@ -60,46 +60,54 @@
         <h2>Minhas reservas</h2>
     </section>
 
+    <span id = "mensagem-padrao">Não há reservas a serem exibidas.</span>
     <main>
-        <section class="container-reserva">
+        
+        <section class="container-reserva template">
             <section class="container-capa">
-                <img src="../img/capas/9786555655940.jpg" id="capa">
+                <img src="../img/capas/9786555655940.jpg" class = "capa" id="capa-template-1">
             </section>
             <section class="container-informacoes-livro">
-                <h3 id="titulo-livro" class="mutavel">Os Irmãos Karamázov</h3>
-                <span id="autor" class="mutavel" title="Clique para ir para a página do autor">Fiódor
-                    Dostoiévski</span>
-                <span id="genero" class="mutavel">Romance</span>
-                <span id="resumo" class="mutavel">Conflitos familiares como palco para fé, razão e
+                <h3 class = "titulo" id="titulo-livro-template-1">Os Irmãos Karamázov</h3>
+                <div class = "autor-e-genero">
+                    <span id="autor-template-1" class="autor" title="Clique para ir para a página do autor">Fiódor Dostoiévski</span>
+                    <span id="genero-template-1" class="genero">Romance</span>
+                </div>
+                <span id="resumo-template-1" class="resumo">Conflitos familiares como palco para fé, razão e
                     liberdade. Uma
                     obra-prima que tensiona ética, afeto e transcendência.
                 </span>
                 <section class="container-informacoes-reserva">
                     <section class="container-status-reserva">
-                        <span class="status-reserva">Aguardando retirada</span>
-                        <span class="informacao-reserva">Você pode retirar esse livro até o dia 22/10/2025 às
+                        <span class="status-reserva" id = "status-template-1">Aguardando retirada</span>
+                        <span class="hora-limite-retirada">Você pode retirar esse livro até o dia 22/10/2025 às
                             20:00</span>
+                        <span class = "numero-chamada" id = "numero-chamada-template-1">Nº de chamada: EF-P1-C06</span>
                     </section>
+                    
                     <button class="botao-cancelar-reserva">Cancelar</button>
                 </section>
             </section>
         </section>
 
-        <section class="container-reserva">
+        <section class="container-reserva template">
             <section class="container-capa">
-                <img src="../img/capas/9788501078896.jpg" id="capa">
+                <img src="../img/capas/9788501078896.jpg" class = "capa" id="capa-template-2">
             </section>
             <section class="container-informacoes-livro">
-                <h3 id="titulo-livro" class="mutavel">Nada a declarar</h3>
-                <span id="autor" class="mutavel" title="Clique para ir para a página do autor">Karen M. McManus</span>
-                <span id="genero" class="mutavel">Mistério</span>
-                <span id="resumo" class="mutavel">Mistério em alto-mar com adolescentes presos num cruzeiro.
+                <h3 class = "titulo" id="titulo-livro-template-2">Nada a declarar</h3>
+                <div class = "autor-e-genero">
+                    <span id="autor-template-2" class = "autor" title="Clique para ir para a página do autor">Karen M. McManus</span>
+                    <span class="genero" id = "genero-template-2">Mistério</span>
+                </div>
+                <span id="resumo-template-2" class = "resumo">Mistério em alto-mar com adolescentes presos num cruzeiro.
                     Conspirações e desaparecimentos alimentam a paranoia do grupo.
                 </span>
                 <section class="container-informacoes-reserva">
                     <section class="container-status-reserva">
-                        <span class="status-reserva reserva-expirada">Reserva expirada</span>
-                        <span class="informacao-reserva informacao-reserva-expirada">Sua reserva expirou no dia 21/10/2025 às 20:00</span>
+                        <span class="status-reserva reserva-expirada" id = "status-template-2">Reserva expirada</span>
+                        <span class="hora-limite-retirada">Sua reserva expirou no dia 21/10/2025 às 20:00</span>
+                        <span class = "numero-chamada" id = "numero-chamada-template-2">Nº de chamada: EE-P1-C06</span>
                     </section>
                     <button class="botao-cancelar-reserva">Cancelar</button>
                 </section>

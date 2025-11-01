@@ -7,24 +7,24 @@ export class ClasseReserva{
     // aqui estão atributos específicos de cada objeto da classe (cada livro específico)
     idReserva
     idLeitor
-    //como pode haver uma fila de reservas, esse atributo guarda a quantidade de usuários que está na sua frente na fila
-    tamanhoFila
     tomboLivro
     //indica a data e hora de solicitação da reserva
     dataHoraSolicitacao
     //indica a data e hora limites para efetivamente coletar o livro
     dataHoraLimite
+    //indica o status da reserva: 'aguardando retirada' ou 'expirada'
+    status
 
     //construtor de objetos reserva
 
-    constructor (idReserva, idUsuario, tamanhoFila, tomboLivro, estaReservado, dataHoraSolicitacao, dataHoraLimite){
+    constructor (idReserva, idUsuario, tomboLivro, dataHoraSolicitacao, dataHoraLimite, status){
 
     this.idReserva = idReserva
     this.idUsuario = idUsuario
     this.tomboLivro = tomboLivro
-    this.estaReservado = estaReservado
     this.dataHoraSolicitacao = dataHoraSolicitacao
     this.dataHoraLimite = dataHoraLimite
+    this.status = "Aguardando retirada"
     
     // a cada chamada de construtor bem sucedida, o contador de número de reservas é incrementado
         ClasseReserva.numeroDeReservas ++
