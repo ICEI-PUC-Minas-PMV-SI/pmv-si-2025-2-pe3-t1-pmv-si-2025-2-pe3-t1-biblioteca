@@ -25,7 +25,7 @@ export function trocarLivro(isbn){
             const capaId = ClasseLivro.vetorLivros[i].capaId
 
             document.getElementById("capa").src = `../img/capas/${capaId}.jpg`
-            document.getElementById("titulo-livro").textContent = disponibilidade
+            document.getElementById("disponibilidade").textContent = disponibilidade
             document.getElementById("titulo-livro").textContent = titulo
             document.getElementById("autor").textContent = autor
             document.getElementById("genero").textContent = genero

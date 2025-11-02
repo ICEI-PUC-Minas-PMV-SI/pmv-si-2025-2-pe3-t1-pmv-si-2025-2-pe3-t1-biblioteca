@@ -3,7 +3,7 @@ const reserveButton = document.getElementById("livro-reservar")
 const selectButton = document.getElementById("livro-selecionar")
 const allContainers = document.querySelectorAll(".opacity05")
 const buttonCancelReserve = document.getElementById("botao-cancelar-reserva")
-const buttonConfirmReserve = document.getElementById("botao-confirmar-reserva")
+
 
 reserveButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -22,3 +22,6 @@ buttonCancelReserve.addEventListener("click", (event) => {
         container.style.opacity = "1"
     })
 })
+
+
+

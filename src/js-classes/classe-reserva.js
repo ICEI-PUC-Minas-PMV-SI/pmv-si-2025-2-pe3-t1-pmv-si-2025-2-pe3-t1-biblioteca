@@ -17,13 +17,13 @@ export class ClasseReserva{
 
     //construtor de objetos reserva
 
-    constructor (idReserva, idUsuario, tomboLivro, dataHoraSolicitacao, dataHoraLimite, status){
+    constructor (idReserva, idUsuario, tomboLivro, dataHoraSolicitacao, dataHoraLimite){
 
     this.idReserva = idReserva
     this.idUsuario = idUsuario
     this.tomboLivro = tomboLivro
     this.dataHoraSolicitacao = dataHoraSolicitacao
-    this.dataHoraLimite = dataHoraLimite
+    this.dataHoraLimite = new Date(dataHoraSolicitacao.getTime() + 24 * 60 * 60 * 1000)
     this.status = "Aguardando retirada"
     
     // a cada chamada de construtor bem sucedida, o contador de número de reservas é incrementado

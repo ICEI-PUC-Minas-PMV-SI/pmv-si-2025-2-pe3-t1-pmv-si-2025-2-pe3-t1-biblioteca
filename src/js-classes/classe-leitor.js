@@ -4,7 +4,7 @@ export class ClasseLeitor {
     static vetorLeitores = JSON.parse(localStorage.getItem("lista de leitores")) || []
     static numeroDeLeitores = ClasseLeitor.vetorLeitores.length
     //recebe o nome de usuário do leitor logado no ato de login
-    static leitorLogado
+    static leitorLogado = localStorage.getItem("leitor logado") || ""
 
     // aqui estão atributos específicos de cada objeto da classe (cada leitor específico)
     id
