@@ -1,6 +1,7 @@
 import { ClasseReserva } from "../js-classes/classe-reserva.js"
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
+import { ClasseLivro } from "../js-classes/classe-livro.js"
 
 export function criarReserva(leitor, livro) {
 
@@ -41,15 +42,15 @@ export function criarReserva(leitor, livro) {
 
     // atualizar lista de livros
 
+    livro.disponibilidade = false;
+    localStorage.setItem("lista de livros", JSON.stringify(ClasseLivro.vetorLivros));
 
 
-
-    
     showAlertSync({
         title: "Reserva concluída",
         message: `${leitor?.nome || "Leitor"}, sua reserva foi registrada com sucesso!`
     }, () => {
-        window.location.href = "../../index.html";
+        window.location.href = "../../src/html-paginas/reservas.html";
     })
 
 }

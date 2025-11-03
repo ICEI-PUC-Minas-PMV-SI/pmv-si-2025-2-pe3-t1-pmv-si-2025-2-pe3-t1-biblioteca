@@ -1,4 +1,5 @@
 import { ClasseLivro } from "../js-classes/classe-livro.js"
+import { ClasseReserva } from "../js-classes/classe-reserva.js"
 
 
 export function trocarLivro(isbn){
@@ -25,7 +26,7 @@ export function trocarLivro(isbn){
             const capaId = ClasseLivro.vetorLivros[i].capaId
 
             document.getElementById("capa").src = `../img/capas/${capaId}.jpg`
-            document.getElementById("disponibilidade").textContent = disponibilidade
+            document.getElementById("disponibilidade").textContent = disponibilidade === true ? "Disponível" : "Indisponível"
             document.getElementById("titulo-livro").textContent = titulo
             document.getElementById("autor").textContent = autor
             document.getElementById("genero").textContent = genero
@@ -37,6 +38,22 @@ export function trocarLivro(isbn){
             document.getElementById("idioma").textContent = idioma
             document.getElementById("paginas").textContent = paginas
             document.getElementById("chamada").textContent = chamada
+
+            const reserveButton = document.getElementById("livro-reservar");
+            const reserveDisponibility = document.getElementById("disponibilidade");
+            if (reserveButton) {
+                if (disponibilidade) {
+                    return
+                } else {
+                    reserveDisponibility.style.backgroundColor = "var(--vermelho-alaranjado)";
+                    reserveDisponibility.style.color = "var(--branco)"
+                    reserveButton.style.backgroundColor = "var(--vermelho-alaranjado)";
+                    reserveButton.style.cursor = "not-allowed";
+                    reserveButton.disabled = true;
+                    reserveButton.setAttribute("title", "Livro indisponível para reserva.")
+                    reserveButton.style.opacity = "0.7"
+                }
+            }
         }
     }
 
