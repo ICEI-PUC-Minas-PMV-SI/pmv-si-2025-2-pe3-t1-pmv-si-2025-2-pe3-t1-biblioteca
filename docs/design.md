@@ -50,7 +50,8 @@
 
 ### Mapa de empatia 06: Jonas Martins
 
-![ME6](https://github.com/user-attachments/assets/f08f9415-9ce8-4733-b274-2839671241e3)
+![Group 48](https://github.com/user-attachments/assets/6ba714bb-368a-4197-9a4a-2a12fbc4c2c1)
+
 
 ## 4.3 Protótipos das Interfaces
 Nesta seção, serão apresentados os protótipos de alta fidelidade do sistema web a ser implementado. As principais telas do sistema serão exibidas e serão indicados quais princípios gestálticos, recomendações ergonômicas e regras de ouro orientaram o processo de design da interação usuário-sistema.
@@ -126,6 +127,38 @@ A tela de cadastro tem como finalidade registrar as informações básicas sobre
 
 ![image 12](https://github.com/user-attachments/assets/f34f8447-ac09-4675-b3a7-21e2e3c75765)
 
+### Página do acervo
+
+#### Objetivo da tela
+
+A página do acervo apresenta todos os livros cadastrados no sistema, agrupados por gênero. São 48 livros, de 24 autores diferentes. O campo de busca filtra os livros por título, autor, gênero ou editora. Também é possível fazer uma busca generalizada, sem filtrar por atributos específicos.
+
+#### Recomendações aplicadas
+
+#### Princípios gestálticos
+
+***Proximidade***: capas de livros de um mesmo gêneros são exibidas em uma mesma linha, dando a impressão de grupo.
+
+***Simetria***: as linhas e colunas de livros foram organizadas de maneira simétrica, facilitando a assimilação do conteúdo do acervo.
+
+#### Regras de ouro
+
+***Controle de iniciativa***: o botão de voltar fornece a sensação de controle para o usuário, que pode se redirecionar para a página inicial caso deseje.
+
+***Feedback informativo***: caso a busca realizada não encontre correspondências no acervo, uma mensagem é exibida na página.
+
+#### Recomendações ergonômicas
+
+***Convite à interação***: o campo de busca convida o leitor a filtrar o acervo de acordo com seus interesses.
+
+![5 - ACERVO](https://github.com/user-attachments/assets/bb51b172-fe74-46c2-a91c-fc032e2b30a1)
+
+<img width="1874" height="672" alt="image" src="https://github.com/user-attachments/assets/8ee900e3-4041-456f-be15-195d2df35544" />
+
+
+<img width="1881" height="838" alt="image" src="https://github.com/user-attachments/assets/516d12da-8b32-43be-9b90-d7cd8d195575" />
+
+
 ### Páginas dos livros e dos autores
 
 #### 1 - Objetivo das telas
@@ -196,6 +229,7 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
 
