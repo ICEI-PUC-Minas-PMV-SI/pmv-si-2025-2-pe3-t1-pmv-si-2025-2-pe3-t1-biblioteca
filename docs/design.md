@@ -73,7 +73,9 @@ A página também conta com uma faixa que apresenta os três gêneros mais acess
 #### Regras de ouro
 
 ***Consistência***: os botões presentes na tela sempre sugerem ações se utilizando de verbos no infinitivo.
+
 ***Fornecer atalhos***: há atalhos de navegação tanto no cabeçalho quanto no rodapé da página. A seção "Em alta" apresenta a possibilidade de busca rápida por livros dos gêneros mais acessados. Há também a possibilidade de redirecionamento rápido para as páginas dos livros a partir das capas presentes nos carrosseis.
+
 ***Feedback informativo***: no fluxo da entrada no sistema há avisos que indicam quando o nome de usuário inserido não consta na base de dados. Na ocasião de a senha estar incorreta, também é exibida uma mensagem para o usuário.
 
 ![2 - HOME - ENTRAR](https://github.com/user-attachments/assets/62352f31-8242-4bd4-baef-a76d93137511)
@@ -93,28 +95,69 @@ A tela de cadastro tem como finalidade registrar as informações básicas sobre
 #### Princípios gestálticos
 
 ***Proximidade***: campos de dados relacionados são exibidos em regiões contíguas, dando a impressão de grupo.
+
 ***Região comum***: além de estarem próximos, grupos de dados relacionados estão reparados visualmente por traços, dando a impressão de conjunto.
+
 ***Simetria***: as colunas foram organizadas de maneira simétrica, facilitando a assimilação do conteúdo do formulário.
 
 #### Regras de ouro
 
 ***Prevenção a erros e maneiras de corrigí-los***: o sistema avisa quando o CPF ou o CEP foram inseridos em formato inválido ou com quantidade insuficiente de caracteres.
+
 ***Controle de iniciativa***: o botão de cancelar fornece a sensação de controle para o usuário, que pode abandonar o fluxo de cadastro caso julgue conveniente.
+
 ***Marcação do final dos diálogos***: o sistema avisa quando o fluxo de cadastro foi completado com sucesso.
 
 #### Recomendações ergonômicas
 
 ***Evitar linguagem alarmante***: os alertas de erro não se utilizam de termos que possam causar a sensação de alarme, urgência ou perigo.
+
 ***Evitar o uso de caixa alta***: os alertas não apresentam palavras com letras exclusivamente maiúsculas, evitando a sensação de alarme, urgência ou rispidez.
+
 ***Distinção clara entre campos***: os rótulos e os campos de inserção de dados apresentam fácil distinção entre si, facilitando o fluxo da atividade.
+
+***Listas ordenadas alfabeticamente***: no campo de escolha do estado em que o leitor reside, a lista está ordenada alfabeticamente, facilitando a localização do estado correto.
 
 ![3 - CADASTRO](https://github.com/user-attachments/assets/1d9d4d96-5bb9-4213-b14f-6202b685c72c)
 
-<img width="889" height="233" alt="image" src="https://github.com/user-attachments/assets/8f2797c3-a1be-4423-b396-ab3c113187f3" />
+![image 9](https://github.com/user-attachments/assets/9e7af8ea-fc5b-4d0d-a09f-97a987f69fbf)
 
-<img width="891" height="230" alt="image" src="https://github.com/user-attachments/assets/8c272f87-49f5-4ca4-acde-cdbb177c8e00" />
+![image 10](https://github.com/user-attachments/assets/f875f9df-1cb3-43e6-8e5a-33327e8234b4)
 
-<img width="883" height="228" alt="image" src="https://github.com/user-attachments/assets/c5a20924-f55a-41a1-93dd-5e45b249943d" />
+![image 12](https://github.com/user-attachments/assets/f34f8447-ac09-4675-b3a7-21e2e3c75765)
+
+### Páginas dos livros e dos autores
+
+#### 1 - Objetivo das telas
+
+As páginas dos livros e dos autores têm como finalidade apresentar detalhes que não estavam presentes nos cards da página inicial. Nessa tela, é apresentada uma sinopse do livro e uma breve descrição biográfica do autor. Visando convidar o usuário à interação com o sistema, são oferecidas as possibilidades de curtir o livro ou o autor, bem como de registrar uma avaliação no sistema.
+
+#### 2 - Recomendações aplicadas
+
+#### Regras de ouro
+
+***Consistência***: os botões presentes na tela sempre sugerem ações se utilizando de verbos no infinitivo.
+
+***Permitir a reversão de ações***: É possível desfazer a "curtida" de um livro ou de um autor com um clique.
+
+***Controle de iniciativa***: o botão de cancelar fornece a sensação de controle para o usuário, que pode abandonar o fluxo de cadastro caso julgue conveniente.
+
+***Marcação do final dos diálogos***: o sistema avisa quando o fluxo de registrar uma reserva foi completado com sucesso.
+
+#### Recomendações ergonômicas
+
+***Adequação de fontes***: textos curtos utilizam fontes sem serifa e textos longos utilizam fontes com serifa, facilitando a leitura.
+
+***Convite à interação***: o botão de curtir - em formato de coração - e o botão de adicionar avaliação fazem um convite ao leitor, o induzindo a interagir com o sistema.
+
+![6 - PAGINA DO LIVRO](https://github.com/user-attachments/assets/c4451eb0-9e16-461b-937d-39c463092eca)
+
+<img width="937" height="843" alt="image" src="https://github.com/user-attachments/assets/5b19f8b5-baf3-44e3-9906-fdb9147163eb" />
+
+<img width="1329" height="605" alt="image" src="https://github.com/user-attachments/assets/ced1af9a-19e8-4086-9ee2-558574c3f4e8" />
+
+![12 - PAGINA DO AUTOR](https://github.com/user-attachments/assets/b381a1ca-2967-4a1c-aab8-24027acff72e)
+
 
 
 
@@ -127,6 +170,7 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
 
