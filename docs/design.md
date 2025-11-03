@@ -158,7 +158,33 @@ As páginas dos livros e dos autores têm como finalidade apresentar detalhes qu
 
 ![12 - PAGINA DO AUTOR](https://github.com/user-attachments/assets/b381a1ca-2967-4a1c-aab8-24027acff72e)
 
+### Páginas 'Minhas reservas', 'Minha seleção' e 'Favoritos'
 
+#### Objetivo das telas
+
+Essas telas têm como finalidade exibir o histórico de escolhas que o leitor realizou em relação aos livros e aos autores apresentados pelo sistema. Na página "Minhas reservas" são exibidas as reservas realizadas pelo leitor logado, tanto aquelas ainda válidas quanto as recentemente expiradas. Na página "Minha seleção" são exibidos títulos que o usuário selecionou para lembrar mais tarde, uma funcionalidade análoga ao "carrinhos" em sistemas de compras. Já nas páginas de livros e autores favoritos o usuário registra títulos e autores de que tenha gostado, para futuramente ter acesso mais rápido a esses elementos.
+
+#### Regras de ouro
+
+***Controle de iniciativa***: o botão de cancelar reserva fornece a sensação de controle para o usuário, que pode excluir uma reserva da qual tenha desistido.
+
+***Feedback informativo***: a data limite para retirar o livro reservado é exibida junto às informações do livro.
+
+#### Recomendações ergonômicas
+
+***Apoio à tomada de decisão***: o botão de cancelar reservas fica automatiamente desabilitado caso a reserva já tenha expirado, evitando confusões e ações incorretas.
+
+***Reconhecimento no lugar de recordação***: como as reservas, seleções e favoritos ficam armazenados no sistema, a carga cognitiva é reduzida devido à não necessidade de recordar cada elemento escolhido pelo leitor.
+
+***Região comum***: além de estarem próximos, informações referentes a uma reserva ou a uma seleção estão separados de outros elementos por um quadro, dando a impressão de conjunto.
+
+![8 - MINHAS RESERVAS](https://github.com/user-attachments/assets/43106b0b-a80f-44fa-b360-e68f07099fe7)
+
+![9 - MINHA SELECAO](https://github.com/user-attachments/assets/9dacd109-ddb1-423b-ba5a-f4cf50062ac0)
+
+![10 - MEUS FAVORITOS - LIVROS](https://github.com/user-attachments/assets/00daf42d-5f36-4125-9d0f-eaca41441845)
+
+![11 - MEUS FAVORITOS - AUTORES](https://github.com/user-attachments/assets/b1b99f70-4e91-4fe3-8d51-78d98c60b3f1)
 
 
 ## 4.4 Testes com Protótipos
@@ -170,6 +196,7 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
 
