@@ -53,7 +53,36 @@
 ![ME6](https://github.com/user-attachments/assets/f08f9415-9ce8-4733-b274-2839671241e3)
 
 ## 4.3 Protótipos das Interfaces
-Apresente nesta seção os protótipos de alta fidelidade do sistema proposto. A fidelidade do protótipo refere-se ao nível de detalhes e funcionalidades incorporadas a ele. Assim, um protótipo de alta fidelidade é uma representação interativa do produto, baseada no computador ou em dispositivos móveis. Esse protótipo já apresenta maior semelhança com o design final em termos de detalhes e funcionalidades. No desenvolvimento dos protótipos, devem ser considerados os princípios gestálticos, as recomendações ergonômicas e as regras de design (como as 8 regras de ouro). É importante descrever no texto do relatório como os princípios gestálticos e as regras de ouro foram seguidas no projeto das interfaces. Nesta etapa deve-se dar uma ênfase na implementação do software de modo que possam ser realizados os testes com usuários na etapa seguinte.
+Nesta seção, serão apresentados os protótipos de alta fidelidade do sistema web a ser implementado. As principais telas do sistema serão exibidas e serão indicados quais princípios gestálticos, recomendações ergonômicas e regras de ouro orientaram o processo de design da interação usuário-sistema.
+
+### Tela inicial - Antes do login
+
+#### 1 - Objetivo da tela
+
+A página inicial apresenta, no canto superior direito, o botão "Entrar", que abre uma pequena janela com as opções de logar, cadastrar-se ou recuperar senha. Há também um campo para procurar livros. Além disso, são apresentados carrosseis e cards com informações curtas sobre os livros e os autores mais acessados, possibilitando o redirecionamento para as páginas desses livros e autores. 
+
+A página também conta com uma faixa que apresenta os três gêneros mais acessados, possibiliando a busca automática pelos livros correspondentes a esses gêneros. Ao final da tela, há um rodapé com informações de contato e âncoras de navegação.
+
+#### 2 - Recomendações aplicadas 
+
+##### Princípios gestálticos
+
+***Proximidade***: os itens de navegação no cabeçalho dão a impressão de um grupo coeso. O card com informações dos livros e dos autores também estão próximos aos seus respectivos carrosseis.
+***Princípio da figura-fundo***: os elementos de destaque apresentam contraste adequado em relação ao fundo no qual estão inseridos.
+
+##### Regras de ouro
+
+***Consistência***: os botões presentes na tela sempre sugerem ações se utilizando de verbos no infinitivo.
+***Fornecer atalhos***: há atalhos de navegação tanto no cabeçalho quanto no rodapé da página. A seção "Em alta" apresenta a possibilidade de busca rápida por livros dos gêneros mais acessados. Há também a possibilidade de redirecionamento rápido para as páginas dos livros a partir das capas presentes nos carrosseis.
+***Feedback informativo***: no fluxo da entrada no sistema há avisos que indicam quando o nome de usuário inserido não consta na base de dados. Na ocasião de a senha estar incorreta, também é exibida uma mensagem para o usuário.
+
+![2 - HOME - ENTRAR](https://github.com/user-attachments/assets/62352f31-8242-4bd4-baef-a76d93137511)
+
+![Group 239182](https://github.com/user-attachments/assets/cbc76d58-603a-455f-ac28-da78d849db53)
+
+![Group 239183](https://github.com/user-attachments/assets/4a1a4943-fd60-46c1-bec8-ebafa7c9f5c8)
+
+
 
 ## 4.4 Testes com Protótipos
 Nesta seção você deve apresentar os testes realizados com usuários utilizando os protótipos de alta fidelidade desenvolvidos na seção anterior. O objetivo é avaliar a usabilidade, a clareza das informações e a adequação do design às necessidades das personas definidas no projeto.
@@ -64,6 +93,7 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
 
