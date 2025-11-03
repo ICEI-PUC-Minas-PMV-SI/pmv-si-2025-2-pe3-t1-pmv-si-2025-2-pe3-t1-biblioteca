@@ -8,6 +8,7 @@ export class ClasseReserva{
     idReserva
     idLeitor
     tomboLivro
+    numeroChamada
     //indica a data e hora de solicitação da reserva
     dataHoraSolicitacao
     //indica a data e hora limites para efetivamente coletar o livro
