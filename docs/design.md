@@ -153,11 +153,9 @@ A página do acervo apresenta todos os livros cadastrados no sistema, agrupados 
 
 ![5 - ACERVO](https://github.com/user-attachments/assets/bb51b172-fe74-46c2-a91c-fc032e2b30a1)
 
-<img width="1874" height="672" alt="image" src="https://github.com/user-attachments/assets/8ee900e3-4041-456f-be15-195d2df35544" />
-
-
 <img width="1881" height="838" alt="image" src="https://github.com/user-attachments/assets/516d12da-8b32-43be-9b90-d7cd8d195575" />
 
+<img width="1874" height="672" alt="image" src="https://github.com/user-attachments/assets/8ee900e3-4041-456f-be15-195d2df35544" />
 
 ### Páginas dos livros e dos autores
 
@@ -229,6 +227,7 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
 
