@@ -14,8 +14,23 @@ export function criarReserva(leitor, livro) {
         return
     }
 
-    const reserva = new ClasseReserva(ClasseReserva.numeroDeReservas+1, leitor.id, livro.tombo, livro.numeroChamada, new Date())
+    const numeroReservasAtivas = leitor.minhasReservas.filter(r => r.status.toLowerCase() === "aguardando retirada").length
 
+    if(numeroReservasAtivas >= 2){
+
+        showAlertSync({
+            title: "Limite de reservas",
+            message: "Você já atingiu o limite de 2 reservas ativas. Para realizar uma nova reserva, você deve cancelar uma de suas reservas ativas."
+        })
+        return
+    }
+
+    const dataUTC = new Date()
+    const dataHoraSolicitacao = new Date(dataUTC.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }))
+    const dataHoraLimite = new Date(dataHoraSolicitacao.getTime() + 24 * 60 * 60 * 1000)
+  
+    const reserva = new ClasseReserva(ClasseReserva.numeroDeReservas+1, leitor.id, livro.tombo, dataHoraSolicitacao, dataHoraLimite)
+    
     ClasseReserva.vetorReservas.push(reserva);
     localStorage.setItem("lista de reservas", JSON.stringify(ClasseReserva.vetorReservas));
 

@@ -47,15 +47,13 @@ export function trocarLivro(isbn){
                 } else {
                     reserveDisponibility.style.backgroundColor = "var(--vermelho-alaranjado)";
                     reserveDisponibility.style.color = "var(--branco)"
-                    reserveButton.style.backgroundColor = "var(--vermelho-alaranjado)";
                     reserveButton.style.cursor = "not-allowed";
                     reserveButton.disabled = true;
-                    reserveButton.setAttribute("title", "Livro indisponível para reserva.")
+                    reserveButton.setAttribute("title", "Livro indisponível para reserva")
                     reserveButton.style.opacity = "0.7"
                 }
             }
         }
     }
-
 }
 
