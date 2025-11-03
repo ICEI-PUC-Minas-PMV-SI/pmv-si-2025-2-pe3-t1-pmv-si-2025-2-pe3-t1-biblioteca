@@ -17,11 +17,12 @@ export class ClasseReserva{
 
     //construtor de objetos reserva
 
-    constructor (idReserva, idUsuario, tomboLivro, dataHoraSolicitacao, dataHoraLimite){
+    constructor (idReserva, idUsuario, tomboLivro, numeroChamada, dataHoraSolicitacao){
 
     this.idReserva = idReserva
     this.idUsuario = idUsuario
     this.tomboLivro = tomboLivro
+    this.numeroChamada = numeroChamada
     this.dataHoraSolicitacao = dataHoraSolicitacao
     this.dataHoraLimite = new Date(dataHoraSolicitacao.getTime() + 24 * 60 * 60 * 1000)
     this.status = "Aguardando retirada"
