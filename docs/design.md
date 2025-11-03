@@ -65,12 +65,12 @@ A página também conta com uma faixa que apresenta os três gêneros mais acess
 
 #### 2 - Recomendações aplicadas 
 
-##### Princípios gestálticos
+#### Princípios gestálticos
 
 ***Proximidade***: os itens de navegação no cabeçalho dão a impressão de um grupo coeso. O card com informações dos livros e dos autores também estão próximos aos seus respectivos carrosseis.
 ***Princípio da figura-fundo***: os elementos de destaque apresentam contraste adequado em relação ao fundo no qual estão inseridos.
 
-##### Regras de ouro
+#### Regras de ouro
 
 ***Consistência***: os botões presentes na tela sempre sugerem ações se utilizando de verbos no infinitivo.
 ***Fornecer atalhos***: há atalhos de navegação tanto no cabeçalho quanto no rodapé da página. A seção "Em alta" apresenta a possibilidade de busca rápida por livros dos gêneros mais acessados. Há também a possibilidade de redirecionamento rápido para as páginas dos livros a partir das capas presentes nos carrosseis.
@@ -81,6 +81,40 @@ A página também conta com uma faixa que apresenta os três gêneros mais acess
 ![Group 239182](https://github.com/user-attachments/assets/cbc76d58-603a-455f-ac28-da78d849db53)
 
 ![Group 239183](https://github.com/user-attachments/assets/4a1a4943-fd60-46c1-bec8-ebafa7c9f5c8)
+
+### Tela de cadastro
+
+#### 1 - Objetivo da tela
+
+A tela de cadastro tem como finalidade registrar as informações básicas sobre o usuário, como nome, CPF, telefone e endereço. Há também um quadro em que o usuário marca seus gêneros favoritos, com o intuito de elaboração de recomendações personalizadas para o leitor. Ao final do formulário, o usuário digita duas vezes a senha escolhida para a entrada no sistema.
+
+#### 2 - Recomendações aplicadas
+
+#### Princípios gestálticos
+
+***Proximidade***: campos de dados relacionados são exibidos em regiões contíguas, dando a impressão de grupo.
+***Região comum***: além de estarem próximos, grupos de dados relacionados estão reparados visualmente por traços, dando a impressão de conjunto.
+***Simetria***: as colunas foram organizadas de maneira simétrica, facilitando a assimilação do conteúdo do formulário.
+
+#### Regras de ouro
+
+***Prevenção a erros e maneiras de corrigí-los***: o sistema avisa quando o CPF ou o CEP foram inseridos em formato inválido ou com quantidade insuficiente de caracteres.
+***Controle de iniciativa***: o botão de cancelar fornece a sensação de controle para o usuário, que pode abandonar o fluxo de cadastro caso julgue conveniente.
+***Marcação do final dos diálogos***: o sistema avisa quando o fluxo de cadastro foi completado com sucesso.
+
+#### Recomendações ergonômicas
+
+***Evitar linguagem alarmante***: os alertas de erro não se utilizam de termos que possam causar a sensação de alarme, urgência ou perigo.
+***Evitar o uso de caixa alta***: os alertas não apresentam palavras com letras exclusivamente maiúsculas, evitando a sensação de alarme, urgência ou rispidez.
+***Distinção clara entre campos***: os rótulos e os campos de inserção de dados apresentam fácil distinção entre si, facilitando o fluxo da atividade.
+
+![3 - CADASTRO](https://github.com/user-attachments/assets/1d9d4d96-5bb9-4213-b14f-6202b685c72c)
+
+<img width="889" height="233" alt="image" src="https://github.com/user-attachments/assets/8f2797c3-a1be-4423-b396-ab3c113187f3" />
+
+<img width="891" height="230" alt="image" src="https://github.com/user-attachments/assets/8c272f87-49f5-4ca4-acde-cdbb177c8e00" />
+
+<img width="883" height="228" alt="image" src="https://github.com/user-attachments/assets/c5a20924-f55a-41a1-93dd-5e45b249943d" />
 
 
 
@@ -93,6 +127,7 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
 >>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
 
 
 
