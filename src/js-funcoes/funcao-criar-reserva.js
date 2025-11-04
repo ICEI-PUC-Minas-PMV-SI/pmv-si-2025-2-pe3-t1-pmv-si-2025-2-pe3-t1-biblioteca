@@ -2,8 +2,9 @@ import { ClasseReserva } from "../js-classes/classe-reserva.js"
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { ClasseLivro } from "../js-classes/classe-livro.js"
+import { obterDataHoraServidor, hojeISO, horaBrasilia } from "./funcoes-de-data-e-hora.js"
 
-export function criarReserva(leitor, livro) {
+export async function criarReserva(leitor, livro) {
 
 
     if (ClasseLeitor.leitorLogado === "") {
@@ -25,11 +26,19 @@ export function criarReserva(leitor, livro) {
         return
     }
 
-    const dataUTC = new Date()
-    const dataHoraSolicitacao = new Date(dataUTC.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }))
-    const dataHoraLimite = new Date(dataHoraSolicitacao.getTime() + 24 * 60 * 60 * 1000)
+    //datas e horário em formato manipulável
+    const data = await obterDataHoraServidor()
+    const dataMs = data.getTime()
+    const limiteMs = dataMs + 24 * 60 * 60 * 1000
+
+    //datas e horários em formato legível
+    const dataSolicitacao = hojeISO(dataMs)
+    const horaSolicitacao = horaBrasilia(dataMs)
+    const dataLimite = hojeISO(limiteMs)
+    const horaLimite = horaBrasilia(limiteMs)
+   
   
-    const reserva = new ClasseReserva(ClasseReserva.numeroDeReservas+1, leitor.id, livro.tombo, dataHoraSolicitacao, dataHoraLimite)
+    const reserva = new ClasseReserva(ClasseReserva.numeroDeReservas+1, leitor.id, livro.tombo, dataMs, dataSolicitacao, horaSolicitacao,  limiteMs, dataLimite, horaLimite)
     
     ClasseReserva.vetorReservas.push(reserva);
     localStorage.setItem("lista de reservas", JSON.stringify(ClasseReserva.vetorReservas));

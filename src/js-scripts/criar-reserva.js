@@ -1,7 +1,6 @@
 import { criarReserva } from "../js-funcoes/funcao-criar-reserva.js"
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { ClasseLivro } from "../js-classes/classe-livro.js"
-
 const botaoConfirmar = document.getElementById("botao-confirmar-reserva")
 
 const isbn = sessionStorage.getItem("isbn_redirecionamento")

@@ -8,12 +8,16 @@ import { salvarTopAcessos} from "../js-funcoes/funcao-livros-mais-acessados.js"
 import { salvarTopAcessosGeneros} from "../js-funcoes/funcao-generos-mais-acessados.js"
 import { persistirLike } from "../js-funcoes/funcao-favorito-persistir.js"
 
+
 window.addEventListener("DOMContentLoaded", () => {
 
     //trecho que carrega as informações do livro
     const isbn = sessionStorage.getItem("isbn_redirecionamento")
 
+    
     trocarLivro(isbn)
+
+   
 
     //trecho que carrega o carrossel de livros semelhantes
 

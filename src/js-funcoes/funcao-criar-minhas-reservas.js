@@ -57,7 +57,7 @@ export function criarMinhasReservas(livro, leitor, reserva) {
 
     const horaLimiteRetirada = document.createElement("span")
     horaLimiteRetirada.classList.add("hora-limite-retirada")
-    horaLimiteRetirada.textContent = "Você pode retirar este livro até a data: " + reserva.dataHoraLimiteFormatado
+    horaLimiteRetirada.textContent = `Você pode retirar este livro até o dia ${reserva.dataLimite} às ${reserva.horarioLimite}`
 
     const numeroChamada = document.createElement("span")
     numeroChamada.classList.add("numero-chamada")
