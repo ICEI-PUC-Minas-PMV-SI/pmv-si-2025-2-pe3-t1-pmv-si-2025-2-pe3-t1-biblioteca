@@ -1,9 +1,9 @@
 body {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    max-width: 100%;
 }
 
 main {
@@ -12,6 +12,7 @@ main {
     gap: 30px;
     margin: 30px 0;
     justify-content: center;
+    max-width: 100%;
 }
 
 /* oculta os templates de reserva */
@@ -26,7 +27,7 @@ main .container-reserva {
     border: 3px solid var(--alcacuz);
     padding: 1rem;
     gap: 30px;
-    align-items: start;
+    align-items: center;
     width: 70%;
 }
 
@@ -52,9 +53,15 @@ main .container-reserva .container-informacoes-livro .titulo {
     width: 100%;
 }
 
+main .container-reserva .autor-e-genero {
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+}
+
 main .container-reserva .container-informacoes-livro .autor {
     font-size: clamp(16px, calc(1vw + 1vh), 28px);
-    width: max-content;
+    width: 30%;
 }
 
 main .container-reserva .container-informacoes-livro .genero {
@@ -63,8 +70,6 @@ main .container-reserva .container-informacoes-livro .genero {
     width: max-content;
     background-color: var(--azul-colombia);
     border-radius: 1.25rem;
-    position: static;
-    top: 100px;
 }
 
 main .container-reserva .container-informacoes-livro .resumo {
@@ -76,7 +81,7 @@ main .container-reserva .container-informacoes-reserva {
     display: flex;
     justify-content: space-between;
     width: 90%;
-    margin-top: 5%;
+    margin: auto 0;
     align-items: center;
 }
 
@@ -101,7 +106,14 @@ main .container-reserva .container-informacoes-reserva .container-status-reserva
     justify-self: center;
 }
 
-main .container-reserva .container-informacoes-reserva .container-status-reserva .informacao-reserva {
+main .container-reserva .container-informacoes-reserva .container-status-reserva .hora-limite-retirada {
+    font-size: clamp(8px, calc(0.7vw + 0.7vh), 16px);
+    font-weight: 700;
+    color: var(--alcacuz);
+    width: 70%;
+}
+
+main .container-reserva .container-informacoes-reserva .container-status-reserva .numero-chamada {
     font-size: clamp(8px, calc(0.7vw + 0.7vh), 16px);
     font-weight: 700;
     color: var(--alcacuz);
@@ -129,11 +141,6 @@ main .container-reserva .container-informacoes-reserva .container-status-reserva
     display: flex;
     align-items: center;
     
-}
-
-.genero{
-
-    margin-left: 10%;
 }
 
 #mensagem-padrão-reserva{
