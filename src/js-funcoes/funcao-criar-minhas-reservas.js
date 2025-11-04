@@ -66,6 +66,7 @@ export function criarMinhasReservas(livro, leitor, reserva) {
     const botaoCancelarReserva = document.createElement("button")
     botaoCancelarReserva.classList.add("botao-cancelar-reserva")
     botaoCancelarReserva.textContent = "Cancelar"
+    botaoCancelarReserva.id = `botao-cancelar-reserva/${reserva.idReserva}/`
 
 
     main.appendChild(containerReserva)
