@@ -56,7 +56,7 @@
 ## 4.3 Protótipos das Interfaces
 Nesta seção, serão apresentados os protótipos de alta fidelidade do sistema web a ser implementado. As principais telas do sistema serão exibidas e serão indicados quais princípios gestálticos, recomendações ergonômicas e regras de ouro orientaram o processo de design da interação usuário-sistema.
 
-### Tela inicial - Antes do login
+### Tela inicial
 
 #### 1 - Objetivo da tela
 
@@ -64,11 +64,12 @@ A página inicial apresenta, no canto superior direito, o botão "Entrar", que a
 
 A página também conta com uma faixa que apresenta os três gêneros mais acessados, possibiliando a busca automática pelos livros correspondentes a esses gêneros. Ao final da tela, há um rodapé com informações de contato e âncoras de navegação.
 
-#### 2 - Recomendações aplicadas 
+#### 2 - Boas práticas de design aplicadas 
 
 #### Princípios gestálticos
 
 ***Proximidade***: os itens de navegação no cabeçalho dão a impressão de um grupo coeso. O card com informações dos livros e dos autores também estão próximos aos seus respectivos carrosseis.
+
 ***Princípio da figura-fundo***: os elementos de destaque apresentam contraste adequado em relação ao fundo no qual estão inseridos.
 
 #### Regras de ouro
@@ -85,13 +86,15 @@ A página também conta com uma faixa que apresenta os três gêneros mais acess
 
 ![Group 239183](https://github.com/user-attachments/assets/4a1a4943-fd60-46c1-bec8-ebafa7c9f5c8)
 
-### Tela de cadastro
+### Tela de cadastro e tela de consulta e edição do perfil do usuário
 
-#### 1 - Objetivo da tela
+#### 1 - Objetivo das telas
 
 A tela de cadastro tem como finalidade registrar as informações básicas sobre o usuário, como nome, CPF, telefone e endereço. Há também um quadro em que o usuário marca seus gêneros favoritos, com o intuito de elaboração de recomendações personalizadas para o leitor. Ao final do formulário, o usuário digita duas vezes a senha escolhida para a entrada no sistema.
 
-#### 2 - Recomendações aplicadas
+A tela de perfil do usuário tem como finalidade a consulta aos dados do leitor, como nome, e-mail, endereço e gêneros favoritos. A página oferece a possibilidade de edição desses campos, bem como de modificação da senha de entrada no sistema. 
+
+#### 2 - Boas práticas de design aplicadas
 
 #### Princípios gestálticos
 
@@ -127,13 +130,16 @@ A tela de cadastro tem como finalidade registrar as informações básicas sobre
 
 ![image 12](https://github.com/user-attachments/assets/f34f8447-ac09-4675-b3a7-21e2e3c75765)
 
+![13 - MEU PERFIL](https://github.com/user-attachments/assets/b5ca124f-71af-4cce-a727-f2f4bd02e0e6)
+
+
 ### Página do acervo
 
-#### Objetivo da tela
+#### 1 - Objetivo da tela
 
 A página do acervo apresenta todos os livros cadastrados no sistema, agrupados por gênero. São 48 livros, de 24 autores diferentes. O campo de busca filtra os livros por título, autor, gênero ou editora. Também é possível fazer uma busca generalizada, sem filtrar por atributos específicos.
 
-#### Recomendações aplicadas
+#### 2 - Boas práticas de design aplicadas
 
 #### Princípios gestálticos
 
@@ -163,7 +169,7 @@ A página do acervo apresenta todos os livros cadastrados no sistema, agrupados 
 
 As páginas dos livros e dos autores têm como finalidade apresentar detalhes que não estavam presentes nos cards da página inicial. Nessa tela, é apresentada uma sinopse do livro e uma breve descrição biográfica do autor. Visando convidar o usuário à interação com o sistema, são oferecidas as possibilidades de curtir o livro ou o autor, bem como de registrar uma avaliação no sistema.
 
-#### 2 - Recomendações aplicadas
+#### 2 - Boas práticas de design aplicadas
 
 #### Regras de ouro
 
@@ -191,9 +197,11 @@ As páginas dos livros e dos autores têm como finalidade apresentar detalhes qu
 
 ### Páginas 'Minhas reservas', 'Minha seleção' e 'Favoritos'
 
-#### Objetivo das telas
+#### 1 - Objetivo das telas
 
 Essas telas têm como finalidade exibir o histórico de escolhas que o leitor realizou em relação aos livros e aos autores apresentados pelo sistema. Na página "Minhas reservas" são exibidas as reservas realizadas pelo leitor logado, tanto aquelas ainda válidas quanto as recentemente expiradas. Na página "Minha seleção" são exibidos títulos que o usuário selecionou para lembrar mais tarde, uma funcionalidade análoga ao "carrinhos" em sistemas de compras. Já nas páginas de livros e autores favoritos o usuário registra títulos e autores de que tenha gostado, para futuramente ter acesso mais rápido a esses elementos.
+
+#### 2 - Boas práticas de design aplicadas
 
 #### Regras de ouro
 
@@ -217,6 +225,50 @@ Essas telas têm como finalidade exibir o histórico de escolhas que o leitor re
 
 ![11 - MEUS FAVORITOS - AUTORES](https://github.com/user-attachments/assets/b1b99f70-4e91-4fe3-8d51-78d98c60b3f1)
 
+### Páginas do fluxo de redefinição de senha
+
+#### 1 - Objetivo das telas
+
+Caso o usuário tente entrar no sistema mas perceba que esqueceu sua senha, é oferecida a possibilidade de redefiní-la. Para isso, basta inserir o e-mail cadastrado no sistema e clicar no botão "Enviar código". Na etapa seguinte, o usuário digita um código de 6 dígitos para validação e, na última etapa, é redefinida a senha de entrada.
+
+#### 2 - Boas práticas de design aplicadas
+
+#### Princípios gestálticos
+
+***Princípio da figura-fundo***: os elementos de destaque apresentam contraste adequado em relação ao fundo no qual estão inseridos.
+
+#### Regras de ouro
+
+***Consistência***: os botões presentes nas telas sempre sugerem ações se utilizando de verbos no infinitivo.
+
+***Prevenção a erros e maneiras de corrigí-los*** : o sistema avisa quando o e-mail inserido não tem correspondência na base de dados, orientando o usuário a conferir o endereço digitado. O sistema avisa quando o código inserido não está correto, orientando o usuário a conferir o código e inserí-lo novamente.
+
+***Controle de iniciativa***: o botão de cancelar fornece a sensação de controle para o usuário, que pode abandonar o fluxo de redefinição da senha caso julgue conveniente.
+
+***Feedback informativo***: à medida que o usuário avança no fluxo de redefinição de senha, as telas exibem informações que confirmam o sucesso da etapa anterior e orientam as ações da nova etapa do processo.
+
+***Marcação do final dos diálogos***: o sistema avisa quando o fluxo de redefinir a senha foi completado com sucesso.
+
+#### Recomendações ergonômicas
+
+***Evitar linguagem alarmante***: os alertas de erro não se utilizam de termos que possam causar a sensação de alarme, urgência ou perigo.
+
+***Evitar o uso de caixa alta***: os alertas não apresentam palavras com letras exclusivamente maiúsculas, evitando a sensação de alarme, urgência ou rispidez.
+
+***Distinção clara entre campos***: os rótulos e os campos de inserção de dados apresentam fácil distinção entre si, facilitando o fluxo da atividade.
+
+![14 - REDEFINIR SENHA - FLUXO 1](https://github.com/user-attachments/assets/7d47c44d-9a75-404f-9449-1ea0a7db59aa)
+
+![Frame 68](https://github.com/user-attachments/assets/ba86b57a-3270-4794-85b5-fcded5ebec3f)
+
+![Frame 69](https://github.com/user-attachments/assets/45eeafd7-b124-40c0-9818-964f8a551a00)
+
+![15 - REDEFINIR SENHA - FLUXO 2](https://github.com/user-attachments/assets/dcd49f52-9291-4029-9ab3-0cc140cbcd78)
+
+![16 - REDEFINIR SENHA - FLUXO 3](https://github.com/user-attachments/assets/3c3d6766-36c7-459c-b997-b022d937e3d8)
+
+![Frame 70](https://github.com/user-attachments/assets/8301a116-bcb6-49fc-bfde-9f3f87ba1e7a)
+
 
 ## 4.4 Testes com Protótipos
 Nesta seção você deve apresentar os testes realizados com usuários utilizando os protótipos de alta fidelidade desenvolvidos na seção anterior. O objetivo é avaliar a usabilidade, a clareza das informações e a adequação do design às necessidades das personas definidas no projeto.
@@ -226,7 +278,8 @@ Cada integrante do grupo deverá aplicar o teste com um usuário distinto, prefe
 Durante a aplicação do teste, registre observações sobre comportamentos, dúvidas, erros e comentários feitos pelo usuário, bem como o tempo necessário para a execução de cada tarefa. Ao final, colete o feedback do participante, destacando pontos positivos e aspectos a serem melhorados.
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
->>>>>>> 508d9f9113bf4aa47c3aba0398b03858467a42ee
+
+
 
 
 
