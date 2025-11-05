@@ -221,9 +221,10 @@ Essas telas têm como finalidade exibir o histórico de escolhas que o leitor re
 
 ![9 - MINHA SELECAO](https://github.com/user-attachments/assets/9dacd109-ddb1-423b-ba5a-f4cf50062ac0)
 
-![10 - MEUS FAVORITOS - LIVROS](https://github.com/user-attachments/assets/00daf42d-5f36-4125-9d0f-eaca41441845)
+![Frame 71](https://github.com/user-attachments/assets/0c1f81ec-1d71-435d-8293-f7175dc4d8e7)
 
-![11 - MEUS FAVORITOS - AUTORES](https://github.com/user-attachments/assets/b1b99f70-4e91-4fe3-8d51-78d98c60b3f1)
+![Frame 72](https://github.com/user-attachments/assets/0621d75d-9b65-4a75-97d3-21aac2e3bd31)
+
 
 ### Páginas do fluxo de redefinição de senha
 
@@ -278,6 +279,7 @@ Cada integrante do grupo deverá aplicar o teste com um usuário distinto, prefe
 Durante a aplicação do teste, registre observações sobre comportamentos, dúvidas, erros e comentários feitos pelo usuário, bem como o tempo necessário para a execução de cada tarefa. Ao final, colete o feedback do participante, destacando pontos positivos e aspectos a serem melhorados.
 
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
+
 
 
 
