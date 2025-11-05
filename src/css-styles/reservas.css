@@ -132,6 +132,11 @@ main .container-reserva .container-informacoes-reserva .botao-cancelar-reserva {
     align-items: center;
 }
 
+.botao-cancelar-reserva:hover{
+
+    filter: brightness(1.2);
+}
+
 main .container-reserva .container-informacoes-reserva .container-status-reserva .reserva-expirada {
     background-color: var(--vermelho-alaranjado);
 }

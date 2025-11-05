@@ -67,6 +67,7 @@ export function criarMinhasReservas(livro, leitor, reserva) {
     botaoCancelarReserva.classList.add("botao-cancelar-reserva")
     botaoCancelarReserva.textContent = "Cancelar"
     botaoCancelarReserva.id = `botao-cancelar-reserva/${reserva.idReserva}/`
+    botaoCancelarReserva.title = "Clique para cancelar essa reserva"
 
 
     main.appendChild(containerReserva)
