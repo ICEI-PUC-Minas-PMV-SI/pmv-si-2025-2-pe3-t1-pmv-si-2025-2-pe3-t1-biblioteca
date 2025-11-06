@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
     cidade: "cidade",
     estado: "estado",
   });
-  initCPFMask({ cpf: "cpf" });
-  initTelefoneMask("telefone");
+  initCPFMask({ cpf: "cpf" })
+  initTelefoneMask("telefone")
 });
 
 // === CANCELAR CADASTRO  ===
 const botaoCancelar = document.getElementById("botao-cancelar");
 botaoCancelar?.addEventListener("click", (e) => {
-  e.preventDefault();
+  e.preventDefault()
 
   showConfirmSync(
     {
@@ -52,12 +52,12 @@ botaoCancelar?.addEventListener("click", (e) => {
       if (ok) finalizarCancelamento();
       // se escolher "Continuar cadastro", não faz nada
     }
-  );
-});
+  )
+})
 
 // === SUBMIT DO FORM ===
 formularioCadastro.addEventListener("submit", function (evento) {
-  evento.preventDefault();
+  evento.preventDefault()
 
   // variável do id, começa em 1 e vai incrementando 1 a cada novo cadastro
   const idLeitor = ClasseLeitor.numeroDeLeitores + 1;

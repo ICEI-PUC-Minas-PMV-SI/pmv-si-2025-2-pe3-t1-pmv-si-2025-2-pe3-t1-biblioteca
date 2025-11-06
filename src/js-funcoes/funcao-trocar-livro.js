@@ -51,6 +51,7 @@ export function trocarLivro(isbn){
                     reserveButton.disabled = true;
                     reserveButton.setAttribute("title", "Livro indisponível para reserva")
                     reserveButton.style.opacity = "0.7"
+                    reserveButton.classList.remove("livro-botoes")
                 }
             }
         }

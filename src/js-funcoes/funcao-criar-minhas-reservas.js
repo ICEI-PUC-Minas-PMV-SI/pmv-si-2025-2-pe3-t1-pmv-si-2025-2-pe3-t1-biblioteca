@@ -4,7 +4,7 @@ import { ClasseLivro } from "../js-classes/classe-livro.js";
 
 const mensagemPadraoReserva = document.getElementById("mensagem-padrao-reserva")
 
-export function criarMinhasReservas(livro, leitor, reserva) {
+export function criarMinhasReservas(livro, reserva) {
 
     const main = document.querySelector("main")
 

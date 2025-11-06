@@ -148,6 +148,11 @@ main {
   cursor: pointer;
 }
 
+.livro-botoes:hover{
+
+  filter: brightness(1.2);
+}
+
 .div-superior_informacoes_5 {
   display: inline-block;
   width: 100%;
