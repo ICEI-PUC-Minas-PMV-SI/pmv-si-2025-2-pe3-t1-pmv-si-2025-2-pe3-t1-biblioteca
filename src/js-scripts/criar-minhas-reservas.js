@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   leitor.minhasReservas.forEach(reserva => {
     const livro = ClasseLivro.vetorLivros.find(li => li.tombo === reserva.tomboLivro)
     if (livro) {
-      criarMinhasReservas(livro, leitor, reserva)
+      criarMinhasReservas(livro, reserva)
     }
   })
   
