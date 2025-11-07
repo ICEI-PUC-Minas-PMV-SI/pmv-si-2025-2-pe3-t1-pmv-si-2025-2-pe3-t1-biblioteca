@@ -334,4 +334,15 @@ Houve uma convergência entre os usuários em relação a alguns pontos positivo
 
 #### Pontos de atenção
 
+Foram apresentados diversos pontos de atenção, sendo propostas possíveis melhorias ao sistema pelos candidatos a usuários:
 
+ - O propósito principal do sistema gerou dúvidas em um candidato a usuário, não tendo uma clara noção se este tem por finalidade de alugar livros ou comprar e se é um sistema pago ou gratuito. Outro candidato a usuário presumiu ser um sistema de vendas de livros e não de empréstimos.
+ - O nome "Versora" apresentado pelo sistema como sua identidade não remeteu a livros ou bibliotecas para dois candidatos a usuários.
+ - Dois candidatos a usuários não se sentiram cativados pela cor do botão "Confirmar" na tela de cadastro.
+ - Diversos elementos informacionais não clicáveis geraram a impressão de serem botões ou elementos clicáveis ou interativos a um candidato a usuário, por exemplo - "disponibilidade" e "gênero" na página do livro. Sendo citado por ele que, caso a cor azul claro da paleta fosse aplicada a todos esses elementos, tornaria-se algo mais agradável e de identificação facilitada.
+ - Outro candidato a usuário percebeu e informou que o botão "Voltar" remete à página acessada anteriormente, entretanto, em alguns fluxos é feita a retornada direta à página inicial.
+ - Foi causado confusão a um candidato a usuário no que diz respeito às funcionalidades "curtir" e "selecionar", não conseguindo diferenciá-las, todavia, quando visualizada as páginas específicas de seleção e favoritos, teve sua dúvida sanada.
+ - Um candidato a usuário não achou o botão "Reservar" da página de seleções algo de sentido claro.
+ - Ocorreu a observação de que as reservas expiradas poderiam ser exibidas em uma aba separada das reservas em andamento.
+ - Na página de favoritos foi notado que o destaque da opacidade dos botões está invertido, enquanto o botão deveria estar opaco em relação ao outro botão para indicar seleção de aba, este encontra-se em destaque, e vice-versa.
+ - Os títulos das páginas "Minha seleção" e "Meus favoritos" não foram de total agrado para um candidato a usuário, sendo dito que os títulos não chamam atenção de forma positiva ou negativa.
