@@ -279,7 +279,7 @@ Nesta seção serão apresentados os resultados de testes de protótipos de alta
 
 #### Perguntas
 
-Foram escolhidas 8 perguntas para serem direcionadas aos usuários, com o intuito de captar e analisar suas impressões sobre o sistema:
+Foram escolhidas oito perguntas para serem direcionadas aos usuários, com o intuito de captar e analisar suas impressões sobre o sistema:
 
 1. *Ao analisar a página inicial, você conseguiu entender rapidamente qual é o propósito ou objetivo principal do site?* 
 
@@ -299,9 +299,9 @@ Foram escolhidas 8 perguntas para serem direcionadas aos usuários, com o intuit
 
 #### Passo a passo
 
-De posse dessas perguntas, foi definido um conjunto de 5 passos para a realização do teste, a fim de tornar o processo menos cansativo e mais proveitoso, desdobrando a sequência de telas em 4 grupos distintos. Assim, foi possível aumentar a probabibilidade de que os usuários não confundissem ou esquecessem as telas, já que eram, no total, 16 páginas. Ao adotar essa abordagem, foi reduzido o esforço cognitivo do usuário, possibilitando uma redução da carga de sua memória de trabalho. Dessa maneira, foi assegurada uma maior qualidade na coleta dos dados.
+De posse dessas perguntas, foi definido um conjunto de cinco passos para a realização do teste, a fim de tornar o processo menos cansativo e mais proveitoso, desdobrando a sequência de telas em 4 grupos distintos. Assim, foi possível aumentar a probabibilidade de que os usuários não confundissem ou esquecessem as telas, já que eram, no total, 16 páginas. Ao adotar essa abordagem, foi reduzido o esforço cognitivo do usuário, possibilitando uma redução da carga de sua memória de trabalho. Dessa maneira, foi assegurada uma maior qualidade na coleta dos dados.
 
-Os 5 passos efetuados foram:
+Os cinco passos efetuados foram:
 
 - **Passo 1:** foram mostradas as imagens 1 e 2, que consistem nos protótipos da tela inicial do sistema. Após a visualização dessas imagens, foi solicitado aos usuários que respondessem à pergunta 1.
 
@@ -331,18 +331,30 @@ Houve uma convergência entre os usuários em relação a alguns pontos positivo
 
 - A média das avaliações foi de 4,6 em 5.
 
-
 #### Pontos de atenção
 
-Foram apresentados diversos pontos de atenção, sendo propostas possíveis melhorias ao sistema pelos candidatos a usuários:
+Foram apresentados diversos pontos de atenção apresentando propostas de melhorias para o sistema pelos candidatos a usuários:
 
- - O propósito principal do sistema gerou dúvidas em um candidato a usuário, não tendo uma clara noção se este tem por finalidade de alugar livros ou comprar e se é um sistema pago ou gratuito. Outro candidato a usuário presumiu ser um sistema de vendas de livros e não de empréstimos.
- - O nome "Versora" apresentado pelo sistema como sua identidade não remeteu a livros ou bibliotecas para dois candidatos a usuários.
- - Dois candidatos a usuários não se sentiram cativados pela cor do botão "Confirmar" na tela de cadastro.
- - Diversos elementos informacionais não clicáveis geraram a impressão de serem botões ou elementos clicáveis ou interativos a um candidato a usuário, por exemplo - "disponibilidade" e "gênero" na página do livro. Sendo citado por ele que, caso a cor azul claro da paleta fosse aplicada a todos esses elementos, tornaria-se algo mais agradável e de identificação facilitada.
- - Outro candidato a usuário percebeu e informou que o botão "Voltar" remete à página acessada anteriormente, entretanto, em alguns fluxos é feita a retornada direta à página inicial.
- - Foi causado confusão a um candidato a usuário no que diz respeito às funcionalidades "curtir" e "selecionar", não conseguindo diferenciá-las, todavia, quando visualizada as páginas específicas de seleção e favoritos, teve sua dúvida sanada.
- - Um candidato a usuário não achou o botão "Reservar" da página de seleções algo de sentido claro.
- - Ocorreu a observação de que as reservas expiradas poderiam ser exibidas em uma aba separada das reservas em andamento.
- - Na página de favoritos foi notado que o destaque da opacidade dos botões está invertido, enquanto o botão deveria estar opaco em relação ao outro botão para indicar seleção de aba, este encontra-se em destaque, e vice-versa.
- - Os títulos das páginas "Minha seleção" e "Meus favoritos" não foram de total agrado para um candidato a usuário, sendo dito que os títulos não chamam atenção de forma positiva ou negativa.
+ - O propósito principal do sistema gerou dúvidas em um candidato a usuário, que não teve uma clara noção se este tem por finalidade alugar livros ou comprá-los. Também houve a dúvida sobre o sistema ser pago ou gratuito. Um segundo candidato a usuário presumiu prontamente que se tratava de um sistema de vendas de livros, não de empréstimos.
+ 
+ - O nome "Versora" não remeteu a livros ou bibliotecas para dois dos candidatos a usuários.
+ 
+ - Dois candidatos a usuários não se sentiram cativados pela cor do botão "Confirmar" na tela de cadastro. Observaram que esse botão específico tem fundo na mesma cor doda tela em que está inserido e, apesar de haver um contorno branco que deixa claro o que é botão e o que é fundo, essa escolha de design não ficou agradável esteticamente.
+ 
+ - Diversos elementos informacionais não clicáveis geraram a impressão de serem botões segundo um candidato a usuário. Por exemplo as informações em que constam a disponibilidade e  o gênero na página do livro. Sendo citado por ele que, caso a cor azul claro da paleta fosse aplicada a todos esses elementos, tornaria-se algo mais agradável, além de facilitar a distinção entre os elementos clicáveis e os elementos não clicáveis.
+ 
+ - Outro candidato a usuário percebeu e informou que o botão "Voltar" remete à página acessada anteriormente, entretanto, em alguns fluxos esse botão redireciona diretamente à página inicial. Isso gerou perplexidade nesse usuário específico.
+ 
+ - Foi causada confusão em um candidato a usuário no que diz respeito às funcionalidades "curtir" e "selecionar". Inicialmente ele afirmou que não conseguiu entender a diferença entre essas funcionalidades. Todavia, quando visualizadas as páginas específicas de "Minha seleção e "Meus favoritos", essa dúvida foi sanada.
+ 
+ - Um candidato a usuário afirmou que o botão "Reservar", da página "Minhas seleções", gerou dúvidas sobre do que se tratava essa funcionalidade.
+ 
+ - Um dos candidatos a usuário realizou a observação de que as reservas expiradas poderiam ser exibidas em uma aba separada das reservas ativas - no design atual do sistema, tanto as reservas ativas quanto as reservas expiradas são exibidas na mesma lista. Embora haja uma diferenciação visual clara entre esses dois tipos, a abordagem com duas abas distintas poderá ser testada em um novo protótipo.
+ 
+ - Na página de favoritos foi notado que o destaque dos botões - feito por intermédio da variação de opacidade - está invertido. Nessa página constam tanto os livros quanto os autores favoritados pelo leitor. No design atual do sistema, quando são exibidos os livros favoritos, o botão "Livros favoritos" está em destaque. Já quando o sistema exibe os autores favoritos, o botão "Autores favoritos" está em destaque. O usuário observou que a abordagem inversa seria mais adequada: quando o sistema exibe os autores favoritos, por exemplo, é o botão "Livros favoritos" que deve receber destaque, induzindo o usuário a clicar neste botão para mudar de aba.
+ 
+ - Um dos candidatos a usuário comentou que os títulos das páginas "Minha seleção" e "Meus favoritos" não agradaram. Foi também observado que esses títulos não chamam a atenção nem de forma positiva, nem de forma negativa.
+
+### Próximos passos
+
+O retorno dado pelos candidatos a usuários nos testes com protótipos de alta fidelidade é essencial para que as equipes de design e de desenvolvimento adaptem o sistema às expectativas daqueles que de fato se beneficiarão dele. Tendo essas informações em mãos, várias escolhas feitas no decorrer do projeto serão reavaliadas, com a finalidade de melhor adequação do sistema ao usuário final. 
