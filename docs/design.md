@@ -299,7 +299,7 @@ Foram escolhidas 8 perguntas para serem direcionadas aos usuários, com o intuit
 
 #### Passo a passo
 
-De posse dessas perguntas, foi definido um conjunto de 5 passos para a realização do teste, a fim de tornar o processo menos cansativo e mais proveitoso, desdobrando a sequência de telas em 4 grupos distintos. Assim, foi possível aumentar a probabibilidade de que os usuários não confundissem ou esquecessem as telas, já que eram, no total, 16 páginas. Ao adotar essa abordagem, foi reduzido o esforço cognitivo do usuário, possibilitando uma redução da carga de sua memória de trabalho. Dessa maneira, assegura-se uma maior qualidade na coleta dos dados.
+De posse dessas perguntas, foi definido um conjunto de 5 passos para a realização do teste, a fim de tornar o processo menos cansativo e mais proveitoso, desdobrando a sequência de telas em 4 grupos distintos. Assim, foi possível aumentar a probabibilidade de que os usuários não confundissem ou esquecessem as telas, já que eram, no total, 16 páginas. Ao adotar essa abordagem, foi reduzido o esforço cognitivo do usuário, possibilitando uma redução da carga de sua memória de trabalho. Dessa maneira, foi assegurada uma maior qualidade na coleta dos dados.
 
 Os 5 passos efetuados foram:
 
@@ -314,5 +314,24 @@ Os 5 passos efetuados foram:
 - **Passo 5:** tendo em vista que foram apresentadas todas as telas selecionadas para o teste, foi solicitado aos usuários que respondessem às perguntas numeradas de 6 a 8, que consistem nas conclusões em relação ao sistema como um todo.
 
 ### Síntese dos resultados
+
+#### Pontos positivos
+
+Houve uma convergência entre os usuários em relação a alguns pontos positivos do sistema:
+
+- Os diversos elementos das telas, como botões, campos de inserção de dados, textos informativos e capas de livros estavam bem posicionados.
+  
+- As informações foram estruturadas de maneira satisfatória e de fácil compreensão.
+  
+- O fluxo de tarefas foi considerado claro e intutivo. Houve comentários alegando que o sistema seguia boas práticas de design já consolidadas por referências em sistemas web.
+
+- O agrupamento final de telas, que consistia na página 'Meu perfil' e no fluxo de redefinição de senha, não recebeu observações negativas.
+
+- Todos os usuários expressaram a capacidade de utilização do sistema por conta própria, sem a necessidade de ajuda externa.
+
+- A média das avaliações foi de 4,6 em 5.
+
+
+#### Pontos de atenção
 
 
