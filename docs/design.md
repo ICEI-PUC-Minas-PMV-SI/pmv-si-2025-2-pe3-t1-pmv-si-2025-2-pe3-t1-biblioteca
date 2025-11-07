@@ -272,22 +272,47 @@ Caso o usuário tente entrar no sistema mas perceba que esqueceu sua senha, é o
 
 
 ## 4.4 Testes com Protótipos
-Nesta seção você deve apresentar os testes realizados com usuários utilizando os protótipos de alta fidelidade desenvolvidos na seção anterior. O objetivo é avaliar a usabilidade, a clareza das informações e a adequação do design às necessidades das personas definidas no projeto.
 
-Cada integrante do grupo deverá aplicar o teste com um usuário distinto, preferencialmente alinhado ao perfil das personas criadas. Devem ser definidas previamente as tarefas que o usuário deverá executar no protótipo (por exemplo: realizar um cadastro, buscar um produto, concluir uma compra).
+Nesta seção serão apresentados os resultados de testes de protótipos de alta fidelidade realizados com 6 candidatos a usuários do sistema. Primeiramente, será apresentada a metodologia utilizada pelo grupo no decorrer dos testes. Após isso, os comentários e observações fornecidos pelos candidatos a usuários serão sintetizados de maneira a contribuir com os próximos ciclos de desenvolvimento.
 
-Durante a aplicação do teste, registre observações sobre comportamentos, dúvidas, erros e comentários feitos pelo usuário, bem como o tempo necessário para a execução de cada tarefa. Ao final, colete o feedback do participante, destacando pontos positivos e aspectos a serem melhorados.
+### Metodologia 
 
-Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final. 
+#### Perguntas
 
+Foram escolhidas 8 perguntas para serem direcionadas aos usuários, com o intuito de captar e analisar suas impressões sobre o sistema:
 
+1. *Ao analisar a página inicial, você conseguiu entender rapidamente qual é o propósito ou objetivo principal do site?* 
 
+2. *O menu e os botões estavam posicionados corretamente?* 
 
+3. *As etapas apresentadas para realizar as tarefas estavam claras e seguiam uma lógica compreensível?*
 
+4. *Os elementos visuais (cores, ícones e disposição dos botões) facilitaram a identificação do que era clicável e do que era apenas informativo?*
+ 
+5. *Há elementos que chamam atenção indevidamente ou confundem?*
 
+6. *Você sentiu que conseguiria utilizar os recursos do site sem a necessidade de ajuda externa?* 
 
+7. *Classifique sua experiência com uma nota entre 1 e 5.*
 
+8. *Comente os fatores que o levaram a essa nota.*
 
+#### Passo a passo
 
+De posse dessas perguntas, foi definido um conjunto de 5 passos para a realização do teste, a fim de tornar o processo menos cansativo e mais proveitoso, desdobrando a sequência de telas em 4 grupos distintos. Assim, foi possível aumentar a probabibilidade de que os usuários não confundissem ou esquecessem as telas, já que eram, no total, 16 páginas. Ao adotar essa abordagem, foi reduzido o esforço cognitivo do usuário, possibilitando uma redução da carga de sua memória de trabalho. Dessa maneira, assegura-se uma maior qualidade na coleta dos dados.
+
+Os 5 passos efetuados foram:
+
+- **Passo 1:** foram mostradas as imagens 1 e 2, que consistem nos protótipos da tela inicial do sistema. Após a visualização dessas imagens, foi solicitado aos usuários que respondessem à pergunta 1.
+
+- **Passo 2:** foram mostradas as imagens numeradas de 3 a 7, que consistem nos protótipos da página de cadastro, da tela inicial após entrada no sistema, do acervo de títulos, da página do livro e da janela de solicitação de reserva. Após a visualização dessas imagens, foi solicitado aos usuários que respondessem às perguntas numeradas de 2 a 5. 
+
+- **Passo 3:** foram mostradas as imagens numeradas de 8 a 12, que consistem nos protótipos das páginas 'Minhas reservas', 'Minha seleção', 'Meus favoritos' - sendo apresentadas nessa tela as abas 'Livros favoritos' e 'Autores favoritos' - e da página do autor. Após a visualização dessas imagens, foi solicitado aos usuários que respondessem novamente às perguntas numeradas de 2 a 5. 
+
+- **Passo 4:** foram mostradas as imagens numeradas de 13 a 16, que consistem nos protótipos da página 'Meu perfil' e das páginas correspondentes ao fluxo de redefinição de senha. Após a visualização dessas imagens, foi solicitado aos usuários que respondessem, mais uma vez, às perguntas numeradas de 2 a 5.
+
+- **Passo 5:** tendo em vista que foram apresentadas todas as telas selecionadas para o teste, foi solicitado aos usuários que respondessem às perguntas numeradas de 6 a 8, que consistem nas conclusões em relação ao sistema como um todo.
+
+### Síntese dos resultados
 
 
