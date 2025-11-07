@@ -1,10 +1,11 @@
-import { ClasseLeitor } from "../js-classes/classe-leitor.js";
-import { ClasseReserva } from "../js-classes/classe-reserva.js";
-import { ClasseLivro } from "../js-classes/classe-livro.js";
+import { expirarReserva } from "./funcao-expirar-reserva.js"
 
 const mensagemPadraoReserva = document.getElementById("mensagem-padrao-reserva")
 
 export function criarMinhasReservas(livro, reserva) {
+
+    //chama a função que checa se a reserva expirou e, em caso positivo, altera os valores da expiração no local storage
+    expirarReserva(reserva)
 
     const main = document.querySelector("main")
 
@@ -57,7 +58,7 @@ export function criarMinhasReservas(livro, reserva) {
 
     const horaLimiteRetirada = document.createElement("span")
     horaLimiteRetirada.classList.add("hora-limite-retirada")
-    horaLimiteRetirada.textContent = `Você pode retirar este livro até o dia ${reserva.dataLimite} às ${reserva.horarioLimite}`
+    horaLimiteRetirada.textContent = `Você pode retirar este livro até ${reserva.diaSemanaDataLimite}, dia ${reserva.dataLimite}, às ${reserva.horarioLimite}`
 
     const numeroChamada = document.createElement("span")
     numeroChamada.classList.add("numero-chamada")

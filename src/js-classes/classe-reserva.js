@@ -18,14 +18,18 @@ export class ClasseReserva{
     dataHoraLimite
     //indica a data limite em formato legível
     dataLimite
+    //indica o dia da semana da data limite
+    diaSemanaDataLimite
     //indica o horário limite em formato legível
     horarioLimite
     //indica o status da reserva: 'aguardando retirada' ou 'expirada'
     status
+    //booleano que indica se a reserva expirou
+    expirou
 
     //construtor de objetos reserva
 
-    constructor (idReserva, idUsuario, tomboLivro, dataHoraSolicitacao, dataSolicitacao, horarioSolicitacao, dataHoraLimite, dataLimite, horarioLimite){
+    constructor (idReserva, idUsuario, tomboLivro, dataHoraSolicitacao, dataSolicitacao, horarioSolicitacao, dataHoraLimite, dataLimite, diaSemanaDataLimite, horarioLimite){
 
     this.idReserva = idReserva
     this.idUsuario = idUsuario
@@ -35,8 +39,10 @@ export class ClasseReserva{
     this.horarioSolicitacao = horarioSolicitacao
     this.dataHoraLimite = dataHoraLimite
     this.dataLimite = dataLimite
+    this.diaSemanaDataLimite = diaSemanaDataLimite
     this.horarioLimite = horarioLimite
     this.status = "Aguardando retirada"
+    this.expirou = false
     
     // a cada chamada de construtor bem sucedida, o contador de número de reservas é incrementado
         ClasseReserva.numeroDeReservas ++

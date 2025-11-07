@@ -93,3 +93,10 @@ export function calcularLimiteReserva(dataMs) {
     return ts(y, m, d + diasParaSeg, FECHA, 0);
   }
 }
+
+//retorna o dia da semana de uma data em formato Date() - milissegundos
+export function diaDaSemana(dataMs) {
+  const d = new Date(dataMs);
+  const dias = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
+  return dias[d.getDay()];
+}
