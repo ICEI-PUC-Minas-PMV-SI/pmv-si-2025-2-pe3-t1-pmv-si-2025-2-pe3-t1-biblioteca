@@ -339,7 +339,7 @@ Foram apresentados diversos pontos de atenção apresentando propostas de melhor
  
  - O nome "Versora" não remeteu a livros ou bibliotecas para dois dos candidatos a usuários.
  
- - Dois candidatos a usuários não se sentiram cativados pela cor do botão "Confirmar" na tela de cadastro. Observaram que esse botão específico tem fundo na mesma cor doda tela em que está inserido e, apesar de haver um contorno branco que deixa claro o que é botão e o que é fundo, essa escolha de design não ficou agradável esteticamente.
+ - Dois candidatos a usuários não se sentiram cativados pela cor do botão "Confirmar" na tela de cadastro. Observaram que esse botão específico tem fundo na mesma cor da tela em que está inserido e, apesar de haver um contorno branco que deixa claro o que é botão e o que é fundo, essa escolha de design não ficou agradável esteticamente.
  
  - Diversos elementos informacionais não clicáveis geraram a impressão de serem botões segundo um candidato a usuário. Por exemplo as informações em que constam a disponibilidade e  o gênero na página do livro. Sendo citado por ele que, caso a cor azul claro da paleta fosse aplicada a todos esses elementos, tornaria-se algo mais agradável, além de facilitar a distinção entre os elementos clicáveis e os elementos não clicáveis.
  
@@ -358,3 +358,4 @@ Foram apresentados diversos pontos de atenção apresentando propostas de melhor
 ### Próximos passos
 
 O retorno dado pelos candidatos a usuários nos testes com protótipos de alta fidelidade é essencial para que as equipes de design e de desenvolvimento adaptem o sistema às expectativas daqueles que de fato se beneficiarão dele. Tendo essas informações em mãos, várias escolhas feitas no decorrer do projeto serão reavaliadas, com a finalidade de melhor adequação do sistema ao usuário final. 
+
