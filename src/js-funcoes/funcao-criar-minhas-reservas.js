@@ -2,10 +2,10 @@ import { expirarReserva } from "./funcao-expirar-reserva.js"
 
 const mensagemPadraoReserva = document.getElementById("mensagem-padrao-reserva")
 
-export function criarMinhasReservas(livro, reserva) {
+export async function criarMinhasReservas(livro, reserva) {
 
-    //chama a função que checa se a reserva expirou e, em caso positivo, altera os valores da expiração no local storage
-    expirarReserva(reserva)
+    //chama a função que checa se a reserva expirou e, em caso positivo, altera os valores da expiração no local storage (atributos "expirou" e "status")
+    const estaExpirada = await expirarReserva(reserva)
 
     const main = document.querySelector("main")
 
@@ -58,7 +58,14 @@ export function criarMinhasReservas(livro, reserva) {
 
     const horaLimiteRetirada = document.createElement("span")
     horaLimiteRetirada.classList.add("hora-limite-retirada")
-    horaLimiteRetirada.textContent = `Você pode retirar este livro até ${reserva.diaSemanaDataLimite}, dia ${reserva.dataLimite}, às ${reserva.horarioLimite}`
+
+    if(!estaExpirada){
+
+        horaLimiteRetirada.textContent = `Você pode retirar este livro até ${reserva.diaSemanaDataLimite}, dia ${reserva.dataLimite}, às ${reserva.horarioLimite}`
+    } else {
+
+        horaLimiteRetirada.textContent = `Sua reserva expirou na ${reserva.diaSemanaDataLimite}, dia ${reserva.dataLimite}, às ${reserva.horarioLimite}`
+    }
 
     const numeroChamada = document.createElement("span")
     numeroChamada.classList.add("numero-chamada")
