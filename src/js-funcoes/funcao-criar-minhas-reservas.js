@@ -84,6 +84,9 @@ export async function criarMinhasReservas(livro, reserva) {
         resumoDoLivro.style.opacity = "0.3";
         numeroChamada.style.opacity = "0.3";
         botaoCancelarReserva.style.opacity = "0.3";
+        botaoCancelarReserva.classList.add("botao-reserva-expirada")
+        botaoCancelarReserva.style.cursor = "not-allowed"
+        botaoCancelarReserva.title = "Esta reserva está expirada"
 
         statusReserva.style.backgroundColor = "var(--vermelho-alaranjado)"
     }

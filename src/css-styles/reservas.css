@@ -137,6 +137,11 @@ main .container-reserva .container-informacoes-reserva .botao-cancelar-reserva {
     filter: brightness(1.2);
 }
 
+.botao-reserva-expirada:hover{
+
+    filter: brightness(1.0) !important;
+}
+
 main .container-reserva .container-informacoes-reserva .container-status-reserva .reserva-expirada {
     background-color: var(--vermelho-alaranjado);
 }
