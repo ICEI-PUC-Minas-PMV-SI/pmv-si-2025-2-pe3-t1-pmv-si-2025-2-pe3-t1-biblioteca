@@ -77,6 +77,16 @@ export async function criarMinhasReservas(livro, reserva) {
     botaoCancelarReserva.id = `botao-cancelar-reserva/${reserva.idReserva}/`
     botaoCancelarReserva.title = "Clique para cancelar essa reserva"
 
+    if (estaExpirada) {
+        containerCapa.style.opacity = "0.3";
+        tituloDoLivro.style.opacity = "0.3";
+        containerAutorEGenero.style.opacity = "0.3";
+        resumoDoLivro.style.opacity = "0.3";
+        numeroChamada.style.opacity = "0.3";
+        botaoCancelarReserva.style.opacity = "0.3";
+
+        statusReserva.style.backgroundColor = "var(--vermelho-alaranjado)"
+    }
 
     main.appendChild(containerReserva)
     containerReserva.append(containerCapa, containerInformacaoLivro)
