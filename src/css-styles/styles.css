@@ -13,6 +13,7 @@
 @import url('../css-styles/reset.css');
 @import url("../css-styles/favoritos.css");
 @import url("../css-styles/autor.css");
+@import url("../css-styles/seus-generos-favoritos.css");
 * {
     box-sizing: border-box;
     text-decoration: none;

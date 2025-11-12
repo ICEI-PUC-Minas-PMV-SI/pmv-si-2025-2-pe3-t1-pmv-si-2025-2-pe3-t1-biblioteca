@@ -1,0 +1,41 @@
+/* esconde o carrossel e o card personalizados que só vão aparecer quando o leitor fizer login */
+.escondido{
+    display: none !important;
+}
+
+body .seus-favoritos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    background-color: var(--azul-delft);
+    gap: 6rem;
+}
+
+body .seus-favoritos-container h2 {
+    font-size: 3rem;
+    font-weight:600;
+    color: var(--branco);
+    margin-top: -30px;
+}
+
+body .seus-favoritos-container .seus-generos-favoritos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+body .seus-favoritos-container .seus-generos-favoritos a {
+    background-color: var(--branco);
+    color: var(--alcacuz);
+    padding: 1rem 1.3rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--azul-delft);
+    border-radius: 0.363rem;
+}
+

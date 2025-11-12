@@ -1,9 +1,9 @@
 
-import { setLoggedOut } from "../js-scripts/login-persistencia.js";
+import { setLoggedOut } from "../js-scripts/login-persistencia.js"
 
 function ensureLogoutDialog() {
   // Evita duplicar se já existir
-  if (document.getElementById("dlg-logout")) return;
+  if (document.getElementById("dlg-logout")) return
 
 // src/js-funcoes/funcao-sair.js  (apenas o template do dialog)
 const html = `
@@ -16,34 +16,43 @@ const html = `
         <button value="confirm" id="btnConfirmarLogout" class="dlg-btn dlg-btn--primary" autofocus>Confirmar logout</button>
     </div>
   </form>
-</dialog>`;
+</dialog>`
 
-  document.body.insertAdjacentHTML("beforeend", html);
+  document.body.insertAdjacentHTML("beforeend", html)
 }
 
 function wireLogoutDialog() {
-  const linkSair = document.getElementById("link_sair");
-  const dlg = document.getElementById("dlg-logout");
-  if (!linkSair || !dlg) return;
+  const linkSair = document.getElementById("link_sair")
+  const dlg = document.getElementById("dlg-logout")
+  if (!linkSair || !dlg) return
 
   linkSair.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     // Fallback caso <dialog> não seja suportado
     if (!("showModal" in dlg)) {
-      if (confirm("Você realmente deseja sair da sua conta?")) setLoggedOut();
-      return;
+      if (confirm("Você realmente deseja sair da sua conta?")) setLoggedOut()
+
+        //captura os elementos que devem ser ocultados na página inicial após o logout
+        const carrosselPersonalizado = document.getElementById("p-carrossel")
+        const secaoGenerosFavoritos = document.getElementById("seus-generos-favoritos")
+
+        //remove a classe desses elementos que os deixa escondidos
+        carrosselPersonalizado.classList.add("escondido")
+        secaoGenerosFavoritos.classList.add("escondido")
+
+      return
     }
-    dlg.showModal();
-  });
+    dlg.showModal()
+  })
 
   // Resultado do <form method="dialog">
   dlg.addEventListener("close", () => {
-    if (dlg.returnValue === "confirm") setLoggedOut();
-  });
+    if (dlg.returnValue === "confirm") setLoggedOut()
+  })
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  ensureLogoutDialog();
-  wireLogoutDialog();
-});
+  ensureLogoutDialog()
+  wireLogoutDialog()
+})

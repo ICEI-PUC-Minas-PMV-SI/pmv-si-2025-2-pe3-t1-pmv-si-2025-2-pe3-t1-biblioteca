@@ -1,5 +1,7 @@
-const KEY_USER = "leitor logado";               // seu “flag”
-const KEY_NAME = "nome do leitor logado";       // pode ser útil depois
+// login-persistencia.js
+
+const KEY_USER = "leitor logado";               // flag
+const KEY_NAME = "nome do leitor logado";       // texto do rótulo
 
 function isLoggedIn() {
   const u = (localStorage.getItem(KEY_USER) || "").trim();
@@ -7,16 +9,54 @@ function isLoggedIn() {
   return u !== "" && n !== "";
 }
 
-function applyLoginStateToUI() {
-  // 1) classe no body para o CSS decidir qual menu abre
-  document.body.classList.toggle("is-logged", isLoggedIn());
+function syncPersonalizadoUI() {
+  // Sincroniza o conteúdo do card com o slide ativo do carrossel "p"
+  const secao = document.getElementById("p-carrossel");
+  if (!secao) return;
 
-  // 2) rótulo do botão (Entrar ↔ nome)
+  const swiperEl = secao.querySelector(".swiper");
+
+  // Atualiza Swiper (caso a seção tenha sido reexibida)
+  try { swiperEl?.swiper?.update?.(); } catch(_) {}
+
+  // Mostra o card correspondente ao slide ativo
+  const activeImg = swiperEl?.querySelector(".swiper-slide-active img");
+  if (activeImg && window.showCardFor) {
+    // Pequeno delay para garantir que a seção já está visível no layout
+    requestAnimationFrame(() => window.showCardFor(activeImg.id));
+  }
+}
+
+function showPersonalizadoSections(show) {
+  const carrosselP = document.getElementById("p-carrossel");
+  const generosFav = document.getElementById("seus-generos-favoritos");
+
+  if (show) {
+    carrosselP?.classList.remove("escondido");
+    generosFav?.classList.remove("escondido");
+    // Sincroniza somente quando mostramos
+    syncPersonalizadoUI();
+  } else {
+    carrosselP?.classList.add("escondido");
+    generosFav?.classList.add("escondido");
+  }
+}
+
+function applyLoginStateToUI() {
+  const logged = isLoggedIn();
+
+  // 1) Classe no body
+  document.body.classList.toggle("is-logged", logged);
+
+  // 2) Rótulo do botão (Entrar ↔ nome)
   const span = document.querySelector(".entrar-rotulo span");
   if (span) {
-    const u = (localStorage.getItem(KEY_USER) || "").trim();
-    span.textContent = u !== "" ? u : "Entrar";
+    const nome = (localStorage.getItem(KEY_USER) || "").trim();
+    span.textContent = logged ? nome : "Entrar";
   }
+
+  // 3) Mostrar/ocultar as seções personalizadas
+  showPersonalizadoSections(logged);
 }
 
 // Atualiza ao carregar a página
@@ -27,28 +67,15 @@ window.addEventListener("storage", (e) => {
   if (e.key === KEY_USER || e.key === KEY_NAME) applyLoginStateToUI();
 });
 
-// Exponho para você chamar após o login
-export function _applyLoginStateNow() { applyLoginStateToUI(); }
-function updateHeaderLoginLabel() {
-  const span = document.querySelector(".entrar-rotulo span");
-  if (!span) return;
-  const usuario = (localStorage.getItem(KEY_USER) || "").trim();
-  span.textContent = usuario !== "" ? usuario : "Entrar";
+// Exponho para você chamar após o login (ex.: no fluxo que valida a senha)
+export function _applyLoginStateNow() {
+  applyLoginStateToUI();
 }
 
-// Atualiza no carregamento
-document.addEventListener("DOMContentLoaded", updateHeaderLoginLabel);
-
-// Sincroniza entre abas/janelas e também se outra parte do código mudar as chaves
-window.addEventListener("storage", (e) => {
-  if (e.key === KEY_USER || e.key === KEY_NAME) updateHeaderLoginLabel();
-});
-
 export function setLoggedOut() {
-  localStorage.setItem("leitor logado", "");
-  localStorage.setItem("nome do leitor logado", "");
-  applyLoginStateToUI(); // volta rótulo para "Entrar" e remove .is-logged
+  localStorage.setItem(KEY_USER, "");
+  localStorage.setItem(KEY_NAME, "");
+  applyLoginStateToUI(); // volta rótulo para "Entrar", remove .is-logged e esconde seções
   const chk = document.getElementById("checkbox-login");
   if (chk) chk.checked = false; // fecha o painel
 }
-

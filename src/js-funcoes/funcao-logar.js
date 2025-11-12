@@ -28,6 +28,14 @@ export function logarLeitor(usuarioOuEmail, senha) {
                     localStorage.setItem("leitor logado", usuario)
                     localStorage.setItem("nome do leitor logado", primeiroNomeLeitor)
 
+                    //captura os elementos que devem aparecer na página inicial somente após o login
+                    const carrosselPersonalizado = document.getElementById("p-carrossel")
+                    const secaoGenerosFavoritos = document.getElementById("seus-generos-favoritos")
+
+                    //remove a classe desses elementos que os deixa escondidos
+                    carrosselPersonalizado.classList.remove("escondido")
+                    secaoGenerosFavoritos.classList.remove("escondido")
+
                     showAlertSync({
                         title: "Boas-vindas",
                         message: `Bem-vindo(a), ${primeiroNomeLeitor}!`
