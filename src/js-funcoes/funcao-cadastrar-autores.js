@@ -1,5 +1,5 @@
 import { ClasseAutor } from "../js-classes/classe-autor.js"
-import { hojeISO } from "./funcoes-de-data-e-hora.js"
+import { hoje } from "./funcoes-de-data-e-hora.js"
 
 const CATALOGO_AUTORES = [
   // FILOSOFIA
@@ -334,7 +334,7 @@ const CATALOGO_AUTORES = [
 
 export function seedAutoresVersora(){
 
-    const dataCadastro = hojeISO()
+    const dataCadastro = hoje()
 
     //limpa o vetor atual
     ClasseAutor.vetorAutores.length = 0

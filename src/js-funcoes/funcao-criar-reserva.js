@@ -2,7 +2,7 @@ import { ClasseReserva } from "../js-classes/classe-reserva.js"
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { ClasseLivro } from "../js-classes/classe-livro.js"
-import { obterDataHoraServidor, hojeISO, horaBrasilia, calcularLimiteReserva, diaDaSemana } from "./funcoes-de-data-e-hora.js"
+import { obterDataHoraServidor, hoje, horaBrasilia, calcularLimiteReserva, diaDaSemana } from "./funcoes-de-data-e-hora.js"
 
 export async function criarReserva(leitor, livro) {
 
@@ -32,12 +32,12 @@ export async function criarReserva(leitor, livro) {
     const limiteMs = calcularLimiteReserva(dataMs)
 
     //datas e horários em formato legível
-    const dataSolicitacao = hojeISO(dataMs)
+    const dataSolicitacao = hoje(dataMs)
     const horaSolicitacao = horaBrasilia(dataMs)
-    const dataLimite = hojeISO(limiteMs)
+    const dataLimite = hoje(limiteMs)
     const horaLimite = horaBrasilia(limiteMs)
     const diaSemana = diaDaSemana(limiteMs)
-   
+
   
     const reserva = new ClasseReserva(ClasseReserva.numeroDeReservas+1, leitor.id, livro.tombo, dataMs, dataSolicitacao, horaSolicitacao,  limiteMs, dataLimite, diaSemana, horaLimite)
     

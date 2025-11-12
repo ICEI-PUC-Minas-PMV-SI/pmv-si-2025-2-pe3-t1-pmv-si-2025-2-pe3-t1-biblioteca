@@ -1,7 +1,7 @@
 import { ClasseLivro } from "../js-classes/classe-livro.js";
 
 // ===== Util =====
-export function hojeISO() {
+export function hoje() {
   const d = new Date();
   const yyyy = d.getFullYear();
   const mm = String(d.getMonth() + 1).padStart(2, "0");
@@ -237,7 +237,7 @@ const CATALOGO_PTBR = [
 
 // ===== Seed principal =====
 export function seedLivrosVersora() {
-  const dataCadastro = hojeISO();
+  const dataCadastro = hoje();
 
   // limpa vetor atual
   ClasseLivro.vetorLivros.length = 0;
