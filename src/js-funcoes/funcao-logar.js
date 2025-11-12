@@ -39,10 +39,12 @@ export function logarLeitor(usuarioOuEmail, senha) {
                     showAlertSync({
                         title: "Boas-vindas",
                         message: `Bem-vindo(a), ${primeiroNomeLeitor}!`
-                    });
-                
+                    })
+
+                    
                     return
-        
+                    
+
                 } else {
 
                     showAlertSync({
