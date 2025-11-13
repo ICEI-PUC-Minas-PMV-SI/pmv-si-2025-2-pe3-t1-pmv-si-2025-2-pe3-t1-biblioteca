@@ -41,7 +41,8 @@ export async function logarLeitor(usuarioOuEmail, senha) {
                         message: `Bem-vindo(a), ${primeiroNomeLeitor}!`
                     })
 
-                    window.location.reload()
+                    window.location.href = window.location.origin + window.location.pathname
+
                     return
                     
                 } else {
