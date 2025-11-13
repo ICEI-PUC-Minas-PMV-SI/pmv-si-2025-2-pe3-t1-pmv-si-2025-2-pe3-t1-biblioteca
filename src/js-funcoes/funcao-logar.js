@@ -1,11 +1,11 @@
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
 
-export function logarLeitor(usuarioOuEmail, senha) {
+export async function logarLeitor(usuarioOuEmail, senha) {
 
     if(usuarioOuEmail === "" || senha ===""){
 
-        showAlertSync({ title: "Atenção", message: "Preencha todos os campos!" });
+        await showAlertSync({ title: "Atenção", message: "Preencha todos os campos!" });
 
         return
 
@@ -15,7 +15,7 @@ export function logarLeitor(usuarioOuEmail, senha) {
 
         for (i = 0; i < ClasseLeitor.numeroDeLeitores; i++) {
 
-             if (usuarioOuEmail === ClasseLeitor.vetorLeitores[i].email || usuarioOuEmail === ClasseLeitor.vetorLeitores[i].usuario) {
+            if (usuarioOuEmail === ClasseLeitor.vetorLeitores[i].email || usuarioOuEmail === ClasseLeitor.vetorLeitores[i].usuario) {
 
                 if (senha === ClasseLeitor.vetorLeitores[i].senha) {
 
@@ -36,32 +36,28 @@ export function logarLeitor(usuarioOuEmail, senha) {
                     carrosselPersonalizado.classList.remove("escondido")
                     secaoGenerosFavoritos.classList.remove("escondido")
 
-                    showAlertSync({
+                    await showAlertSync({
                         title: "Boas-vindas",
                         message: `Bem-vindo(a), ${primeiroNomeLeitor}!`
                     })
 
-                    
+                    window.location.reload()
                     return
                     
-
                 } else {
 
-                    showAlertSync({
+                    await showAlertSync({
                         title: "Senha incorreta",
                         message: "Encontramos seu usuário/e-mail, mas sua senha está incorreta. Digite sua senha novamente."
-                    });
+                    })
 
                     return
                 }
-            }   
-        }  
-    
-        showAlertSync({
-            title: "Usuário não encontrado",
-            message: "Desculpe, não encontramos seu usuário/e-mail na nossa base de dados. Repita o procedimento."
-        });
+            }  
+        }
+        
     } 
+    
 }
 
 export function logarDireto (usuario, senha){
@@ -70,7 +66,7 @@ export function logarDireto (usuario, senha){
 
     for (i = 0; i < ClasseLeitor.numeroDeLeitores; i++) {
 
-            if (usuario === ClasseLeitor.vetorLeitores[i].usuario) {
+        if (usuario === ClasseLeitor.vetorLeitores[i].usuario) {
 
             if (senha === ClasseLeitor.vetorLeitores[i].senha) {
 
@@ -81,11 +77,9 @@ export function logarDireto (usuario, senha){
 
                 localStorage.setItem("leitor logado", usuario)
                 localStorage.setItem("nome do leitor logado", primeiroNomeLeitor)
+
             }
         }
     }
-
-
-      
 
 }

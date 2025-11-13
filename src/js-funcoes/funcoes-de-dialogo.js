@@ -82,10 +82,15 @@ export function showConfirm({
 }
 
 export function showAlertSync(opts = {}, onClose) {
-  showAlert(opts).then(() => {
-    if (typeof onClose === "function") onClose();
-  });
+  const p = showAlert(opts);        // Promise que resolve quando o diálogo fecha
+
+  if (typeof onClose === "function") {
+    p.then(() => onClose());
+  }
+
+  return p;                         // dá pra usar await
 }
+
 
 export function showConfirmSync(opts = {}, onDecision) {
   showConfirm(opts).then((ok) => {

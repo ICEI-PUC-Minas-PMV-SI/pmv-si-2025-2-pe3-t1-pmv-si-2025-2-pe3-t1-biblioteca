@@ -4,14 +4,14 @@ import { _applyLoginStateNow } from "./login-persistencia.js"
 
 const botaoLogar = document.getElementById("botao_logar")
 
-botaoLogar.addEventListener("click", function (evento) {
+botaoLogar.addEventListener("click", async function (evento) {
 
     evento.preventDefault()
 
     const usuarioOuEmailLeitor = document.getElementById("input_usuario").value
     const senhaLeitor = document.getElementById("input_senha").value
 
-    logarLeitor(usuarioOuEmailLeitor, senhaLeitor)
+    await logarLeitor(usuarioOuEmailLeitor, senhaLeitor)
 
     
     const leitorLogado = localStorage.getItem("leitor logado") || ""
