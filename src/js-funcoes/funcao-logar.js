@@ -55,8 +55,12 @@ export async function logarLeitor(usuarioOuEmail, senha) {
                     return
                 }
             }  
-        }
-        
+        } 
+
+        showAlertSync({
+            title: "Usuário não encontrado",
+            message: "Desculpe, não encontramos seu usuário/e-mail na nossa base de dados. Repita o procedimento."
+        })
     } 
     
 }
