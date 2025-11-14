@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas seleções</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+
+    <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- _______________________________ -->
+
+    <!-- importando a fonte Inter, utilizada no Figma -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- _______________________________ -->
+
+    <link rel="stylesheet" href="../css-styles/reset.css">
+    <link rel="stylesheet" href="../css-styles/styles.css">
+    <link rel="stylesheet" href="../css-styles/selecoes.css">
+
+    <script src="../js-scripts/login.js" type="module" defer></script>
+    <script src="../js-scripts/login-persistencia.js" type="module" defer></script>
+    <script src="../js-funcoes/funcao-sair.js" type="module" defer></script>
+    <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
+    <script src="../js-scripts/criar-minhas-selecoes.js" type="module" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho opacity05">
+        <nav>
+            <section class="logo_container">
+                <img src="../img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
+            </section>
+            <section class="nav_containers">
+                <section class="anchor_container">
+                    <a href="../../index.html">Página inicial</a>
+                    <a href="#">Quem somos</a>
+                    <a href="./acervo.html">Nosso acervo</a>
+                </section>
+                <section class="login_container">
+                    <label for="checkbox-login" class="entrar-rotulo">
+                        <img src="../img/icon_user.png" alt="Ícone de usuário">
+                        <span>Entrar</span>
+                    </label>
+                </section>
+            </section>
+        </nav>
+    </header>
+
+    <section class="navigation-bar" style="gap: 0;">
+        <a href="./acervo.html" class="back-to-home" id="voltar">
+            <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
+            <span>Voltar</span>
+        </a>
+        <h2>Minhas seleções</h2>
+    </section>
+
+    <main>
+        <span id="mensagem-padrao-selecao">Não há seleções a serem exibidas.</span>
+
+        <section class="container-selecao">
+            <section class="container-capa">
+                <img src="../img/capas/9786555655940.jpg" class="capa" id="capa-template-1">
+            </section>
+            <section class="container-informacoes-livro">
+                <span id="disponibilidade" class="mutavel">Disponível</span>
+                <h3 class="titulo" id="titulo-livro-template-1">Os Irmãos Karamázov</h3>
+                <div class="autor-e-genero">
+                    <span id="autor-template-1" class="autor" title="Clique para ir para a página do autor">Fiódor
+                        Dostoiévski</span>
+                    <span id="genero-template-1" class="genero">Romance</span>
+                </div>
+                <span id="resumo-template-1" class="resumo">Conflitos familiares como palco para fé, razão e
+                    liberdade. Uma
+                    obra-prima que tensiona ética, afeto e transcendência.
+                </span>
+                <section class="container-botoes-selecao">
+                    <button type="button" class="botao-ir-para-livro">Ir para o livro</button>
+                    <button class="botao-reservar" type="button">Reservar</button>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="opacity05">
+        <section class="left_container">
+            <div class="email_container">
+                <span>Entre em contato: versora@pucminas.br</span>
+            </div>
+            <div class="logos_container">
+                <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
+                <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
+            </div>
+        </section>
+        <section class="right_container">
+            <div class="devs">
+                <h2>Desenvolvido por</h2>
+                <ul>
+                    <li>Caio</li>
+                    <li>Danilo</li>
+                    <li>Gustavo</li>
+                    <li>Jessé</li>
+                    <li>Kauê</li>
+                    <li>Michael</li>
+                </ul>
+            </div>
+            <nav>
+                <h2>Navegação</h2>
+                <a href="../html-paginas/acervo.html">Nosso acervo</a>
+                <a href="../../index.html">Página Inicial</a>
+                <a href="#">Quem somos</a>
+            </nav>
+        </section>
+    </footer>
+
+</body>
+
+</html>

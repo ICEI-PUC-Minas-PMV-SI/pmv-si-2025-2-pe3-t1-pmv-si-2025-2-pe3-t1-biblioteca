@@ -5,7 +5,6 @@ const allContainers = document.querySelectorAll(".opacity05")
 const buttonCancelReserve = document.getElementById("botao-cancelar-reserva")
 const reserveDisponibility = document.getElementById("disponibilidade") 
 
-
 reserveButton.addEventListener("click", (event) => {
     event.preventDefault();
 

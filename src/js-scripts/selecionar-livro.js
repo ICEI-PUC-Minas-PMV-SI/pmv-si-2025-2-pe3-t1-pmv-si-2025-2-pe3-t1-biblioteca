@@ -6,7 +6,6 @@ const botaoSelecionar = document.getElementById("livro-selecionar")
 
 const isbn = sessionStorage.getItem("isbn_redirecionamento")
 
-
 const leitor = ClasseLeitor.vetorLeitores.find(l => l.usuario === ClasseLeitor.leitorLogado )
 const livro = ClasseLivro.vetorLivros.find(li => li.isbn ===  isbn)
 
