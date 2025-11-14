@@ -15,6 +15,10 @@ main {
     max-width: 100%;
 }
 
+.template{
+    display: none !important;
+}
+
 main .container-selecao {
     display: flex;
     flex-direction: row;
