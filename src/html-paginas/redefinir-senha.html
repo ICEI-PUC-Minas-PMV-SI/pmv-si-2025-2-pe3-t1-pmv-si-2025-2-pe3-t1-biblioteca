@@ -9,16 +9,18 @@
   <link rel = "stylesheet"  href = "../css-styles/styles.css">
 </head>
 <body id="body-redefinir-senha">
-  <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
 
   <!-- Section 1: e-mail -->
-  <section id="sec1" class="redefinir-senha_parte-1">
+  <section id="sec1" class="redefinir-senha_parte-1 redefinir-senha-secao">
+    <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
     <div class="redefinir-senha_formulario-1">
       <h3 class="redefinir-senha_orientação">
         Digite o e-mail associado à sua conta no Versora. Caso o e-mail esteja correto, você receberá um código para redefinir sua senha:
       </h3>
+      <div class="label-input">
       <label for="redefinir-senha_email">E-mail:</label>
-      <input type="email" name="redefinir-senha_email" id="redefinir-senha_email" placeholder="Digite seu e-mail" required>
+      <input style="color: black;" type="email" name="redefinir-senha_email" id="redefinir-senha_email" placeholder="Digite seu e-mail" required>
+    </div>
     </div>
 
     <div class="redefinir-senha_botoes" id="botao_enviar-codigo">
@@ -35,7 +37,7 @@
   </section>
 
   <!-- Section 2: código (OTP) -->
-  <section id="sec2" class="redefinir-senha_parte-2" hidden>
+  <section id="sec2" class="redefinir-senha_parte-2 redefinir-senha-secao" hidden>
     <div class="redefinir-senha_formulario-2">
       <h3 class="redefinir-senha_orientação">Digite os 6 dígitos do código enviado ao seu e-mail:</h3>
 
@@ -58,7 +60,7 @@
   </section>
 
   <!-- Section 3: nova senha -->
-  <section id="sec3" class="redefinir-senha_parte-3" hidden>
+  <section id="sec3" class="redefinir-senha_parte-3 redefinir-senha-secao" hidden>
     <div class="redefinir-senha_formulario-3">
       <h3 class="redefinir-senha_orientação">Preencha os campos a seguir para modificar sua senha:</h3>
 
@@ -84,5 +86,37 @@
     </div>
   </section>
   <script src = "../js-scripts/redefinir-senha.js" type = "module" defer></script>
+
+ <footer id="footer-cadastro">
+        <section class="left_container">
+            <div class="email_container">
+                <span>Entre em contato: versora@pucminas.br</span>
+            </div>
+            <div class="logos_container">
+                <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
+                <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
+            </div>
+        </section>
+        <section class="right_container">
+            <div class="devs">
+                <h2>Desenvolvido por</h2>
+                <ul>
+                    <li>Caio</li>
+                    <li>Danilo</li>
+                    <li>Gustavo</li>
+                    <li>Jessé</li>
+                    <li>Kauê</li>
+                    <li>Michael</li>
+                </ul>
+            </div>
+            <nav>
+                <h2>Navegação</h2>
+                <a href="../html-paginas/acervo.html">Nosso acervo</a>
+                <a href="../../index.html">Página Inicial</a>
+                <a href="#">Quem somos</a>
+            </nav>
+        </section>
+    </footer>
+
 </body>
 </html>
