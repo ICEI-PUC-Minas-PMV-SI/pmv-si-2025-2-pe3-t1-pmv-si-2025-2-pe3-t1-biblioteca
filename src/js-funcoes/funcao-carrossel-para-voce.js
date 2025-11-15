@@ -1,15 +1,24 @@
-//atribui o ISBN dos livros correspondentes como parte do id das âncoras do carrossel de livros recomendados após login do leitor
+//atribui o ISBN dos livros correspondentes como parte do id das âncoras do carrossel de livros recomendados após login do leitor, para referenciar corretamente o redirecionamento para a página do livro
 
-import {ClasseLeitor} from "../js-classes/classe-leitor.js"
-import { selecionadosParaVoce } from "./funcao-selecionados-para-voce.js"
+export function carregarAncorasCarrosselPersonalizado(livros){
 
-window.addEventListener("DOMContentLoaded", () => {
-const usuario = localStorage.getItem("leitor logado")
+    const ancoras = document.querySelectorAll(".p-ancora-capas-index")
 
-const leitor = ClasseLeitor.vetorLeitores.find( l => l.usuario === usuario)
+    let i
 
-const vetor = selecionadosParaVoce(leitor)
+    for(i=0; i<ancoras.length; i++){
 
-console.log(vetor)
+        //atribui como parte do id de cada âncora do carrossel o isbn do livro correspondente
+        ancoras[i].id =  `p-${livros[i].isbn}`
+    }
 
-})
+    let j
+
+    for(j=0;j<ancoras.length;j++){
+
+        console.log(livros[j].isbn)
+        document.getElementById(`p-capa-${j+1}`).src = `./src/img/capas/${livros[j].isbn}.jpg`
+        document.getElementById(`p-capa-${j+1}`).alt = livros[j].titulo
+    }
+                   
+}

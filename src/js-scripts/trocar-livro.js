@@ -14,10 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //trecho que carrega as informações do livro
     const isbn = sessionStorage.getItem("isbn_redirecionamento")
 
-    
     trocarLivro(isbn)
-
-   
 
     //trecho que carrega o carrossel de livros semelhantes
 

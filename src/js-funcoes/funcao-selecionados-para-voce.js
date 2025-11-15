@@ -1,3 +1,5 @@
+//cria um vetor com 6 livros correspondentes aos gêneros favoritos escolhidos pelo leitor
+
 import { ClasseLivro } from "../js-classes/classe-livro.js"
 
 export function selecionadosParaVoce(leitor){

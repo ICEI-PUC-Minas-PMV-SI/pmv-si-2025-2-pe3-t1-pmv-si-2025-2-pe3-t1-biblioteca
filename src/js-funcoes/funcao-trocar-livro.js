@@ -1,6 +1,4 @@
 import { ClasseLivro } from "../js-classes/classe-livro.js"
-import { ClasseReserva } from "../js-classes/classe-reserva.js"
-
 
 export function trocarLivro(isbn){
 
