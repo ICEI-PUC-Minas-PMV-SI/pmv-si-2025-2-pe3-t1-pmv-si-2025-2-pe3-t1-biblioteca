@@ -45,6 +45,19 @@ export async function criarMinhasSelecoes(livro, selecao) {
     resumoDoLivro.classList.add("resumo")
     resumoDoLivro.textContent = livro.descricaoCurta
 
+    const containerBotoes = document.createElement("section")
+    containerBotoes.classList.add("container-botoes-selecao")
+
+    const botaoIrParaLivro = document.createElement("button")
+    botaoIrParaLivro.classList.add("botao-ir-para-livro")
+    botaoIrParaLivro.textContent = "Ir para o livro"
+    botaoIrParaLivro.type = "button"
+
+    const botaoDeReserva = document.createElement("button")
+    botaoDeReserva.classList.add("botao-reservar")
+    botaoDeReserva.textContent = "Reservar"
+    botaoDeReserva.type = "button"
+
     if (!selecao) {
         containerSelecao.display = ""
         mensagemPadraoSelecao.display = "flex"
@@ -53,7 +66,8 @@ export async function criarMinhasSelecoes(livro, selecao) {
     main.appendChild(containerSelecao)
     containerSelecao.append(containerCapa, containerInformacaoLivro)
     containerCapa.appendChild(imagemCapa)   
-    containerInformacaoLivro.append(disponibilidade, tituloDoLivro, containerAutorEGenero, resumoDoLivro,)
+    containerInformacaoLivro.append(disponibilidade, tituloDoLivro, containerAutorEGenero, resumoDoLivro, containerBotoes)
     containerAutorEGenero.append(autorDoLivro, generoDoLivro)
+    containerBotoes.append(botaoIrParaLivro, botaoDeReserva)
 
 }
