@@ -23,6 +23,7 @@
   margin: 0 0 12px;
   font: 500 clamp(14px, 1.7vw, 24px)/1.5 var(--fonte-principal);
   color: var(--texto-secundario);
+  text-align: center;
 }
 
 /* -------- Inputs comuns (e-mail / senhas) -------- */
@@ -55,7 +56,7 @@
 #body-redefinir-senha input[type="password"]:focus{
   outline: none;
   border-color: var(--azul-delft);
-  box-shadow: 0 0 0 3px var(--azul-delft / 0.2);
+  box-shadow: 0 0 0 5px var(--azul-delft / 0.2);
 }
 
 /* -------- Botões -------- */
@@ -70,7 +71,7 @@
   appearance: none;
   border-radius: 10px;
   padding: 10px 14px;
-  font: 700 15px/1 var(--fonte-principal);
+  font: 700 20px/1 var(--fonte-principal);
   cursor: pointer;
   border: 1.5px solid var(--azul-delft);
   background: var(--azul-delft);
@@ -222,4 +223,10 @@
 .redefinir-senha_botoes{
   display: block;
   align-items: center;
+}
+
+.img-troca-senha {
+  display: block;
+  margin: 30px auto 0;
+  max-width: 150px; 
 }

@@ -38,8 +38,9 @@
 
   <!-- Section 2: código (OTP) -->
   <section id="sec2" class="redefinir-senha_parte-2 redefinir-senha-secao" hidden>
+    <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
     <div class="redefinir-senha_formulario-2">
-      <h3 class="redefinir-senha_orientação">Digite os 6 dígitos do código enviado ao seu e-mail:</h3>
+      <h3 class="redefinir-senha_orientação">Insira os 6 dígitos do código enviado para o seu e-mail:</h3>
 
       <div class="codigo-validacao" id="otp" aria-label="Código de verificação de 6 dígitos">
         <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 1" autocomplete="one-time-code">
@@ -49,6 +50,8 @@
         <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 5">
         <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 6">
       </div>
+
+        <img src="../img/troca-senha.png" alt="imagem de troca de senha" class="img-troca-senha">
 
       <input type="hidden" name="codigo-validacao" id="codigo-validacao">
       <!-- Loading “Confirmando código...” -->
