@@ -4,6 +4,34 @@ body{
     flex-direction: column;
 }
 
+.navigation-bar {
+  background-color: var(--azul-delft);
+  max-height: 8rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 20px;
+}
+
+.back-to-home {
+  /* background-color: transparent; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+.back-to-home span {
+  font-size: 2.3rem;
+  color: var(--branco);
+  font-weight: 550;
+  margin-left: -4%;
+}  
+
 #voltar{
 
     font-size: 42px; 
@@ -58,6 +86,7 @@ body{
     display: flex;
     gap: 5%;
     align-items: center;
+    width: 90%;
    
 }
 
@@ -76,6 +105,15 @@ body{
     
 }
 
+.div-superior_informacoes_2 #nacionalidade {
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: 700;
+  color: var(--azul-delft);
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+
 .div-superior_informacoes_3{
 
     display: flex;
@@ -83,6 +121,7 @@ body{
     gap: 5%;
     align-items: center;
 }
+
 
 .div-inferior{
 

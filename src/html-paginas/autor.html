@@ -33,13 +33,37 @@
 <!-- OBS: a página padrão será a do livro "Irmãos Karamazov" -->
 
 <body>
+ 
+    <header class="cabecalho opacity05">
+        <nav>
+            <section class="logo_container">
+                <img src="../img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
+            </section>
+            <section class="nav_containers">
+                <section class="anchor_container">
+                    <a href="../../index.html">Página inicial</a>
+                    <a href="#">Quem somos</a>
+                    <a href="./acervo.html">Nosso acervo</a>
+                </section>
+                <section class="login_container">
+                    <label for="checkbox-login" class="entrar-rotulo">
+                        <img src="../img/icon_user.png" alt="Ícone de usuário">
+                        <span>Entrar</span>
+                    </label>
+                </section>
+            </section>
+        </nav>
+    </header>
 
-    <a id="voltar" href="../../index.html">
+
+   <section class="navigation-bar opacity05">
+    <a class="back-to-home" id="voltar" href="../../index.html">
         <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
-
-
-        Home</a>
-    <div class="div-superior">
+         <span>Voltar</span>
+        </a>
+   </section>
+    <main>
+        <div class="div-superior">
 
         <img src="../img/fotos-autores/0000.jpg" id="foto">
 
@@ -200,6 +224,81 @@
 
         </div>
     </section>
+
+     <section class="avaliation-container opacity05">
+            <h2>Avaliações</h2>
+
+            <section class="container-interno-avaliacao">
+                <section class="container-pontuacao">
+                    <span id="nota-avaliacao">4,5</span>
+                    <section class="estrela-de-pontuacao">
+                        stars
+                    </section>
+                    <span id="quantidade-avaliacoes">6 Classificações</span>
+                </section>
+
+                <section class="container-estrela-barra">
+                    <section class="estrela-barra">
+                        <span id="5star-avaliacao">5</span>
+                        <div class="barra-5-estrelas barra-dzn" id="barra-5-estrelas"></div>
+                    </section>
+                    <section class="estrela-barra">
+                        <span id="5star-avaliacao">4</span>
+                        <div class="barra-4-estrelas barra-dzn" id="barra-4-estrelas"></div>
+                    </section>
+                    <section class="estrela-barra">
+                        <span id="5star-avaliacao">3</span>
+                        <div class="barra-3-estrelas barra-dzn" id="barra-3-estrelas"></div>
+                    </section>
+                    <section class="estrela-barra">
+                        <span id="5star-avaliacao">2</span>
+                        <div class="barra-2-estrelas barra-dzn" id="barra-2-estrelas"></div>
+                    </section>
+                    <section class="estrela-barra">
+                        <span id="5star-avaliacao">1</span>
+                        <div class="barra-1-estrela barra-dzn" id="barra-1-estrela"></div>
+                    </section>
+                </section>
+            </section>
+
+            <section class="container-add-avaliacao">
+                <button class="adicionar-avaliacao" id="adicionar-avaliacao">
+                    + Adicionar Avaliação
+                </button>
+            </section>
+        </section>
+   </main>
+
+     <footer class="opacity05">
+        <section class="left_container">
+            <div class="email_container">
+                <span>Entre em contato: versora@pucminas.br</span>
+            </div>
+            <div class="logos_container">
+                <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
+                <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
+            </div>
+        </section>
+        <section class="right_container">
+            <div class="devs">
+                <h2>Desenvolvido por</h2>
+                <ul>
+                    <li>Caio</li>
+                    <li>Danilo</li>
+                    <li>Gustavo</li>
+                    <li>Jessé</li>
+                    <li>Kauê</li>
+                    <li>Michael</li>
+                </ul>
+            </div>
+            <nav>
+                <h2>Navegação</h2>
+                <a href="../html-paginas/acervo.html">Nosso acervo</a>
+                <a href="../../index.html">Página Inicial</a>
+                <a href="#">Quem somos</a>
+            </nav>
+        </section>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
