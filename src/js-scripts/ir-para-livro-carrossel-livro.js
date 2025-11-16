@@ -1,4 +1,4 @@
-const capas = document.querySelectorAll(".mais-acessados")
+const capas = document.querySelectorAll(".ancora-carrossel-livro")
 
 capas.forEach(capa => {
 

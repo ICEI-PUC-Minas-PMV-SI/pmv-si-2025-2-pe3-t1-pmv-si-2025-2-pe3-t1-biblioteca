@@ -1,4 +1,4 @@
-const capas = document.querySelectorAll(".ancora-capas-index")
+const capas = document.querySelectorAll(".mais-acessados")
 
 capas.forEach(capa => {
 
