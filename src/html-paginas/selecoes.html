@@ -30,6 +30,9 @@
     <script src="../js-funcoes/funcao-sair.js" type="module" defer></script>
     <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
     <script src="../js-scripts/criar-minhas-selecoes.js" type="module" defer></script>
+    <script src="../js-scripts/ir-para-livro-selecao.js" type="module" defer></script>
+    <script src="../js-scripts/reserva-selecao.js" type="module" defer></script>
+    <script src="../js-scripts/criar-reserva.js" type="module" defer></script>
 </head>
 
 <body>
@@ -82,11 +85,37 @@
                     obra-prima que tensiona ética, afeto e transcendência.
                 </span>
                 <section class="container-botoes-selecao">
-                    <button type="button" class="botao-ir-para-livro">Ir para o livro</button>
+                    <button type="button" class="botao-ir-para-livro" >Ir para o livro</button>
                     <button class="botao-reservar" type="button">Reservar</button>
                 </section>
             </section>
         </section>
+
+        <section class="reserve-container">
+            <h2>Confirme sua reserva</h2>
+
+            <section class="container-livro">
+                <section class="lib-page">
+                    <img src="../img/capas/0000000000000.jpg" id="capa-janela-reserva">
+                    <section class="container-informacao">
+                        <h3 id="titulo-livro-janela-reserva" class="mutavel"></h3>
+                        <span id="autor-janela-reserva" class="mutavel"
+                            title="Clique para ir para a página do autor"></span>
+                        <span id="genero-janela-reserva" class="mutavel"></span>
+                        <span id="resumo" class="mutavel">
+                        </span>
+                    </section>
+                </section>
+
+                <span>Após a confirmação, o prazo para a retirada do livro é de 24 horas.</span>
+            </section>
+
+            <section class="buttons-container">
+                <button class="reserve-buttons" id="botao-cancelar-reserva">Cancelar</button>
+                <button class="reserve-buttons" id="botao-confirmar-reserva">Confirmar reserva</button>
+            </section>
+        </section>
+        </div>
     </main>
 
     <footer class="opacity05">
