@@ -332,7 +332,7 @@ body .search_container div input:focus::placeholder {
     
 }
 
-#imagem-lupa-home{
+#lupa-busca-home{
 
-    opacity: 0.8;
+    opacity: 0.6;
 }
