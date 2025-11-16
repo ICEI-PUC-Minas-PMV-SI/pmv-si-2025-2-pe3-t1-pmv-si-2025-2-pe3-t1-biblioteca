@@ -1,3 +1,3 @@
 # 6. Apresentação do Projeto
 
-Disponibilizar o arquivo da apresentação final do projeto.
+Disponibilizar o arquivo da apresentação final do projeto. ..
