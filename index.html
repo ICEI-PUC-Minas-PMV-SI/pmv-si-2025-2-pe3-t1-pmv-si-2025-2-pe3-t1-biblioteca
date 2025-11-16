@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versora</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
 
-     <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
+    <!-- importando o link da relação que vai permitir usar o carrossel "SwiperJS" -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- _______________________________ -->
 
     <!-- importando a fonte Inter, utilizada no Figma -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <!-- _______________________________ -->
 
-    <link rel = "stylesheet" href = "src/css-styles/reset.css">
-    <link rel = "stylesheet" href = "src/css-styles/styles.css">
+    <link rel="stylesheet" href="src/css-styles/reset.css">
+    <link rel="stylesheet" href="src/css-styles/styles.css">
     <script src="src/js-scripts/transicao-card.js" defer></script>
 
 </head>
+
 <body>
-    <input type = "checkbox" id = "checkbox-login">
-    <header class = "cabecalho">
+    <input type="checkbox" id="checkbox-login">
+    <header class="cabecalho">
         <nav>
             <section class="logo_container">
                 <img src="src/img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
@@ -35,201 +39,213 @@
                     <a href="#">Quem somos</a>
                     <a href="./src/html-paginas/acervo.html">Nosso acervo</a>
                 </section>
-                    <section class="login_container">
-                        <label for = "checkbox-login" class = "entrar-rotulo">
-                            <img src="src/img/icon_user.png" alt="Ícone de usuário">
-                            <span>Entrar</span>
-                        </label>
-                    </section>
+                <section class="login_container">
+                    <label for="checkbox-login" class="entrar-rotulo">
+                        <img src="src/img/icon_user.png" alt="Ícone de usuário">
+                        <span>Entrar</span>
+                    </label>
+                </section>
             </section>
         </nav>
     </header>
 
-    <section class = "container_busca_e_login">
+    <section class="container_busca_e_login">
         <section class="search_container">
             <h1>Já sabe qual universo deseja explorar hoje?</h1>
             <h2>Encontre em nosso acervo sua próxima leitura</h2>
             <div>
-                <input type="text" id = "busca-home" placeholder="Procurar livro">
-                <button class="submitButton" id = "botao-buscar-home" title = "Clique para buscar">
-                <img src="./src/img/icon_search.png" id = "lupa-busca-home" alt="">
-            </button>
+                <input type="text" id="busca-home" placeholder="Procurar livro">
+                <button id="botao-buscar-home" type="button">Botão</button>
             </div>
         </section>
-        <section class = "menu_login">
-            <div class = "container_campos_usuario">
-                <label for = "input_usuario">Usuário/e-mail</label>
-                <input type = "text" class = "input_usuario" id = "input_usuario" placeholder="Digite seu usuário/e-mail">
-                </div>
-            <div class = "container_campos_senha">
-                <div class ="container_rotulo_senha">
-                    <label>Senha</label>
-                    <a href = "./src/html-paginas/redefinir-senha.html" class = "esqueci_senha">Esqueci minha senha</a>
-                </div>
-                <input type = "password" class = "input_senha" id = "input_senha" placeholder="Digite sua senha">
+        <section class="menu_login">
+            <div class="container_campos_usuario">
+                <label for="input_usuario">Usuário/e-mail</label>
+                <input type="text" class="input_usuario" id="input_usuario" placeholder="Digite seu usuário/e-mail">
             </div>
-            <button type = "submit" id = "botao_logar">Logar</button>
-            <p class = "cadastre-se">Não tem uma conta?<a href = "src/html-paginas/cadastro.html" class = "ancora_cadastre-se"> Cadastrar-se</a></p>
-            </section>
-            <section class = "menu_usuario">
-            <ul class = "menu_usuario_lista">
-                <li class = "menu_usuario_lista_item">
-                    <a class = "menu_usuario_ancora" href = "./src/html-paginas/reservas.html"><img class = "menu_usuario_icone" src = "src/img/icone_pilha_livros.svg">Minhas reservas</a>
+            <div class="container_campos_senha">
+                <div class="container_rotulo_senha">
+                    <label>Senha</label>
+                    <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha senha</a>
+                </div>
+                <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
+            </div>
+            <button type="submit" id="botao_logar">Logar</button>
+            <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html"
+                    class="ancora_cadastre-se"> Cadastrar-se</a></p>
+        </section>
+        <section class="menu_usuario">
+            <ul class="menu_usuario_lista">
+                <li class="menu_usuario_lista_item">
+                    <a class="menu_usuario_ancora" href="./src/html-paginas/reservas.html"><img
+                            class="menu_usuario_icone" src="src/img/icone_pilha_livros.svg">Minhas reservas</a>
                 </li>
-                <li class = "menu_usuario_lista_item">
-                    <a class = "menu_usuario_ancora" href = "./src/html-paginas/selecoes.html"><img class = "menu_usuario_icone" src = "src/img/icone_sacola.svg">Minha seleção</a>
+                <li class="menu_usuario_lista_item">
+                    <a class="menu_usuario_ancora" href="./src/html-paginas/selecoes.html"><img
+                            class="menu_usuario_icone" src="src/img/icone_sacola.svg">Minha seleção</a>
                 </li>
-                <li class = "menu_usuario_lista_item">
-                    <a class = "menu_usuario_ancora" href = "./src/html-paginas/favoritos-livros.html"><img class = "menu_usuario_icone" src = "src/img/icone_coracao.svg">Meus favoritos</a>
+                <li class="menu_usuario_lista_item">
+                    <a class="menu_usuario_ancora" href="./src/html-paginas/favoritos-livros.html"><img
+                            class="menu_usuario_icone" src="src/img/icone_coracao.svg">Meus favoritos</a>
                 </li>
-                <li class = "menu_usuario_lista_item">
-                    <a class = "menu_usuario_ancora" href = "#"><img class = "menu_usuario_icone" src = "src/img/icone_lapis.svg">Editar perfil</a>
+                <li class="menu_usuario_lista_item">
+                    <a class="menu_usuario_ancora" href="./src/html-paginas/editar.perfil.html"><img
+                            class="menu_usuario_icone" src="src/img/icone_lapis.svg">Editar perfil</a>
                 </li>
-                <li class = "menu_usuario_lista_item">
-                    <a class = "menu_usuario_ancora" href = "#" id = "link_sair"><img class = "menu_usuario_icone" src = "src/img/icone_sair.svg">Sair</a>
+                <li class="menu_usuario_lista_item">
+                    <a class="menu_usuario_ancora" href="#" id="link_sair"><img class="menu_usuario_icone"
+                            src="src/img/icone_sair.svg">Sair</a>
                 </li>
             </ul>
         </section>
     </section>
 
-     <!-- NOVO CARROSSEL DOS LIVROS COM O CARD - CARROSSEL PERSONALIZADO PARA O LEITOR LOGADO -->
- <section class = "carrossel escondido" id = "p-carrossel">
-        <h2 class = "carrossel_titulo">Selecionados para você</h2>
-        
-        <div class = "carrossel_container">
-            
+    <!-- NOVO CARROSSEL DOS LIVROS COM O CARD - CARROSSEL PERSONALIZADO PARA O LEITOR LOGADO -->
+    <section class="carrossel escondido" id="p-carrossel">
+        <h2 class="carrossel_titulo">Selecionados para você</h2>
+
+        <div class="carrossel_container">
+
             <div class="swiper">
-                
+
                 <div class="swiper-pagination">
-                        
+
                 </div>
 
-                    <div class="swiper-wrapper">
+                <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index p-ancora-capas-index" id="p-9788527301114" href = "./src/html-paginas/livro.html">
-                                <img id="p-capa-1" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788527301114.jpg"
-                                    alt="A Estrutura das Revoluções Científicas">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index p-ancora-capas-index" id="p-9788544104688" href = "./src/html-paginas/livro.html">
-                                <img id="p-capa-2" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788544104688.jpg"
-                                    alt="A Classe Média no Espelho">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index p-ancora-capas-index" id="p-9788535908596" href = "./src/html-paginas/livro.html">
-                                <img id="p-capa-3" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788535908596.jpg"
-                                    alt="Bilhões e Bilhões">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index p-ancora-capas-index" id="p-9788571648463" href = "./src/html-paginas/livro.html">
-                                <img id="p-capa-4" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788571648463.jpg"
-                                    alt="Como a Mente Funciona">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index p-ancora-capas-index" id="p-9788535910666" href = "./src/html-paginas/livro.html">
-                                <img id="p-capa-5" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788535910666.jpg"
-                                    alt="Admirável Mundo Novo">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index p-ancora-capas-index" id="p-9786560051812" href = "./src/html-paginas/livro.html">
-                                <img id="p-capa-6" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9786560051812.jpg"
-                                    alt="A Mansão Hollow">
-                            </a>
-                        </div>
-                       
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index p-ancora-capas-index" id="p-9788527301114"
+                            href="./src/html-paginas/livro.html">
+                            <img id="p-capa-1" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788527301114.jpg" alt="A Estrutura das Revoluções Científicas">
+                        </a>
                     </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index p-ancora-capas-index" id="p-9788544104688"
+                            href="./src/html-paginas/livro.html">
+                            <img id="p-capa-2" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788544104688.jpg" alt="A Classe Média no Espelho">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index p-ancora-capas-index" id="p-9788535908596"
+                            href="./src/html-paginas/livro.html">
+                            <img id="p-capa-3" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788535908596.jpg" alt="Bilhões e Bilhões">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index p-ancora-capas-index" id="p-9788571648463"
+                            href="./src/html-paginas/livro.html">
+                            <img id="p-capa-4" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788571648463.jpg" alt="Como a Mente Funciona">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index p-ancora-capas-index" id="p-9788535910666"
+                            href="./src/html-paginas/livro.html">
+                            <img id="p-capa-5" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788535910666.jpg" alt="Admirável Mundo Novo">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index p-ancora-capas-index" id="p-9786560051812"
+                            href="./src/html-paginas/livro.html">
+                            <img id="p-capa-6" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9786560051812.jpg" alt="A Mansão Hollow">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            
+
         </div>
 
         <div id="p-slot-livros" class="cards-slot"></div>
 
         <div class="container_card" id="p-livro-default">
-        <h3>Conheça nossos títulos</h3>
-        <p id= "p-descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as setas para rolar o carrossel.</p>
+            <h3>Conheça nossos títulos</h3>
+            <p id="p-descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as
+                setas para rolar o carrossel.</p>
         </div>
 
         <div class="container_card" id="p-livro-1">
-        <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-1">A Estrutura das Revoluções Científicas</h3>
-        <p class="container_card-descricao p-container_card-descricao" id="p-descricao-1">
-            Obra clássica de Thomas Kuhn que introduziu o conceito de paradigmas científicos e revoluções no avanço da ciência. 
-            Um marco na filosofia e história da ciência.
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-1">A Estrutura das Revoluções
+                Científicas</h3>
+            <p class="container_card-descricao p-container_card-descricao" id="p-descricao-1">
+                Obra clássica de Thomas Kuhn que introduziu o conceito de paradigmas científicos e revoluções no avanço
+                da ciência.
+                Um marco na filosofia e história da ciência.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="p-livro-2">
-        <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-2">A Classe Média no Espelho</h3>
-        <p class="container_card-descricao p-container_card-descricao" id="p-descricao-2">
-            Radiografia crítica da classe média brasileira e seus mitos de mérito. Analisa identidades, afetos e o papel político desse estrato social.
+            <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-2">A Classe Média no Espelho</h3>
+            <p class="container_card-descricao p-container_card-descricao" id="p-descricao-2">
+                Radiografia crítica da classe média brasileira e seus mitos de mérito. Analisa identidades, afetos e o
+                papel político desse estrato social.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="p-livro-3">
-        <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-3">Bilhões e Bilhões</h3>
-        <p class="container_card-descricao p-container_card-descricao" id="p-descricao-3">
-            Último livro de Carl Sagan, reúne reflexões sobre ciência, meio ambiente, religião e o futuro da humanidade, 
-            com a visão crítica e poética do autor.
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-3">Bilhões e Bilhões</h3>
+            <p class="container_card-descricao p-container_card-descricao" id="p-descricao-3">
+                Último livro de Carl Sagan, reúne reflexões sobre ciência, meio ambiente, religião e o futuro da
+                humanidade,
+                com a visão crítica e poética do autor.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="p-livro-4">
-        <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-4">Como a Mente Funciona</h3>
-        <p class="container_card-descricao p-container_card-descricao" id="p-descricao-4">
-            Apresenta a mente como sistema de processamento de informação moldado pela evolução. Um guia provocativo para cognição, linguagem e comportamento.
+            <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-4">Como a Mente Funciona</h3>
+            <p class="container_card-descricao p-container_card-descricao" id="p-descricao-4">
+                Apresenta a mente como sistema de processamento de informação moldado pela evolução. Um guia provocativo
+                para cognição, linguagem e comportamento.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="p-livro-5">
-        <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-5">Admirável Mundo Novo</h3>
-        <p class="container_card-descricao p-container_card-descricao" id="p-descricao-5">
-           Clássico distópico que descreve uma sociedade rigidamente controlada por engenharia genética e condicionamento social.
+            <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-5">Admirável Mundo Novo</h3>
+            <p class="container_card-descricao p-container_card-descricao" id="p-descricao-5">
+                Clássico distópico que descreve uma sociedade rigidamente controlada por engenharia genética e
+                condicionamento social.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="p-livro-6">
-        <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-6">A Mansão Hollow</h3>
-        <p class="container_card-descricao p-container_card-descricao" id="p-descricao-6">
-            Romance policial de Agatha Christie, com Hercule Poirot investigando um crime em uma mansão cheia de segredos e relações ambíguas.
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            <h3 class="container_card-titulo p-container_card-titulo" id="p-titulo-6">A Mansão Hollow</h3>
+            <p class="container_card-descricao p-container_card-descricao" id="p-descricao-6">
+                Romance policial de Agatha Christie, com Hercule Poirot investigando um crime em uma mansão cheia de
+                segredos e relações ambíguas.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
     </section>
     <!-- FIM DO NOVO CARROSSEL DOS LIVROS COM O CARD - CARROSSEL PERSONALIZADO PARA O LEITOR LOGADO -->
 
     <!-- NOVA SEÇÃO "SEUS GÊNEROS FAVORITOS" -->
-    <section class="seus-favoritos-container escondido" id = "seus-generos-favoritos">
+    <section class="seus-favoritos-container escondido" id="seus-generos-favoritos">
         <h2>Seus gêneros favoritos</h2>
-        
-        <div class="seus-generos-favoritos" id = "secao-generos-favoritos">
+
+        <div class="seus-generos-favoritos" id="secao-generos-favoritos">
             <!-- <div class="ancora-genero-favorito-container">
                 <a class = "ancora-genero-favorito" title = "Clique para buscar livros de filosofia" id = "Filosofia" href="#">Filosofia</a>
             </div> -->
@@ -243,288 +259,286 @@
 
     </section>
     <!-- FIM DA NOVA SEÇÃO "SEUS GÊNEROS FAVORITOS" -->
-    
-    
+
+
     <!-- CARROSSEL DOS LIVROS COM O CARD -->
- <section class = "carrossel">
-        <h2 class = "carrossel_titulo">Livros mais acessados</h2>
-        
-        <div class = "carrossel_container">
-            
+    <section class="carrossel">
+        <h2 class="carrossel_titulo">Livros mais acessados</h2>
+
+        <div class="carrossel_container">
+
             <div class="swiper">
-                
+
                 <div class="swiper-pagination">
-                        
+
                 </div>
 
-                    <div class="swiper-wrapper">
+                <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788527301114" href = "">
-                                <img id="capa-1" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788527301114.jpg"
-                                    alt="A Estrutura das Revoluções Científicas">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788544104688" href = "./src/html-paginas/livro.html">
-                                <img id="capa-2" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788544104688.jpg"
-                                    alt="A Classe Média no Espelho">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788535908596" href = "./src/html-paginas/livro.html">
-                                <img id="capa-3" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788535908596.jpg"
-                                    alt="Bilhões e Bilhões">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788571648463" href = "./src/html-paginas/livro.html">
-                                <img id="capa-4" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788571648463.jpg"
-                                    alt="Como a Mente Funciona">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788535910666" href = "./src/html-paginas/livro.html">
-                                <img id="capa-5" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788535910666.jpg"
-                                    alt="Admirável Mundo Novo">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9786560051812" href = "./src/html-paginas/livro.html">
-                                <img id="capa-6" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9786560051812.jpg"
-                                    alt="A Mansão Hollow">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788501078896" href = "./src/html-paginas/livro.html">
-                                <img id="capa-7" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788501078896.jpg"
-                                    alt="Cem Anos de Solidão">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-capas-index mais-acessados" id="9788532530782" href = "./src/html-paginas/livro.html">
-                                <img id="capa-8" class="p-container_capa-livro container_capa-livro"
-                                    src="./src/img/capas/9788532530782.jpg"
-                                    alt="Harry Potter e a Pedra Filosofal">
-                            </a>
-                        </div>
-
-                       
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788527301114" href="">
+                            <img id="capa-1" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788527301114.jpg" alt="A Estrutura das Revoluções Científicas">
+                        </a>
                     </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788544104688" href="./src/html-paginas/livro.html">
+                            <img id="capa-2" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788544104688.jpg" alt="A Classe Média no Espelho">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788535908596" href="./src/html-paginas/livro.html">
+                            <img id="capa-3" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788535908596.jpg" alt="Bilhões e Bilhões">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788571648463" href="./src/html-paginas/livro.html">
+                            <img id="capa-4" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788571648463.jpg" alt="Como a Mente Funciona">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788535910666" href="./src/html-paginas/livro.html">
+                            <img id="capa-5" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788535910666.jpg" alt="Admirável Mundo Novo">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9786560051812" href="./src/html-paginas/livro.html">
+                            <img id="capa-6" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9786560051812.jpg" alt="A Mansão Hollow">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788501078896" href="./src/html-paginas/livro.html">
+                            <img id="capa-7" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788501078896.jpg" alt="Cem Anos de Solidão">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-capas-index" id="9788532530782" href="./src/html-paginas/livro.html">
+                            <img id="capa-8" class="p-container_capa-livro container_capa-livro"
+                                src="./src/img/capas/9788532530782.jpg" alt="Harry Potter e a Pedra Filosofal">
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            
+
         </div>
 
         <div id="slot-livros" class="cards-slot"></div>
 
         <div class="container_card" id="livro-default">
-        <h3>Conheça nossos títulos</h3>
-        <p id= "descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as setas para rolar o carrossel.</p>
+            <h3>Conheça nossos títulos</h3>
+            <p id="descricao-base">Passe o mouse sobre as capas para ver informações sobre o livro ou clique sobre as
+                setas para rolar o carrossel.</p>
         </div>
 
         <div class="container_card" id="livro-1">
-        <h3 class="container_card-titulo" id="titulo-1">A Estrutura das Revoluções Científicas</h3>
-        <p class="container_card-descricao" id="descricao-1">
-            Obra clássica de Thomas Kuhn que introduziu o conceito de paradigmas científicos e revoluções no avanço da ciência. 
-            Um marco na filosofia e história da ciência.
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            <h3 class="container_card-titulo" id="titulo-1">A Estrutura das Revoluções Científicas</h3>
+            <p class="container_card-descricao" id="descricao-1">
+                Obra clássica de Thomas Kuhn que introduziu o conceito de paradigmas científicos e revoluções no avanço
+                da ciência.
+                Um marco na filosofia e história da ciência.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-2">
-        <h3 class="container_card-titulo" id="titulo-2">A Classe Média no Espelho</h3>
-        <p class="container_card-descricao" id="descricao-2">
-            Radiografia crítica da classe média brasileira e seus mitos de mérito. Analisa identidades, afetos e o papel político desse estrato social.
+            <h3 class="container_card-titulo" id="titulo-2">A Classe Média no Espelho</h3>
+            <p class="container_card-descricao" id="descricao-2">
+                Radiografia crítica da classe média brasileira e seus mitos de mérito. Analisa identidades, afetos e o
+                papel político desse estrato social.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-3">
-        <h3 class="container_card-titulo" id="titulo-3">Bilhões e Bilhões</h3>
-        <p class="container_card-descricao" id="descricao-3">
-            Último livro de Carl Sagan, reúne reflexões sobre ciência, meio ambiente, religião e o futuro da humanidade, 
-            com a visão crítica e poética do autor.
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            <h3 class="container_card-titulo" id="titulo-3">Bilhões e Bilhões</h3>
+            <p class="container_card-descricao" id="descricao-3">
+                Último livro de Carl Sagan, reúne reflexões sobre ciência, meio ambiente, religião e o futuro da
+                humanidade,
+                com a visão crítica e poética do autor.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-4">
-        <h3 class="container_card-titulo" id="titulo-4">Como a Mente Funciona</h3>
-        <p class="container_card-descricao" id="descricao-4">
-            Apresenta a mente como sistema de processamento de informação moldado pela evolução. Um guia provocativo para cognição, linguagem e comportamento.
+            <h3 class="container_card-titulo" id="titulo-4">Como a Mente Funciona</h3>
+            <p class="container_card-descricao" id="descricao-4">
+                Apresenta a mente como sistema de processamento de informação moldado pela evolução. Um guia provocativo
+                para cognição, linguagem e comportamento.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-5">
-        <h3 class="container_card-titulo" id="titulo-5">Admirável Mundo Novo</h3>
-        <p class="container_card-descricao" id="descricao-5">
-           Clássico distópico que descreve uma sociedade rigidamente controlada por engenharia genética e condicionamento social.
+            <h3 class="container_card-titulo" id="titulo-5">Admirável Mundo Novo</h3>
+            <p class="container_card-descricao" id="descricao-5">
+                Clássico distópico que descreve uma sociedade rigidamente controlada por engenharia genética e
+                condicionamento social.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-6">
-        <h3 class="container_card-titulo" id="titulo-6">A Mansão Hollow</h3>
-        <p class="container_card-descricao" id="descricao-6">
-            Romance policial de Agatha Christie, com Hercule Poirot investigando um crime em uma mansão cheia de segredos e relações ambíguas.
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            <h3 class="container_card-titulo" id="titulo-6">A Mansão Hollow</h3>
+            <p class="container_card-descricao" id="descricao-6">
+                Romance policial de Agatha Christie, com Hercule Poirot investigando um crime em uma mansão cheia de
+                segredos e relações ambíguas.
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-7">
-        <h3 class="container_card-titulo" id="titulo-7">Cem Anos de Solidão</h3>
-        <p class="container_card-descricao" id="descricao-7">
-            A saga dos Buendía ergue Macondo entre mito e memória. Um épico do realismo mágico sobre tempo, destino e solidão.
+            <h3 class="container_card-titulo" id="titulo-7">Cem Anos de Solidão</h3>
+            <p class="container_card-descricao" id="descricao-7">
+                A saga dos Buendía ergue Macondo entre mito e memória. Um épico do realismo mágico sobre tempo, destino
+                e solidão.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
 
         <div class="container_card" id="livro-8">
-        <h3 class="container_card-titulo" id="titulo-8">Harry Potter e a Pedra Filosofal</h3>
-        <p class="container_card-descricao" id="descricao-8">
-            Primeiro livro da série Harry Potter, que apresenta o mundo bruxo e a jornada do jovem feiticeiro.
+            <h3 class="container_card-titulo" id="titulo-8">Harry Potter e a Pedra Filosofal</h3>
+            <p class="container_card-descricao" id="descricao-8">
+                Primeiro livro da série Harry Potter, que apresenta o mundo bruxo e a jornada do jovem feiticeiro.
 
-        </p>
-        <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
+            </p>
+            <p class="container_card_orientacao">Clique sobre a capa para mais detalhes.</p>
         </div>
     </section>
     <!-- FIM DO CARROSSEL DOS LIVROS COM O CARD -->
 
     <section class="rise_container">
         <h2>Em alta</h2>
-        
+
         <div class="high_container">
             <div class="high-itens_container">
-                <a class = "ancoras-em-alta" title = "Clique para buscar livros de filosofia" id = "001" href="#">Filosofia</a>
+                <a class="ancoras-em-alta" title="Clique para buscar livros de filosofia" id="001"
+                    href="#">Filosofia</a>
             </div>
             <div class="high-itens_container">
-                <a class = "ancoras-em-alta" title = "Clique para buscar livros de divulgação científica" id = "002" href="#">Divulgação Científica</a>
+                <a class="ancoras-em-alta" title="Clique para buscar livros de divulgação científica" id="002"
+                    href="#">Divulgação Científica</a>
             </div>
             <div class="high-itens_container">
-                <a class = "ancoras-em-alta" title = "Clique para buscar livros de sociologia" id = "004" href="#">Sociologia</a>
+                <a class="ancoras-em-alta" title="Clique para buscar livros de sociologia" id="004"
+                    href="#">Sociologia</a>
             </div>
         </div>
 
     </section>
 
     <!-- CARROSSEL DOS AUTORES COM O CARD -->
-    <section class = "carrossel">
-        <h2 class = "carrossel_titulo">Autores mais acessados</h2>
-        
-        <div class = "carrossel_container">
-            
+    <section class="carrossel">
+        <h2 class="carrossel_titulo">Autores mais acessados</h2>
+
+        <div class="carrossel_container">
+
             <div class="swiper">
-                
+
                 <div class="swiper-pagination">
-                        
+
                 </div>
 
-                    <div class="swiper-wrapper">
-                        
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0001" href = "./src/html-paginas/autor.html">
-                                <img id="foto-1" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0001.jpg"
-                                    alt="Thomas S. Kuhn">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0004" href="./src/html-paginas/autor.html">
-                                <img id="foto-2" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0004.jpg"
-                                    alt="Jessé Souza">
-                            </a>
-                        </div>
+                <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0007" href="./src/html-paginas/autor.html">
-                                <img id="foto-3" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0007.jpg"
-                                    alt="Carl Sagan">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0010" href="./src/html-paginas/autor.html">
-                                <img id="foto-4" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0010.jpg"
-                                    alt="Steven Pinker">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0013" href="./src/html-paginas/autor.html">
-                                <img id="foto-5" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0013.jpg"
-                                    alt="Aldous Huxley">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0016" href="./src/html-paginas/autor.html">
-                                <img id="foto-6" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0016.jpg"
-                                    alt="Agatha Christie">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0019" href="./src/html-paginas/autor.html">
-                                <img id="foto-7" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0019.jpg"
-                                    alt="Gabriel García Márquez">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a class="ancora-autores-index" id="0022" href="./src/html-paginas/autor.html">
-                                <img id="foto-8" class="container_foto-autor"
-                                    src="src/img/fotos-autores/0022.jpg"
-                                    alt="J. K. Rowling">
-                            </a>
-                        </div>
-
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0001" href="./src/html-paginas/autor.html">
+                            <img id="foto-1" class="container_foto-autor" src="src/img/fotos-autores/0001.jpg"
+                                alt="Thomas S. Kuhn">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0004" href="./src/html-paginas/autor.html">
+                            <img id="foto-2" class="container_foto-autor" src="src/img/fotos-autores/0004.jpg"
+                                alt="Jessé Souza">
+                        </a>
                     </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0007" href="./src/html-paginas/autor.html">
+                            <img id="foto-3" class="container_foto-autor" src="src/img/fotos-autores/0007.jpg"
+                                alt="Carl Sagan">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0010" href="./src/html-paginas/autor.html">
+                            <img id="foto-4" class="container_foto-autor" src="src/img/fotos-autores/0010.jpg"
+                                alt="Steven Pinker">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0013" href="./src/html-paginas/autor.html">
+                            <img id="foto-5" class="container_foto-autor" src="src/img/fotos-autores/0013.jpg"
+                                alt="Aldous Huxley">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0016" href="./src/html-paginas/autor.html">
+                            <img id="foto-6" class="container_foto-autor" src="src/img/fotos-autores/0016.jpg"
+                                alt="Agatha Christie">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0019" href="./src/html-paginas/autor.html">
+                            <img id="foto-7" class="container_foto-autor" src="src/img/fotos-autores/0019.jpg"
+                                alt="Gabriel García Márquez">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a class="ancora-autores-index" id="0022" href="./src/html-paginas/autor.html">
+                            <img id="foto-8" class="container_foto-autor" src="src/img/fotos-autores/0022.jpg"
+                                alt="J. K. Rowling">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            
+
         </div>
 
         <div id="slot-autores" class="cards-slot"></div>
 
         <div class="container_card" id="autor-default">
-        <h3>Conheça nossos autores</h3>
-        <p id= "descricao-base">Passe o mouse sobre as fotos para ver informações sobre o autor ou clique sobre as setas para rolar o carrossel.</p>
+            <h3>Conheça nossos autores</h3>
+            <p id="descricao-base">Passe o mouse sobre as fotos para ver informações sobre o autor ou clique sobre as
+                setas para rolar o carrossel.</p>
         </div>
 
         <div class="container_card" id="autor-1">
             <h3 class="container_card-nome" id="nome-autor-1">Thomas Kuhn</h3>
             <p class="container_card-bio" id="bio-1">
-                Thomas Samuel Kuhn foi um físico, historiador e filósofo da ciência estadunidense. Seu trabalho incidiu sobre história da ciência e filosofia da ciência, tornando-se um marco no estudo do processo que leva ao desenvolvimento científico
+                Thomas Samuel Kuhn foi um físico, historiador e filósofo da ciência estadunidense. Seu trabalho incidiu
+                sobre história da ciência e filosofia da ciência, tornando-se um marco no estudo do processo que leva ao
+                desenvolvimento científico
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -532,14 +546,16 @@
         <div class="container_card" id="autor-2">
             <h3 class="container_card-nome" id="nome-autor-2">Jessé Souza</h3>
             <p class="container_card-bio" id="bio-2">
-                Jessé Souza é um sociólogo brasileiro que analisa desigualdades, classes e elites no Brasil, com crítica a narrativas que naturalizam privilégios.
+                Jessé Souza é um sociólogo brasileiro que analisa desigualdades, classes e elites no Brasil, com crítica
+                a narrativas que naturalizam privilégios.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
         <div class="container_card" id="autor-3">
             <h3 class="container_card-nome" id="nome-autor-3">Carl Sagan</h3>
             <p class="container_card-bio" id="bio-3">
-                Carl Sagan foi um astrônomo, astrofísico e divulgador científico estadunidense. Popularizou a ciência com a série “Cosmos”, defendendo o ceticismo e o pensamento crítico como pilares do conhecimento humano.
+                Carl Sagan foi um astrônomo, astrofísico e divulgador científico estadunidense. Popularizou a ciência
+                com a série “Cosmos”, defendendo o ceticismo e o pensamento crítico como pilares do conhecimento humano.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -547,7 +563,9 @@
         <div class="container_card" id="autor-4">
             <h3 class="container_card-nome" id="nome-autor-4">Steven Pinker</h3>
             <p class="container_card-bio" id="bio-4">
-                Steven Pinker é um psicólogo cognitivo e linguista canadense-americano. Destaca-se por suas pesquisas sobre linguagem, cognição e comportamento humano, defendendo o papel da razão e da ciência no progresso social.
+                Steven Pinker é um psicólogo cognitivo e linguista canadense-americano. Destaca-se por suas pesquisas
+                sobre linguagem, cognição e comportamento humano, defendendo o papel da razão e da ciência no progresso
+                social.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -555,7 +573,8 @@
         <div class="container_card" id="autor-5">
             <h3 class="container_card-nome" id="nome-autor-5">Aldous Huxley</h3>
             <p class="container_card-bio" id="bio-5">
-                Aldous Huxley foi um escritor e ensaísta britânico. Autor de “Admirável Mundo Novo”, antecipou dilemas éticos da ciência e da tecnologia, tornando-se um dos grandes visionários do século XX.
+                Aldous Huxley foi um escritor e ensaísta britânico. Autor de “Admirável Mundo Novo”, antecipou dilemas
+                éticos da ciência e da tecnologia, tornando-se um dos grandes visionários do século XX.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -563,7 +582,9 @@
         <div class="container_card" id="autor-6">
             <h3 class="container_card-nome" id="nome-autor-6">Agatha Christie</h3>
             <p class="container_card-bio" id="bio-6">
-                Agatha Christie foi uma escritora britânica conhecida como a “Rainha do Crime”. Criadora dos detetives Hercule Poirot e Miss Marple, revolucionou o romance policial com tramas engenhosas e finais imprevisíveis.
+                Agatha Christie foi uma escritora britânica conhecida como a “Rainha do Crime”. Criadora dos detetives
+                Hercule Poirot e Miss Marple, revolucionou o romance policial com tramas engenhosas e finais
+                imprevisíveis.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -571,7 +592,9 @@
         <div class="container_card" id="autor-7">
             <h3 class="container_card-nome" id="nome-autor-7">Gabriel García Márquez</h3>
             <p class="container_card-bio" id="bio-7">
-                Gabriel García Márquez foi um escritor colombiano, vencedor do Nobel de Literatura. Mestre do realismo mágico, retratou com lirismo e crítica social a identidade latino-americana em obras como “Cem Anos de Solidão”.
+                Gabriel García Márquez foi um escritor colombiano, vencedor do Nobel de Literatura. Mestre do realismo
+                mágico, retratou com lirismo e crítica social a identidade latino-americana em obras como “Cem Anos de
+                Solidão”.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -579,7 +602,8 @@
         <div class="container_card" id="autor-8">
             <h3 class="container_card-nome" id="nome-autor-8">J. K. Rowling</h3>
             <p class="container_card-bio" id="bio-8">
-                J. K. Rowling é uma escritora britânica, criadora da série “Harry Potter”. Sua obra combina fantasia, valores éticos e crítica social, marcando gerações e redefinindo o gênero literário infantojuvenil.
+                J. K. Rowling é uma escritora britânica, criadora da série “Harry Potter”. Sua obra combina fantasia,
+                valores éticos e crítica social, marcando gerações e redefinindo o gênero literário infantojuvenil.
             </p>
             <p class="container_card_orientacao">Clique sobre a foto para mais detalhes.</p>
         </div>
@@ -620,25 +644,26 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="src/js-scripts/carrossel.js"></script>
-    <script src = "src/js-scripts/login.js" type = "module" defer></script>
-    <script src="src/js-scripts/login-persistencia.js" type = "module" defer></script>
+    <script src="src/js-scripts/login.js" type="module" defer></script>
+    <script src="src/js-scripts/login-persistencia.js" type="module" defer></script>
     <script src="src/js-funcoes/funcao-sair.js" type="module" defer></script>
-    <script src = "src/js-scripts/redefinir-senha.js" type = "module" defer></script>
-    <script src = "src/js-scripts/cadastro-livros.js" type = "module" defer></script>
-    <script src = "src/js-scripts/buscar-home.js" type = "module" defer></script>
-    <script src = "src/js-scripts/ir-para-livro-carrossel-index.js" type = "module" defer></script>
-    <script src = "src/js-scripts/carregar-carrossel-livros-index.js" type = "module" defer></script>
-    <script src = "src/js-scripts/carregar-carrossel-autores-index.js" type = "module" defer></script>
-    <script src = "src/js-scripts/cadastro-autores.js" type = "module"></script>
-    <script src = "src/js-scripts/ir-para-autor-carrossel-index.js" type = "module"></script>
-    <script src = "src/js-scripts/cadastro-generos.js" type = "module"></script>
-    <script src = "src/js-scripts/carregar-em-alta.js" type = "module"></script>
-    <script src = "src/js-scripts/buscar-em-alta.js" type = "module"></script>
-    <script src = "src/js-scripts/buscar-genero-favorito.js" type = "module" defer></script>
-    <script src = "src/js-scripts/carregar-generos-favoritos.js" type = "module"></script>
-    <script src = "src/js-scripts/carregar-carrossel-personalizado.js" type = "module"></script>
-    <script src = "src/js-scripts/ir-para-livro-carrossel-personalizado.js" type = "module"></script>
+    <script src="src/js-scripts/redefinir-senha.js" type="module" defer></script>
+    <script src="src/js-scripts/cadastro-livros.js" type="module" defer></script>
+    <script src="src/js-scripts/buscar-home.js" type="module" defer></script>
+    <script src="src/js-scripts/ir-para-livro-carrossel-index.js" type="module" defer></script>
+    <script src="src/js-scripts/carregar-carrossel-livros-index.js" type="module" defer></script>
+    <script src="src/js-scripts/carregar-carrossel-autores-index.js" type="module" defer></script>
+    <script src="src/js-scripts/cadastro-autores.js" type="module"></script>
+    <script src="src/js-scripts/ir-para-autor-carrossel-index.js" type="module"></script>
+    <script src="src/js-scripts/cadastro-generos.js" type="module"></script>
+    <script src="src/js-scripts/carregar-em-alta.js" type="module"></script>
+    <script src="src/js-scripts/buscar-em-alta.js" type="module"></script>
+    <script src="src/js-scripts/buscar-genero-favorito.js" type="module" defer></script>
+    <script src="src/js-scripts/carregar-generos-favoritos.js" type="module"></script>
+    <script src="src/js-scripts/carregar-carrossel-personalizado.js" type="module"></script>
+    <script src="src/js-scripts/ir-para-livro-carrossel-personalizado.js" type="module"></script>
 
 
 </body>
+
 </html>
