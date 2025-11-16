@@ -22,6 +22,7 @@ export function criarFavoritos(vetorFavoritos){
                 ancoraFavorito.className = "capa-favorito"
                 ancoraFavorito.href = ""
                 ancoraFavorito.id = vetorFavoritos[k]
+                ancoraFavorito.title = `Clique para ir para a página do livro`
 
                 //cria a imagem que contém a capa do livro:
                 const imagem = document.createElement("img")

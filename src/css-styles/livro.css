@@ -315,14 +315,15 @@ background-color: var(--azul-colombia);
   border: 5px solid var(--azul-delft);
   width: 65vw;
   height: max-content;
-  position: absolute;
-  left: 24%;
+  position: fixed;
+  top: 10%;
+  left: 20%;
   z-index: 10;
   box-sizing: border-box;
   border-radius: 15px;
   transform: scale(calc(80 / 100)); 
   transform-origin: top center; 
-  margin-top: 5%;
+  
 }
 
 .reserve-container h2 {

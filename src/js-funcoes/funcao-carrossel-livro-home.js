@@ -6,7 +6,7 @@ export function carregarAncorasCarrossel(isbn1, isbn2, isbn3, isbn4, isbn5, isbn
 
     const vetorISBNs = [isbn1, isbn2, isbn3, isbn4, isbn5, isbn6, isbn7, isbn8]
 
-    const ancoras = document.querySelectorAll(".ancora-capas-index")
+    const ancoras = document.querySelectorAll(".mais-acessados")
 
     let i
 

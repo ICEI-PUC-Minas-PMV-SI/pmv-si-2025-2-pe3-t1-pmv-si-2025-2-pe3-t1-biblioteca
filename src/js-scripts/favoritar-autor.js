@@ -16,7 +16,7 @@ coracao.addEventListener("click", function(evento){
         document.getElementById("like").checked = false
 
         removerFavorito(id)
-        document.getElementById("rotulo-like").title = "Curtir"
+        document.getElementById("rotulo-like").title = "Favoritar esse autor"
 
     } else {
 

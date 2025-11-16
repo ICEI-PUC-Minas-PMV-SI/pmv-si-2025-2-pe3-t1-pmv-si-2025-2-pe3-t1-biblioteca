@@ -38,9 +38,10 @@
     align-items: center;
     background-color: white;
     border-radius: 16px;
-    width: 75%;
+    width: 60%;
     height: 45%;
     justify-content: space-between;
+    margin-right: 5%;
 }
 
 .container-form .tipo-de-busca {
@@ -84,14 +85,19 @@
 }
 
 .submitButton {
-    background-color: white;
+    background-color: var(--azul-colombia);
     padding: 10px 5px 10px 5px;
-    width: 10%;
+    width: 20%;
     height: 100%;
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
     border-left: 2px solid var(--azul-delft);
     cursor: pointer;
+}
+
+#lupa-busca-acervo{
+
+    opacity: 0.8;
 }
 
 .container-form input {
