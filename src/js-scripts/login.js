@@ -3,6 +3,9 @@ import { _applyLoginStateNow } from "./login-persistencia.js"
 
 
 const botaoLogar = document.getElementById("botao_logar")
+const botaoDeEntrada = document.querySelector(".login_container")
+const containerLogin = document.querySelector(".menu_login")
+const containerUsuario = document.querySelector(".menu_usuario")
 
 botaoLogar.addEventListener("click", async function (evento) {
 
@@ -19,7 +22,7 @@ botaoLogar.addEventListener("click", async function (evento) {
     // Verifica se há um usuário logado
     if (leitorLogado.trim() !== "") {
     // Seleciona o <span> dentro do botão "Entrar"
-    const rotuloLogin = document.querySelector(".entrar-rotulo span")
+    const rotuloLogin = document.querySelector(".login_container span")
 
     // Substitui o "Entrar" pelo nome de usuário
     if (rotuloLogin) {
@@ -35,10 +38,21 @@ botaoLogar.addEventListener("click", async function (evento) {
     _applyLoginStateNow();
 
     //fecha o menu de login
-    const checkbox = document.getElementById("checkbox-login");
-    if (checkbox) checkbox.checked = false;
+    containerLogin.classList.remove("visibility")
+    containerUsuario.classList.remove("visibility")
 
 }
 
+})
 
+botaoDeEntrada.addEventListener("click", (event) => {
+    event.preventDefault()
+
+    const leitorLogado = localStorage.getItem("leitor logado") || ""
+
+    if (leitorLogado.trim() !== "") {
+        containerUsuario.classList.toggle("visibility")
+    } else {
+        containerLogin.classList.toggle("visibility")
+    }
 })

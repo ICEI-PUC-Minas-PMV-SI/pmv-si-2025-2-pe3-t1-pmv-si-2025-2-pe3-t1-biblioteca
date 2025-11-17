@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versora - Acervo</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" >
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="../css-styles/acervo.css">
     <link rel="stylesheet" href="../css-styles/styles.css">
     <script defer src="../js-scripts/acervo.js"></script>
@@ -31,14 +31,55 @@
                     <a href="./acervo.html">Nosso acervo</a>
                 </section>
                 <section class="login_container">
-                    <label for="checkbox-login" class="entrar-rotulo">
-                        <img src="../img/icon_user.png" alt="Ícone de usuário">
-                        <span>Entrar</span>
-                    </label>
+
+                    <img src="../img/icon_user.png" alt="Ícone de usuário">
+                    <span>Entrar</span>
+
                 </section>
             </section>
         </nav>
     </header>
+
+    <section class="menu_login" style="display: none;">
+        <div class="container_campos_usuario">
+            <label for="input_usuario">Usuário/e-mail</label>
+            <input type="text" class="input_usuario" id="input_usuario" placeholder="Digite seu usuário/e-mail">
+        </div>
+        <div class="container_campos_senha">
+            <div class="container_rotulo_senha">
+                <label>Senha</label>
+                <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha senha</a>
+            </div>
+            <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
+        </div>
+        <button type="submit" id="botao_logar">Logar</button>
+        <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html" class="ancora_cadastre-se">
+                Cadastrar-se</a></p>
+    </section>
+    <section class="menu_usuario" style="display: none;">
+        <ul class="menu_usuario_lista">
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/reservas.html"><img class="menu_usuario_icone"
+                        src="../img/icone_pilha_livros.svg">Minhas reservas</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/selecoes.html"><img class="menu_usuario_icone"
+                        src="../img/icone_sacola.svg">Minha seleção</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/favoritos-livros.html"><img
+                        class="menu_usuario_icone" src="../img/icone_coracao.svg">Meus favoritos</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/editar-perfil.html"><img
+                        class="menu_usuario_icone" src="../img/icone_lapis.svg">Editar perfil</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="#" id="link_sair"><img class="menu_usuario_icone"
+                        src="../img/icone_sair.svg">Sair</a>
+            </li>
+        </ul>
+    </section>
 
     <section class="navigation-bar" id="navbar-acervo">
         <a href="../../index.html" class="back-to-home-acervo">
@@ -59,17 +100,17 @@
                 <img src="../img/arrow-down.png" alt="Seta para baixo">
             </div>
 
-            <input type="text" class="input-busca" id = "busca-acervo">
+            <input type="text" class="input-busca" id="busca-acervo">
 
-            <button class="submitButton" id = "botao-buscar-acervo" title = "Clique para buscar">
-                <img src="../img/icon_search.png" id = "lupa-busca-acervo" alt="">
+            <button class="submitButton" id="botao-buscar-acervo" title="Clique para buscar">
+                <img src="../img/icon_search.png" id="lupa-busca-acervo" alt="">
             </button>
         </form>
     </section>
-    
+
 
     <section class="libContainer">
-        <span id = "contagem-de-encontrados"></span>
+        <span id="contagem-de-encontrados"></span>
         <ul class="libItem">
 
             <!-- =======================
@@ -101,7 +142,8 @@
             </a>
 
             <a class="capa-ancora" href="#" id="9788535923292" title="Clique para ir para a página do livro">
-                <img src="../img/capas/9788535923292.jpg" alt="A Paisagem Moral: Como a ciência pode determinar os valores humanos">
+                <img src="../img/capas/9788535923292.jpg"
+                    alt="A Paisagem Moral: Como a ciência pode determinar os valores humanos">
                 <span>A Paisagem Moral: Como a ciência pode determinar os valores humanos</span>
             </a>
 
@@ -142,7 +184,8 @@
                 DIVULGAÇÃO CIENTÍFICA
             ======================= -->
             <a class="capa-ancora" href="#" id="9788535908596" title="Clique para ir para a página do livro">
-                <img src="../img/capas/9788535908596.jpg" alt="Bilhões e Bilhões: Reflexões sobre vida e morte na virada do milênio">
+                <img src="../img/capas/9788535908596.jpg"
+                    alt="Bilhões e Bilhões: Reflexões sobre vida e morte na virada do milênio">
                 <span>Bilhões e Bilhões: Reflexões sobre vida e morte na virada do milênio</span>
             </a>
 
@@ -327,7 +370,8 @@
             </a>
 
             <a class="capa-ancora" href="#" id="9788578277108" title="Clique para ir para a página do livro">
-                <img src="../img/capas/9788578277108.jpg" alt="As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa">
+                <img src="../img/capas/9788578277108.jpg"
+                    alt="As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa">
                 <span>As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa</span>
             </a>
 
@@ -338,7 +382,7 @@
 
         </ul>
 
-        
+
     </section>
 
     <footer>
@@ -372,12 +416,12 @@
         </section>
     </footer>
 
-    <script src = "../js-scripts/buscar-no-acervo.js" type = "module"></script>
-    <script src = "../js-scripts/ir-para-livro-acervo.js" type = "module"></script>
-    <script src = "../js-scripts/buscar-em-alta-carregar.js" type = "module"></script>
-    
-    <script src = "../js-scripts/buscar-pag-autor-carregar.js" type = "module"></script>
-    <script src = "../js-scripts/buscar-genero-favorito-carregar.js" type = "module"></script>
+    <script src="../js-scripts/buscar-no-acervo.js" type="module"></script>
+    <script src="../js-scripts/ir-para-livro-acervo.js" type="module"></script>
+    <script src="../js-scripts/buscar-em-alta-carregar.js" type="module"></script>
+
+    <script src="../js-scripts/buscar-pag-autor-carregar.js" type="module"></script>
+    <script src="../js-scripts/buscar-genero-favorito-carregar.js" type="module"></script>
 
 
 </body>

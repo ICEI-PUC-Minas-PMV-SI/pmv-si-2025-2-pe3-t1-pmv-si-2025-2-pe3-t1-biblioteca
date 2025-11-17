@@ -48,14 +48,55 @@
                     <a href="./acervo.html">Nosso acervo</a>
                 </section>
                 <section class="login_container">
-                    <label for="checkbox-login" class="entrar-rotulo">
-                        <img src="../img/icon_user.png" alt="Ícone de usuário">
-                        <span>Entrar</span>
-                    </label>
+
+                    <img src="../img/icon_user.png" alt="Ícone de usuário">
+                    <span>Entrar</span>
+
                 </section>
             </section>
         </nav>
     </header>
+
+    <section class="menu_login" style="display: none;">
+        <div class="container_campos_usuario">
+            <label for="input_usuario">Usuário/e-mail</label>
+            <input type="text" class="input_usuario" id="input_usuario" placeholder="Digite seu usuário/e-mail">
+        </div>
+        <div class="container_campos_senha">
+            <div class="container_rotulo_senha">
+                <label>Senha</label>
+                <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha senha</a>
+            </div>
+            <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
+        </div>
+        <button type="submit" id="botao_logar">Logar</button>
+        <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html" class="ancora_cadastre-se">
+                Cadastrar-se</a></p>
+    </section>
+    <section class="menu_usuario" style="display: none;">
+        <ul class="menu_usuario_lista">
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/reservas.html"><img class="menu_usuario_icone"
+                        src="../img/icone_pilha_livros.svg">Minhas reservas</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/selecoes.html"><img class="menu_usuario_icone"
+                        src="../img/icone_sacola.svg">Minha seleção</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/favoritos-livros.html"><img
+                        class="menu_usuario_icone" src="../img/icone_coracao.svg">Meus favoritos</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="./src/html-paginas/editar-perfil.html"><img
+                        class="menu_usuario_icone" src="../img/icone_lapis.svg">Editar perfil</a>
+            </li>
+            <li class="menu_usuario_lista_item">
+                <a class="menu_usuario_ancora" href="#" id="link_sair"><img class="menu_usuario_icone"
+                        src="../img/icone_sair.svg">Sair</a>
+            </li>
+        </ul>
+    </section>
 
     <section class="navigation-bar opacity05">
         <a href="./acervo.html" class="back-to-home" id="voltar">
@@ -150,8 +191,10 @@
 
                 <div class="div-superior_informacoes_4">
                     <!-- botões: selecionar e reservar -->
-                    <button class = "livro-botoes" id="livro-selecionar" title = "Clique para adicionar esse livro à sua seleção">Selecionar</button>
-                    <button class = "livro-botoes" id="livro-reservar" title = "Clique para reservar esse livro">Reservar</button>
+                    <button class="livro-botoes" id="livro-selecionar"
+                        title="Clique para adicionar esse livro à sua seleção">Selecionar</button>
+                    <button class="livro-botoes" id="livro-reservar"
+                        title="Clique para reservar esse livro">Reservar</button>
                 </div>
 
                 <div class="div-superior_informacoes_5">
@@ -359,7 +402,7 @@
     <script src="../js-scripts/ir-para-autor-pag-livro.js" type="module"></script>
     <script src="../js-scripts/carregar-janela-reserva.js" type="module"></script>
     <script src="../js-scripts/selecionar-livro.js" type="module"></script>
-    
+
 </body>
 
 </html>

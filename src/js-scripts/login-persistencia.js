@@ -2,6 +2,8 @@
 
 const KEY_USER = "leitor logado";               // flag
 const KEY_NAME = "nome do leitor logado";       // texto do rótulo
+const containerLogin = document.querySelector(".menu_login")
+const containerUsuario = document.querySelector(".menu_usuario")
 
 function isLoggedIn() {
   const u = (localStorage.getItem(KEY_USER) || "").trim();
@@ -49,7 +51,7 @@ function applyLoginStateToUI() {
   document.body.classList.toggle("is-logged", logged);
 
   // 2) Rótulo do botão (Entrar ↔ nome)
-  const span = document.querySelector(".entrar-rotulo span");
+  const span = document.querySelector(".login_container span");
   if (span) {
     const nome = (localStorage.getItem(KEY_USER) || "").trim();
     span.textContent = logged ? nome : "Entrar";
@@ -76,6 +78,6 @@ export function setLoggedOut() {
   localStorage.setItem(KEY_USER, "");
   localStorage.setItem(KEY_NAME, "");
   applyLoginStateToUI(); // volta rótulo para "Entrar", remove .is-logged e esconde seções
-  const chk = document.getElementById("checkbox-login");
-  if (chk) chk.checked = false; // fecha o painel
+  containerLogin.classList.remove("visibility")
+  containerUsuario.classList.remove("visibility")
 }
