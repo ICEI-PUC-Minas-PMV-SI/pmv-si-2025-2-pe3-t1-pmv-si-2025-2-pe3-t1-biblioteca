@@ -9,6 +9,7 @@ const containerUsuario = document.querySelector(".menu_usuario")
 
 botaoLogar.addEventListener("click", async function (evento) {
 
+    evento.preventDefault()
 
     const usuarioOuEmailLeitor = document.getElementById("input_usuario").value
     const senhaLeitor = document.getElementById("input_senha").value
@@ -34,6 +35,9 @@ botaoLogar.addEventListener("click", async function (evento) {
     if (inputUsuario) inputUsuario.value = "";
     if (inputSenha)   inputSenha.value   = "";
 
+    containerLogin.classList.remove("visibility")
+    containerUsuario.classList.remove("visibility")
+
     _applyLoginStateNow();
 
     //fecha o menu de login
@@ -45,6 +49,10 @@ botaoLogar.addEventListener("click", async function (evento) {
 })
 
 botaoDeEntrada.addEventListener("click", (event) => {
+
+    const clicouNoTopo = event.target.closest(".login_container,.login_container > img, .login_container > span");
+
+    if (!clicouNoTopo) return;
 
     const leitorLogado = localStorage.getItem("leitor logado") || ""
 

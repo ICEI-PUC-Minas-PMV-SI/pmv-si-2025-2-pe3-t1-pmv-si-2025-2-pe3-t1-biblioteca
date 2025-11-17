@@ -57,6 +57,10 @@ function applyLoginStateToUI() {
     span.textContent = logged ? nome : "Entrar";
   }
 
+  containerLogin.classList.remove("visibility")
+  containerUsuario.classList.remove("visibility")
+
+
   // 3) Mostrar/ocultar as seções personalizadas
   showPersonalizadoSections(logged);
 }
