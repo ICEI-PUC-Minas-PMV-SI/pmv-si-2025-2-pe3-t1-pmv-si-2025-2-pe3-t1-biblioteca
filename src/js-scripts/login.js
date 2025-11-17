@@ -9,10 +9,11 @@ const containerUsuario = document.querySelector(".menu_usuario")
 
 botaoLogar.addEventListener("click", async function (evento) {
 
-    evento.preventDefault()
+    evento.stopPropagation()
 
     const usuarioOuEmailLeitor = document.getElementById("input_usuario").value
     const senhaLeitor = document.getElementById("input_senha").value
+    
 
     await logarLeitor(usuarioOuEmailLeitor, senhaLeitor)
 
@@ -50,9 +51,8 @@ botaoLogar.addEventListener("click", async function (evento) {
 
 botaoDeEntrada.addEventListener("click", (event) => {
 
-    const clicouNoTopo = event.target.closest(".login_container,.login_container > img, .login_container > span");
-
-    if (!clicouNoTopo) return;
+    containerLogin.addEventListener("click", e => e.stopPropagation());
+    containerUsuario.addEventListener("click", e => e.stopPropagation());
 
     const leitorLogado = localStorage.getItem("leitor logado") || ""
 
