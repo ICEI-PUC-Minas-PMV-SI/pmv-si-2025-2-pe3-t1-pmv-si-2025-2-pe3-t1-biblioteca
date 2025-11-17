@@ -34,52 +34,56 @@
 
                     <img src="../img/icon_user.png" alt="Ícone de usuário">
                     <span>Entrar</span>
+                    <section class="menu_login" style="display: none;">
+                        <div class="container_campos_usuario">
+                            <label for="input_usuario">Usuário/e-mail</label>
+                            <input type="text" class="input_usuario" id="input_usuario"
+                                placeholder="Digite seu usuário/e-mail">
+                        </div>
+                        <div class="container_campos_senha">
+                            <div class="container_rotulo_senha">
+                                <label>Senha</label>
+                                <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha
+                                    senha</a>
+                            </div>
+                            <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
+                        </div>
+                        <button type="submit" id="botao_logar">Logar</button>
+                        <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html"
+                                class="ancora_cadastre-se">
+                                Cadastrar-se</a></p>
+                    </section>
+                    <section class="menu_usuario" style="display: none;">
+                        <ul class="menu_usuario_lista">
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/reservas.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_pilha_livros.svg">Minhas
+                                    reservas</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/selecoes.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_sacola.svg">Minha seleção</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/favoritos-livros.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_coracao.svg">Meus favoritos</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/editar-perfil.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_lapis.svg">Editar perfil</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="#" id="link_sair"><img class="menu_usuario_icone"
+                                        src="../img/icone_sair.svg">Sair</a>
+                            </li>
+                        </ul>
+                    </section>
 
                 </section>
             </section>
         </nav>
-    </header>
 
-    <section class="menu_login" style="display: none;">
-        <div class="container_campos_usuario">
-            <label for="input_usuario">Usuário/e-mail</label>
-            <input type="text" class="input_usuario" id="input_usuario" placeholder="Digite seu usuário/e-mail">
-        </div>
-        <div class="container_campos_senha">
-            <div class="container_rotulo_senha">
-                <label>Senha</label>
-                <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha senha</a>
-            </div>
-            <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
-        </div>
-        <button type="submit" id="botao_logar">Logar</button>
-        <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html" class="ancora_cadastre-se">
-                Cadastrar-se</a></p>
-    </section>
-    <section class="menu_usuario" style="display: none;">
-        <ul class="menu_usuario_lista">
-            <li class="menu_usuario_lista_item">
-                <a class="menu_usuario_ancora" href="./src/html-paginas/reservas.html"><img class="menu_usuario_icone"
-                        src="../img/icone_pilha_livros.svg">Minhas reservas</a>
-            </li>
-            <li class="menu_usuario_lista_item">
-                <a class="menu_usuario_ancora" href="./src/html-paginas/selecoes.html"><img class="menu_usuario_icone"
-                        src="../img/icone_sacola.svg">Minha seleção</a>
-            </li>
-            <li class="menu_usuario_lista_item">
-                <a class="menu_usuario_ancora" href="./src/html-paginas/favoritos-livros.html"><img
-                        class="menu_usuario_icone" src="../img/icone_coracao.svg">Meus favoritos</a>
-            </li>
-            <li class="menu_usuario_lista_item">
-                <a class="menu_usuario_ancora" href="./src/html-paginas/editar-perfil.html"><img
-                        class="menu_usuario_icone" src="../img/icone_lapis.svg">Editar perfil</a>
-            </li>
-            <li class="menu_usuario_lista_item">
-                <a class="menu_usuario_ancora" href="#" id="link_sair"><img class="menu_usuario_icone"
-                        src="../img/icone_sair.svg">Sair</a>
-            </li>
-        </ul>
-    </section>
+    </header>
 
     <section class="navigation-bar" id="navbar-acervo">
         <a href="../../index.html" class="back-to-home-acervo">

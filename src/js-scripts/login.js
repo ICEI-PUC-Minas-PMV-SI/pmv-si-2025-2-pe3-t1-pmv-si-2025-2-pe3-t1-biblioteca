@@ -9,7 +9,6 @@ const containerUsuario = document.querySelector(".menu_usuario")
 
 botaoLogar.addEventListener("click", async function (evento) {
 
-    evento.preventDefault()
 
     const usuarioOuEmailLeitor = document.getElementById("input_usuario").value
     const senhaLeitor = document.getElementById("input_senha").value
@@ -46,7 +45,6 @@ botaoLogar.addEventListener("click", async function (evento) {
 })
 
 botaoDeEntrada.addEventListener("click", (event) => {
-    event.preventDefault()
 
     const leitorLogado = localStorage.getItem("leitor logado") || ""
 

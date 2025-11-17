@@ -1,4 +1,17 @@
 
+.menu_login {
+    position: absolute;
+    right: 8%;
+    top: 10%;
+    flex-direction: column;
+}
+
+.menu_usuario {
+    position: absolute;
+    right: 8%;
+    top: 10%;
+}
+
 /* sua animação já existia */
 @keyframes fadeInUsuario {
   from { opacity: 0; }
