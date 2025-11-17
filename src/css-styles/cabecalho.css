@@ -23,6 +23,10 @@ body header nav .nav_containers {
     gap: 3rem;
 }
 
+.icon {
+    width: 1.5rem;
+}
+
 body header nav .nav_containers .anchor_container {
     display: flex;
     flex-direction: row;

@@ -84,11 +84,12 @@ main {
 
 #livros-favoritos {
     background-color: var(--azul-delft);
+    opacity: 0.4;
 }
 
 #autores-favoritos {
     background-color: var(--azul-delft);
-    opacity: 0.4;
+    opacity: 1;
 }
 
 .container-do-favorito{
