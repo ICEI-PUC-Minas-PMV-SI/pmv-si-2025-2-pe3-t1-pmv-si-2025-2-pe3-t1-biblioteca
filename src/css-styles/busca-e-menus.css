@@ -26,6 +26,7 @@
     z-index: 10;
     color: var(--alcacuz);
     min-width: max-content;
+    width: 14vw;
 }
 
 .menu_usuario ul {
