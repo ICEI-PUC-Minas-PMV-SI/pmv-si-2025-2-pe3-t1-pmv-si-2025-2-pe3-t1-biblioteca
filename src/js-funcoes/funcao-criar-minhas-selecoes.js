@@ -83,8 +83,8 @@ export async function criarMinhasSelecoes(livro, selecao) {
   botaoLixeira.className = "btn-trash";
   botaoLixeira.type = "button";
   botaoLixeira.id = `lixeira-${vetorLeitor}`;
-  botaoLixeira.setAttribute("aria-label", "Remover dos favoritos");
-  botaoLixeira.title = "Remover dos favoritos";
+  botaoLixeira.setAttribute("aria-label", "Remover livro de sua seleção");
+  botaoLixeira.title = "Remover livro de sua seleção";
 
   // Cria o SVG
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");

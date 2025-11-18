@@ -229,3 +229,10 @@ background-color: var(--azul-colombia);
   font-weight: 550;
   cursor: pointer;
 }
+
+#mensagem-padrao-selecao{
+
+  font-size: 1.5rem;
+  color: var(--alcacuz);
+  font-weight: 400;
+}

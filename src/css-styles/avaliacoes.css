@@ -8,10 +8,10 @@
     border: 0.25rem solid var(--azul-delft);
     border-radius: 1rem;
     padding: 1rem;
-    width: 40vw;
-    height: 60vh;
+    width: 60vw;
+    height: 80vh;
     position: fixed;
-    top: 20%;
+    top: 10%;
     left: auto;
     right: auto;
     z-index: 1000;
@@ -24,19 +24,29 @@
     display: flex;
     justify-content: center;
     
-   
+}
+
+textarea{
+
+    height: 30vh;
+    margin-bottom: 2vh;
 }
 
 .janela-avaliacao button{
 
-    height: 3.0rem;
-    width: 40%;
+    height: 8vh;
+    width: 15vw;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 4vh;
     border-radius: 1.25rem;
     color: var(--branco);
     font-weight: 550;
     cursor: pointer;
+}
+
+.janela-avaliacao button:hover{
+
+    filter:brightness(1.2);
 }
 
 #avaliacao-cancelar{
@@ -57,26 +67,26 @@
     border: 0.2rem solid var(--azul-delft);
     border-radius: 0.5rem;
     width: 99%;
-    font-size: 1.5rem;
+    font-size: 3vh;
     opacity: 0.9;
 }
 
 h3{
 
-    font-size: 2.0rem;
+    font-size: 6vh;
     text-align: center;
-    padding: 2% 0 3% 0;
+    padding: 1% 0 1% 0;
     font-weight: 550;
 }
 
 .janela-avaliacao span {
 
-    font-size: 1.5rem;
+    font-size: 4vh;
 }
 
 .janela-avaliacao label {
 
-    font-size: 1.5rem;
+    font-size: 4vh;
 }
 
 .container-nota{

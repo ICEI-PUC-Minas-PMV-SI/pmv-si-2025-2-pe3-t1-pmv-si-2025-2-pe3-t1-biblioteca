@@ -10,7 +10,7 @@
     padding: 20px;
     border-radius: 1rem;
     z-index: 10;
-    color: black;
+    color: var(--alcacuz);
     min-width: max-content;
 }
 
@@ -21,10 +21,10 @@
     flex-direction: column;
     background-color: #FFFFFF;
     border: 2px solid var(--azul-delft);
-    padding: 20px;
+    padding: 10px;
     border-radius: 1rem;
     z-index: 10;
-    color: black;
+    color: var(--alcacuz);
     min-width: max-content;
 }
 
@@ -39,7 +39,7 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    color: black;
+    color: var(--alcacuz);
 }
 
 .menu_usuario ul li a:hover{
@@ -47,7 +47,7 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    color: black;
+    color: var(--alcacuz);
     font-weight: 700;
     transition: 0.2s ease-in;
 }

@@ -209,7 +209,7 @@ main {
 }
 
 .carrossel .carrossel_titulo {
-  font-size: 56px;
+  font-size: 3rem;
 }
 
 .avaliation-container {
@@ -221,7 +221,7 @@ main {
 }
 
 .avaliation-container h2 {
-  font-size: 56px;
+  font-size: 3rem;
   color: var(--azul-delft);
   font-weight: 700;
 }
