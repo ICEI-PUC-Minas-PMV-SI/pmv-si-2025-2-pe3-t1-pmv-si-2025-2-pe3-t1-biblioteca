@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="../css-styles/acervo.css">
     <link rel="stylesheet" href="../css-styles/styles.css">
     <script defer src="../js-scripts/acervo.js"></script>
-    <script defer src="../js-funcoes/funcao-sair.js" type="module"></script>
-    <script defer src="../js-scripts/redefinir-senha.js" type="module"></script>
     <script defer src="../js-scripts/cadastro-livros.js" type="module"></script>
 </head>
 
@@ -41,13 +39,13 @@
                         <div class="container_campos_senha">
                             <div class="container_rotulo_senha">
                                 <label>Senha</label>
-                                <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha
+                                <a href="../html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha
                                     senha</a>
                             </div>
                             <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
                         </div>
                         <button type="submit" id="botao_logar">Logar</button>
-                        <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html"
+                        <p class="cadastre-se">Não tem uma conta?<a href="../html-paginas/cadastro.html"
                                 class="ancora_cadastre-se">
                                 Cadastrar-se</a></p>
                     </section>
@@ -421,8 +419,10 @@
     <script src="../js-scripts/buscar-no-acervo.js" type="module"></script>
     <script src="../js-scripts/ir-para-livro-acervo.js" type="module"></script>
     <script src="../js-scripts/buscar-em-alta-carregar.js" type="module"></script>
-    <script defer src="../js-scripts/login.js" type="module"></script>
-    <script defer src="../js-scripts/login-persistencia.js" type="module"></script>
+    <script src="../js-scripts/login.js" type="module" defer></script>
+    <script src="../js-scripts/login-persistencia.js" type="module" defer></script>
+    <script src="../js-funcoes/funcao-sair.js" type="module" defer></script>
+    <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
     <script src="../js-scripts/buscar-pag-autor-carregar.js" type="module"></script>
     <script src="../js-scripts/buscar-genero-favorito-carregar.js" type="module"></script>
 

@@ -15,8 +15,43 @@
 
 .menu_usuario {
     position: absolute;
-    right: 8%;
-    top: 10%;
+    right: 8.3%;
+    top: 9.7%;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 2px solid var(--azul-delft);
+    padding: 20px;
+    border-radius: 1rem;
+    z-index: 10;
+    color: black;
+}
+
+.menu_usuario ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu_usuario ul li a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+
+.menu_usuario ul li a:hover{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    font-weight: 700;
+    transition: 0.2s ease-in;
+}
+
+.menu_usuario ul li img {
+    max-width: 42px;
 }
 
 /* sua animação já existia */

@@ -33,8 +33,10 @@ export async function logarLeitor(usuarioOuEmail, senha) {
                     const secaoGenerosFavoritos = document.getElementById("seus-generos-favoritos")
 
                     //remove a classe desses elementos que os deixa escondidos
-                    carrosselPersonalizado.classList.remove("escondido")
-                    secaoGenerosFavoritos.classList.remove("escondido")
+
+                    if (carrosselPersonalizado) carrosselPersonalizado.classList.remove("escondido");
+                    
+                    if (secaoGenerosFavoritos) secaoGenerosFavoritos.classList.remove("escondido");
 
                     await showAlertSync({
                         title: "Boas-vindas",
