@@ -14,6 +14,7 @@
 @import url("../css-styles/favoritos.css");
 @import url("../css-styles/autor.css");
 @import url("../css-styles/seus-generos-favoritos.css");
+@import url("../css-styles/avaliacoes.css");
 * {
     box-sizing: border-box;
     text-decoration: none;

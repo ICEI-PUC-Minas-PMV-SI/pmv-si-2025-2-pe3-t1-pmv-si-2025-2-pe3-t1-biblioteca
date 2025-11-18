@@ -133,8 +133,7 @@
 
                     <!-- aqui está o código das estrelas que representam a classificação -->
                     <div id="classificacao" class="rating" role="radiogroup" aria-label="Classificação">
-                        <!-- Ordem invertida para facilitar o preenchimento via ~ e row-reverse -->
-                        <input type="radio" name="rating" id="star5" value="5" aria-label="5 estrelas">
+                        <input type="radio" name="rating" id="" value="5" aria-label="5 estrelas">
                         <label for="star5" title="5 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -142,7 +141,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star4" value="4" aria-label="4 estrelas">
+                        <input type="radio" name="rating" id="" value="4" aria-label="4 estrelas">
                         <label for="star4" title="4 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -150,7 +149,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star3" value="3" aria-label="3 estrelas">
+                        <input type="radio" name="rating" id="" value="3" aria-label="3 estrelas">
                         <label for="star3" title="3 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -158,7 +157,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star2" value="2" aria-label="2 estrelas">
+                        <input type="radio" name="rating" id="" value="2" aria-label="2 estrelas">
                         <label for="star2" title="2 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -166,7 +165,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star1" value="1" aria-label="1 estrela">
+                        <input type="radio" name="rating" id="" value="1" aria-label="1 estrela">
                         <label for="star1" title="1 estrela">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -362,6 +361,69 @@
                     + Adicionar Avaliação
                 </button>
             </section>
+
+            <section class = "janela-avaliacao" id = "janela-avaliacao-livro">
+                <h3 class = "janela-avaliacao-titulo">Qual é a sua avaliação desse livro?</h3>
+                
+                <div class = "container-nota">
+                    <span class = "instrucao-nota">Atribua uma nota de 1 a 5:</span>
+                      <!-- aqui está o código das estrelas que representam a classificação -->
+                    <div id="atribuir-classificacao-livro" class="rating" role="radiogroup" aria-label="Classificação">
+                        <!-- Ordem invertida para facilitar o preenchimento via ~ e row-reverse -->
+                        <input type="radio" name="rating" id="star5" value="5" aria-label="5 estrelas">
+                        <label for="star5" title="5 estrelas">
+                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                                <path
+                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                        </label>
+
+                        <input type="radio" name="rating" id="star4" value="4" aria-label="4 estrelas">
+                        <label for="star4" title="4 estrelas">
+                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                                <path
+                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                        </label>
+
+                        <input type="radio" name="rating" id="star3" value="3" aria-label="3 estrelas">
+                        <label for="star3" title="3 estrelas">
+                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                                <path
+                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                        </label>
+
+                        <input type="radio" name="rating" id="star2" value="2" aria-label="2 estrelas">
+                        <label for="star2" title="2 estrelas">
+                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                                <path
+                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                        </label>
+
+                        <input type="radio" name="rating" id="star1" value="1" aria-label="1 estrela">
+                        <label for="star1" title="1 estrela">
+                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
+                                <path
+                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <!-- fim da classificação -->
+                    
+                </div>
+                <div class = "container-comentario">
+                    <label for = "comentario" class = "instrucao-comentario">Conte-nos sobre sua experiência com esse livro (opcional):</label>
+                    <textarea class = "input-comentario" id = "comentario" name = "comentario" rows = "8" cols = "100"></textarea>
+                </div>
+                <div class = "avaliacao-botoes">
+                    <button type="button" id="avaliacao-cancelar">Cancelar</button>
+                    <button type="button" id="avaliacao-enviar">Enviar</button>
+                </div>
+
+
+            </section>
         </section>
     </main>
 
@@ -406,6 +468,7 @@
     <script src="../js-scripts/ir-para-autor-pag-livro.js" type="module"></script>
     <script src="../js-scripts/carregar-janela-reserva.js" type="module"></script>
     <script src="../js-scripts/selecionar-livro.js" type="module"></script>
+    <script src="../js-scripts/avaliacao-livro.js" type="module"></script>
 
 </body>
 
