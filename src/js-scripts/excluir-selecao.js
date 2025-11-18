@@ -8,7 +8,7 @@ document.addEventListener("click", (e) => {
   e.preventDefault()
   
   const isbn = lixeira.id.split("-")[1]
-
+  
   removerSelecao(isbn)
 
   location.reload()
