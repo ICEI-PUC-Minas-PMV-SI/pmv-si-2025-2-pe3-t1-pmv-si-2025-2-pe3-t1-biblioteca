@@ -2,8 +2,8 @@
 .menu_login {
     gap: 10px;
     position: absolute;
-    right: 8.3%;
-    top: 9.7%;
+    right: 0;
+    top: 105%;
     flex-direction: column;
     background-color: #FFFFFF;
     border: 2px solid var(--azul-delft);
@@ -11,12 +11,13 @@
     border-radius: 1rem;
     z-index: 10;
     color: black;
+    min-width: max-content;
 }
 
 .menu_usuario {
     position: absolute;
-    right: 8.3%;
-    top: 9.7%;
+    right: 0;
+    top: 105%;
     flex-direction: column;
     background-color: #FFFFFF;
     border: 2px solid var(--azul-delft);
@@ -24,6 +25,7 @@
     border-radius: 1rem;
     z-index: 10;
     color: black;
+    min-width: max-content;
 }
 
 .menu_usuario ul {

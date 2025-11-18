@@ -54,6 +54,7 @@ body header nav .login_container {
     border-radius: .313rem;
     font-size: 1.5rem;
     cursor: pointer;
+    position: relative;
 }
 
 .entrar-rotulo:hover{
