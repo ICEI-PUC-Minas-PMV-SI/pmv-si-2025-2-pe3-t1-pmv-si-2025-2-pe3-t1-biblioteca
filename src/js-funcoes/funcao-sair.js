@@ -41,15 +41,31 @@ function wireLogoutDialog() {
         carrosselPersonalizado.classList.add("escondido")
         secaoGenerosFavoritos.classList.add("escondido")
 
+        window.location.reload()
+
+
       return
     }
     dlg.showModal()
   })
 
-  // Resultado do <form method="dialog">
   dlg.addEventListener("close", () => {
-    if (dlg.returnValue === "confirm") setLoggedOut()
-  })
+  if (dlg.returnValue === "confirm") {
+    setLoggedOut()
+
+    // captura os elementos que devem ser ocultados na página inicial após o logout
+    const carrosselPersonalizado = document.getElementById("p-carrossel")
+    const secaoGenerosFavoritos = document.getElementById("seus-generos-favoritos")
+
+    // adiciona a classe que esconde esses elementos (se existirem nessa página)
+    carrosselPersonalizado?.classList.add("escondido")
+    secaoGenerosFavoritos?.classList.add("escondido")
+
+    // agora sim, recarrega a página
+    window.location.reload()
+  }
+})
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
