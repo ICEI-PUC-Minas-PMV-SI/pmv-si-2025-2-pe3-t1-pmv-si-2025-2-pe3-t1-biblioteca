@@ -281,7 +281,14 @@ confirmarEditarEndereco.addEventListener("click", function (evento) {
   document.getElementById("checkbox-genero-8").disabled = true;
 });
 
-
+document.getElementById("checkbox-genero-1").disabled = true;
+  document.getElementById("checkbox-genero-2").disabled = true;
+  document.getElementById("checkbox-genero-3").disabled = true;
+  document.getElementById("checkbox-genero-4").disabled = true;
+  document.getElementById("checkbox-genero-5").disabled = true;
+  document.getElementById("checkbox-genero-6").disabled = true;
+  document.getElementById("checkbox-genero-7").disabled = true;
+  document.getElementById("checkbox-genero-8").disabled = true;
 
 const botaoEditarFavoritos = document.getElementById("editar-favoritos-lapis");
 
