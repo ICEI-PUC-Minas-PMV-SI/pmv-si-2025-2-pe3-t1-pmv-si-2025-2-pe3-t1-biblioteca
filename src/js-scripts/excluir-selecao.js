@@ -12,10 +12,10 @@ document.addEventListener("click", (e) => {
   
   showConfirmSync(
     {
-      title: "Prosseguir com o cancelamento",
-      message: "Deseja cancelar sua seleção?",
-      confirmText: "Cancelar essa seleção",
-      cancelText: "Manter essa seleção",
+      title: "Prosseguir com a remoção",
+      message: "Deseja remover esse livro de sua seleção?",
+      confirmText: "Remover esse livro",
+      cancelText: "Manter esse livro",
     },
     (ok) => {
       if (!ok) return
@@ -23,8 +23,8 @@ document.addEventListener("click", (e) => {
       // Mostra o alerta e SÓ DEPOIS executa o cancelamento
       showAlertSync(
         {
-          title: "Seleção cancelada",
-          message: "Sua seleção foi cancelada, mas você ainda pode buscar esse livro em nosso acervo.",
+          title: "Livro removido",
+          message: "O livro foi removido de sua seleção, mas você ainda pode buscar esse livro em nosso acervo.",
           okText: "OK",
         },
         () => {
