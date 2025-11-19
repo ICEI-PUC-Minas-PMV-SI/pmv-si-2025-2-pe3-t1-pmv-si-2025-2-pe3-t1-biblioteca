@@ -131,49 +131,84 @@
                 <div class="div-superior_informacoes_3">
                     <!-- nota e coração de favoritar -->
 
-                    <!-- aqui está o código das estrelas que representam a classificação -->
-                    <div id="classificacao" class="rating" role="radiogroup" aria-label="Classificação">
-                        <input type="radio" name="rating" id="" value="5" aria-label="5 estrelas">
-                        <label for="star5" title="5 estrelas">
-                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                                <path
-                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
-                            </svg>
-                        </label>
+                    <!-- aqui está o código das estrelas que indicam a média das notas do livro -->
+                    <section class="rating-display" id ="rating-media-topo">
+                        <div class="rating-display__stars">
 
-                        <input type="radio" name="rating" id="" value="4" aria-label="4 estrelas">
-                        <label for="star4" title="4 estrelas">
-                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                                <path
-                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            <!-- 5 estrelas -->
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
                             </svg>
-                        </label>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
 
-                        <input type="radio" name="rating" id="" value="3" aria-label="3 estrelas">
-                        <label for="star3" title="3 estrelas">
-                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                                <path
-                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
                             </svg>
-                        </label>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
 
-                        <input type="radio" name="rating" id="" value="2" aria-label="2 estrelas">
-                        <label for="star2" title="2 estrelas">
-                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                                <path
-                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
                             </svg>
-                        </label>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
 
-                        <input type="radio" name="rating" id="" value="1" aria-label="1 estrela">
-                        <label for="star1" title="1 estrela">
-                            <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
-                                <path
-                                    d="M12 2l3.09 6.26 6.91.99-5 4.86 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
                             </svg>
-                        </label>
-                    </div>
-                    <!-- fim da classificação -->
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- fim das estrelas -->
 
                     <!-- aqui está o ícone de favoritar -->
                     <div class="favoritar">
@@ -325,11 +360,88 @@
 
             <section class="container-interno-avaliacao">
                 <section class="container-pontuacao">
-                    <span id="nota-avaliacao">4,5</span>
+                    <span id="nota-avaliacao">Esse livro ainda não foi avaliado</span>
                     <section class="estrela-de-pontuacao">
-                        stars
+                        <!-- aqui está replicado o código das estrelas que indicam a média das notas do livro -->
+                    <section class="rating-display" id="rating-media-abaixo">
+                        <div class="rating-display__stars">
+
+                            <!-- 5 estrelas -->
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+
+                            <div class="estrela-wrapper">
+                            <svg class="estrela-svg estrela-svg--empty estrela-wrapper__base"
+                                viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                        1.18 6.89L12 17.77 5.82 21
+                                        l1.18-6.89-5-4.86 6.91-.99L12 2z" />
+                            </svg>
+                            <div class="estrela-wrapper__mask"><svg class="estrela-svg estrela-svg--filled"
+                                viewBox="0 0 24 24"><path
+                                d="M12 2l3.09 6.26 6.91.99-5 4.86
+                                    1.18 6.89L12 17.77 5.82 21
+                                    l1.18-6.89-5-4.86 6.91-.99L12 2z"/></svg></div>
+                            </div>
+                        </div>
                     </section>
-                    <span id="quantidade-avaliacoes">6 Classificações</span>
+                    <!-- fim das estrelas -->
+
+                    </section>
+                    <span id="quantidade-avaliacoes">0 classificações</span>
                 </section>
 
                 <section class="container-estrela-barra">
@@ -370,7 +482,7 @@
                       <!-- aqui está o código das estrelas que representam a classificação -->
                     <div id="atribuir-classificacao-livro" class="rating" role="radiogroup" aria-label="Classificação">
                         <!-- Ordem invertida para facilitar o preenchimento via ~ e row-reverse -->
-                        <input type="radio" name="rating" id="star5" value="5" aria-label="5 estrelas">
+                        <input type="radio" name="rating" id="star5" value=5 aria-label="5 estrelas">
                         <label for="star5" title="5 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -378,7 +490,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star4" value="4" aria-label="4 estrelas">
+                        <input type="radio" name="rating" id="star4" value=4 aria-label="4 estrelas">
                         <label for="star4" title="4 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -386,7 +498,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star3" value="3" aria-label="3 estrelas">
+                        <input type="radio" name="rating" id="star3" value=3 aria-label="3 estrelas">
                         <label for="star3" title="3 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -394,7 +506,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star2" value="2" aria-label="2 estrelas">
+                        <input type="radio" name="rating" id="star2" value=2 aria-label="2 estrelas">
                         <label for="star2" title="2 estrelas">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path
@@ -402,7 +514,7 @@
                             </svg>
                         </label>
 
-                        <input type="radio" name="rating" id="star1" value="1" aria-label="1 estrela">
+                        <input type="radio" name="rating" id="star1" value= 1 aria-label="1 estrela">
                         <label for="star1" title="1 estrela">
                             <svg viewBox="0 0 24 24" class="estrela-svg" aria-hidden="true">
                                 <path

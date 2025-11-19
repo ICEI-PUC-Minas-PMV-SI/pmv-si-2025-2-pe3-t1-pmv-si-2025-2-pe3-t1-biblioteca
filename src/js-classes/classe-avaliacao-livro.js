@@ -10,8 +10,8 @@ export class ClasseAvaliacaoLivro{
     idAvaliacaoLivro
     //id do leitor que realizou a avaliacao
     idLeitor
-    //tombo do livro 
-    tomboLivro
+    //ISBN do livro 
+    isbnLivro
     //string com o título do livro
     tituloLivro
     //inteiro de 1 a 5
@@ -20,14 +20,14 @@ export class ClasseAvaliacaoLivro{
     comentario
 
     //construtor de objetos avaliacao
-    constructor (id, idLeitor, tombo, nome, valor, comentario){
+    constructor (id, idLeitor, isbnLivro, nome, valor, comentario){
 
         this.idAvaliacaoLivro = id
         this.idLeitor = idLeitor
-        this.tomboLivro = tombo
+        this.isbnLivro = isbnLivro
         this.tituloLivro = nome
         this.nota = valor 
-        this.comentário = comentario
+        this.comentario = comentario
 
         // a cada chamada de construtor bem sucedida, o contador de avaliações é incrementado
         ClasseAvaliacaoLivro.numeroDeAvaliacoes ++

@@ -1,4 +1,4 @@
-import { avaliarLivro } from "../js-funcoes/funcao-avaliar-livro.js"
+import { avaliarLivro } from "../js-funcoes/funcoes-avaliacao-livro.js"
 import { ClasseLivro } from "../js-classes/classe-livro.js"
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
@@ -40,12 +40,19 @@ botaoCancelar.addEventListener("click", (evento) => {
 const leitor = ClasseLeitor.vetorLeitores.find(le => le.usuario === localStorage.getItem("leitor logado"))
 const livro = ClasseLivro.vetorLivros.find(li => li.isbn === sessionStorage.getItem("isbn_redirecionamento"))
 
-botaoEnviar.addEventListener("click", (evento) => {
+botaoEnviar.addEventListener("click", async (evento) => {
 
     evento.preventDefault()
-    avaliarLivro(leitor, livro)
+    
+    if(await avaliarLivro(leitor, livro)){
 
-    janelaAvaliacao.style.display = "none"
+        window.location.reload()
+
+    
+
+    }
+
+    
 
 })
 

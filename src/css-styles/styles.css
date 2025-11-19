@@ -15,6 +15,8 @@
 @import url("../css-styles/autor.css");
 @import url("../css-styles/seus-generos-favoritos.css");
 @import url("../css-styles/avaliacoes.css");
+@import url("../css-styles/estrelas-classificacao.css");
+
 * {
     box-sizing: border-box;
     text-decoration: none;

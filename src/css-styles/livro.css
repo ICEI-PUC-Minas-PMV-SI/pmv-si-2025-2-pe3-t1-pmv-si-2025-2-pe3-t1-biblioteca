@@ -245,7 +245,7 @@ main {
 }
 
 .avaliation-container .container-interno-avaliacao .container-pontuacao #nota-avaliacao {
-  font-size: 56px;
+  font-size: 1.0rem;
   color: var(--alcacuz);
   opacity: 0.7;
 }
@@ -500,6 +500,7 @@ background-color: var(--azul-colombia);
 .rating label:hover ~ label .estrela-svg path {
   fill: var(--azul-delft);
   stroke: var(--azul-delft);
+
 }
 
 /* Seleção: pinta a escolhida e as anteriores (visualmente) */
@@ -510,3 +511,22 @@ background-color: var(--azul-colombia);
 
 /* Micro-feedback */
 .rating label:active .estrela-svg { transform: scale(0.92); }
+
+/* ESTRELAS DO BLOCO DE BAIXO (seção "Avaliações") */
+
+#rating-media-abaixo .estrela-svg--empty path {
+  fill: var(--branco);
+  stroke: var(--alcacuz);   
+  stroke-width: 2;
+  opacity: 0.3;             
+}
+
+#rating-media-abaixo .estrela-svg--filled path {
+  fill: var(--alcacuz);  
+  opacity: 0.3;              
+  stroke: rgba(57, 57, 57, 0.3);
+
+
+  
+    
+} 
