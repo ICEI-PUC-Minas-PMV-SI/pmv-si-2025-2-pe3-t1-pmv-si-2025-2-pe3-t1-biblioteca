@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="../css-styles/styles.css">
+    <link rel="stylesheet" href="../css-styles/editar-perfil.css">
 </head>
 
 <body id="body-cadastro">
@@ -20,15 +21,15 @@
         </nav>
     </header>
 
-    <form class="formulario-cadastro">
+    <section class="navigation-bar">
+        <a href="../../index.html" class="back-to-home">
+            <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
+            <span>Voltar</span>
+        </a>
+        <h2 id="titulo-cadastro">Editar perfil</h2>
+    </section>
 
-        <section class="navigation-bar">
-            <a href="../../index.html" class="back-to-home">
-                <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
-                <span>Voltar</span>
-            </a>
-            <h2 id="titulo-cadastro">Editar perfil</h2>
-        </section>
+    <form class="formulario-edicao-perfil">
 
         <section class="form-container">
 
@@ -253,42 +254,44 @@
 
             <fieldset class="quadro-senha">
 
-                <h3 class="formulario-cadastro_titulo-quadro">CREDENCIAIS
+                <section class="formulario-cadastro_titulo-quadro">
+                    <h3 class="titulo-quadro">CREDENCIAIS</h3>
                     <a href="#">
                         <img class="icon" id="editar-senha-lapis" src="../img/icone_lapis_branco.svg">
                         <img class="icon" id="editar-senha-confirmar" hidden src="../img/icone_confirmar.svg">
                         <img class="icon" id="editar-senha-cancelar" hidden src="../img/icone_cancelar.svg">
 
                     </a>
+                </section>
 
-                    <div class="quadro-senha_campos">
-                        <div class="quadro-senha_campo">
+                <div class="quadro-senha_campos">
+                    <div class="quadro-senha_campo">
 
-                            <label for="senha"> Senha atual:</label>
-                            <input type="password" name="senha" id="senha" placeholder="">
-
-                        </div>
-                    </div>
-
-                    <div id="quadro-senhas" class="quadro-senha_campos" style="display: none;">
-                        <div class="quadro-senha_campo">
-
-                            <label for="senha"> Nova senha:</label>
-                            <input type="password" id="nova-senha" name="senha" placeholder="Digite sua nova senha">
-
-                        </div>
-
-
-                        <div class="quadro-senha_campo">
-
-                            <label for="senha"> Confirmar nova senha:</label>
-                            <input type="password" id="confirmar-nova-senha" name="confirmar-senha"
-                                placeholder="Repita sua nova senha">
-
-                        </div>
-
+                        <label for="senha"> Senha atual:</label>
+                        <input type="password" name="senha" id="senha" class="senha-atual" placeholder="">
 
                     </div>
+                </div>
+
+                <div id="quadro-senhas" class="quadro-senha_campos" style="display: none;">
+                    <div class="quadro-senha_campo">
+
+                        <label for="senha"> Nova senha:</label>
+                        <input type="password" id="nova-senha" name="senha" placeholder="Digite sua nova senha">
+
+                    </div>
+
+
+                    <div class="quadro-senha_campo">
+
+                        <label for="senha"> Confirmar nova senha:</label>
+                        <input type="password" id="confirmar-nova-senha" name="confirmar-senha"
+                            placeholder="Repita sua nova senha">
+
+                    </div>
+
+
+                </div>
 
             </fieldset>
 

@@ -51,9 +51,6 @@ body {
     min-height: 100vh;
 }
 
-input:disabled {
-    background-color: #ffffff80;
-}
 
 
 
