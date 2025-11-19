@@ -1,3 +1,4 @@
+import { showConfirmSync, showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
 import { removerSelecao } from "../js-funcoes/funcao-remover-selecao.js"
 
 document.addEventListener("click", (e) => {
