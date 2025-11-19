@@ -222,13 +222,7 @@ const cancelarEditarEndereco = document.getElementById(
 cancelarEditarEndereco.addEventListener("click", function (evento) {
   evento.preventDefault();
   botaoEditarEndereco.setAttribute("hidden", "");
-  document.getElementById("editar-endereco-lapis").removeAttribute("hidden");
-  document
-    .getElementById("editar-endereco-cancelar")
-    .setAttribute("hidden", "");
-  document
-    .getElementById("editar-endereco-confirmar")
-    .setAttribute("hidden", "");
+
   document.getElementById("cep").disabled = true;
   document.getElementById("rua").disabled = true;
   document.getElementById("numero-fachada").disabled = true;
@@ -236,7 +230,15 @@ cancelarEditarEndereco.addEventListener("click", function (evento) {
   document.getElementById("cidade").disabled = true;
   document.getElementById("estado").disabled = true;
 
-    location.reload()
+  document.getElementById("editar-endereco-lapis").removeAttribute("hidden");
+
+  document
+    .getElementById("editar-endereco-cancelar")
+    .setAttribute("hidden", "");
+  document
+    .getElementById("editar-endereco-confirmar")
+    .setAttribute("hidden", "");
+
 });
 
 const confirmarEditarEndereco = document.getElementById(
@@ -259,16 +261,27 @@ confirmarEditarEndereco.addEventListener("click", function (evento) {
     cidade: cidade.value,
     estado: estado.value,
   });
+
+  document.getElementById("editar-endereco-lapis").removeAttribute("hidden");
+  
+  document
+    .getElementById("editar-endereco-cancelar")
+    .setAttribute("hidden", "");
+  document
+    .getElementById("editar-endereco-confirmar")
+    .setAttribute("hidden", "");
+
+  document.getElementById("checkbox-genero-1").disabled = true;
+  document.getElementById("checkbox-genero-2").disabled = true;
+  document.getElementById("checkbox-genero-3").disabled = true;
+  document.getElementById("checkbox-genero-4").disabled = true;
+  document.getElementById("checkbox-genero-5").disabled = true;
+  document.getElementById("checkbox-genero-6").disabled = true;
+  document.getElementById("checkbox-genero-7").disabled = true;
+  document.getElementById("checkbox-genero-8").disabled = true;
 });
 
-document.getElementById("checkbox-genero-1").disabled = true;
-document.getElementById("checkbox-genero-2").disabled = true;
-document.getElementById("checkbox-genero-3").disabled = true;
-document.getElementById("checkbox-genero-4").disabled = true;
-document.getElementById("checkbox-genero-5").disabled = true;
-document.getElementById("checkbox-genero-6").disabled = true;
-document.getElementById("checkbox-genero-7").disabled = true;
-document.getElementById("checkbox-genero-8").disabled = true;
+
 
 const botaoEditarFavoritos = document.getElementById("editar-favoritos-lapis");
 
@@ -418,6 +431,8 @@ editarFavoritosConfirmar.addEventListener("click", function (evento) {
     return;
   }
 
+  document.getElementById("editar-favoritos-lapis").removeAttribute("hidden");
+
   document
     .getElementById("editar-favoritos-cancelar")
     .setAttribute("hidden", "");
@@ -472,5 +487,8 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     editarFormulario({
       senha: confirmarNovaSenha.value,
     });
+  } else if (!novaSenha.value) {
+    alert("Digite uma nova senha")
+    return
   } else alert("As senhas devem ser digitadas iguais");
 });
