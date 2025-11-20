@@ -49,6 +49,7 @@ main .container-selecao .container-informacoes-livro .titulo, .autor, .genero, .
 main .container-selecao .container-informacoes-livro .titulo {
     font-size: clamp(20px, calc(1.4vw + 1.4vh), 36px);
     width: 100%;
+    text-align: left;
 }
 
 main .container-selecao .autor-e-genero {
@@ -227,4 +228,11 @@ background-color: var(--azul-colombia);
   color: var(--branco);
   font-weight: 550;
   cursor: pointer;
+}
+
+#mensagem-padrao-selecao{
+
+  font-size: 1.5rem;
+  color: var(--alcacuz);
+  font-weight: 400;
 }

@@ -53,6 +53,11 @@
 
         <img src="../img/troca-senha.png" alt="imagem de troca de senha" class="img-troca-senha">
 
+<div class="redefinir-senha_botoes" id="botao_confirmar-codigo">
+      <button type="button" id="enviar-codigo_botao-cancelar">Cancelar</button>
+      <button type="button" id="enviar-codigo_botao-confirmar">Confirmar</button>
+    </div>
+
       <input type="hidden" name="codigo-validacao" id="codigo-validacao">
       <!-- Loading “Confirmando código...” -->
       <div id="email-loading" class="rs-loading" hidden aria-live="polite">
@@ -64,6 +69,7 @@
 
   <!-- Section 3: nova senha -->
   <section id="sec3" class="redefinir-senha_parte-3 redefinir-senha-secao" hidden>
+     <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
     <div class="redefinir-senha_formulario-3">
       <h3 class="redefinir-senha_orientação">Preencha os campos a seguir para modificar sua senha:</h3>
 
@@ -79,7 +85,7 @@
 
       <div class="redefinir-senha_botoes" id="botao_redefinir-senha">
         <button type="button" id="redefinir-senha_botao-cancelar">Cancelar</button>
-        <button type="submit" id="redefinir-senha_botao-confirmar">Confirmar mudança</button>
+        <button type="submit" id="redefinir-senha_botao-confirmar">Confirmar</button>
       </div>
     </div>
     <!-- Loading “Redefinindo senha...” -->

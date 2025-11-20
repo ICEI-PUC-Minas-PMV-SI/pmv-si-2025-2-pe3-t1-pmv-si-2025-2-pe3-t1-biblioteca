@@ -51,6 +51,7 @@ main .container-reserva .container-informacoes-livro .titulo, .autor, .genero, .
 main .container-reserva .container-informacoes-livro .titulo {
     font-size: clamp(20px, calc(1.4vw + 1.4vh), 36px);
     width: 100%;
+    text-align: left;
 }
 
 main .container-reserva .autor-e-genero {
@@ -154,10 +155,14 @@ main .container-reserva .container-informacoes-reserva .container-status-reserva
     
 }
 
-#mensagem-padrão-reserva{
+#mensagem-padrao-reserva{
+    
     display: flex;
     justify-self: center;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
+    color: var(--alcacuz);
+    font-weight: 400;
     
 }

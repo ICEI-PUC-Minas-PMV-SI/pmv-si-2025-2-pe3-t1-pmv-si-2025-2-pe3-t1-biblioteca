@@ -1,0 +1,71 @@
+.card-rating {
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    width: 420px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+}
+
+.rating-display__stars {
+    display: flex;
+    gap: 0.4rem;
+    
+}
+
+.estrela-wrapper {
+    position: relative;
+    width: 28px;
+    height: 28px;
+}
+
+.estrela-svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.estrela-svg--empty path {
+    fill: var(--branco);
+    stroke: var(--alcacuz);
+    stroke-width: 2;
+}
+
+.estrela-svg--filled path {
+    fill: var(--azul-delft);
+    stroke: var(--azul-delft);
+    stroke-width: 1;
+}
+
+.estrela-wrapper__base {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.estrela-wrapper__mask {
+    position: absolute;
+    inset: 0;
+    width: 0%;   /* será ajustado via JS */
+    overflow: hidden;
+}
+
+
+.controls {
+    border-top: 1px solid var(--cinza-clar);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+
+

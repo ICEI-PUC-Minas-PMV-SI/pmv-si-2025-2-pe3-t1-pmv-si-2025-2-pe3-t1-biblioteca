@@ -7,6 +7,7 @@ import { carregarAncorasCarrossel } from "../js-funcoes/funcao-carrosel-livro.js
 import { salvarTopAcessos} from "../js-funcoes/funcao-livros-mais-acessados.js"
 import { salvarTopAcessosGeneros} from "../js-funcoes/funcao-generos-mais-acessados.js"
 import { persistirLike } from "../js-funcoes/funcao-favorito-persistir.js"
+import { calcularMediaLivro, preencherEstrelas, quantidadeAvaliacoes } from "../js-funcoes/funcoes-avaliacao-livro.js"
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -99,6 +100,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
     persistirLike(vetorFavoritos)
 
-    
+    // daqui pra baixo serão as chamadas de funções relacionadas às avaliações
 
+    const media = calcularMediaLivro(isbn)
+
+    preencherEstrelas(media)
+
+    document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(isbn)} classificaçoes`
+
+    
+    if(quantidadeAvaliacoes(isbn)>0){
+
+
+        if(quantidadeAvaliacoes(isbn) === 1){
+
+            document.getElementById("quantidade-avaliacoes").textContent = "1 classificação"
+        }
+        else{
+        document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(isbn)} classificaçoes`
+        }
+        document.getElementById("nota-avaliacao").textContent = String(media).replace(".",",")
+        document.getElementById("nota-avaliacao").style.fontSize = "5.0rem";
+    }
 })

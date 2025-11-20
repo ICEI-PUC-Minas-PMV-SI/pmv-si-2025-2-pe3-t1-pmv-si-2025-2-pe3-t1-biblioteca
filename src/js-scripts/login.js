@@ -9,13 +9,13 @@ const containerUsuario = document.querySelector(".menu_usuario")
 
 botaoLogar.addEventListener("click", async function (evento) {
 
+    evento.preventDefault()
 
     const usuarioOuEmailLeitor = document.getElementById("input_usuario").value
     const senhaLeitor = document.getElementById("input_senha").value
-
+    
     await logarLeitor(usuarioOuEmailLeitor, senhaLeitor)
 
-    
     const leitorLogado = localStorage.getItem("leitor logado") || ""
 
     // Verifica se há um usuário logado
@@ -40,11 +40,18 @@ botaoLogar.addEventListener("click", async function (evento) {
     containerLogin.classList.remove("visibility")
     containerUsuario.classList.remove("visibility")
 
+    return
 }
 
 })
 
+containerLogin.addEventListener("click", e => e.stopPropagation());
+containerUsuario.addEventListener("click", e => e.stopPropagation());
+botaoDeEntrada.addEventListener("click", e => e.stopPropagation());
+
 botaoDeEntrada.addEventListener("click", (event) => {
+
+    event.preventDefault()
 
     const leitorLogado = localStorage.getItem("leitor logado") || ""
 

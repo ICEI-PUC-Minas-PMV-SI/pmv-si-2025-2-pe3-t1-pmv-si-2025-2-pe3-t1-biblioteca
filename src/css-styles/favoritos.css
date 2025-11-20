@@ -62,7 +62,9 @@ main {
     margin-top: 5%;
     margin-left:auto;
     margin-right: auto;
-    font-size: 30px;
+    font-size: 1.5rem;
+    color: var(--alcacuz);
+    font-weight: 400;
     
 }
 

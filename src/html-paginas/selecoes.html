@@ -33,6 +33,7 @@
     <script src="../js-scripts/ir-para-livro-selecao.js" type="module" defer></script>
     <script src="../js-scripts/reserva-selecao.js" type="module" defer></script>
     <script src="../js-scripts/criar-reserva.js" type="module" defer></script>
+    <script src="../js-scripts/excluir-selecao.js" type="module" defer></script>
 </head>
 
 <body>
@@ -61,13 +62,13 @@
                         <div class="container_campos_senha">
                             <div class="container_rotulo_senha">
                                 <label>Senha</label>
-                                <a href="./src/html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha
+                                <a href="../html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha
                                     senha</a>
                             </div>
                             <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
                         </div>
                         <button type="submit" id="botao_logar">Logar</button>
-                        <p class="cadastre-se">Não tem uma conta?<a href="src/html-paginas/cadastro.html"
+                        <p class="cadastre-se">Não tem uma conta?<a href="../html-paginas/cadastro.html"
                                 class="ancora_cadastre-se">
                                 Cadastrar-se</a></p>
                     </section>
@@ -109,11 +110,11 @@
             <img src="../img/arrow-left.png" alt="Seta apontando para esquerda, que indica voltar de página">
             <span>Acervo</span>
         </a>
-        <h2>Minhas seleções</h2>
+        <h2>Minha seleção</h2>
     </section>
 
     <main>
-        <span id="mensagem-padrao-selecao">Não há seleções a serem exibidas.</span>
+        <span id="mensagem-padrao-selecao">Não há livros selecionados a serem exibidos</span>
 
         <section class="container-selecao template">
             <section class="container-capa">
@@ -154,7 +155,7 @@
                     </section>
                 </section>
 
-                <span>Após a confirmação, o prazo para a retirada do livro é de 24 horas.</span>
+                <span>Após a confirmação, o prazo para a retirada do livro será exibido na sua lista de reservas.</span>
             </section>
 
             <section class="buttons-container">

@@ -35,7 +35,6 @@ export async function criarMinhasReservas(livro, reserva) {
 
     const autorDoLivro = document.createElement("span")
     autorDoLivro.classList.add("autor")
-    autorDoLivro.title = "Clique para ir para a página do autor"
     autorDoLivro.textContent = livro.autor
 
     const generoDoLivro = document.createElement("span")
