@@ -516,6 +516,7 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     senha.value = usuarioPadrao.senha;
 
     alert("Sua senha foi alterada com sucesso!")
+    location.reload()
   } else if (!novaSenha.value) {
     alert("Digite uma nova senha")
     return
