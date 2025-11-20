@@ -251,6 +251,10 @@ body .formulario-edicao-perfil .quadro-senha {
     align-items: center;
 }
 
+.titulo-quadro {
+    font-size: 24px;
+}
+
 body .formulario-edicao-perfil .quadro-senha .formulario-cadastro_titulo-quadro {
     display: flex;
     flex-direction: row;

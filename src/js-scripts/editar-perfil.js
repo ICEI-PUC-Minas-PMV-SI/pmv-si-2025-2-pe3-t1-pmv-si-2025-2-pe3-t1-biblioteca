@@ -383,6 +383,10 @@ cancelarEditarFavoritos.addEventListener("click", function (evento) {
   document.getElementById("checkbox-genero-7").disabled = true;
   document.getElementById("checkbox-genero-8").disabled = true;
 
+  if(document.getElementById("checkbox-genero-1").disabled) {
+    document.getElementById("checkbox-genero-1").style.cursor = "not-allowed"
+  }
+
     
 });
 
@@ -465,19 +469,24 @@ botaoEditarSenha.addEventListener("click", function (evento) {
   document.getElementById("editar-senha-confirmar").removeAttribute("hidden");
   document.getElementById("editar-senha-cancelar").removeAttribute("hidden");
   document.getElementById("editar-senha-confirmar").removeAttribute("hidden");
+  senha.setAttribute("placeholder", "Digite a sua senha atual")
   document.getElementById("quadro-senhas").style.display = "flex";
+  senha.disabled = false;
+  senha.value = ""
 });
 
 const cancelarEditarSenha = document.getElementById("editar-senha-cancelar");
 
 cancelarEditarSenha.addEventListener("click", function (evento) {
   evento.preventDefault();
+  usuarioPadrao = getleitor()
   botaoEditarSenha.setAttribute("hidden", "");
   document.getElementById("editar-senha-lapis").removeAttribute("hidden");
   document.getElementById("editar-senha-cancelar").setAttribute("hidden", "");
   document.getElementById("editar-senha-confirmar").setAttribute("hidden", "");
   document.getElementById("quadro-senhas").style.display = "none";
   document.getElementById("senha").disabled = true;
+  senha.value = usuarioPadrao.senha;
 });
 
 const confirmarEditarSenha = document.getElementById("editar-senha-confirmar");
@@ -486,14 +495,27 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   const senha = document.getElementById("senha");
   const novaSenha = document.getElementById("nova-senha");
   const confirmarNovaSenha = document.getElementById("confirmar-nova-senha");
+  usuarioPadrao = getleitor()
 
   console.log("novaSenha.value", novaSenha.value);
   console.log("confirmarEditarSenha.value", confirmarEditarSenha.value);
 
-  if (novaSenha.value === confirmarNovaSenha.value) {
+  if (senha.value !== usuarioPadrao.senha) {
+    alert("A senha atual está incorreta!")
+    return
+  } else if (novaSenha.value === confirmarNovaSenha.value) {
     editarFormulario({
       senha: confirmarNovaSenha.value,
-    });
+    })
+
+    document.getElementById("editar-senha-lapis").removeAttribute("hidden");
+    document.getElementById("editar-senha-cancelar").setAttribute("hidden", "");
+    document.getElementById("editar-senha-confirmar").setAttribute("hidden", "");
+    document.getElementById("quadro-senhas").style.display = "none";
+    document.getElementById("senha").disabled = true;
+    senha.value = usuarioPadrao.senha;
+
+    alert("Sua senha foi alterada com sucesso!")
   } else if (!novaSenha.value) {
     alert("Digite uma nova senha")
     return
