@@ -71,6 +71,10 @@ body .formulario-edicao-perfil option{
     font-size: 1rem;
 }
 
+.formulario-cadastro_titulo-quadro {
+    text-align: left;
+}
+
 body .formulario-edicao-perfil .quadro-identidade {
     display: flex;
     flex-direction: column;
