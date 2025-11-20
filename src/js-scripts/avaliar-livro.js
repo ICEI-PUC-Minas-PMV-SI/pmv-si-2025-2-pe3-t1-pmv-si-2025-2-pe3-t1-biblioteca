@@ -9,6 +9,10 @@ const janelaAvaliacao = document.getElementById("janela-avaliacao-livro")
 const botaoAdicionarAvaliacao = document.getElementById("adicionar-avaliacao")
 const leitorLogado = localStorage.getItem("leitor logado") || ""
 
+// encontrando o leitor logado e o livro da página
+const leitor = ClasseLeitor.vetorLeitores.find(le => le.usuario === localStorage.getItem("leitor logado"))
+const livro = ClasseLivro.vetorLivros.find(li => li.isbn === sessionStorage.getItem("isbn_redirecionamento"))
+
 botaoAdicionarAvaliacao.addEventListener("click", (evento) => {
 
     evento.preventDefault()
@@ -37,8 +41,6 @@ botaoCancelar.addEventListener("click", (evento) => {
 
 })
 
-const leitor = ClasseLeitor.vetorLeitores.find(le => le.usuario === localStorage.getItem("leitor logado"))
-const livro = ClasseLivro.vetorLivros.find(li => li.isbn === sessionStorage.getItem("isbn_redirecionamento"))
 
 botaoEnviar.addEventListener("click", async (evento) => {
 
@@ -47,12 +49,7 @@ botaoEnviar.addEventListener("click", async (evento) => {
     if(await avaliarLivro(leitor, livro)){
 
         window.location.reload()
-
-    
-
     }
-
-    
 
 })
 

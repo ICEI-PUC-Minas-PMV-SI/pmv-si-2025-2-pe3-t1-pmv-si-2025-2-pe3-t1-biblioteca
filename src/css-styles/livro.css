@@ -270,22 +270,138 @@ main {
 
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 10px;
+  
 }
 
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra span {
-  min-width: 10px
+  min-width: 10px;
+  margin: 0.5rem;
 }
 
-.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-dzn {
-  width: 100%;
+.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra {
+  
+  height: 45%;
+  
+}
+
+.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-cinza {
+  
   background-color: var(--alcacuz);
   opacity: 0.3;
-  height: 45%;
-  border-radius: 1.25rem;
+  flex: 1 1 auto;
+
+  border-top-right-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  
+}
+
+.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-azul {
+  
+  background-color: var(--azul-delft);
+  flex: 0 0 100%;
+
+  border-top-left-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+
+}
+
+/* aqui está a estilização específica que vai mudar o tamanho das barras azuis */
+
+:root{
+
+  /* os percentuais preenchidos da barra azul são setados inicialmente em 0% e serão modificados via JS */
+  --p-1-azul: 0%;
+  --p-2-azul: 0%;
+  --p-3-azul: 0%;
+  --p-4-azul: 0%;
+  --p-5-azul: 0%;
+
+  /* essas variáveis tratam da borda direita da barra azul, que precisam ser arredondadas caso a barra esteja em 100% */
+  --borda-direita-azul-1: 0rem;
+  --borda-direita-azul-2: 0rem;
+  --borda-direita-azul-3: 0rem;
+  --borda-direita-azul-4: 0rem;
+  --borda-direita-azul-5: 0rem;
+  
+
+  /* essas variáveis tratam a borda esquerda da barra cinza, que precisa mudar caso a barra azul apareça */
+  --borda-esquerda-cinza-1: 1.25rem;
+  --borda-esquerda-cinza-2: 1.25rem;
+  --borda-esquerda-cinza-3: 1.25rem;
+  --borda-esquerda-cinza-4: 1.25rem;
+  --borda-esquerda-cinza-5: 1.25rem;
+
+}
+
+#barra-1-estrelas-azul{
+
+  flex: 0 0 var(--p-1-azul) !important;
+  border-top-right-radius: var(--borda-direita-azul-1)!important;
+  border-bottom-right-radius: var(--borda-direita-azul-1)!important;
+
+}
+
+#barra-2-estrelas-azul{
+
+  flex: 0 0 var(--p-2-azul) !important;
+  border-top-right-radius: var(--borda-direita-azul-2)!important;
+  border-bottom-right-radius: var(--borda-direita-azul-2)!important;
+
+}
+
+#barra-3-estrelas-azul{
+
+  flex: 0 0 var(--p-3-azul) !important;
+  border-top-right-radius: var(--borda-direita-azul-3)!important;
+  border-bottom-right-radius: var(--borda-direita-azul-3)!important;
+
+}
+
+#barra-4-estrelas-azul{
+
+  flex: 0 0 var(--p-4-azul) !important;
+  border-top-right-radius: var(--borda-direita-azul-4)!important;
+  border-bottom-right-radius: var(--borda-direita-azul-4)!important;
+
+}
+
+#barra-5-estrelas-azul{
+
+  flex: 0 0 var(--p-5-azul) !important;
+  border-top-right-radius: var(--borda-direita-azul-5)!important;
+  border-bottom-right-radius: var(--borda-direita-azul-5)!important;
+
+}
+
+#barra-1-estrelas-cinza{
+
+  border-top-left-radius: var(--borda-esquerda-cinza-1)!important;
+  border-bottom-left-radius: var(--borda-esquerda-cinza-1)!important;
+}
+
+#barra-2-estrelas-cinza{
+
+  border-top-left-radius: var(--borda-esquerda-cinza-2)!important;
+  border-bottom-left-radius: var(--borda-esquerda-cinza-2)!important;
+}
+
+#barra-3-estrelas-cinza{
+
+  border-top-left-radius: var(--borda-esquerda-cinza-3)!important;
+  border-bottom-left-radius: var(--borda-esquerda-cinza-3)!important;
+}
+
+#barra-4-estrelas-cinza{
+
+  border-top-left-radius: var(--borda-esquerda-cinza-4)!important;
+  border-bottom-left-radius: var(--borda-esquerda-cinza-4)!important;
+}
+
+#barra-5-estrelas-cinza{
+
+  border-top-left-radius: var(--borda-esquerda-cinza-5)!important;
+  border-bottom-left-radius: var(--borda-esquerda-cinza-5)!important;
 }
 
 .avaliation-container .container-add-avaliacao {

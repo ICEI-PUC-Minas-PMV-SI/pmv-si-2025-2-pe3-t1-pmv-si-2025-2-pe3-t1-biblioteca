@@ -144,3 +144,83 @@ export function quantidadeAvaliacoes(isbn){
 
     return notasLivro.length
 }
+
+export function preencherBarras(isbn){
+
+    let vetorNotas = []
+
+    let i
+
+    for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
+
+        if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
+
+            vetorNotas.push(ClasseAvaliacaoLivro.vetorAvaliacoes[i].nota)
+
+        }
+    }
+
+    //aqui está a quantidade total de classificações recebidas:
+    const quantidadeTotal = vetorNotas.length
+
+    //aqui estão as variáveis que guardarão a quantidade de notas 1, 2, 3, 4 e 5 que o livro recebeu, para calcular os percentuais e preencher as barras adequadamente
+    const quantidadeNota1 = vetorNotas.filter(v => v === 1).length
+    const quantidadeNota2 = vetorNotas.filter(v => v === 2).length
+    const quantidadeNota3 = vetorNotas.filter(v => v === 3).length
+    const quantidadeNota4 = vetorNotas.filter(v => v === 4).length
+    const quantidadeNota5 = vetorNotas.filter(v => v === 5).length
+
+    //aqui estão os percentuais em si
+    const percentualNota1 = (quantidadeNota1/quantidadeTotal)*100 || 0
+    const percentualNota2 = (quantidadeNota2/quantidadeTotal)*100 || 0
+    const percentualNota3 = (quantidadeNota3/quantidadeTotal)*100 || 0
+    const percentualNota4 = (quantidadeNota4/quantidadeTotal)*100 || 0
+    const percentualNota5 = (quantidadeNota5/quantidadeTotal)*100 || 0
+
+    // preenchendo as barras azuis
+    document.documentElement.style.setProperty('--p-1-azul', percentualNota1 + '%')
+
+    document.documentElement.style.setProperty('--p-2-azul', percentualNota2 + '%')
+
+    document.documentElement.style.setProperty('--p-3-azul', percentualNota3 + '%')
+
+    document.documentElement.style.setProperty('--p-4-azul', percentualNota4 + '%')
+
+    document.documentElement.style.setProperty('--p-5-azul', percentualNota5 + '%')
+
+    //mudando a barra direita das barras azuis, apenas quando necessário
+
+    const percentuais = {
+
+        1: percentualNota1,
+        2: percentualNota2,
+        3: percentualNota3,
+        4: percentualNota4,
+        5: percentualNota5
+    }
+
+    for (let y = 1; y <= 5; y++) {
+
+        if (percentuais[y] === 100) {
+            document.documentElement.style.setProperty(`--borda-direita-azul-${y}`, "1.25rem")
+        }
+    }
+
+    // mudando a borda da barra cinza de arredondada para reta, apenas quando necessário
+    const quantidades = {
+    1: quantidadeNota1,
+    2: quantidadeNota2,
+    3: quantidadeNota3,
+    4: quantidadeNota4,
+    5: quantidadeNota5
+    }
+
+    for (let x = 1; x <= 5; x++) {
+
+        if (quantidades[x] !== 0) {
+            document.documentElement.style.setProperty(`--borda-esquerda-cinza-${x}`, "0%")
+        }
+    }
+
+}
+    

@@ -7,13 +7,30 @@ import { carregarAncorasCarrossel } from "../js-funcoes/funcao-carrosel-livro.js
 import { salvarTopAcessos} from "../js-funcoes/funcao-livros-mais-acessados.js"
 import { salvarTopAcessosGeneros} from "../js-funcoes/funcao-generos-mais-acessados.js"
 import { persistirLike } from "../js-funcoes/funcao-favorito-persistir.js"
-import { calcularMediaLivro, preencherEstrelas, quantidadeAvaliacoes } from "../js-funcoes/funcoes-avaliacao-livro.js"
+import { calcularMediaLivro, preencherBarras, preencherEstrelas, quantidadeAvaliacoes } from "../js-funcoes/funcoes-avaliacao-livro.js"
+
+
+//encontrando o objeto leitor
+const usuarioLogado = localStorage.getItem("leitor logado")
+let leitor
+
+let n
+
+for(n=0; n<ClasseLeitor.vetorLeitores.length;n++){
+
+    if(ClasseLeitor.vetorLeitores[n].usuario === usuarioLogado){
+
+        leitor = ClasseLeitor.vetorLeitores[n]
+
+        break
+    }
+}
+
+//encontrando o isbn do livro
+const isbn = sessionStorage.getItem("isbn_redirecionamento")
 
 
 window.addEventListener("DOMContentLoaded", () => {
-
-    //trecho que carrega as informações do livro
-    const isbn = sessionStorage.getItem("isbn_redirecionamento")
 
     trocarLivro(isbn)
 
@@ -74,27 +91,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //trecho que permite a persistência do like
 
-    const usuarioLogado = localStorage.getItem("leitor logado")
 
     if(!usuarioLogado){
         return
     }
 
     let vetorFavoritos = []
-
-    let leitor
-
-    let n
-
-    for(n=0; n<ClasseLeitor.vetorLeitores.length;n++){
-
-        if(ClasseLeitor.vetorLeitores[n].usuario === usuarioLogado){
-
-            leitor = ClasseLeitor.vetorLeitores[n]
-
-            break
-        }
-    }
 
     vetorFavoritos = leitor.meusFavoritos
 
@@ -122,4 +124,6 @@ window.addEventListener("DOMContentLoaded", () => {
         document.getElementById("nota-avaliacao").textContent = String(media).replace(".",",")
         document.getElementById("nota-avaliacao").style.fontSize = "5.0rem";
     }
+
+    preencherBarras(isbn)
 })
