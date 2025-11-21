@@ -214,7 +214,7 @@ body .formulario-edicao-perfil .quadro-generos .quadro-generos_campos label a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: not-allowed;
 
   /* caixa não infla com o hover */
   width: 100%;               
@@ -240,7 +240,7 @@ body .formulario-edicao-perfil .quadro-generos .quadro-generos_campos label a {
 }
 
 /* Aumente aqui a fonte dos gêneros sob hover */
-body .formulario-edicao-perfil .quadro-generos .quadro-generos_campos label a .hover:hover {
+body .formulario-edicao-perfil .quadro-generos .quadro-generos_campos label .hover:hover {
  
    font-size: 1.1rem;
 }
