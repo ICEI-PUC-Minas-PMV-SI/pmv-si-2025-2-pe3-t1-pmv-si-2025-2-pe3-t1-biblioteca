@@ -206,11 +206,13 @@ export function preencherBarras(isbn){
     }
 
     // colocando um title explicativo nas barras
-    document.getElementById("estrela-barra-5").title = `Esse livro recebeu ${Math.round(percentualNota5)}% de classificações nota 5`
-    document.getElementById("estrela-barra-4").title = `Esse livro recebeu ${Math.round(percentualNota4)}% de classificações nota 4`
-    document.getElementById("estrela-barra-3").title = `Esse livro recebeu ${Math.round(percentualNota3)}% de classificações nota 3`
-    document.getElementById("estrela-barra-2").title = `Esse livro recebeu ${Math.round(percentualNota2)}% de classificações nota 2`
-    document.getElementById("estrela-barra-1").title = `Esse livro recebeu ${Math.round(percentualNota1)}% de classificações nota 1`
+    if(quantidadeTotal>0){
+        document.getElementById("estrela-barra-5").title = `Esse livro recebeu ${Math.round(percentualNota5)}% de classificações nota 5`
+        document.getElementById("estrela-barra-4").title = `Esse livro recebeu ${Math.round(percentualNota4)}% de classificações nota 4`
+        document.getElementById("estrela-barra-3").title = `Esse livro recebeu ${Math.round(percentualNota3)}% de classificações nota 3`
+        document.getElementById("estrela-barra-2").title = `Esse livro recebeu ${Math.round(percentualNota2)}% de classificações nota 2`
+        document.getElementById("estrela-barra-1").title = `Esse livro recebeu ${Math.round(percentualNota1)}% de classificações nota 1`
+    }
 
 }
     

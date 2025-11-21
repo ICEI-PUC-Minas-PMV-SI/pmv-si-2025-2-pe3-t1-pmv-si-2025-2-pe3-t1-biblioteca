@@ -110,7 +110,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(isbn)} classificaçoes`
 
-    
+    if(quantidadeAvaliacoes(isbn) === 0){
+
+        document.querySelector("#rating-media-topo .rating-display__stars").title = "Esse livro ainda não recebeu classificações"
+    }
     if(quantidadeAvaliacoes(isbn)>0){
 
 
