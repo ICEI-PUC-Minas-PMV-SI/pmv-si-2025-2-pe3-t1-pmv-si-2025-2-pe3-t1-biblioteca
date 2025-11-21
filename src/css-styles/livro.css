@@ -269,9 +269,10 @@ main {
 }
 
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr; 
   align-items: center;
-  
+  column-gap: 0.5rem;
 }
 
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra span {
@@ -282,15 +283,17 @@ main {
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra {
   
   height: 45%;
+  border-radius: 1.25rem;
   
 }
 
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-cinza {
   
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
   background-color: var(--alcacuz);
   opacity: 0.3;
-  flex: 1 1 auto;
-
   border-top-right-radius: 1.25rem;
   border-bottom-right-radius: 1.25rem;
   
@@ -298,9 +301,10 @@ main {
 
 .avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-azul {
   
+  grid-column: 2;
+  grid-row: 1;
   background-color: var(--azul-delft);
-  flex: 0 0 100%;
-
+  width: 0%;   /* default, JS troca via CSS var */
   border-top-left-radius: 1.25rem;
   border-bottom-left-radius: 1.25rem;
 
@@ -336,7 +340,7 @@ main {
 
 #barra-1-estrelas-azul{
 
-  flex: 0 0 var(--p-1-azul) !important;
+  width: var(--p-1-azul) !important;
   border-top-right-radius: var(--borda-direita-azul-1)!important;
   border-bottom-right-radius: var(--borda-direita-azul-1)!important;
 
@@ -344,7 +348,7 @@ main {
 
 #barra-2-estrelas-azul{
 
-  flex: 0 0 var(--p-2-azul) !important;
+  width: var(--p-2-azul) !important;
   border-top-right-radius: var(--borda-direita-azul-2)!important;
   border-bottom-right-radius: var(--borda-direita-azul-2)!important;
 
@@ -352,7 +356,7 @@ main {
 
 #barra-3-estrelas-azul{
 
-  flex: 0 0 var(--p-3-azul) !important;
+  width: var(--p-3-azul) !important;
   border-top-right-radius: var(--borda-direita-azul-3)!important;
   border-bottom-right-radius: var(--borda-direita-azul-3)!important;
 
@@ -360,7 +364,7 @@ main {
 
 #barra-4-estrelas-azul{
 
-  flex: 0 0 var(--p-4-azul) !important;
+  width: var(--p-4-azul) !important;
   border-top-right-radius: var(--borda-direita-azul-4)!important;
   border-bottom-right-radius: var(--borda-direita-azul-4)!important;
 
@@ -368,40 +372,10 @@ main {
 
 #barra-5-estrelas-azul{
 
-  flex: 0 0 var(--p-5-azul) !important;
+  width: var(--p-5-azul) !important;
   border-top-right-radius: var(--borda-direita-azul-5)!important;
   border-bottom-right-radius: var(--borda-direita-azul-5)!important;
 
-}
-
-#barra-1-estrelas-cinza{
-
-  border-top-left-radius: var(--borda-esquerda-cinza-1)!important;
-  border-bottom-left-radius: var(--borda-esquerda-cinza-1)!important;
-}
-
-#barra-2-estrelas-cinza{
-
-  border-top-left-radius: var(--borda-esquerda-cinza-2)!important;
-  border-bottom-left-radius: var(--borda-esquerda-cinza-2)!important;
-}
-
-#barra-3-estrelas-cinza{
-
-  border-top-left-radius: var(--borda-esquerda-cinza-3)!important;
-  border-bottom-left-radius: var(--borda-esquerda-cinza-3)!important;
-}
-
-#barra-4-estrelas-cinza{
-
-  border-top-left-radius: var(--borda-esquerda-cinza-4)!important;
-  border-bottom-left-radius: var(--borda-esquerda-cinza-4)!important;
-}
-
-#barra-5-estrelas-cinza{
-
-  border-top-left-radius: var(--borda-esquerda-cinza-5)!important;
-  border-bottom-left-radius: var(--borda-esquerda-cinza-5)!important;
 }
 
 .avaliation-container .container-add-avaliacao {
@@ -419,6 +393,11 @@ main {
   border-radius: 1rem;
   font-size: 1.25rem;
   cursor: pointer;
+}
+
+.avaliation-container .adicionar-avaliacao:hover{
+
+  filter: brightness(1.2);
 }
 
 .reserve-container {
