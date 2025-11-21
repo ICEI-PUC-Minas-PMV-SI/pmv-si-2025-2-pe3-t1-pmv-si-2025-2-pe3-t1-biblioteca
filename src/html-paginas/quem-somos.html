@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem somos?</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+     
+     <!-- importando a fonte Inter, utilizada no Figma -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- _______________________________ -->
+     
+    <link rel="stylesheet" href="../css-styles/reset.css">
+    <link rel="stylesheet" href="../css-styles/styles.css">
+    <link rel="stylesheet" href="../css-styles/quem-somos.css">
+</head>
+
+
+<body id="bodyquemsomos"> 
+    
+    <header class="cabecalho">
+        <nav>
+            <section class="logo_container">
+                <img src="../img/logotipo_versora.png" alt="Logotipo comercial VERSORA">
+            </section>
+            <section class="nav_containers">
+                <section class="anchor_container">
+                    <a href="../../index.html">Página inicial</a>
+                    <a href="./quem-somos.html">Quem somos</a>
+                    <a href="./acervo.html">Nosso acervo</a>
+                </section>
+                <section class="login_container">
+
+                    <img src="../img/icon_user.png" alt="Ícone de usuário">
+                    <span>Entrar</span>
+                    <section class="menu_login" style="display: none;">
+                        <div class="container_campos_usuario">
+                            <label for="input_usuario">Usuário/e-mail</label>
+                            <input type="text" class="input_usuario" id="input_usuario"
+                                placeholder="Digite seu usuário/e-mail">
+                        </div>
+                        <div class="container_campos_senha">
+                            <div class="container_rotulo_senha">
+                                <label>Senha</label>
+                                <a href="../html-paginas/redefinir-senha.html" class="esqueci_senha">Esqueci minha
+                                    senha</a>
+                            </div>
+                            <input type="password" class="input_senha" id="input_senha" placeholder="Digite sua senha">
+                        </div>
+                        <button type="submit" id="botao_logar">Logar</button>
+                        <p class="cadastre-se">Não tem uma conta?<a href="../html-paginas/cadastro.html"
+                                class="ancora_cadastre-se">
+                                Cadastrar-se</a></p>
+                    </section>
+                    <section class="menu_usuario" style="display: none;">
+                        <ul class="menu_usuario_lista">
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/reservas.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_pilha_livros.svg">Minhas
+                                    reservas</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/selecoes.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_sacola.svg">Minha seleção</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/favoritos-livros.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_coracao.svg">Meus favoritos</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="../html-paginas/editar-perfil.html"><img
+                                        class="menu_usuario_icone" src="../img/icone_lapis.svg">Editar perfil</a>
+                            </li>
+                            <li class="menu_usuario_lista_item">
+                                <a class="menu_usuario_ancora" href="#" id="link_sair"><img class="menu_usuario_icone"
+                                        src="../img/icone_sair.svg">Sair</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </section>
+            </section>
+        </nav>
+    </header>
+    
+    
+    <section class="container_info">
+        <section class="info_container">
+            <h1>Quem somos?</h1>
+            <h2>O Versora é uma plataforma criada para facilitar o acesso aos livros da sua biblioteca. 
+                Aqui, você pode reservar títulos online de forma rápida e prática e fazer a retirada presencial quando for mais conveniente. 
+                Nosso objetivo é conectar leitores ao conhecimento, tornando o processo de empréstimo mais simples, organizado e acessível.</h2>
+        </section>
+    </section>
+
+    <section class="imagens_info">
+         <section class="imagens_info">
+             <h1> Passo a Passo</h1>
+              <div class="card_passos">
+                    <h2>Encontre um livro</h2>
+                    <h3>Buscar livros no acervo rápido e fácil</h3>
+              </div>
+         </section>
+    </section>
+    
+</body>
+</html>
