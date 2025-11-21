@@ -15,11 +15,16 @@ const getLeitores = () =>
   JSON.parse(localStorage.getItem("lista de leitores")) || [];
 
 const getleitor = () => {
-  const leitorAtual = ClasseLeitor.vetorLeitores.find(
-    (l) => l.usuario === ClasseLeitor.leitorLogado
+  const leitores = getLeitores();
+  const usuarioLogado = localStorage.getItem("leitor logado");
+
+  if (!usuarioLogado) return null;
+
+  const leitorAtual = leitores.find(
+    (l) => l.usuario === usuarioLogado
   );
 
-  return leitorAtual;
+  return leitorAtual || null;
 };
 
 const preencherDados = (leitorLogado) => {
@@ -183,8 +188,7 @@ confirmarEditar.addEventListener("click", function (evento) {
     .getElementById("editar-dados-pessoais-confirmar")
     .setAttribute("hidden", "");
 
-  const original = getleitor();
-  preencherDados(original);
+  preencherDados(getleitor());
 });
 
 const botaoEditarEndereco = document.getElementById("editar-endereco-lapis");
@@ -402,19 +406,21 @@ cancelarEditarFavoritos.addEventListener("click", function (evento) {
       el.classList.remove("hover");
     });
 
-  const leitorAtual = getleitor();
-
   document.querySelectorAll(".checkbox-genero").forEach((checkbox) => {
     document.querySelectorAll(".ancora-genero").forEach((ancora) => {
+
+      const leitorAtual = getleitor();
       checkbox.checked = leitorAtual.meusGeneros.includes(ancora.value);
       checkbox.disabled;
       ancora.style.opacity = "0.9";
+      checkbox.checked = false
 
-      usuarioPadrao.meusGeneros.forEach((genero) => {
+      leitorAtual.meusGeneros.forEach((genero) => {
         const slugGenero = slug(genero);
         // const favorito = document.getElementById(slugGenero);
         const favorito = document.querySelector(`.${slugGenero}`);
         if (favorito) favorito.checked = true;
+
       });
     });
   });
@@ -513,7 +519,7 @@ botaoEditarSenha.addEventListener("click", function (evento) {
   document.getElementById("editar-senha-cancelar").removeAttribute("hidden");
   document.getElementById("editar-senha-confirmar").removeAttribute("hidden");
   senha.setAttribute("placeholder", "Digite a sua senha atual");
-  document.getElementById("quadro-senhas").style.display = "flex";
+  document.getElementById("quadro-senhas").style.display = "grid";
   senha.disabled = false;
   senha.value = "";
 });
@@ -552,10 +558,12 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   if (senha.value !== usuarioPadrao.senha) {
     alert("A senha atual está incorreta!");
     return;
-  } else if (novaSenha.value === confirmarNovaSenha.value) {
+  } else if (novaSenha.value === confirmarNovaSenha.value && confirmarNovaSenha !== "") {
     editarFormulario({
       senha: confirmarNovaSenha.value,
     });
+
+    const usuarioAtual = getleitor()
 
     document.getElementById("editar-senha-lapis").removeAttribute("hidden");
     document.getElementById("editar-senha-cancelar").setAttribute("hidden", "");
@@ -564,13 +572,15 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
       .setAttribute("hidden", "");
     document.getElementById("quadro-senhas").style.display = "none";
     document.getElementById("senha").disabled = true;
-    senha.value = usuarioPadrao.senha;
+    senha.value = usuarioAtual.senha;
 
     alert("Sua senha foi alterada com sucesso!");
     novaSenha.value = "";
     confirmarNovaSenha.value = "";
-    preencherDados(usuarioPadrao);
   } else if (!novaSenha.value) {
+    alert("Digite uma nova senha");
+    return;
+  } else if (novaSenha.value === "" || confirmarNovaSenha.value === "") {
     alert("Digite uma nova senha");
     return;
   } else alert("As senhas devem ser digitadas iguais");

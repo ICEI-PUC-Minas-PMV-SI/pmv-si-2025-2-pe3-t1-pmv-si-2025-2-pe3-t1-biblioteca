@@ -269,21 +269,20 @@ body .formulario-edicao-perfil .quadro-senha .formulario-cadastro_titulo-quadro 
 
 body .formulario-edicao-perfil .quadro-senha .quadro-senha_campos {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     width: 100%;
     row-gap: 1rem;
-    position: relative;
 }
 
 body .formulario-edicao-perfil .quadro-senha .quadro-senha_campos .quadro-senha_campo {
     display: flex;
     flex-direction: column;
-    gap: .15rem;
+    gap: .2rem;
 }
 
 body .formulario-edicao-perfil .quadro-senha .quadro-senha_campos .quadro-senha_campo .senha-atual {
-    position: relative;
-    width: 30.3rem;
+    width: 100%;
 }
 
 body .formulario-edicao-perfil .quadro-senha .quadro-senha_campos .quadro-senha_campo label {
