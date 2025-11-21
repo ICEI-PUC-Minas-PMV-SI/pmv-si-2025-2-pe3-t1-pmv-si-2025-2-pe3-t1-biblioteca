@@ -522,6 +522,8 @@ const cancelarEditarSenha = document.getElementById("editar-senha-cancelar");
 
 cancelarEditarSenha.addEventListener("click", function (evento) {
   evento.preventDefault();
+  const novaSenha = document.getElementById("nova-senha");
+  const confirmarNovaSenha = document.getElementById("confirmar-nova-senha");
   usuarioPadrao = getleitor();
   botaoEditarSenha.setAttribute("hidden", "");
   document.getElementById("editar-senha-lapis").removeAttribute("hidden");
@@ -530,6 +532,8 @@ cancelarEditarSenha.addEventListener("click", function (evento) {
   document.getElementById("quadro-senhas").style.display = "none";
   document.getElementById("senha").disabled = true;
   senha.value = usuarioPadrao.senha;
+  novaSenha.value = "";
+  confirmarNovaSenha.value = "";
   const original = getleitor();
   preencherDados(original);
 });
@@ -563,10 +567,12 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     senha.value = usuarioPadrao.senha;
 
     alert("Sua senha foi alterada com sucesso!");
-    const original = getleitor();
-    preencherDados(original);
+    novaSenha.value = "";
+    confirmarNovaSenha.value = "";
+    preencherDados(usuarioPadrao);
   } else if (!novaSenha.value) {
     alert("Digite uma nova senha");
     return;
   } else alert("As senhas devem ser digitadas iguais");
+
 });
