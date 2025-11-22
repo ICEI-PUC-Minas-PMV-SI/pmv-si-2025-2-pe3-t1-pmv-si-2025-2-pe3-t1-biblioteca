@@ -7,7 +7,7 @@ import { carregarAncorasCarrossel } from "../js-funcoes/funcao-carrosel-livro.js
 import { salvarTopAcessos} from "../js-funcoes/funcao-livros-mais-acessados.js"
 import { salvarTopAcessosGeneros} from "../js-funcoes/funcao-generos-mais-acessados.js"
 import { persistirLike } from "../js-funcoes/funcao-favorito-persistir.js"
-import { calcularMediaLivro, preencherBarras, preencherEstrelas, quantidadeAvaliacoes } from "../js-funcoes/funcoes-avaliacao-livro.js"
+import { calcularMediaLivro, listarAvaliacoes, preencherBarras, preencherEstrelas, quantidadeAvaliacoes, jaComentou } from "../js-funcoes/funcoes-avaliacao-livro.js"
 
 
 //encontrando o objeto leitor
@@ -122,11 +122,28 @@ window.addEventListener("DOMContentLoaded", () => {
             document.getElementById("quantidade-avaliacoes").textContent = "1 classificação"
         }
         else{
-        document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(isbn)} classificaçoes`
+        document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(isbn)} classificações`
         }
         document.getElementById("nota-avaliacao").textContent = String(media).replace(".",",")
         document.getElementById("nota-avaliacao").style.fontSize = "5.0rem";
     }
 
     preencherBarras(isbn)
+
+    listarAvaliacoes(isbn)
+    
+    if(jaComentou(isbn, leitor)){
+
+        const botao = document.getElementById("adicionar-avaliacao")
+
+        const texto = document.getElementById("texto-botao-avaliacao-livro")
+        texto.textContent = "Editar sua avaliação"
+    
+        const lapis = document.createElement("img")
+        lapis.src = "../img/icone_lapis_branco.svg"
+        lapis.classList.add("icone-lapis")
+        botao.appendChild(lapis)
+
+        botao.title = "Você já avaliou esse livro. Clique para editar sua avaliação."
+    }
 })

@@ -242,11 +242,11 @@ main {
   justify-content: space-around;
   gap: 15px;
   align-items: center;
-  min-width: max-content;
+  margin-right: 1%;
 }
 
 .avaliation-container .container-interno-avaliacao .container-pontuacao #nota-avaliacao {
-  font-size: 1.0rem;
+ 
   color: var(--alcacuz);
   opacity: 0.7;
   
@@ -258,59 +258,76 @@ main {
 }
 
 .avaliation-container .container-interno-avaliacao .container-pontuacao #quantidade-avaliacoes {
-  font-size: 16px;
+  font-size: 1.25rem;
   color: var(--alcacuz);
   opacity: 0.7;
 }
 
-.avaliation-container .container-interno-avaliacao .container-estrela-barra {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 95%;
-}
+.secao-containeres-estrela-nota-barra{
 
-.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra {
-  display: grid;
-  grid-template-columns: auto 1fr; 
-  align-items: center;
-  column-gap: 0.5rem;
-}
-
-.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra span {
-  min-width: 10px;
-  margin: 0.5rem;
-}
-
-.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra {
-  
-  height: 45%;
-  border-radius: 1.25rem;
-  
-}
-
-.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-cinza {
-  
-  grid-column: 2;
-  grid-row: 1;
+  flex: 1 1 0;
   width: 100%;
+}
+.container-estrela-nota-barra{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.container-estrela-nota-barra img{
+
+  height: 3rem;
+  margin-right: 1%;
+  
+}
+
+.container-estrela-nota-barra span{
+
+  font-size: 1.5rem;
+  margin-right: 1%;
+  margin-top: 0.5%;
+
+}
+
+.n2{
+
+  margin-right: 0.85%!important;
+  
+}
+
+.n1{
+
+  margin-right: 1.15%!important;
+  
+}
+
+.container-barras{
+
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0;
+  min-width:0;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  height: 1.25rem;
+
+}
+
+.barra-azul {
+  background-color: var(--azul-delft);
+  flex: 0 0 0%;   /* começa em 0, muda por id */
+}
+
+.barra-cinza {
   background-color: var(--alcacuz);
   opacity: 0.3;
-  border-top-right-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
-  
+  flex: 1 1 auto; /* ocupa o resto */
 }
 
-.avaliation-container .container-interno-avaliacao .container-estrela-barra .estrela-barra .barra-azul {
-  
-  grid-column: 2;
-  grid-row: 1;
-  background-color: var(--azul-delft);
-  width: 0%;   /* default, JS troca via CSS var */
-  border-top-left-radius: 1.25rem;
-  border-bottom-left-radius: 1.25rem;
 
-}
 
 /* aqui está a estilização específica que vai mudar o tamanho das barras azuis */
 
@@ -322,63 +339,15 @@ main {
   --p-3-azul: 0%;
   --p-4-azul: 0%;
   --p-5-azul: 0%;
-
-  /* essas variáveis tratam da borda direita da barra azul, que precisam ser arredondadas caso a barra esteja em 100% */
-  --borda-direita-azul-1: 0rem;
-  --borda-direita-azul-2: 0rem;
-  --borda-direita-azul-3: 0rem;
-  --borda-direita-azul-4: 0rem;
-  --borda-direita-azul-5: 0rem;
-  
-
-  /* essas variáveis tratam a borda esquerda da barra cinza, que precisa mudar caso a barra azul apareça */
-  --borda-esquerda-cinza-1: 1.25rem;
-  --borda-esquerda-cinza-2: 1.25rem;
-  --borda-esquerda-cinza-3: 1.25rem;
-  --borda-esquerda-cinza-4: 1.25rem;
-  --borda-esquerda-cinza-5: 1.25rem;
-
 }
 
-#barra-1-estrelas-azul{
+#barra-1-estrelas-azul { flex-basis: var(--p-1-azul); }
+#barra-2-estrelas-azul { flex-basis: var(--p-2-azul); }
+#barra-3-estrelas-azul { flex-basis: var(--p-3-azul); }
+#barra-4-estrelas-azul { flex-basis: var(--p-4-azul); }
+#barra-5-estrelas-azul { flex-basis: var(--p-5-azul); }
 
-  width: var(--p-1-azul) !important;
-  border-top-right-radius: var(--borda-direita-azul-1)!important;
-  border-bottom-right-radius: var(--borda-direita-azul-1)!important;
 
-}
-
-#barra-2-estrelas-azul{
-
-  width: var(--p-2-azul) !important;
-  border-top-right-radius: var(--borda-direita-azul-2)!important;
-  border-bottom-right-radius: var(--borda-direita-azul-2)!important;
-
-}
-
-#barra-3-estrelas-azul{
-
-  width: var(--p-3-azul) !important;
-  border-top-right-radius: var(--borda-direita-azul-3)!important;
-  border-bottom-right-radius: var(--borda-direita-azul-3)!important;
-
-}
-
-#barra-4-estrelas-azul{
-
-  width: var(--p-4-azul) !important;
-  border-top-right-radius: var(--borda-direita-azul-4)!important;
-  border-bottom-right-radius: var(--borda-direita-azul-4)!important;
-
-}
-
-#barra-5-estrelas-azul{
-
-  width: var(--p-5-azul) !important;
-  border-top-right-radius: var(--borda-direita-azul-5)!important;
-  border-bottom-right-radius: var(--borda-direita-azul-5)!important;
-
-}
 
 .avaliation-container .container-add-avaliacao {
   width: 90%;
@@ -386,16 +355,33 @@ main {
   justify-content: start;
 } 
 
+
+
 .avaliation-container .adicionar-avaliacao {
   background-color: var(--azul-delft);
-  width: 15%;
+  width: 25%;
   min-width: min-content;
   padding: 1rem 0.25rem;
   color: var(--branco);
   border-radius: 1rem;
   font-size: 1.25rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap:2.5%;
+  text-align: center;
+  
 }
+
+#texto-botao-avaliacao-livro{
+
+  padding-top: 1%;
+}
+
+
+
 
 .avaliation-container .adicionar-avaliacao:hover{
 
@@ -622,8 +608,72 @@ background-color: var(--azul-colombia);
   fill: var(--alcacuz);  
   opacity: 0.3;              
   stroke: rgba(57, 57, 57, 0.3);
-
-
-  
-    
 } 
+
+/* daqui pra baixo é a estilização dos comentários com classificação deixados pelos leitores na página do livro */
+
+.exibicao-avaliacoes{
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5%;
+  margin-right: 30%;
+}
+
+.container-comentario{
+
+  display: flex;
+  width: 60vw;
+  align-items: first baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5% 0 2.5% 1.5%;
+  border-bottom: 0.2rem solid #0F040480 ;
+  background-color: #BDD5EA30;
+  margin-bottom: 1%;
+  border-radius: 1.25rem;
+
+
+ 
+  
+  
+}
+
+.container-nome-data-avaliacao{
+
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+  align-items: flex-end;
+}
+
+.container-nome-data-avaliacao span{
+
+  font-family: var(--fonte-principal);
+  font-size: 1.5rem;
+}
+
+.nome-avaliador{
+
+  width: 25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container-nome-data-avaliacao .data-avaliacao{
+
+  font-family: var(--fonte-principal);
+  font-size: 1.0rem;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+
+.container-comentario p{
+
+  font-family: var(--fonte-principal);
+  font-size: 1.25rem;
+  opacity: 0.9;
+
+}

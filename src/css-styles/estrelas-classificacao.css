@@ -58,14 +58,5 @@
 }
 
 
-.controls {
-    border-top: 1px solid var(--cinza-clar);
-    padding-top: 1rem;
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-}
-
 
 

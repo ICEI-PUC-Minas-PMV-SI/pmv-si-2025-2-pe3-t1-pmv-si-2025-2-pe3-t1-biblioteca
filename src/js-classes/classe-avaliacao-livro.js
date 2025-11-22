@@ -8,8 +8,12 @@ export class ClasseAvaliacaoLivro{
     // aqui estão atributos específicos de cada objeto da classe (cada avaliação específica)
     //id sequencial
     idAvaliacaoLivro
+    //texto contendo data de avaliação ou de edição da avaliação
+    dataTexto
     //id do leitor que realizou a avaliacao
     idLeitor
+    //nome de usuário do leitor que realizou a avaliaçao
+    usuario
     //ISBN do livro 
     isbnLivro
     //string com o título do livro
@@ -20,12 +24,14 @@ export class ClasseAvaliacaoLivro{
     comentario
 
     //construtor de objetos avaliacao
-    constructor (id, idLeitor, isbnLivro, nome, valor, comentario){
+    constructor (id, dataTexto, idLeitor, usuario, isbnLivro, tituloLivro, valor, comentario){
 
         this.idAvaliacaoLivro = id
+        this.dataTexto = dataTexto
         this.idLeitor = idLeitor
+        this.usuario = usuario
         this.isbnLivro = isbnLivro
-        this.tituloLivro = nome
+        this.tituloLivro = tituloLivro
         this.nota = valor 
         this.comentario = comentario
 

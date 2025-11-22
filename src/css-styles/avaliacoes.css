@@ -37,7 +37,7 @@ textarea{
     height: 8vh;
     width: 15vw;
     cursor: pointer;
-    font-size: 4vh;
+    font-size: 3vh;
     border-radius: 1.25rem;
     color: var(--branco);
     font-weight: 550;
@@ -77,16 +77,20 @@ h3{
     text-align: center;
     padding: 1% 0 1% 0;
     font-weight: 550;
+    font-family: var(--fonte-principal);
 }
 
 .janela-avaliacao span {
 
     font-size: 4vh;
+    font-weight: 400;
+    font-family: var(--fonte-principal);
 }
 
 .janela-avaliacao label {
 
     font-size: 4vh;
+    font-family: var(--fonte-principal);
 }
 
 .container-nota{
@@ -107,5 +111,7 @@ h3{
 
 .instrucao-comentario{
 
-    padding: 0 0 1% 0;
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    
 }

@@ -1,7 +1,8 @@
-import { avaliarLivro } from "../js-funcoes/funcoes-avaliacao-livro.js"
+import { avaliarLivro, jaComentou } from "../js-funcoes/funcoes-avaliacao-livro.js"
 import { ClasseLivro } from "../js-classes/classe-livro.js"
 import { ClasseLeitor } from "../js-classes/classe-leitor.js"
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js"
+import { ClasseAvaliacaoLivro } from "../js-classes/classe-avaliacao-livro.js"
 
 const botaoCancelar = document.getElementById("avaliacao-cancelar")
 const botaoEnviar = document.getElementById("avaliacao-enviar")
@@ -26,9 +27,30 @@ botaoAdicionarAvaliacao.addEventListener("click", (evento) => {
         })
 
         return
-    }
+    } else if(!jaComentou(livro.isbn, leitor)){
 
-    janelaAvaliacao.style.display = "flex";
+        janelaAvaliacao.style.display = "flex"
+    } else{
+
+        janelaAvaliacao.style.display = "flex"
+
+        let i
+        for(i=0;i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
+
+            if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === livro.isbn && ClasseAvaliacaoLivro.vetorAvaliacoes[i].usuario === leitor.usuario){
+
+                //recupera a estrela com o valor correto
+                document.querySelectorAll('input[name="rating"]').forEach(r => r.checked = false)
+                const alvo = document.querySelector(`input[name="rating"][value="${ClasseAvaliacaoLivro.vetorAvaliacoes[i].nota}"]`)
+                if (alvo) alvo.checked = true
+
+                //recupera o comentário que havia sido feito
+                document.getElementById("comentario").textContent = ClasseAvaliacaoLivro.vetorAvaliacoes[i].comentario
+            }
+        }
+
+
+    }
 
 })
 

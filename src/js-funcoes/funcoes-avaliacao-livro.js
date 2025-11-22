@@ -1,6 +1,6 @@
 import { ClasseAvaliacaoLivro } from "../js-classes/classe-avaliacao-livro.js"
 import {showAlertSync} from "./funcoes-de-dialogo.js"
-
+import { obterDataHoraServidor, hoje } from "./funcoes-de-data-e-hora.js"
 
 export async function avaliarLivro(leitor, livro){
 
@@ -19,11 +19,27 @@ export async function avaliarLivro(leitor, livro){
 
     const comentario = document.getElementById("comentario").value
 
-    const idAvaliacao = ClasseAvaliacaoLivro.vetorAvaliacoes.length + 1
+    const dataMs = await obterDataHoraServidor()
+    const dataHoje = hoje(dataMs)
 
-    const avaliacao = new ClasseAvaliacaoLivro(idAvaliacao, leitor.id, livro.isbn, livro.titulo, nota, comentario)
+    if(!jaComentou(livro.isbn, leitor)){
+      const idAvaliacao = ClasseAvaliacaoLivro.vetorAvaliacoes.length + 1
 
-    ClasseAvaliacaoLivro.vetorAvaliacoes.push(avaliacao)
+      const texto = `Avaliado em ${dataHoje}`
+
+      const avaliacao = new ClasseAvaliacaoLivro(idAvaliacao, texto, leitor.id, leitor.usuario, livro.isbn, livro.titulo, nota, comentario)
+
+      ClasseAvaliacaoLivro.vetorAvaliacoes.push(avaliacao)
+
+    } else if(jaComentou(livro.isbn, leitor)){
+
+      const avaliacaoAnterior = ClasseAvaliacaoLivro.vetorAvaliacoes.find(a => a.isbnLivro === livro.isbn && a.usuario === leitor.usuario)
+
+      avaliacaoAnterior.nota = nota
+      avaliacaoAnterior.comentario = comentario
+      avaliacaoAnterior.dataTexto = `Editado em ${dataHoje}`
+
+    }
 
     localStorage.setItem(ClasseAvaliacaoLivro.chaveLS, JSON.stringify(ClasseAvaliacaoLivro.vetorAvaliacoes))
 
@@ -85,24 +101,28 @@ export function calcularMediaLivro(isbn){
 // essa é a função que vai efetivamente preencher as estrelas representando a nota média recebida pelo livro, considerando todos os usuários que o avaliaram
 
 export function preencherEstrelas(media) {
+
+  // pega os dois blocos de estrelas
   const blocoCima  = document.querySelector("#rating-media-topo .rating-display__stars");
   const blocoBaixo = document.querySelector("#rating-media-abaixo .rating-display__stars");
 
   if (!blocoCima) return;
 
+  // sanitiza média
   let m = Number(media) || 0;
-  m = Math.max(0, Math.min(5, m));
-  m = Math.floor(m * 10) / 10;
-
+  m = Math.max(0, Math.min(5, m));          // força entre 0 e 5
+  m = Math.floor(m * 10) / 10;              // arredonda para 1 casa
   const textoMedia = String(m).replace(".", ",");
 
+  // função interna que preenche um bloco de estrelas
   function aplicarPreenchimento(bloco, { setTitle }) {
     if (!bloco) return;
 
     const wrappers = bloco.querySelectorAll(".estrela-wrapper");
 
+    // aplica title só no bloco de cima
     if (setTitle) {
-      bloco.title = `A nota média desse livro é de ${textoMedia} de 5 `;
+      bloco.title = `A nota média desse livro é de ${textoMedia} de 5`;
     } else {
       bloco.removeAttribute("title");
     }
@@ -111,17 +131,30 @@ export function preencherEstrelas(media) {
       const mask = wrapper.querySelector(".estrela-wrapper__mask");
       if (!mask) return;
 
-      const diff = m - index;
+      const diff = m - index;               // diferença entre estrela atual e média
       let pct;
-      if (diff >= 1) pct = 100;
-      else if (diff <= 0) pct = 0;
-      else pct = diff * 100;
+
+      if (diff >= 1) {
+        pct = 100;                           // estrela cheia
+      } else if (diff <= 0) {
+        pct = 0;                             // estrela vazia
+      } else {
+        // estrela fracionada: calcula percentual exato...
+        pct = diff * 100;
+
+        // ... aplica boost de preenchimento
+        pct = pct + 9;
+
+        // impede passar de 100%
+        pct = Math.min(pct, 100);
+      }
 
       mask.style.width = `${pct}%`;
     });
   }
 
-  aplicarPreenchimento(blocoCima,  { setTitle: true  });
+  // aplica no topo (com title) e na seção abaixo (sem title)
+  aplicarPreenchimento(blocoCima,  { setTitle: true });
   aplicarPreenchimento(blocoBaixo, { setTitle: false });
 }
 
@@ -198,21 +231,150 @@ export function preencherBarras(isbn){
         5: percentualNota5
     }
 
-    for (let y = 1; y <= 5; y++) {
-
-        if (percentuais[y] === 100) {
-            document.documentElement.style.setProperty(`--borda-direita-azul-${y}`, "1.25rem")
-        }
-    }
-
     // colocando um title explicativo nas barras
     if(quantidadeTotal>0){
-        document.getElementById("estrela-barra-5").title = `Esse livro recebeu ${Math.round(percentualNota5)}% de classificações nota 5`
-        document.getElementById("estrela-barra-4").title = `Esse livro recebeu ${Math.round(percentualNota4)}% de classificações nota 4`
-        document.getElementById("estrela-barra-3").title = `Esse livro recebeu ${Math.round(percentualNota3)}% de classificações nota 3`
-        document.getElementById("estrela-barra-2").title = `Esse livro recebeu ${Math.round(percentualNota2)}% de classificações nota 2`
-        document.getElementById("estrela-barra-1").title = `Esse livro recebeu ${Math.round(percentualNota1)}% de classificações nota 1`
+        document.querySelector(".container-barras-5").title = `${Math.round(percentualNota5)}% das classificações desse livro foram nota 5`
+        document.querySelector(".container-barras-4").title = `${Math.round(percentualNota4)}% das classificações desse livro foram nota 4`
+        document.querySelector(".container-barras-3").title = `${Math.round(percentualNota3)}% das classificações desse livro foram nota 3`
+        document.querySelector(".container-barras-2").title = `${Math.round(percentualNota2)}% das classificações desse livro foram nota 2`
+        document.querySelector(".container-barras-1").title = `${Math.round(percentualNota1)}% das classificações desse livro foram nota 1`
     }
 
 }
+
+// essa função será chamada pela função listarAvaliacoes par a criação dinâmica das estrelas do comentário deixado pelo leitor
+function criarBlocoEstrelas(nota) {
+  const rating = document.createElement("section");
+  rating.classList.add("rating-display");
+
+  const stars = document.createElement("div");
+  stars.classList.add("rating-display__stars");
+  rating.appendChild(stars);
+
+  const pathD = "M12 2l3.09 6.26 6.91.99-5 4.86 \
+1.18 6.89L12 17.77 5.82 21 \
+l1.18-6.89-5-4.86 6.91-.99L12 2z";
+
+  for (let s = 1; s <= 5; s++) {
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("estrela-wrapper");
+
+    // SVG base (vazia)
+    const baseSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    baseSvg.setAttribute("viewBox", "0 0 24 24");
+    baseSvg.classList.add("estrela-svg", "estrela-svg--empty", "estrela-wrapper__base");
+
+    const basePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    basePath.setAttribute("d", pathD);
+    baseSvg.appendChild(basePath);
+
+    // Máscara + SVG preenchida
+    const maskDiv = document.createElement("div");
+    maskDiv.classList.add("estrela-wrapper__mask");
+
+    const filledSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    filledSvg.setAttribute("viewBox", "0 0 24 24");
+    filledSvg.classList.add("estrela-svg", "estrela-svg--filled");
+
+    const filledPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    filledPath.setAttribute("d", pathD);
+    filledSvg.appendChild(filledPath);
+
+    // aqui decidimos se essa estrela é cheia ou vazia
+    if (s <= nota) {
+      maskDiv.style.width = "100%"; // estrela cheia
+    } else {
+      maskDiv.style.width = "0%";   // estrela vazia
+    }
+
+    maskDiv.appendChild(filledSvg);
+
+    wrapper.appendChild(baseSvg);
+    wrapper.appendChild(maskDiv);
+    stars.appendChild(wrapper);
+  }
+
+  return rating;
+}
+
     
+export async function listarAvaliacoes(isbn){
+
+  // vetor que vai receber somente as avaliações do livro da página
+  let vetor = []
+
+  let i
+
+  for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
+
+    if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
+
+      vetor.push(ClasseAvaliacaoLivro.vetorAvaliacoes[i])
+    }
+  }
+
+  let j
+
+  for(j=0;j<vetor.length;j++){
+
+    if(vetor[j].comentario !=""){
+
+      const secao = document.querySelector(".exibicao-avaliacoes")
+
+      // criando o container geral do comentário e atribuindo hierarquia
+      const containerComentario = document.createElement("div")
+      containerComentario.classList.add("container-comentario")
+      secao.appendChild(containerComentario)
+
+      // criando o container do nome de usuário e data e atribuindo hierarquia
+      const containerNomeData = document.createElement("div")
+      containerNomeData.classList.add("container-nome-data-avaliacao")
+      containerComentario.appendChild(containerNomeData)
+
+      //criando o span que contém o nome de usuário do leitor que comentou e atribuindo hierarquia
+      const usuario = document.createElement("span")
+      usuario.classList.add("nome-avaliador")
+      containerNomeData.appendChild(usuario)
+
+      //criando o span que contém a data do comentário e atribuindo hierarquia
+      const data = document.createElement("span")
+      data.classList.add("data-avaliacao")
+      containerNomeData.appendChild(data)
+
+      const estrelas = criarBlocoEstrelas(vetor[j].nota)
+      containerComentario.appendChild(estrelas)
+
+      //criando o parágrago que contém o comentário e atribuindo hierarquia
+      const comentario = document.createElement("p")
+      comentario.classList.add("comentario-exibicao")
+      containerComentario.appendChild(comentario)
+      
+      
+      usuario.textContent = vetor[j].usuario
+      data.textContent = vetor[j].dataTexto
+      comentario.textContent = vetor[j].comentario
+      estrelas.title = `Nota ${vetor[j].nota} de 5`
+    }
+  }
+   
+}
+
+export function jaComentou(isbn, leitor){
+
+  
+  let ja = false
+
+  let i
+
+  for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
+
+    
+    if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
+
+      ja = true
+      
+      return ja
+      
+    }
+  }
+}
