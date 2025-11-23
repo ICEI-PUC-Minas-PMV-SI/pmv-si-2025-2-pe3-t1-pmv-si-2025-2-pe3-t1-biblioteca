@@ -23,11 +23,18 @@ export async function avaliarLivro(leitor, livro){
     const dataHoje = hoje(dataMs)
 
     if(!jaComentou(livro.isbn, leitor)){
-      const idAvaliacao = ClasseAvaliacaoLivro.vetorAvaliacoes.length + 1
+
+      //capta o total de avaliações já feitas, mesmo que tenham sido apagadas
+      let totalAvaliacoes = localStorage.getItem("total de avaliações - livros") || 0
+
+      //o id da avaliação será o total de avaliações incrementado
+      const idAvaliacao = ++totalAvaliacoes
 
       const texto = `Avaliado em ${dataHoje}`
 
       const avaliacao = new ClasseAvaliacaoLivro(idAvaliacao, texto, leitor.id, leitor.usuario, livro.isbn, livro.titulo, nota, comentario)
+
+      localStorage.setItem("total de avaliações - livros", totalAvaliacoes)
 
       ClasseAvaliacaoLivro.vetorAvaliacoes.push(avaliacao)
 
@@ -298,7 +305,7 @@ l1.18-6.89-5-4.86 6.91-.99L12 2z";
 }
 
     
-export async function listarAvaliacoes(isbn, leitor){
+export async function listarAvaliacoes(isbn){
 
   // vetor que vai receber somente as avaliações do livro da página
   let vetor = []
@@ -311,7 +318,6 @@ export async function listarAvaliacoes(isbn, leitor){
 
       vetor.push(ClasseAvaliacaoLivro.vetorAvaliacoes[i])
 
-      console.log(ClasseAvaliacaoLivro.vetorAvaliacoes[i].idAvaliacaoLivro)
     }
   }
 
@@ -446,15 +452,15 @@ export function jaComentou(isbn, leitor){
 
   let i
 
-  for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
+  const usuarioLogado = localStorage.getItem("leitor logado") || ""
+  if(usuarioLogado != ""){
+    for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
 
-  
-    if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
+      if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
 
-      ja = true
-      
-      return ja
-      
+        ja = true
+      } 
     }
   }
+  return ja
 }

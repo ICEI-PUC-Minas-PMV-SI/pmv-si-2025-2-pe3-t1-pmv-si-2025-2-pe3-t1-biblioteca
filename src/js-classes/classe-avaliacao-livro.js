@@ -3,7 +3,6 @@ export class ClasseAvaliacaoLivro{
     // aqui estão atributos estáticos, que pertencem à classe como um todo e não a objetos específicos
     static chaveLS = "lista de avaliações - livros"
     static vetorAvaliacoes = JSON.parse(localStorage.getItem("lista de avaliações - livros")) || []
-    static numeroDeAvaliacoes = ClasseAvaliacaoLivro.vetorAvaliacoes.length
 
     // aqui estão atributos específicos de cada objeto da classe (cada avaliação específica)
     //id sequencial
@@ -34,8 +33,5 @@ export class ClasseAvaliacaoLivro{
         this.tituloLivro = tituloLivro
         this.nota = valor 
         this.comentario = comentario
-
-        // a cada chamada de construtor bem sucedida, o contador de avaliações é incrementado
-        ClasseAvaliacaoLivro.numeroDeAvaliacoes ++
     }
 }

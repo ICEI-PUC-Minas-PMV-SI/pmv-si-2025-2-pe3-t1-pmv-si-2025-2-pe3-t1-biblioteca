@@ -102,20 +102,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //chama a função que salva o vetor de 3 gêneros mais acessados no local storage
     salvarTopAcessosGeneros(3)
 
-    //trecho que permite a persistência do like
-
-
-    if(!usuarioLogado){
-        return
-    }
-
-    let vetorFavoritos = []
-
-    vetorFavoritos = leitor.meusFavoritos
-
-    persistirLike(vetorFavoritos)
-
-    // daqui pra baixo serão as chamadas de funções relacionadas às avaliações
+    // nesse trecho serão as chamadas de funções relacionadas às avaliações
 
     const media = calcularMediaLivro(isbn)
 
@@ -143,32 +130,42 @@ window.addEventListener("DOMContentLoaded", () => {
 
     preencherBarras(isbn)
 
-    listarAvaliacoes(isbn, leitor)
+    listarAvaliacoes(isbn)
+
+    //escondendo a lixeira das avaliações que não pertencem ao leitor logado
+    const lixeiras = document.querySelectorAll('[id^="lixeira-"]')
+    
+    if(!usuarioLogado){
+
+        lixeiras.forEach(el => {
+        el.style.display = "none" 
+        })
+    }
 
     //encontrando o id do comentário que pertence ao leitor, caso exista
     let z
     let idAvaliacaoLivro
 
-    for(z=0; z<ClasseAvaliacaoLivro.vetorAvaliacoes.length;z++){
+    if(usuarioLogado){
+        for(z=0; z<ClasseAvaliacaoLivro.vetorAvaliacoes.length;z++){
 
-        if(ClasseAvaliacaoLivro.vetorAvaliacoes[z].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[z].isbnLivro === isbn){
+            if(ClasseAvaliacaoLivro.vetorAvaliacoes[z].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[z].isbnLivro === isbn){
 
-          idAvaliacaoLivro = ClasseAvaliacaoLivro.vetorAvaliacoes[z].idAvaliacaoLivro
-          break
+            idAvaliacaoLivro = ClasseAvaliacaoLivro.vetorAvaliacoes[z].idAvaliacaoLivro
+            break
+            }
         }
+
+        const manter = `lixeira-${idAvaliacaoLivro}` 
+        
+        lixeiras.forEach(el => {
+            if (el.id === manter) {
+                el.style.display = ""     
+            } else {
+                el.style.display = "none" 
+            }
+        })
     }
-
-    //escondendo a lixeira das avaliações que não pertencem ao leitor logado
-    const manter = `lixeira-${idAvaliacaoLivro}` 
-    const lixeiras = document.querySelectorAll('[id^="lixeira-"]')
-
-    lixeiras.forEach(el => {
-        if (el.id === manter) {
-             el.style.display = ""     
-        } else {
-            el.style.display = "none" 
-        }
-    })
 
     if(jaComentou(isbn, leitor)){
 
@@ -184,4 +181,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
         botao.title = "Você já avaliou esse livro. Clique para editar sua avaliação."
     }
+
+    //trecho que permite a persistência do like
+
+    if(!usuarioLogado){
+        return
+    }
+
+    let vetorFavoritos = []
+
+    vetorFavoritos = leitor.meusFavoritos
+
+    persistirLike(vetorFavoritos)
+
+    
 })
