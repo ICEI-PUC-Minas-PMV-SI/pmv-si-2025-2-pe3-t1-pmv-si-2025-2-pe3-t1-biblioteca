@@ -27,6 +27,34 @@ const getleitor = () => {
   return leitorAtual || null;
 };
 
+const verificarDisponibilidade = (camposEditados) => {
+  const leitores = getLeitores()
+  const leitorAtual = getleitor()
+
+  const novoUsuario = camposEditados.usuario?.trim().toLowerCase();
+  const novoEmail = camposEditados.email?.trim().toLowerCase();
+  const novoCPF = camposEditados.cpf?.trim().toLowerCase();
+
+  for (const leitor of leitores) {
+    if (leitor !== leitorAtual) {
+
+      if (novoUsuario && leitor.usuario.toLowerCase() === novoUsuario) {
+        return { disponivel: false, campo: "usuário" }
+      }
+
+      if (novoEmail && leitor.email.toLowerCase() === novoEmail) {
+        return { disponivel: false, campo: "e-mail" }
+      }
+
+      if (novoCPF && leitor.cpf.toLowerCase() === novoCPF) {
+        return { disponivel: false, campo: "cpf" }
+      }
+    }
+  }
+
+  return { disponivel: true }
+}
+
 const preencherDados = (leitorLogado) => {
   console.log("leitorLogado", leitorLogado);
   const usuario = document.getElementById("usuario");
@@ -194,6 +222,15 @@ confirmarEditar.addEventListener("click", function (evento) {
 const botaoEditarEndereco = document.getElementById("editar-endereco-lapis");
 
 const editarFormulario = (camposEditados) => {
+
+  const verificacao = verificarDisponibilidade(camposEditados)
+  if (!verificacao.disponivel) {
+    showAlertSync({
+      title: "Não foi possível alterar o seu cadastro",
+      message: `O ${verificacao.campo} informado já está sendo utilizado por outro leitor.`,
+    })
+    return
+  }
   const leitores = getLeitores();
   const leitorAntigo = getleitor();
   const index = leitores.findIndex((l) => l.usuario === leitorAntigo.usuario);
@@ -279,6 +316,13 @@ confirmarEditarEndereco.addEventListener("click", function (evento) {
     cidade: cidade.value,
     estado: estado.value,
   });
+
+  document.getElementById("cep").disabled = true;
+  document.getElementById("rua").disabled = true;
+  document.getElementById("numero-fachada").disabled = true;
+  document.getElementById("bairro").disabled = true;
+  document.getElementById("cidade").disabled = true;
+  document.getElementById("estado").disabled = true;
 
   document.getElementById("editar-endereco-lapis").removeAttribute("hidden");
 

@@ -12,6 +12,7 @@ main {
   align-items: center;
   gap: 40px;
   flex: 1;
+  margin-bottom: 70px;
 }
 
 .navigation-bar {
@@ -141,6 +142,7 @@ body .imagens_info .container_passo-a-passo {
   grid-template-columns: repeat(3,1fr);
   row-gap: 2rem;
   width: 100%;
+  justify-items: center;
 }
 
 body .imagens_info .container_passo-a-passo div {
