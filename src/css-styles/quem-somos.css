@@ -8,11 +8,10 @@
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 40px;
   flex: 1;
-  margin: 50px 0
 }
 
 .navigation-bar {
@@ -86,15 +85,13 @@ body .info_container{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30rem;
-    width: 1;
-    background-color: var(--azul-delft);
-    gap: 1.8rem;
+    gap: 2.5rem;
+    width: 70%;
 }
 body .info_container h1 {
     color: white;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 body .info_container h2 {
@@ -106,9 +103,14 @@ body .info_container h2 {
 .container_info{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;         /* garante mesma altura */
+    justify-content: center;
     min-width:0;
+    background-color: var(--azul-delft);
+    align-items: center;
+    gap: 3rem;
+    min-height: max-content;
+    padding: 40px 40px;
+
 }
 
 body .imagens_info{
@@ -116,35 +118,73 @@ body .imagens_info{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 40rem;
-    width: 1;
-    background-color: var(--branco);;
-    gap: 1.8rem;
+    gap: 2rem;
+    width: 100%;
 }
 
 body .imagens_info h1 {
     color: #2E347B;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
-body .imagens_info h2 {
-    font-size: clamp(2rem, 2vw, 1.5rem);
-    margin: 2rem 2rem;
-    line-height: 1.5rem;
+
+body .imagens_info .container_passos {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  align-items: center;
+
+}
+body .imagens_info .container_passo-a-passo {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 2rem;
+  width: 100%;
 }
 
-body .imagens_info h3 {
-    font-size: clamp(1rem, 1.6vw, 1.25rem);
-    margin: 2rem 2rem;
-    line-height: 1.5rem;
+body .imagens_info .container_passo-a-passo div {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  gap: 2rem;
+  background-color: #D9D9D9;
+  border-radius: 2.5rem;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
 }
 
+body .imagens_info .container_passo-a-passo div img {
+  width: 155px;
+  max-height: 137px;
+}
+  
+
+body .imagens_info .container_passo-a-passo div h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+body .imagens_info .container_passo-a-passo div h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+body .imagens_info .container_passo-a-passo div p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+
+body .imagem_banner img {
+   width: 300px;
+
+}
 
 .card_passos{
   display:block;
   width: 70%;
-  margin: 2rem auto;
   background: var(--azul-colombia);
   color: var(--alcacuz);
   opacity: 0.9;
