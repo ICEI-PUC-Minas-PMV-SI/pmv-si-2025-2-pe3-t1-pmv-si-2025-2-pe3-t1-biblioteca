@@ -1,5 +1,5 @@
 import { ClasseAvaliacaoLivro } from "../js-classes/classe-avaliacao-livro.js"
-import {showAlertSync} from "./funcoes-de-dialogo.js"
+import {showAlertSync, showConfirmSync} from "./funcoes-de-dialogo.js"
 import { obterDataHoraServidor, hoje } from "./funcoes-de-data-e-hora.js"
 
 export async function avaliarLivro(leitor, livro){
@@ -298,7 +298,7 @@ l1.18-6.89-5-4.86 6.91-.99L12 2z";
 }
 
     
-export async function listarAvaliacoes(isbn){
+export async function listarAvaliacoes(isbn, leitor){
 
   // vetor que vai receber somente as avaliações do livro da página
   let vetor = []
@@ -310,6 +310,8 @@ export async function listarAvaliacoes(isbn){
     if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
 
       vetor.push(ClasseAvaliacaoLivro.vetorAvaliacoes[i])
+
+      console.log(ClasseAvaliacaoLivro.vetorAvaliacoes[i].idAvaliacaoLivro)
     }
   }
 
@@ -329,7 +331,7 @@ export async function listarAvaliacoes(isbn){
       // criando o container do nome de usuário e data e atribuindo hierarquia
       const containerNomeData = document.createElement("div")
       containerNomeData.classList.add("container-nome-data-avaliacao")
-      containerComentario.appendChild(containerNomeData)
+      
 
       //criando o span que contém o nome de usuário do leitor que comentou e atribuindo hierarquia
       const usuario = document.createElement("span")
@@ -342,13 +344,71 @@ export async function listarAvaliacoes(isbn){
       containerNomeData.appendChild(data)
 
       const estrelas = criarBlocoEstrelas(vetor[j].nota)
-      containerComentario.appendChild(estrelas)
-
+      
       //criando o parágrago que contém o comentário e atribuindo hierarquia
       const comentario = document.createElement("p")
       comentario.classList.add("comentario-exibicao")
-      containerComentario.appendChild(comentario)
       
+      //criando o container que engloba tudo acima, pra separar da lixeira
+      const containerExcetoLixeira = document.createElement("div")
+      containerExcetoLixeira.classList.add("container-exceto-lixeira")
+
+      const containerLixeira = document.createElement("div")
+      containerLixeira.classList.add("lixeira-comentario-livro")
+
+      const botaoLixeira = document.createElement("button");
+      containerLixeira.appendChild(botaoLixeira)
+      botaoLixeira.className = "btn-trash";
+      botaoLixeira.type = "button";
+      botaoLixeira.id = `lixeira-${vetor[j].idAvaliacaoLivro}`;
+
+      botaoLixeira.setAttribute("aria-label", "Remover avaliação");
+      botaoLixeira.title = "Remover avaliação";
+      // Cria o SVG
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("width", "24");
+      svg.setAttribute("height", "24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "1.8");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.classList.add("icon-trash");
+
+      // Adiciona os caminhos
+      const paths = [
+        { d: "M3 6h18" },
+        { d: "M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6" },
+        { d: "M10 11v6M14 11v6" },
+      ];
+
+      // Retângulo do corpo
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      rect.setAttribute("x", "5");
+      rect.setAttribute("y", "6");
+      rect.setAttribute("width", "14");
+      rect.setAttribute("height", "15");
+      rect.setAttribute("rx", "2");
+      svg.appendChild(rect);
+
+      // Cria os paths e adiciona ao SVG
+      paths.forEach((p) => {
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", p.d);
+        svg.appendChild(path);
+      });
+
+      // Junta SVG dentro do botão
+      botaoLixeira.appendChild(svg);
+
+      //atribuindo a hierarquia do container-comentario
+      containerComentario.appendChild(containerExcetoLixeira)
+      containerComentario.appendChild(containerLixeira)
+      containerExcetoLixeira.appendChild(containerNomeData)
+      containerExcetoLixeira.appendChild(estrelas)
+      containerExcetoLixeira.appendChild(comentario)
       
       usuario.textContent = vetor[j].usuario
       data.textContent = vetor[j].dataTexto
@@ -356,19 +416,39 @@ export async function listarAvaliacoes(isbn){
       estrelas.title = `Nota ${vetor[j].nota} de 5`
     }
   }
-   
+}
+
+export function removerAvaliacao(avaliacao){
+
+  let removeu = false
+
+  const indice = ClasseAvaliacaoLivro.vetorAvaliacoes.indexOf(avaliacao)
+
+  console.log(indice)
+  
+  if(indice!== -1){
+
+    console.log("achou")
+    ClasseAvaliacaoLivro.vetorAvaliacoes.splice(indice, 1)
+
+    localStorage.setItem("lista de avaliações - livros",JSON.stringify( ClasseAvaliacaoLivro.vetorAvaliacoes))
+    
+    removeu = true
+    return removeu
+
+  }
+    
 }
 
 export function jaComentou(isbn, leitor){
 
-  
   let ja = false
 
   let i
 
   for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
 
-    
+  
     if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
 
       ja = true

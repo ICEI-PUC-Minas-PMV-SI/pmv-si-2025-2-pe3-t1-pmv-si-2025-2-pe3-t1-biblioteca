@@ -623,20 +623,36 @@ background-color: var(--azul-colombia);
 .container-comentario{
 
   display: flex;
+  flex-direction: row;
   width: 60vw;
-  align-items: first baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.5% 0 2.5% 1.5%;
   border-bottom: 0.2rem solid #0F040480 ;
   background-color: #BDD5EA30;
   margin-bottom: 1%;
   border-radius: 1.25rem;
+}
+
+.container-exceto-lixeira{
+
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  gap: 1.5rem;
+  padding: 1.5% 0 2.5% 1.5%;
+
+}
+
+.lixeira-comentario-livro{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 2% 0 0;
 
 
- 
-  
-  
+
 }
 
 .container-nome-data-avaliacao{

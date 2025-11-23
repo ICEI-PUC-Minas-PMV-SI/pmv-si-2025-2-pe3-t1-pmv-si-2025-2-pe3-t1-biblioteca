@@ -8,10 +8,11 @@ import { salvarTopAcessos} from "../js-funcoes/funcao-livros-mais-acessados.js"
 import { salvarTopAcessosGeneros} from "../js-funcoes/funcao-generos-mais-acessados.js"
 import { persistirLike } from "../js-funcoes/funcao-favorito-persistir.js"
 import { calcularMediaLivro, listarAvaliacoes, preencherBarras, preencherEstrelas, quantidadeAvaliacoes, jaComentou } from "../js-funcoes/funcoes-avaliacao-livro.js"
+import { ClasseAvaliacaoLivro } from "../js-classes/classe-avaliacao-livro.js"
 
 
 //encontrando o objeto leitor
-const usuarioLogado = localStorage.getItem("leitor logado")
+const usuarioLogado = localStorage.getItem("leitor logado") || ""
 let leitor
 
 let n
@@ -28,6 +29,18 @@ for(n=0; n<ClasseLeitor.vetorLeitores.length;n++){
 
 //encontrando o isbn do livro
 const isbn = sessionStorage.getItem("isbn_redirecionamento")
+
+let livro
+
+let i
+
+for(i=0; i<ClasseLivro.vetorLivros.length;i++){
+
+    if(ClasseLivro.vetorLivros[i].isbn === isbn){
+        livro = ClasseLivro.vetorLivros[i]
+        break
+    }
+}
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -130,8 +143,33 @@ window.addEventListener("DOMContentLoaded", () => {
 
     preencherBarras(isbn)
 
-    listarAvaliacoes(isbn)
-    
+    listarAvaliacoes(isbn, leitor)
+
+    //encontrando o id do comentário que pertence ao leitor, caso exista
+    let z
+    let idAvaliacaoLivro
+
+    for(z=0; z<ClasseAvaliacaoLivro.vetorAvaliacoes.length;z++){
+
+        if(ClasseAvaliacaoLivro.vetorAvaliacoes[z].usuario === leitor.usuario && ClasseAvaliacaoLivro.vetorAvaliacoes[z].isbnLivro === isbn){
+
+          idAvaliacaoLivro = ClasseAvaliacaoLivro.vetorAvaliacoes[z].idAvaliacaoLivro
+          break
+        }
+    }
+
+    //escondendo a lixeira das avaliações que não pertencem ao leitor logado
+    const manter = `lixeira-${idAvaliacaoLivro}` 
+    const lixeiras = document.querySelectorAll('[id^="lixeira-"]')
+
+    lixeiras.forEach(el => {
+        if (el.id === manter) {
+             el.style.display = ""     
+        } else {
+            el.style.display = "none" 
+        }
+    })
+
     if(jaComentou(isbn, leitor)){
 
         const botao = document.getElementById("adicionar-avaliacao")

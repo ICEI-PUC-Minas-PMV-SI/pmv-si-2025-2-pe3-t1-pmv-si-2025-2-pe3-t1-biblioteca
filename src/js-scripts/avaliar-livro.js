@@ -30,6 +30,7 @@ botaoAdicionarAvaliacao.addEventListener("click", (evento) => {
     } else if(!jaComentou(livro.isbn, leitor)){
 
         janelaAvaliacao.style.display = "flex"
+        
     } else{
 
         janelaAvaliacao.style.display = "flex"
@@ -45,11 +46,9 @@ botaoAdicionarAvaliacao.addEventListener("click", (evento) => {
                 if (alvo) alvo.checked = true
 
                 //recupera o comentário que havia sido feito
-                document.getElementById("comentario").textContent = ClasseAvaliacaoLivro.vetorAvaliacoes[i].comentario
+                document.getElementById("comentario").value = ClasseAvaliacaoLivro.vetorAvaliacoes[i].comentario
             }
         }
-
-
     }
 
 })
@@ -57,6 +56,13 @@ botaoAdicionarAvaliacao.addEventListener("click", (evento) => {
 botaoCancelar.addEventListener("click", (evento) => {
 
     evento.preventDefault()
+
+    //limpa valores que podem ter sido preenchidos
+    document.querySelectorAll('input[name="rating"]').forEach(r => r.checked = false)
+    const alvo = document.querySelector(`input[name="rating"][value=""]`)
+    if (alvo) alvo.checked = true
+    document.getElementById("comentario").value = ""
+
     janelaAvaliacao.style.display = "none"
 
     return
