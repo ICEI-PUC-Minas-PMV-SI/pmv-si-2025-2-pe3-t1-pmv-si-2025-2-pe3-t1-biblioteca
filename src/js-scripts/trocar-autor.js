@@ -8,9 +8,29 @@ import { carregarAncorasCarrossel } from "../js-funcoes/funcao-carrossel-autor.j
 import { salvarTopAcessos} from "../js-funcoes/funcao-autores-mais-acessados.js"
 import { persistirLike } from "../js-funcoes/funcao-favorito-persistir-autor.js"
 import { salvarTopAcessosGeneros } from "../js-funcoes/funcao-generos-mais-acessados.js"
-
+import { calcularMediaAutor, preencherEstrelas, quantidadeAvaliacoes, preencherBarras, criarBlocoEstrelas, listarAvaliacoes, jaComentou } from "../js-funcoes/funcoes-avaliacao-autor.js"
+import { ClasseAvaliacaoAutor } from "../js-classes/classe-avaliacao-autor.js"
 
 window.addEventListener("DOMContentLoaded", () => {
+
+    //encontrando o objeto leitor
+    const usuarioLogado = localStorage.getItem("leitor logado") || ""
+
+    let leitor
+
+    let n
+
+    for(n=0; n<ClasseLeitor.vetorLeitores.length;n++){
+
+        if(ClasseLeitor.vetorLeitores[n].usuario === usuarioLogado){
+
+            leitor = ClasseLeitor.vetorLeitores[n]
+
+            break
+        }
+    }
+
+    console.log(usuarioLogado)
 
     //trecho que carrega as informações do autor
     const id = sessionStorage.getItem("id_autor_redirecionamento")
@@ -52,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
      //incrementa o número de acessos do autor
     ClasseAutor.vetorAutores[i].numeroDeAcessos++
 
-    //esse trecho é para incrementar o número de acessos do objeto gênero associado ao livro
+    //esse trecho é para incrementar o número de acessos do objeto gênero associado ao autor
     let k
     console.log(autor.generos[0])
     for(k=0;k<8;k++){
@@ -71,34 +91,98 @@ window.addEventListener("DOMContentLoaded", () => {
     //atualiza a lista de autores no local storage
     localStorage.setItem("lista de autores", JSON.stringify(ClasseAutor.vetorAutores))
 
-    //chama a função que salva o vetor de 8 livros mais acessados no local storage
+    //chama a função que salva o vetor de 8 autores mais acessados no local storage
     salvarTopAcessos(8)
     //chama a função que salva o vetor de 3 gêneros mais acessados no local storage
     salvarTopAcessosGeneros(3)
 
-    //trecho que permite a persistência do like
+    // nesse trecho serão as chamadas de funções relacionadas às avaliações
     
-        const usuarioLogado = localStorage.getItem("leitor logado")
+        const media = calcularMediaAutor(id)
+    
+        preencherEstrelas(media)
+    
+        document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(id)} classificaçoes`
+    
+        if(quantidadeAvaliacoes(id) === 0){
+    
+            document.querySelector("#rating-media-topo .rating-display__stars").title = "Esse autor ainda não recebeu classificações"
+        }
+        if(quantidadeAvaliacoes(id)>0){
+    
+    
+            if(quantidadeAvaliacoes(id) === 1){
+    
+                document.getElementById("quantidade-avaliacoes").textContent = "1 classificação"
+            }
+            else{
+            document.getElementById("quantidade-avaliacoes").textContent = `${quantidadeAvaliacoes(id)} classificações`
+            }
+            document.getElementById("nota-avaliacao").textContent = String(media).replace(".",",")
+            document.getElementById("nota-avaliacao").style.fontSize = "5.0rem";
+        }
+    
+        preencherBarras(id)
+    
+        listarAvaliacoes(id)
+    
+        //escondendo a lixeira das avaliações que não pertencem ao leitor logado
+        const lixeiras = document.querySelectorAll('[id^="lixeira-"]')
+        
+        if(!usuarioLogado){
+    
+            lixeiras.forEach(el => {
+            el.style.display = "none" 
+            })
+        }
+    
+        //encontrando o id do comentário que pertence ao leitor, caso exista
+        let z
+        let idAvaliacaoAutor
+    
+        if(usuarioLogado){
+            for(z=0; z<ClasseAvaliacaoAutor.vetorAvaliacoes.length;z++){
+    
+                if(ClasseAvaliacaoAutor.vetorAvaliacoes[z].usuario === leitor.usuario && ClasseAvaliacaoAutor.vetorAvaliacoes[z].idAutor === id){
+    
+                idAvaliacaoAutor = ClasseAvaliacaoAutor.vetorAvaliacoes[z].idAvaliacaoAutor
+                break
+                }
+            }
+    
+            const manter = `lixeira-${idAvaliacaoAutor}` 
+            
+            lixeiras.forEach(el => {
+                if (el.id === manter) {
+                    el.style.display = ""     
+                } else {
+                    el.style.display = "none" 
+                }
+            })
+        }
+    
+        if(jaComentou(id, leitor)){
+    
+            const botao = document.getElementById("adicionar-avaliacao")
+    
+            const texto = document.getElementById("texto-botao-avaliacao-autor")
+            texto.textContent = "Editar sua avaliação"
+        
+            const lapis = document.createElement("img")
+            lapis.src = "../img/icone_lapis_branco.svg"
+            lapis.classList.add("icone-lapis")
+            botao.appendChild(lapis)
+    
+            botao.title = "Você já avaliou esse autor. Clique para editar sua avaliação."
+        }
+
+    //trecho que permite a persistência do like
     
         if(!usuarioLogado){
             return
         }
     
         let vetorFavoritos = []
-    
-        let leitor
-    
-        let n
-    
-        for(n=0; n<ClasseLeitor.vetorLeitores.length;n++){
-    
-            if(ClasseLeitor.vetorLeitores[n].usuario === usuarioLogado){
-    
-                leitor = ClasseLeitor.vetorLeitores[n]
-    
-                break
-            }
-        }
     
         vetorFavoritos = leitor.meusAutoresFavoritos
 

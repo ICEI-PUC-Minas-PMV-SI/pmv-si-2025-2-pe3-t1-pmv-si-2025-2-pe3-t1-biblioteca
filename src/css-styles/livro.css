@@ -651,7 +651,15 @@ background-color: var(--azul-colombia);
   height: 100%;
   padding: 0 2% 0 0;
 
+}
 
+.lixeira-comentario-autor{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 2% 0 0;
 
 }
 
