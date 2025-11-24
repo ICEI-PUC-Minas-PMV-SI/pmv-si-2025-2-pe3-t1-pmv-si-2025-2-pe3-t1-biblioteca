@@ -97,7 +97,7 @@ body .info_container h1 {
 
 body .info_container h2 {
     color: white;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 2rem;
 }
 
@@ -228,7 +228,7 @@ body .depoimentos_info .container_card_depoimentos div {
 }
 
 body .depoimentos_info .container_card_depoimentos div span {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
   color: var(--branco);
   font-weight: 600;
