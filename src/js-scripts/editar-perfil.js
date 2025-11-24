@@ -31,12 +31,14 @@ const verificarDisponibilidade = (camposEditados) => {
   const leitores = getLeitores()
   const leitorAtual = getleitor()
 
+  console.log(leitorAtual, "teste")
+
   const novoUsuario = camposEditados.usuario?.trim().toLowerCase();
   const novoEmail = camposEditados.email?.trim().toLowerCase();
   const novoCPF = camposEditados.cpf?.trim().toLowerCase();
 
   for (const leitor of leitores) {
-    if (leitor !== leitorAtual) {
+    if (leitor.usuario !== leitorAtual.usuario) {
 
       if (novoUsuario && leitor.usuario.toLowerCase() === novoUsuario) {
         return { disponivel: false, campo: "usuário" }
@@ -317,13 +319,6 @@ confirmarEditarEndereco.addEventListener("click", function (evento) {
     estado: estado.value,
   });
 
-  document.getElementById("cep").disabled = true;
-  document.getElementById("rua").disabled = true;
-  document.getElementById("numero-fachada").disabled = true;
-  document.getElementById("bairro").disabled = true;
-  document.getElementById("cidade").disabled = true;
-  document.getElementById("estado").disabled = true;
-
   document.getElementById("editar-endereco-lapis").removeAttribute("hidden");
 
   document
@@ -332,6 +327,13 @@ confirmarEditarEndereco.addEventListener("click", function (evento) {
   document
     .getElementById("editar-endereco-confirmar")
     .setAttribute("hidden", "");
+
+  document.getElementById("cep").disabled = true;
+  document.getElementById("rua").disabled = true;
+  document.getElementById("numero-fachada").disabled = true;
+  document.getElementById("bairro").disabled = true;
+  document.getElementById("cidade").disabled = true;
+  document.getElementById("estado").disabled = true;
 });
 
 document.getElementById("checkbox-genero-1").disabled = true;
@@ -599,6 +601,11 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   console.log("novaSenha.value", novaSenha.value);
   console.log("confirmarEditarSenha.value", confirmarEditarSenha.value);
 
+  if (novaSenha.value === "" || confirmarNovaSenha.value === "" || senha.value === "") {
+    alert("Os campos não devem estar vazios.");
+    return;
+  }
+
   if (senha.value !== usuarioPadrao.senha) {
     alert("A senha atual está incorreta!");
     return;
@@ -624,9 +631,6 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   } else if (!novaSenha.value) {
     alert("Digite uma nova senha");
     return;
-  } else if (novaSenha.value === "" || confirmarNovaSenha.value === "") {
-    alert("Digite uma nova senha");
-    return;
-  } else alert("As senhas devem ser digitadas iguais");
+   } else alert("As senhas devem ser digitadas iguais");
 
 });
