@@ -123,7 +123,7 @@ body .imagens_info{
     width: 100%;
 }
 
-body .imagens_info h1 {
+body .imagens_info h2 {
     color: #2E347B;
     font-weight: 600;
     font-size: 4rem;
@@ -163,12 +163,12 @@ body .imagens_info .container_passo-a-passo div img {
 }
   
 
-body .imagens_info .container_passo-a-passo div h2 {
+body .imagens_info .container_passo-a-passo div h3 {
   font-size: 2.5rem;
   text-align: center;
 }
 
-body .imagens_info .container_passo-a-passo div h3 {
+body .imagens_info .container_passo-a-passo div h4 {
   font-size: 2rem;
   text-align: center;
 }
@@ -183,6 +183,117 @@ body .imagem_banner img {
    width: 300px;
 
 }
+
+body .depoimentos_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    background-color: #2E347B;
+    padding: 40px;
+}
+
+body .depoimentos_info h2 {
+    color: #FFFF;
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+body .depoimentos_info .container_depoimentos {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  align-items: center;
+
+}
+body .depoimentos_info .container_card_depoimentos {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 2rem;
+  width: 100%;
+  justify-items: center;
+}
+
+body .depoimentos_info .container_card_depoimentos div {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  gap: 2rem;
+  border-radius: 2.5rem;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+body .depoimentos_info .container_card_depoimentos div span {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--branco);
+  font-weight: 600;
+}
+
+body .perguntas_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    width: 100%;
+}
+
+body .perguntas_info .container_perguntas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+body .perguntas_info .container_perguntas .container_perguntas_estrutura{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  row-gap: 5rem;
+  column-gap: 2rem;
+  justify-items: center;
+}
+
+body .perguntas_info .container_perguntas .container_perguntas_estrutura div{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  width: 75%;
+}
+
+body .perguntas_info .container_perguntas .container_perguntas_estrutura div h3{
+  text-align: start;
+}
+
+body .perguntas_info h2 {
+    color: var(--azul-delft);
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+body .perguntas_info h3 {
+    color: var(--azul-delft);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+body .perguntas_info p {
+    color: var(--alcacuz);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+body .imagem_banner img {
+   width: 300px;
+
+}
+
 
 .card_passos{
   display:block;
