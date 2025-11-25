@@ -563,7 +563,6 @@ botaoEditarSenha.addEventListener("click", function (evento) {
   botaoEditarSenha.setAttribute("hidden", "");
   document.getElementById("editar-senha-confirmar").removeAttribute("hidden");
   document.getElementById("editar-senha-cancelar").removeAttribute("hidden");
-  document.getElementById("editar-senha-confirmar").removeAttribute("hidden");
   senha.setAttribute("placeholder", "Digite a sua senha atual");
   document.getElementById("quadro-senhas").style.display = "grid";
   senha.disabled = false;
@@ -610,8 +609,8 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   for (const campo of campos) {
     if (campo.valor === "") {
       showAlertSync({
-      title: "Campo Vazio",
-      message: `O campo "${campo.nome}" não pode estar vazio`,
+      title: "Atenção",
+      message: `Preencha todos os campos!`,
     });
     return;
     }
@@ -619,8 +618,8 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
 
   if (senha.value !== usuarioPadrao.senha) {
     showAlertSync({
-      title: "Senha inválida",
-      message: "A senha deve ser digitada corretamente.",
+      title: "Senha incorreta",
+      message: "Sua senha atual está incorreta. Digite sua senha atual novamente.",
     });
     return;
   } else if (novaSenha.value === confirmarNovaSenha.value && confirmarNovaSenha !== "") {
@@ -642,8 +641,9 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     novaSenha.value = "";
     confirmarNovaSenha.value = "";
   } else showAlertSync({
-      title: "As senhas não coincidem",
-      message: "As senhas deve ser digitadas corretamente.",
+      title: "Senhas diferentes",
+      message: "As novas senhas digitadas não estão iguais. Repita o procedimento.",
     });
 
 });
+
