@@ -554,6 +554,7 @@ editarFavoritosConfirmar.addEventListener("click", function (evento) {
   document.querySelectorAll(".ancora-genero").forEach((checkbox) => {
     checkbox.style.opacity = "0.9";
   });
+
 });
 
 const botaoEditarSenha = document.getElementById("editar-senha-lapis");
@@ -640,6 +641,11 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     
     novaSenha.value = "";
     confirmarNovaSenha.value = "";
+
+    showAlertSync({
+      title: "Senha alterada com sucesso",
+      message: `Sua senha foi alterada. Utilize sua nova senha na próxima entrada no sistema.`,
+    })
   } else showAlertSync({
       title: "Senhas diferentes",
       message: "As novas senhas digitadas não estão iguais. Repita o procedimento.",
