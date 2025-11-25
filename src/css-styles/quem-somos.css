@@ -92,13 +92,13 @@ body .info_container{
 body .info_container h1 {
     color: white;
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 body .info_container h2 {
     color: white;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .container_info{
@@ -126,7 +126,7 @@ body .imagens_info{
 body .imagens_info h2 {
     color: #2E347B;
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 
@@ -164,12 +164,12 @@ body .imagens_info .container_passo-a-passo div img {
   
 
 body .imagens_info .container_passo-a-passo div h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
 }
 
 body .imagens_info .container_passo-a-passo div h4 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-align: center;
 }
 
@@ -198,7 +198,7 @@ body .depoimentos_info {
 body .depoimentos_info h2 {
     color: #FFFF;
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 body .depoimentos_info .container_depoimentos {
@@ -228,7 +228,7 @@ body .depoimentos_info .container_card_depoimentos div {
 }
 
 body .depoimentos_info .container_card_depoimentos div span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   color: var(--branco);
   font-weight: 600;
@@ -239,7 +239,7 @@ body .perguntas_info {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3.5rem;
+    gap: 3rem;
     width: 100%;
 }
 
@@ -274,13 +274,13 @@ body .perguntas_info .container_perguntas .container_perguntas_estrutura div h3{
 body .perguntas_info h2 {
     color: var(--azul-delft);
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 body .perguntas_info h3 {
     color: var(--azul-delft);
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 body .perguntas_info p {

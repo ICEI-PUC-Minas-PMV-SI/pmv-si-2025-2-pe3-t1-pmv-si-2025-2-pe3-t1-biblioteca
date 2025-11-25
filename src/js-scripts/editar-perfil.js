@@ -601,13 +601,27 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   console.log("novaSenha.value", novaSenha.value);
   console.log("confirmarEditarSenha.value", confirmarEditarSenha.value);
 
-  if (novaSenha.value === "" || confirmarNovaSenha.value === "" || senha.value === "") {
-    alert("Os campos não devem estar vazios.");
+  const campos = [
+    { valor: senha.value, nome: "Senha"},
+    { valor: novaSenha.value, nome: "Nova senha"},
+    { valor: confirmarNovaSenha.value, nome: "Confirmar nova senha"}
+  ]
+
+  for (const campo of campos) {
+    if (campo.valor === "") {
+      showAlertSync({
+      title: "Campo Vazio",
+      message: `O campo "${campo.nome}" não pode estar vazio`,
+    });
     return;
+    }
   }
 
   if (senha.value !== usuarioPadrao.senha) {
-    alert("A senha atual está incorreta!");
+    showAlertSync({
+      title: "Senha inválida",
+      message: "A senha deve ser digitada corretamente.",
+    });
     return;
   } else if (novaSenha.value === confirmarNovaSenha.value && confirmarNovaSenha !== "") {
     editarFormulario({
@@ -628,9 +642,9 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     alert("Sua senha foi alterada com sucesso!");
     novaSenha.value = "";
     confirmarNovaSenha.value = "";
-  } else if (!novaSenha.value) {
-    alert("Digite uma nova senha");
-    return;
-   } else alert("As senhas devem ser digitadas iguais");
+  } else showAlertSync({
+      title: "As senhas não coincidem",
+      message: "As senhas deve ser digitadas corretamente.",
+    });
 
 });
