@@ -111,9 +111,12 @@ function shakeOtp() {
   const otpBox = document.getElementById("otp");
   const inputs = document.querySelectorAll("#otp .codigo-validacao__input");
   const hidden = document.getElementById("codigo-validacao");
+  const btnCancelar2 = document.getElementById("confirmar-codigo_botao-cancelar")
 
   const btnRedefinirSenha = document.getElementById("redefinir-senha_botao-confirmar")
   const btnCancelar3 = document.getElementById("redefinir-senha_botao-cancelar");
+  const btnProsseguirCodigo = document.getElementById("confirmar-codigo_botao-confirmar");
+
 
   otpBox?.addEventListener("animationend", () => otpBox.classList.remove("otp--erro"));
 
@@ -251,47 +254,34 @@ function shakeOtp() {
     updateHidden("");
   }
 
-  function updateHiddenAndValidate() {
-    const code = getOtpValue();
-    updateHidden(code);
+function updateHiddenAndValidate() {
+  const code = getOtpValue();
+  updateHidden(code);
+  
+}
 
-    if (code.length === (inputs ? inputs.length : 0)) {
-      (async () => {
-        if (code === OTP_EXPECTED) {
-          // LOADING (Section 2) ANTES de seguir para a Section 3
-          await startSectionLoading(sec2, 900);
-          setOtpState("otp--ok");
-          showStep(3);
-          document.getElementById("nova-senha")?.focus();
-        } else {
-          // Somente SHAKE (sem loading) antes da mensagem
-          setOtpState("otp--erro");
-          console.log("vai fazer o shake")
-          shakeOtp();
-
-          showValidateFixSync(
-            {
-              title: "Código inválido",
-              message: "O código inserido está incorreto. Deseja  digitar novamente?",
-              cancelText: "Cancelar procedimento",
-              continueText: "Inserir código novamente",
-            },
-            (ok) => {
-              if (ok) {
-                // Tentar de novo → limpa e volta pro 1º dígito
-                clearOtp();
-                blurNow(document.activeElement);
-                focusOtpFirstAggressive();
-              } else {
-                // Cancelar → redireciona pro index
-                window.location.href = "../../index.html";
-              }
-            }
-          );
+  // Cancelar na etapa 2
+  btnCancelar2?.addEventListener("click", (e) => {
+     e.preventDefault();
+   
+     showConfirmSync(
+       {
+         title: "Cancelar redefinição de senha",
+         message: "Todos os dados preenchidos serão perdidos.",
+         confirmText: "Cancelar o procedimento",
+         cancelText: "Continuar o procedimento",
+       },
+       (ok) => {
+         if (ok) {
+         // Cancelar → redireciona pro index
+              window.location.href = "../../index.html"
+       } else {
+        finalizarCancelamento()
+              
         }
-      })();
-    }
-  }
+      }
+     );
+  });
 
   if (hasOTP) {
     inputs.forEach((inp, i) => {
@@ -333,6 +323,55 @@ function shakeOtp() {
       });
     });
   }
+
+  btnProsseguirCodigo?.addEventListener("click", async () => {
+  const code = getOtpValue();
+
+  // Ainda não preencheu os 6 dígitos
+  if (code.length < (inputs ? inputs.length : 0)) {
+    showAlertSync(
+      {
+        title: "Código incompleto",
+        message: "Digite os 6 dígitos do código antes de prosseguir."
+      },
+      () => {
+        focusOtpFirstAggressive();
+      }
+    );
+    return;
+  }
+
+  // Código correto
+  if (code === OTP_EXPECTED) {
+    await startSectionLoading(sec2, 900);
+    setOtpState("otp--ok");
+    showStep(3);
+    document.getElementById("nova-senha")?.focus();
+    return;
+  }
+
+  // Código incorreto
+  setOtpState("otp--erro");
+  shakeOtp();
+
+  showValidateFixSync(
+    {
+      title: "Código inválido",
+      message: "O código inserido está incorreto. Deseja digitar novamente?",
+      cancelText: "Cancelar procedimento",
+      continueText: "Inserir código novamente",
+    },
+    (ok) => {
+      if (ok) {
+        clearOtp();
+        blurNow(document.activeElement);
+        focusOtpFirstAggressive();
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+  );
+});
 
   // ===== Etapa 3 =====
   btnRedefinirSenha?.addEventListener("click", async (e) => {

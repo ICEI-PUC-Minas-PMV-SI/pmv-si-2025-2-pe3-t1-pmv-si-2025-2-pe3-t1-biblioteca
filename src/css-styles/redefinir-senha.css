@@ -7,21 +7,21 @@
 #body-redefinir-senha .redefinir-senha_parte-2,
 #body-redefinir-senha .redefinir-senha_parte-3,
 #body-redefinir-senha .body-redefinir-senha_parte-3{
-  margin: 24px auto;
-  padding: 16px;
+  margin: 1.5rem auto;
+  padding: 1rem;
   gap: 10%;
 }
 
 #body-redefinir-senha .redefinir-senha_titulo{
   text-align: center;
-  margin: 8px 0 4px;
+  margin: 1vh 0 2vh;
   font: 700 clamp(20px, 3.2vw, 28px)/1.2 var(--fonte-principal);
   color: var(--branco);
 }
 
 #body-redefinir-senha .redefinir-senha_orientação{
-  margin: 0 0 12px;
-  font: 500 clamp(14px, 1.7vw, 24px)/1.5 var(--fonte-principal);
+  margin: 0 0 3vhpx;
+  font: 500 clamp(0.8rem, 1.7vw, 1.5rem)/1.5 var(--fonte-principal);
   color: var(--texto-secundario);
   text-align: center;
 }
@@ -30,11 +30,22 @@
 #body-redefinir-senha .redefinir-senha_formulario-1 label,
 #body-redefinir-senha .redefinir-senha_formulario-3 label{
   display: block;
-  margin: 8px 0 6px;
+  margin: 1.0vh 0 1.5vh;
   font-weight: 600;
   color: var(--white);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
+
+#confirmar-codigo_botao-cancelar{
+
+  background-color: var(--vermelho-alaranjado) !important;
+}
+
+#botoes-prosseguir-codigo{
+
+  margin: 10vh 0 5vh 0 !important;
+}
+
 
 #body-redefinir-senha input[type="email"],
 #body-redefinir-senha input[type="password"]{
@@ -43,7 +54,7 @@
   border: 1px solid var(--alcacuz / 0.25);
   border-radius: 10px;
   background: var(--branco);
-  color: var(--texto);
+  color: var(--alcacuz);
   font: 500 16px/1.35 var(--fonte-principal);
 }
 
@@ -64,7 +75,7 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin-top: 16px;
+  margin: 4vh 0 2vh 0;
 }
 
 #body-redefinir-senha .redefinir-senha_botoes button{
@@ -77,9 +88,9 @@
   background: var(--azul-delft);
   color: var(--branco);
   transition: filter .15s ease, transform .05s ease;
-   border: solid white;
-   margin: 1.5rem 0.5rem 0 0.5rem;
-   width: 30%;
+  border: solid white;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  width: 30%;
 }
 
 #body-redefinir-senha #enviar-codigo_botao-cancelar,
@@ -87,11 +98,11 @@
   background: var(--vermelho-alaranjado);
   color: var(--branco);
   border-color: var(--vermelho-alaranjado);
-   border: solid white;
+  border: solid white;
 }
 
 #body-redefinir-senha .redefinir-senha_botoes button:hover{
-  filter: brightness(1.07);
+  filter: brightness(1.2);
 }
 #body-redefinir-senha .redefinir-senha_botoes button:active{
   transform: translateY(1px);
@@ -106,9 +117,9 @@
    ================================= */
 #body-redefinir-senha .codigo-validacao{
   display: flex;
-  gap: 14px;
+  gap: 0.8rem;
   justify-content: center;
-  margin: 18px 0 8px;
+  margin: 2rem 0 0.5rem;
   position: relative;
 }
 
@@ -121,12 +132,12 @@
   outline: none;
   padding: 6px 0 10px;
   border-bottom: 2px dashed var(--alcacuz / 0.25);
-  color: var(--texto);
+  color: var(--branco);
   caret-color: transparent;
 }
 
 #body-redefinir-senha .codigo-validacao__input::placeholder{
-  color: var(--alcacuz / 0.45);
+  color: var(--branco);
 }
 
 /* Foco/Preenchido: apenas com a paleta */
@@ -207,7 +218,7 @@
   background-color: var(--azul-delft);
    color: var(--branco);
    border-radius: 1rem;
-   height: 60vh;
+   height: 70vh;
    width: 50vw;
    display: flex;
    flex-direction: column;
@@ -216,8 +227,8 @@
 
 .redefinir-senha_formulario-1{
   display: flex;
-   flex-direction: column;
-   gap: 2rem;
+  flex-direction: column;
+  gap: 0.25vh;
 }
 
 .redefinir-senha_botoes{
