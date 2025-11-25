@@ -638,8 +638,7 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     document.getElementById("quadro-senhas").style.display = "none";
     document.getElementById("senha").disabled = true;
     senha.value = usuarioAtual.senha;
-
-    alert("Sua senha foi alterada com sucesso!");
+    
     novaSenha.value = "";
     confirmarNovaSenha.value = "";
   } else showAlertSync({
