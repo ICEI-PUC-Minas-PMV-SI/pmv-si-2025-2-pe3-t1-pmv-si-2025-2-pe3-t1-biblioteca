@@ -17,12 +17,17 @@ export function selecionarLivro(leitor, livro) {
     let duplicidade = false
     let i
 
-    for(i=0;i<leitor.minhaSelecao.length;i++){
 
-        if(leitor.minhaSelecao[i].tombo === livro.tombo){
+    if(leitor.minhaSelecao.length>0){
 
-            duplicidade = true
-            break
+        console.log("entrou")
+        for(i=0;i<leitor.minhaSelecao.length;i++){
+
+            if(leitor.minhaSelecao[i].tombo === livro.tombo){
+
+                duplicidade = true
+                break
+            }
         }
     }
     
