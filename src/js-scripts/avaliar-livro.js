@@ -14,13 +14,17 @@ const leitorLogado = localStorage.getItem("leitor logado") || ""
 const leitor = ClasseLeitor.vetorLeitores.find(le => le.usuario === localStorage.getItem("leitor logado"))
 const livro = ClasseLivro.vetorLivros.find(li => li.isbn === sessionStorage.getItem("isbn_redirecionamento"))
 
+if (leitorLogado === "") {
+    botaoAdicionarAvaliacao.style.display = "none"
+}
+
 botaoAdicionarAvaliacao.addEventListener("click", (evento) => {
 
     evento.preventDefault()
 
 
     if(leitorLogado === ""){
-
+        
         showAlertSync({
             title: "Usuário não logado",
             message: "Acesse sua conta para adicionar uma avaliação."
