@@ -1,5 +1,6 @@
 import { showAlertSync } from "../js-funcoes/funcoes-de-dialogo.js";
 import { ClasseLeitor } from "../js-classes/classe-leitor.js";
+import { showConfirmSync } from "../js-funcoes/funcoes-de-dialogo.js";
 
 const slug = (texto) => {
   const slug = texto
@@ -20,18 +21,14 @@ const getleitor = () => {
 
   if (!usuarioLogado) return null;
 
-  const leitorAtual = leitores.find(
-    (l) => l.usuario === usuarioLogado
-  );
+  const leitorAtual = leitores.find((l) => l.usuario === usuarioLogado);
 
   return leitorAtual || null;
 };
 
 const verificarDisponibilidade = (camposEditados) => {
-  const leitores = getLeitores()
-  const leitorAtual = getleitor()
-
-  console.log(leitorAtual, "teste")
+  const leitores = getLeitores();
+  const leitorAtual = getleitor();
 
   const novoUsuario = camposEditados.usuario?.trim().toLowerCase();
   const novoEmail = camposEditados.email?.trim().toLowerCase();
@@ -39,23 +36,22 @@ const verificarDisponibilidade = (camposEditados) => {
 
   for (const leitor of leitores) {
     if (leitor.usuario !== leitorAtual.usuario) {
-
       if (novoUsuario && leitor.usuario.toLowerCase() === novoUsuario) {
-        return { disponivel: false, campo: "usuário" }
+        return { disponivel: false, campo: "usuário" };
       }
 
       if (novoEmail && leitor.email.toLowerCase() === novoEmail) {
-        return { disponivel: false, campo: "e-mail" }
+        return { disponivel: false, campo: "e-mail" };
       }
 
       if (novoCPF && leitor.cpf.toLowerCase() === novoCPF) {
-        return { disponivel: false, campo: "cpf" }
+        return { disponivel: false, campo: "cpf" };
       }
     }
   }
 
-  return { disponivel: true }
-}
+  return { disponivel: true };
+};
 
 const preencherDados = (leitorLogado) => {
   console.log("leitorLogado", leitorLogado);
@@ -198,6 +194,50 @@ confirmarEditar.addEventListener("click", function (evento) {
   const telefone = document.getElementById("telefone");
   const email = document.getElementById("email");
 
+  const verificacao = verificarDisponibilidade({
+    usuario: usuario.value,
+    cpf: cpf.value,
+    email: email.value,
+  });
+
+  if (!verificacao.disponivel) {
+    showConfirmSync(
+      {
+        title: "Não foi possível alterar o seu cadastro",
+        message: `O ${verificacao.campo} informado já está sendo utilizado por outro leitor.`,
+        confirmText: `Cancelar edição`,
+        cancelText: `Corrigir ${verificacao.campo}`,
+      },
+
+      (ok) => {
+        if (!ok) return;
+
+        botaoEditar.setAttribute("hidden", "");
+        document
+          .getElementById("editar-dados-pessoais-lapis")
+          .removeAttribute("hidden");
+        document
+          .getElementById("editar-dados-pessoais-cancelar")
+          .setAttribute("hidden", "");
+        document
+          .getElementById("editar-dados-pessoais-confirmar")
+          .setAttribute("hidden", "");
+
+        document.getElementById("usuario").disabled = true;
+        document.getElementById("nome").disabled = true;
+        document.getElementById("sobrenome").disabled = true;
+        document.getElementById("cpf").disabled = true;
+        document.getElementById("telefone").disabled = true;
+        document.getElementById("email").disabled = true;
+
+        const original = getleitor();
+        preencherDados(original);
+      }
+    );
+
+    return;
+  }
+
   editarFormulario({
     usuario: usuario.value,
     nome: nome.value,
@@ -224,15 +264,6 @@ confirmarEditar.addEventListener("click", function (evento) {
 const botaoEditarEndereco = document.getElementById("editar-endereco-lapis");
 
 const editarFormulario = (camposEditados) => {
-
-  const verificacao = verificarDisponibilidade(camposEditados)
-  if (!verificacao.disponivel) {
-    showAlertSync({
-      title: "Não foi possível alterar o seu cadastro",
-      message: `O ${verificacao.campo} informado já está sendo utilizado por outro leitor.`,
-    })
-    return
-  }
   const leitores = getLeitores();
   const leitorAntigo = getleitor();
   const index = leitores.findIndex((l) => l.usuario === leitorAntigo.usuario);
@@ -454,19 +485,17 @@ cancelarEditarFavoritos.addEventListener("click", function (evento) {
 
   document.querySelectorAll(".checkbox-genero").forEach((checkbox) => {
     document.querySelectorAll(".ancora-genero").forEach((ancora) => {
-
       const leitorAtual = getleitor();
       checkbox.checked = leitorAtual.meusGeneros.includes(ancora.value);
       checkbox.disabled;
       ancora.style.opacity = "0.9";
-      checkbox.checked = false
+      checkbox.checked = false;
 
       leitorAtual.meusGeneros.forEach((genero) => {
         const slugGenero = slug(genero);
         // const favorito = document.getElementById(slugGenero);
         const favorito = document.querySelector(`.${slugGenero}`);
         if (favorito) favorito.checked = true;
-
       });
     });
   });
@@ -554,7 +583,6 @@ editarFavoritosConfirmar.addEventListener("click", function (evento) {
   document.querySelectorAll(".ancora-genero").forEach((checkbox) => {
     checkbox.style.opacity = "0.9";
   });
-
 });
 
 const botaoEditarSenha = document.getElementById("editar-senha-lapis");
@@ -602,33 +630,47 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
   console.log("confirmarEditarSenha.value", confirmarEditarSenha.value);
 
   const campos = [
-    { valor: senha.value, nome: "Senha"},
-    { valor: novaSenha.value, nome: "Nova senha"},
-    { valor: confirmarNovaSenha.value, nome: "Confirmar nova senha"}
-  ]
+    { valor: senha.value, nome: "Senha" },
+    { valor: novaSenha.value, nome: "Nova senha" },
+    { valor: confirmarNovaSenha.value, nome: "Confirmar nova senha" },
+  ];
 
   for (const campo of campos) {
     if (campo.valor === "") {
       showAlertSync({
-      title: "Atenção",
-      message: `Preencha todos os campos!`,
-    });
-    return;
+        title: "Atenção",
+        message: `Preencha todos os campos!`,
+      });
+      return;
     }
+  }
+
+  if (novaSenha.value === senha.value) {
+    showAlertSync({
+      title: "Informe uma nova senha",
+      message: "A senha atual não pode ser reutilizada.",
+    });
+    novaSenha.value = "";
+    confirmarNovaSenha.value = "";
+    return;
   }
 
   if (senha.value !== usuarioPadrao.senha) {
     showAlertSync({
       title: "Senha incorreta",
-      message: "Sua senha atual está incorreta. Digite sua senha atual novamente.",
+      message:
+        "Sua senha atual está incorreta. Digite sua senha atual novamente.",
     });
     return;
-  } else if (novaSenha.value === confirmarNovaSenha.value && confirmarNovaSenha !== "") {
+  } else if (
+    novaSenha.value === confirmarNovaSenha.value &&
+    confirmarNovaSenha !== ""
+  ) {
     editarFormulario({
       senha: confirmarNovaSenha.value,
     });
 
-    const usuarioAtual = getleitor()
+    const usuarioAtual = getleitor();
 
     document.getElementById("editar-senha-lapis").removeAttribute("hidden");
     document.getElementById("editar-senha-cancelar").setAttribute("hidden", "");
@@ -638,18 +680,18 @@ confirmarEditarSenha.addEventListener("click", function (evento) {
     document.getElementById("quadro-senhas").style.display = "none";
     document.getElementById("senha").disabled = true;
     senha.value = usuarioAtual.senha;
-    
+
     novaSenha.value = "";
     confirmarNovaSenha.value = "";
 
     showAlertSync({
       title: "Senha alterada com sucesso",
       message: `Sua senha foi alterada. Utilize sua nova senha na próxima entrada no sistema.`,
-    })
-  } else showAlertSync({
-      title: "Senhas diferentes",
-      message: "As novas senhas digitadas não estão iguais. Repita o procedimento.",
     });
-
+  } else
+    showAlertSync({
+      title: "Senhas diferentes",
+      message:
+        "As novas senhas digitadas não estão iguais. Repita o procedimento.",
+    });
 });
-
