@@ -187,66 +187,72 @@ export function quantidadeAvaliacoes(isbn){
 
 export function preencherBarras(isbn){
 
-    let vetorNotas = []
+  let vetorNotas = []
 
-    let i
+  let i
 
-    for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
+  for(i=0; i<ClasseAvaliacaoLivro.vetorAvaliacoes.length;i++){
 
-        if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
+      if(ClasseAvaliacaoLivro.vetorAvaliacoes[i].isbnLivro === isbn){
 
-            vetorNotas.push(ClasseAvaliacaoLivro.vetorAvaliacoes[i].nota)
+          vetorNotas.push(ClasseAvaliacaoLivro.vetorAvaliacoes[i].nota)
 
-        }
-    }
+      }
+  }
 
-    //aqui está a quantidade total de classificações recebidas:
-    const quantidadeTotal = vetorNotas.length
+  //aqui está a quantidade total de classificações recebidas:
+  const quantidadeTotal = vetorNotas.length
 
-    //aqui estão as variáveis que guardarão a quantidade de notas 1, 2, 3, 4 e 5 que o livro recebeu, para calcular os percentuais e preencher as barras adequadamente
-    const quantidadeNota1 = vetorNotas.filter(v => v === 1).length
-    const quantidadeNota2 = vetorNotas.filter(v => v === 2).length
-    const quantidadeNota3 = vetorNotas.filter(v => v === 3).length
-    const quantidadeNota4 = vetorNotas.filter(v => v === 4).length
-    const quantidadeNota5 = vetorNotas.filter(v => v === 5).length
+  //aqui estão as variáveis que guardarão a quantidade de notas 1, 2, 3, 4 e 5 que o livro recebeu, para calcular os percentuais e preencher as barras adequadamente
+  const quantidadeNota1 = vetorNotas.filter(v => v === 1).length
+  const quantidadeNota2 = vetorNotas.filter(v => v === 2).length
+  const quantidadeNota3 = vetorNotas.filter(v => v === 3).length
+  const quantidadeNota4 = vetorNotas.filter(v => v === 4).length
+  const quantidadeNota5 = vetorNotas.filter(v => v === 5).length
 
-    //aqui estão os percentuais em si
-    const percentualNota1 = (quantidadeNota1/quantidadeTotal)*100 || 0
-    const percentualNota2 = (quantidadeNota2/quantidadeTotal)*100 || 0
-    const percentualNota3 = (quantidadeNota3/quantidadeTotal)*100 || 0
-    const percentualNota4 = (quantidadeNota4/quantidadeTotal)*100 || 0
-    const percentualNota5 = (quantidadeNota5/quantidadeTotal)*100 || 0
+  //aqui estão os percentuais em si
+  const percentualNota1 = (quantidadeNota1/quantidadeTotal)*100 || 0
+  const percentualNota2 = (quantidadeNota2/quantidadeTotal)*100 || 0
+  const percentualNota3 = (quantidadeNota3/quantidadeTotal)*100 || 0
+  const percentualNota4 = (quantidadeNota4/quantidadeTotal)*100 || 0
+  const percentualNota5 = (quantidadeNota5/quantidadeTotal)*100 || 0
 
-    // preenchendo as barras azuis
-    document.documentElement.style.setProperty('--p-1-azul', percentualNota1 + '%')
+  // preenchendo as barras azuis
+  document.documentElement.style.setProperty('--p-1-azul', percentualNota1 + '%')
 
-    document.documentElement.style.setProperty('--p-2-azul', percentualNota2 + '%')
+  document.documentElement.style.setProperty('--p-2-azul', percentualNota2 + '%')
 
-    document.documentElement.style.setProperty('--p-3-azul', percentualNota3 + '%')
+  document.documentElement.style.setProperty('--p-3-azul', percentualNota3 + '%')
 
-    document.documentElement.style.setProperty('--p-4-azul', percentualNota4 + '%')
+  document.documentElement.style.setProperty('--p-4-azul', percentualNota4 + '%')
 
-    document.documentElement.style.setProperty('--p-5-azul', percentualNota5 + '%')
+  document.documentElement.style.setProperty('--p-5-azul', percentualNota5 + '%')
 
-    //mudando a barra direita das barras azuis, apenas quando necessário
-    const percentuais = {
+  //mudando a barra direita das barras azuis, apenas quando necessário
+  const percentuais = {
 
-        1: percentualNota1,
-        2: percentualNota2,
-        3: percentualNota3,
-        4: percentualNota4,
-        5: percentualNota5
-    }
+    1: percentualNota1,
+    2: percentualNota2,
+    3: percentualNota3,
+    4: percentualNota4,
+    5: percentualNota5
+  }
 
-    // colocando um title explicativo nas barras
-    if(quantidadeTotal>0){
-        document.querySelector(".container-barras-5").title = `${Math.round(percentualNota5)}% das classificações desse livro foram nota 5`
-        document.querySelector(".container-barras-4").title = `${Math.round(percentualNota4)}% das classificações desse livro foram nota 4`
-        document.querySelector(".container-barras-3").title = `${Math.round(percentualNota3)}% das classificações desse livro foram nota 3`
-        document.querySelector(".container-barras-2").title = `${Math.round(percentualNota2)}% das classificações desse livro foram nota 2`
-        document.querySelector(".container-barras-1").title = `${Math.round(percentualNota1)}% das classificações desse livro foram nota 1`
-    }
+  // colocando um title explicativo nas barras
+  if(quantidadeTotal>0){
+    document.querySelector(".container-barras-5").title = `${Math.round(percentualNota5)}% das classificações desse livro foram nota 5`
+    document.querySelector(".container-barras-4").title = `${Math.round(percentualNota4)}% das classificações desse livro foram nota 4`
+    document.querySelector(".container-barras-3").title = `${Math.round(percentualNota3)}% das classificações desse livro foram nota 3`
+    document.querySelector(".container-barras-2").title = `${Math.round(percentualNota2)}% das classificações desse livro foram nota 2`
+    document.querySelector(".container-barras-1").title = `${Math.round(percentualNota1)}% das classificações desse livro foram nota 1`
+  }
 
+  // carregando a numeração de classificações de cada nota:
+  document.getElementById("numeracao-barra-1").textContent = quantidadeNota1
+  document.getElementById("numeracao-barra-2").textContent = quantidadeNota2
+  document.getElementById("numeracao-barra-3").textContent = quantidadeNota3
+  document.getElementById("numeracao-barra-4").textContent = quantidadeNota4
+  document.getElementById("numeracao-barra-5").textContent = quantidadeNota5
 }
 
 // essa função será chamada pela função listarAvaliacoes par a criação dinâmica das estrelas do comentário deixado pelo leitor

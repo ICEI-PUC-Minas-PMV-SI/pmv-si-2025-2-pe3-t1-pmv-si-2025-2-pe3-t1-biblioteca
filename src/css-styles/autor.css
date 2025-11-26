@@ -230,3 +230,27 @@ body{
 
 /* Micro-feedback */
 .rating label:active .estrela-svg { transform: scale(0.92); }
+
+.container-estrela-nota-barra img{
+
+  height: 3rem;
+  width: 12.5rem;
+  margin-right: 1%;
+  
+}
+
+.container-estrela-nota-barra span{
+
+  font-size: 1.5rem;
+  margin-top: 0.5%;
+  font-variant-numeric: tabular-nums;
+
+
+}
+
+
+.numeracao-barra{
+
+  margin-right: 0.75%!important;
+  
+}

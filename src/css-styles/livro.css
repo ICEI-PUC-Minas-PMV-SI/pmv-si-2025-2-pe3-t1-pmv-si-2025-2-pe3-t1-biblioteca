@@ -280,6 +280,7 @@ main {
 .container-estrela-nota-barra img{
 
   height: 3rem;
+  width: 12.5rem;
   margin-right: 1%;
   
 }
@@ -287,20 +288,16 @@ main {
 .container-estrela-nota-barra span{
 
   font-size: 1.5rem;
-  margin-right: 1%;
   margin-top: 0.5%;
+  font-variant-numeric: tabular-nums;
 
 }
 
-.n2{
 
-  margin-right: 0.85%!important;
-  
-}
 
-.n1{
+.numeracao-barra{
 
-  margin-right: 1.15%!important;
+  margin-right: 0.75%!important;
   
 }
 

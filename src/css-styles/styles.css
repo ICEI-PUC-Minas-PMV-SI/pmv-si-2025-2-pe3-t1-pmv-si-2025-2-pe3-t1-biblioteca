@@ -54,6 +54,11 @@ body {
     min-height: 100vh;
 }
 
+button:hover{
+
+    filter: brightness(1.2);
+}
+
 
 
 

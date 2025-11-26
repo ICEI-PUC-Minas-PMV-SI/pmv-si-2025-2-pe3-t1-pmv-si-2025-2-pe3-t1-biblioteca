@@ -57,6 +57,11 @@ body header nav .login_container {
     position: relative;
 }
 
+body header nav .login_container:hover{
+
+    filter: brightness(1.2);
+}
+
 .entrar-rotulo:hover{
 
     filter: brightness(1.2);
