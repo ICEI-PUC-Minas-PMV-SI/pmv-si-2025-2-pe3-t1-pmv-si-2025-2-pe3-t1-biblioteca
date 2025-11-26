@@ -1,130 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redefinir senha</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" >
-  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" >
-  <link rel = "stylesheet"  href = "../css-styles/styles.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+  <link rel="stylesheet" href="../css-styles/styles.css">
 </head>
+
 <body id="body-redefinir-senha">
 
-  <!-- Section 1: e-mail -->
-  <section id="sec1" class="redefinir-senha_parte-1 redefinir-senha-secao">
-    <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
-    <div class="redefinir-senha_formulario-1">
-      <h3 class="redefinir-senha_orientação">
-        Digite o e-mail associado à sua conta no Versora. Caso o e-mail esteja correto, você receberá um código para redefinir sua senha:
-      </h3>
-      <div class="label-input">
-      <label for="redefinir-senha_email">E-mail:</label>
-      <input style="color: black;" type="email" name="redefinir-senha_email" id="redefinir-senha_email" placeholder="Digite seu e-mail" required>
-    </div>
-    </div>
-
-    <div class="redefinir-senha_botoes" id="botao_enviar-codigo">
-      <button type="button" id="enviar-codigo_botao-cancelar">Cancelar</button>
-      <button type="button" id="enviar-codigo_botao-confirmar">Enviar código</button>
-    </div>
-
-    <!-- Loading “Enviando código...” -->
-    <div id="email-loading" class="rs-loading" hidden aria-live="polite">
-      <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando código..."></div>
-      <span class="rs-loading__text">Enviando código…</span>
-    </div>
-
-  </section>
-
-  <!-- Section 2: código (OTP) -->
-  <section id="sec2" class="redefinir-senha_parte-2 redefinir-senha-secao" hidden>
-    <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
-    <div class="redefinir-senha_formulario-2">
-      <h3 class="redefinir-senha_orientação">Insira os 6 dígitos do código enviado para o seu e-mail:</h3>
-
-      <div class="codigo-validacao" id="otp" aria-label="Código de verificação de 6 dígitos">
-        <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 1" autocomplete="one-time-code">
-        <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 2">
-        <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 3">
-        <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 4">
-        <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 5">
-        <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="0" aria-label="Dígito 6">
+  <main>
+    <!-- Section 1: e-mail -->
+    <section id="sec1" class="redefinir-senha_parte-1 redefinir-senha-secao">
+      <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
+      <div class="redefinir-senha_formulario-1">
+        <h3 class="redefinir-senha_orientação">
+          Digite o e-mail associado à sua conta no Versora. Caso o e-mail esteja correto, você receberá um código para
+          redefinir sua senha:
+        </h3>
+        <div class="label-input">
+          <label for="redefinir-senha_email">E-mail:</label>
+          <input style="color: black;" type="email" name="redefinir-senha_email" id="redefinir-senha_email"
+            placeholder="Digite seu e-mail" required>
+        </div>
       </div>
 
+      <div class="redefinir-senha_botoes" id="botao_enviar-codigo">
+        <button type="button" id="enviar-codigo_botao-cancelar">Cancelar</button>
+        <button type="button" id="enviar-codigo_botao-confirmar">Enviar código</button>
+      </div>
 
-<div class="redefinir-senha_botoes" id="botoes-prosseguir-codigo">
-      <button type="button" id="confirmar-codigo_botao-cancelar">Cancelar</button>
-      <button type="button" id="confirmar-codigo_botao-confirmar">Prosseguir</button>
-    </div>
-
-      <input type="hidden" name="codigo-validacao" id="codigo-validacao">
-      <!-- Loading “Confirmando código...” -->
+      <!-- Loading “Enviando código...” -->
       <div id="email-loading" class="rs-loading" hidden aria-live="polite">
-        <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando código..."></div>
+        <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+          aria-label="Enviando código..."></div>
+        <span class="rs-loading__text">Enviando código…</span>
+      </div>
+
+    </section>
+
+    <!-- Section 2: código (OTP) -->
+    <section id="sec2" class="redefinir-senha_parte-2 redefinir-senha-secao" hidden>
+      <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
+      <div class="redefinir-senha_formulario-2">
+        <h3 class="redefinir-senha_orientação">Insira os 6 dígitos do código enviado para o seu e-mail:</h3>
+
+        <div class="codigo-validacao" id="otp" aria-label="Código de verificação de 6 dígitos">
+          <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1"
+            placeholder="0" aria-label="Dígito 1" autocomplete="one-time-code">
+          <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1"
+            placeholder="0" aria-label="Dígito 2">
+          <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1"
+            placeholder="0" aria-label="Dígito 3">
+          <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1"
+            placeholder="0" aria-label="Dígito 4">
+          <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1"
+            placeholder="0" aria-label="Dígito 5">
+          <input class="codigo-validacao__input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1"
+            placeholder="0" aria-label="Dígito 6">
+        </div>
+
+
+        <div class="redefinir-senha_botoes" id="botoes-prosseguir-codigo">
+          <button type="button" id="confirmar-codigo_botao-cancelar">Cancelar</button>
+          <button type="button" id="confirmar-codigo_botao-confirmar">Prosseguir</button>
+        </div>
+
+        <input type="hidden" name="codigo-validacao" id="codigo-validacao">
+        <!-- Loading “Confirmando código...” -->
+        <div id="email-loading" class="rs-loading" hidden aria-live="polite">
+          <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+            aria-label="Enviando código..."></div>
           <span class="rs-loading__text">Confirmando código…</span>
         </div>
       </div>
-  </section>
+    </section>
 
-  <!-- Section 3: nova senha -->
-  <section id="sec3" class="redefinir-senha_parte-3 redefinir-senha-secao" hidden>
-     <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
-    <div class="redefinir-senha_formulario-3">
-      <h3 class="redefinir-senha_orientação">Preencha os campos a seguir para modificar sua senha:</h3>
+    <!-- Section 3: nova senha -->
+    <section id="sec3" class="redefinir-senha_parte-3 redefinir-senha-secao" hidden>
+      <h2 class="redefinir-senha_titulo">Redefina sua senha</h2>
+      <div class="redefinir-senha_formulario-3">
+        <h3 class="redefinir-senha_orientação">Preencha os campos a seguir para modificar sua senha:</h3>
 
-      <div class="quadro-senha_campo">
-        <label for="nova-senha">Nova senha:</label>
-        <input type="password" name="nova-senha" id="nova-senha" placeholder="Digite sua nova senha">
+        <div class="quadro-senha_campo">
+          <label for="nova-senha">Nova senha:</label>
+          <input type="password" name="nova-senha" id="nova-senha" placeholder="Digite sua nova senha">
+        </div>
+
+        <div class="quadro-senha_campo">
+          <label for="repita-senha">Confirmar nova senha:</label>
+          <input type="password" name="nova-senha-repita-senha" id="repita-nova-senha"
+            placeholder="Repita sua nova senha" required>
+        </div>
+
+        <div class="redefinir-senha_botoes" id="botao_redefinir-senha">
+          <button type="button" id="redefinir-senha_botao-cancelar">Cancelar</button>
+          <button type="submit" id="redefinir-senha_botao-confirmar">Confirmar</button>
+        </div>
       </div>
-
-      <div class="quadro-senha_campo">
-        <label for="repita-senha">Confirmar nova senha:</label>
-        <input type="password" name="nova-senha-repita-senha" id="repita-nova-senha" placeholder="Repita sua nova senha" required>
-      </div>
-
-      <div class="redefinir-senha_botoes" id="botao_redefinir-senha">
-        <button type="button" id="redefinir-senha_botao-cancelar">Cancelar</button>
-        <button type="submit" id="redefinir-senha_botao-confirmar">Confirmar</button>
-      </div>
-    </div>
-    <!-- Loading “Redefinindo senha...” -->
-    <div id="email-loading" class="rs-loading" hidden aria-live="polite">
-      <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando código..."></div>
+      <!-- Loading “Redefinindo senha...” -->
+      <div id="email-loading" class="rs-loading" hidden aria-live="polite">
+        <div class="rs-loading__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+          aria-label="Enviando código..."></div>
         <span class="rs-loading__text">Redefinindo senha…</span>
-    </div>
-  </section>
-  <script src = "../js-scripts/redefinir-senha.js" type = "module" defer></script>
+      </div>
+    </section>
 
- <footer id="footer-cadastro">
-        <section class="left_container">
-            <div class="email_container">
-                <span>Entre em contato: versora@pucminas.br</span>
-            </div>
-            <div class="logos_container">
-                <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
-                <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
-            </div>
-        </section>
-        <section class="right_container">
-            <div class="devs">
-                <h2>Desenvolvido por</h2>
-                <ul>
-                    <li>Caio</li>
-                    <li>Danilo</li>
-                    <li>Gustavo</li>
-                    <li>Jessé</li>
-                    <li>Kauê</li>
-                    <li>Michael</li>
-                </ul>
-            </div>
-            <nav>
-                <h2>Navegação</h2>
-                <a href="../html-paginas/acervo.html">Nosso acervo</a>
-                <a href="../../index.html">Página Inicial</a>
-                <a href="#">Quem somos</a>
-            </nav>
-        </section>
-    </footer>
+  </main>
+  <script src="../js-scripts/redefinir-senha.js" type="module" defer></script>
+
+  <footer id="footer-cadastro">
+    <section class="left_container">
+      <div class="email_container">
+        <span>Entre em contato: versora@pucminas.br</span>
+      </div>
+      <div class="logos_container">
+        <img src="../../src/img/Logo-branca-versora.png" alt="Logotipo branca versora">
+        <img src="../../src/img/logo_puc.png" alt="Logotipo Puc Minas">
+      </div>
+    </section>
+    <section class="right_container">
+      <div class="devs">
+        <h2>Desenvolvido por</h2>
+        <ul>
+          <li>Caio</li>
+          <li>Danilo</li>
+          <li>Gustavo</li>
+          <li>Jessé</li>
+          <li>Kauê</li>
+          <li>Michael</li>
+        </ul>
+      </div>
+      <nav>
+        <h2>Navegação</h2>
+        <a href="../html-paginas/acervo.html">Nosso acervo</a>
+        <a href="../../index.html">Página Inicial</a>
+        <a href="#">Quem somos</a>
+      </nav>
+    </section>
+  </footer>
 
 </body>
+
 </html>
