@@ -4,8 +4,6 @@
 
 #body-redefinir-senha {
   display: flex;
-  justify-content: space-between;
-  height: 100vh;
 }
 
 /* -------- Layout das sections -------- */
@@ -30,7 +28,6 @@
   font: 500 clamp(0.8rem, 1.7vw, 1.5rem)/1.5 var(--fonte-principal);
   color: var(--texto-secundario);
   text-align: center;
-  max-width: 90%;
 }
 
 #body-redefinir-senha .redefinir-senha_formulario-1 {
