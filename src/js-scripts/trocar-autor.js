@@ -30,8 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    console.log(usuarioLogado)
-
     //trecho que carrega as informações do autor
     const id = sessionStorage.getItem("id_autor_redirecionamento")
 
@@ -134,6 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
             lixeiras.forEach(el => {
             el.style.display = "none" 
             })
+
         }
     
         //encontrando o id do comentário que pertence ao leitor, caso exista
@@ -179,6 +178,10 @@ window.addEventListener("DOMContentLoaded", () => {
     //trecho que permite a persistência do like
     
         if(!usuarioLogado){
+
+            document.getElementById("coracao-autor").style.pointerEvents = "none"
+            document.getElementById("rotulo-like").style.pointerEvents = "none"
+
             return
         }
     

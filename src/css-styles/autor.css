@@ -16,6 +16,10 @@ body{
   gap: 20px;
 }
 
+#buscar-livros-do-autor:hover{
+
+  filter: brightness(1.2);
+}
 .back-to-home {
   /* background-color: transparent; */
   display: flex;

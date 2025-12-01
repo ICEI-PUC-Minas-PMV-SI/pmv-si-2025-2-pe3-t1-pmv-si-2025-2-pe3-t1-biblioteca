@@ -185,6 +185,9 @@ window.addEventListener("DOMContentLoaded", () => {
     //trecho que permite a persistência do like
 
     if(!usuarioLogado){
+
+         document.getElementById("coracao-livro").style.pointerEvents = "none"
+            document.getElementById("rotulo-like").style.pointerEvents = "none"
         return
     }
 

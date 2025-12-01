@@ -107,6 +107,13 @@
     padding-left: 10px;
 }
 
+#busca-acervo::placeholder{
+
+    color: var(--alcacuz);
+    opacity: 0.6;
+    text-align: center;
+} 
+
 .libContainer {
     display: flex;
     flex-direction: column;
