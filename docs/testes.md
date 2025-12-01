@@ -17,7 +17,8 @@ Nesta etapa foram realizadas dois tipos de avaliação: por inspeção (avaliaç
 
 [Relatorio_De_Teste_Usuario_5_Gustavo.docx](https://github.com/user-attachments/files/23842668/Relatorio_De_Teste_Usuario_5_Gustavo.docx)
 
-[Relatorio_De_Teste_Usuario_6_Michael.docx](https://github.com/user-attachments/files/23842669/Relatorio_De_Teste_Usuario_6_Michael.docx)
+[Relatorio_De_Teste_Usuario_6_Michael.docx](https://github.com/user-attachments/files/23842903/Relatorio_De_Teste_Usuario_6_Michael.docx)
+
 
 
 
