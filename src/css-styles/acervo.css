@@ -114,6 +114,12 @@
     text-align: center;
 } 
 
+#busca-acervo:focus::placeholder{
+
+    color: transparent;
+    
+} 
+
 .libContainer {
     display: flex;
     flex-direction: column;
