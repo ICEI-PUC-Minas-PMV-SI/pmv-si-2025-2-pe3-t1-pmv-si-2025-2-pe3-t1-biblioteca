@@ -15,11 +15,6 @@ main {
     max-width: 100%;
 }
 
-/* oculta os templates de reserva */
-.template{
-
-    display: none !important;
-}
 
 main .container-reserva {
     display: flex;
