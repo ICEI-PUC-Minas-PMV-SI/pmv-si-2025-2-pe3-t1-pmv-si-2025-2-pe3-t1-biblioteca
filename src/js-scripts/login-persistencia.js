@@ -55,7 +55,7 @@ function applyLoginStateToUI() {
   if (span) {
     const nome = (localStorage.getItem(KEY_USER) || "").trim();
     span.textContent = logged ? nome : "Entrar";
-    span.title = logged ? "Clique para acessar o menu de usuário." : "Clique para acessar o menu de login."
+    span.title = logged ? "Clique para acessar o menu de usuário" : "Clique para acessar o menu de login"
   }
 
   // 3) Mostrar/ocultar as seções personalizadas
