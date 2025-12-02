@@ -30,6 +30,11 @@
     align-items: start;
 }
 
+/* body header nav .login_container:hover{
+
+    filter: brightness(1.2);
+} */
+
 .menu_usuario ul {
     display: flex;
     flex-direction: column;
